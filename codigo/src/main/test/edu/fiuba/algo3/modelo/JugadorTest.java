@@ -16,6 +16,8 @@ public class JugadorTest {
         Respuesta respuestaCorrecta = new Respuesta(new RespuestaCorrecta(), "holis soy correcta :D");
         Respuesta respuestaIncorrecta = new Respuesta(new RespuestaIncorrecta(), "soy incorrecta :c");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
+        respuestas.add(respuestaCorrecta);
+        respuestas.add(respuestaIncorrecta);
 
         Pregunta unaPregunta = new Pregunta(new VerdaderoFalso(new Clasico()), respuestas, "hola soy una pregunta??");
 
