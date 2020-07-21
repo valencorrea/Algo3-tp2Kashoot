@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 public class PreguntaTest {
-
+/*
     @Test
     public void preguntaVerdaderoFalsoClasicoSeCreaIndicandoLaRespuestaCorrecta(){
 
@@ -25,5 +25,5 @@ public class PreguntaTest {
         assert(contenidoCorrecto.equals(contenidoObtenido));
 
     }
-
+*/
 }

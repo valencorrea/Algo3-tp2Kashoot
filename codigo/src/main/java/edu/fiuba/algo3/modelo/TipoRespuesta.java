@@ -4,4 +4,7 @@ public abstract class TipoRespuesta {
 
     public abstract boolean soyCorrecta();
 
+    public abstract int getPuntos();
+
+
 }

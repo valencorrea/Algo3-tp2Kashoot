@@ -31,7 +31,7 @@ public class Pregunta {
 
         Respuesta unaRespuesta = this.buscarContenido(unContenido);
 
-        return this.tipo.calcularPuntaje(unaRespuesta.soyCorrecta(), );
+        return this.tipo.calcularPuntaje(unaRespuesta);
     }
 
     public Respuesta buscarContenido(String unContenido){

@@ -19,4 +19,8 @@ public class Respuesta {
     public String getContenido(){
         return this.contenido;
     }
+
+    public int getPuntos() {
+        return this.tipo.getPuntos();
+    }
 }
