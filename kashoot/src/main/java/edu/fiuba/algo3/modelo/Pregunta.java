@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 public class Pregunta {
 
-    private final ArrayList<Respuesta> respuestas;
+    private ArrayList<Respuesta> respuestas;
     private TipoPregunta tipo;
     private String contenido;
 
-    public Pregunta(TipoPregunta unTipo, ArrayList<Respuesta> unasRespuestas, String unContenido){
+
+    public Pregunta(TipoPregunta unTipo, String unContenido){
         this.tipo = unTipo;
-        this.respuestas = unasRespuestas;
         this.contenido = unContenido;
+        this.respuestas = new ArrayList<Respuesta>();
     }
 
     public Respuesta getCorrecta(){
@@ -46,4 +47,19 @@ public class Pregunta {
         return respuestaBuscada;
     }
 
+    public void agregarRespuestaCorrecta(String contenido) {
+
+         this.agregarRespuesta(new Respuesta(new RespuestaCorrecta(),contenido));
+    }
+
+    public void agregarRespuesta(Respuesta unaRespuesta){
+
+        this.respuestas.add(unaRespuesta);
+    }
+
+    public void agregarRespuestaIncorrecta(String contenido) {
+
+        this.agregarRespuesta(new Respuesta(new RespuestaIncorrecta(),contenido));
+    }
 }
+
