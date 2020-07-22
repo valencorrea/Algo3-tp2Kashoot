@@ -11,6 +11,4 @@ public class VerdaderoFalso extends TipoPregunta{
     public int calcularPuntaje(Respuesta unaRespuesta){
         return this.formato.calcularPuntaje(unaRespuesta);
     }
-
-
 }
