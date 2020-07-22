@@ -2,7 +2,6 @@ package edu.fiuba.algo3.modelo;
 
 public class Respuesta {
 
-    public String unContenido;
     private TipoRespuesta tipo;
     private String contenido;
 
@@ -10,6 +9,7 @@ public class Respuesta {
         this.tipo = unTipo;
         this.contenido = unContenido;
     }
+
 
     public boolean soyCorrecta() {
 
