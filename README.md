@@ -1,4 +1,4 @@
-# tp2
+# Trabajo Practico 2 - KASHOOT
 tp2 algoritmos 3 en java
 
 Overleaf: https://www.overleaf.com/4985297591fwwxdqdbpqfh
