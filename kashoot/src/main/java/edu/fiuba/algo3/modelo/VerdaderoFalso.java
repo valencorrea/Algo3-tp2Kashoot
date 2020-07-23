@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-public class VerdaderoFalso extends TipoPregunta{
+public class VerdaderoFalso implements TipoPregunta {
 
     private TipoFormato formato;
 
