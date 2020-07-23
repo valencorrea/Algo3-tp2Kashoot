@@ -34,7 +34,8 @@ public class Pregunta {
 
         return this.tipo.calcularPuntaje(unaRespuesta);
     }
-
+    //modelar respuesta(Generica) y opciones.
+    // cambiar lo de correcta e incorrecta
     public Respuesta buscarContenido(String unContenido){
         Respuesta respuestaBuscada = null; /*PREGUNTAR SI ESTA BIEN INICIALIZAR CON NULL Y NUNCA CHEQUEAR QUE NO LO SEA*/
 
