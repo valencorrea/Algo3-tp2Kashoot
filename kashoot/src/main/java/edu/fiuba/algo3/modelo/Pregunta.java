@@ -25,7 +25,7 @@ public class Pregunta {
             }
         }
 
-        return respuestaCorrecta;
+        return respuestaCorrecta; //Comentario
     }
 
     public int responder(String unContenido) {
