@@ -9,6 +9,7 @@ public class Clasico extends TipoFormato{
             return puntos;
         }
 
-        return 0;//un comentario
+        return 0;
+        //comentario agus
     }
 }
