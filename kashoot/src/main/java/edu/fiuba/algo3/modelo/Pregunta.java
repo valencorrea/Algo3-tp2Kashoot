@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 public class Pregunta {
 
-    private ArrayList<Respuesta> respuestas;
+    private ArrayList<Opcion> opciones;
     private TipoPregunta tipo;
     private String contenido;
 
-
-    public Pregunta(TipoPregunta unTipo, String unContenido){
+    //la pregunta no deberia saber cuales opciones son correctas o incorrectas, solo se las guarda en un array
+    public Pregunta(TipoPregunta unTipo, String unContenido,ArrayList<Opcion> opciones){
         this.tipo = unTipo;
         this.contenido = unContenido;
-        this.respuestas = new ArrayList<Respuesta>();
+        this.opciones = opciones;
     }
-
+/*
     public Respuesta getCorrecta(){
 
         Respuesta respuestaCorrecta = null;
@@ -27,30 +27,19 @@ public class Pregunta {
 
         return respuestaCorrecta;
     }
-
-    public int responder(String unContenido) {
-
-        Respuesta unaRespuesta = this.buscarContenido(unContenido);
-
-        return this.tipo.calcularPuntaje(unaRespuesta);
+*/
+    public int responder(Respuesta respuesta) {
+        return 10;
     }
+    /*
+ */
     //modelar respuesta(Generica) y opciones.
     // cambiar lo de correcta e incorrecta
-    public Respuesta buscarContenido(String unContenido){
-        Respuesta respuestaBuscada = null; /*PREGUNTAR SI ESTA BIEN INICIALIZAR CON NULL Y NUNCA CHEQUEAR QUE NO LO SEA*/
 
-        for(Respuesta respuesta: this.respuestas){
-            if(respuesta.getContenido().equals(unContenido)){
-                respuestaBuscada = respuesta;
-            }
-        }
 
-        return respuestaBuscada;
-    }
+   /* public void agregarRespuestaCorrecta(String contenido) {
 
-    public void agregarRespuestaCorrecta(String contenido) {
-
-         this.agregarRespuesta(new Respuesta(new RespuestaCorrecta(),contenido));
+         this.agregarRespuesta(new Respuesta(new OpcionCorrecta(),contenido));
     }
 
     public void agregarRespuesta(Respuesta unaRespuesta){
@@ -60,7 +49,9 @@ public class Pregunta {
 
     public void agregarRespuestaIncorrecta(String contenido) {
 
-        this.agregarRespuesta(new Respuesta(new RespuestaIncorrecta(),contenido));
+        this.agregarRespuesta(new Respuesta(new OpcionIncorrecta(),contenido));
     }
+
+    */
 }
 

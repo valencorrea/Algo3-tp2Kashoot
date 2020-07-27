@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-public class RespuestaCorrecta extends TipoRespuesta {
+public class OpcionCorrecta extends TipoOpcion {
 
     private int puntaje = 10;
 

@@ -1,26 +1,25 @@
 package edu.fiuba.algo3.modelo;
 
+import java.util.ArrayList;
+
 public class Respuesta {
 
-    private TipoRespuesta tipo;
-    private String contenido;
+    private ArrayList<Opcion> opciones = new ArrayList<Opcion>();
 
-    public Respuesta(TipoRespuesta unTipo, String unContenido){
-        this.tipo = unTipo;
-        this.contenido = unContenido;
+
+    public void agregarOpcion(Opcion opcion){
+        opciones.add(opcion);
     }
 
-
-    public boolean soyCorrecta() {
+  /*  public boolean soyCorrecta() {
 
         return this.tipo.soyCorrecta();
     }
-
-    public String getContenido(){
-        return this.contenido;
-    }
-
+*/
+/*
     public int getPuntos() {
         return this.tipo.getPuntos();
     }
+    */
+
 }

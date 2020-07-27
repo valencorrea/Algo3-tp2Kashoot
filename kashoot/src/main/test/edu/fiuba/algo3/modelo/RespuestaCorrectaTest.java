@@ -8,11 +8,11 @@ public class RespuestaCorrectaTest {
 
     @Test
     public void unTipoCorrectoEsCorrecto(){
-        assert(new RespuestaCorrecta().soyCorrecta());
+        assert(new OpcionCorrecta().soyCorrecta());
     }
 
     @Test
     public void unTipoCorrectoDevuelve10Puntos(){
-        assertEquals(new RespuestaCorrecta().getPuntos(), 10);
+        assertEquals(new OpcionCorrecta().getPuntos(), 10);
     }
 }

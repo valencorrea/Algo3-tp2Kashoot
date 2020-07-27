@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PreguntaTest {
-
+/*
     @Test
     public void preguntaVerdaderoFalsoClasicoSeCreaIndicandoLaRespuestaCorrecta(){
 
@@ -47,6 +47,28 @@ public class PreguntaTest {
 
         assertEquals(10,resultado);
         assertEquals(0,otroResultado);
+
+    }
+*/
+    @Test
+
+    public void seCreaUnaPreguntaDeVerdaderoFalsoConPenalidad(){
+
+        Opcion opcionCorrecta = new Opcion(new OpcionCorrecta(),"Verdadero");
+        Opcion opcionIncorrecta = new Opcion(new OpcionIncorrecta(),"Falsa");
+
+        ArrayList<Opcion> opciones = new ArrayList<Opcion>();
+        opciones.add(opcionCorrecta);
+        opciones.add(opcionIncorrecta);
+
+        Pregunta unaPregunta = new Pregunta(new VerdaderoFalso(new Penalidad()),"Soy pregunta?",opciones);
+
+        Respuesta respuesta = new Respuesta();
+        respuesta.agregarOpcion(opcionCorrecta);
+
+        int puntosObtenidos = unaPregunta.responder(respuesta);
+
+        assertEquals(10,puntosObtenidos);
 
     }
 

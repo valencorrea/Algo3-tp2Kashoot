@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-public class RespuestaIncorrecta extends TipoRespuesta {
+public class OpcionIncorrecta extends TipoOpcion {
 
 
     @Override
