@@ -2,7 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 public abstract class TipoOpcion {
 
-    public abstract boolean soyCorrecta();
+    protected int puntaje = 10;
 
-    public abstract int getPuntos();
+    public abstract int calcularPuntaje(TipoFormato formatoPregunta);
 }

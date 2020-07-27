@@ -9,4 +9,7 @@ public class Opcion {
         this.tipo = tipo;
         this.contenido = contenido;
     }
+    public int calcularPuntaje(TipoFormato formatoPregunta){
+        return tipo.calcularPuntaje(formatoPregunta);
+    }
 }
