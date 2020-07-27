@@ -9,7 +9,6 @@ public class ModalidadPregunta {
     }
 
     public int calcularPuntaje(Respuesta unaRespuesta){
-        //return unaRespuesta.calcularPuntaje(this.formato);
-        return 10;
+        return unaRespuesta.calcularPuntaje(this.formato);
     }
 }
