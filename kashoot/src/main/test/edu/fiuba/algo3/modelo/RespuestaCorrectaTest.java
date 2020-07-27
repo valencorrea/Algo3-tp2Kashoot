@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RespuestaCorrectaTest {
-
+/*
     @Test
     public void unTipoCorrectoEsCorrecto(){
         assert(new OpcionCorrecta().soyCorrecta());
@@ -15,4 +15,4 @@ public class RespuestaCorrectaTest {
     public void unTipoCorrectoDevuelve10Puntos(){
         assertEquals(new OpcionCorrecta().getPuntos(), 10);
     }
-}
+*/}

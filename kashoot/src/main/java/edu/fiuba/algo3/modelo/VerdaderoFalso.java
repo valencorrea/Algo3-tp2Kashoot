@@ -10,6 +10,7 @@ public class VerdaderoFalso implements TipoPregunta {
     }
 
     public int calcularPuntaje(Respuesta unaRespuesta){
-        return this.formato.calcularPuntaje(unaRespuesta);
+        return unaRespuesta.calcularPuntaje(formato);
+       // return this.formato.calcularPuntaje(unaRespuesta);
     }
 }
