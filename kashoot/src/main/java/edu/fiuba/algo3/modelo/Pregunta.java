@@ -4,16 +4,14 @@ import java.util.ArrayList;
 
 public class Pregunta {
 
-    private ArrayList<Opcion> opciones;
     private ModalidadPregunta modalidad;
     private String contenido;
     private Respuesta respuestaCorrecta;
 
     //la pregunta no deberia saber cuales opciones son correctas o incorrectas, solo se las guarda en un array
-    public Pregunta(ModalidadPregunta unaModalidad, String unContenido,ArrayList<Opcion> opciones, Respuesta respuestaCorrecta){
+    public Pregunta(ModalidadPregunta unaModalidad, String unContenido,Respuesta respuestaCorrecta){
         this.modalidad = unaModalidad;
         this.contenido = unContenido;
-        this.opciones = opciones;
         this.respuestaCorrecta = respuestaCorrecta;
     }
 /*
