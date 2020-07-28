@@ -8,7 +8,8 @@ public class ModalidadPregunta {
         this.formato = unFormato;
     }
 
-    public int calcularPuntaje(Respuesta unaRespuesta){
-        return unaRespuesta.calcularPuntaje(this.formato);
+    public int calcularPuntaje(Respuesta respuestaJugador, int cantidadAciertos, int cantidadCorrectas){
+        //return respuestaJugador.calcularPuntaje(this.formato);
+        return this.formato.calcularPuntaje(cantidadAciertos, cantidadCorrectas);
     }
 }

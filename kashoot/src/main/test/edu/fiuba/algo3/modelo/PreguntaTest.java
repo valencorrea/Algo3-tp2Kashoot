@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PreguntaTest {
 
     @Test
-    public void preguntaVerdaderoFalsoClasicoSeCreaIndicandoLaRespuestaCorrecta() {
+    public void preguntaVerdaderoFalsoClasicoSeCreaIndicandoLaRespuestaCorrectaSeRespondeMal() {
 
         Opcion opcionCorrecta = new Opcion(new OpcionCorrecta(), "Verdadero");
         Opcion opcionIncorrecta = new Opcion(new OpcionIncorrecta(), "Falsa");
@@ -18,14 +18,17 @@ public class PreguntaTest {
         opciones.add(opcionCorrecta);
         opciones.add(opcionIncorrecta);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Clasico()), "Soy pregunta?", opciones);
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionIncorrecta);
 
-        Respuesta respuesta = new Respuesta();
-        respuesta.agregarOpcion(opcionCorrecta);
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionCorrecta);
 
-        int puntosObtenidos = unaPregunta.responder(respuesta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Clasico()), "Soy pregunta?", opciones, respuestaCorrecta);
 
-        assertEquals(10, puntosObtenidos);
+        int puntosObtenidos = unaPregunta.calcularPuntaje(respuestaIncorrecta);
+
+        assertEquals(0, puntosObtenidos);
     }
 
     @Test
@@ -39,21 +42,14 @@ public class PreguntaTest {
         opciones.add(opcionCorrecta);
         opciones.add(opcionIncorrecta);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Penalidad()), "Soy pregunta?", opciones);
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionCorrecta);
 
-        Respuesta respuesta = new Respuesta();
-        respuesta.agregarOpcion(opcionCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Penalidad()), "Soy pregunta?", opciones, respuestaCorrecta);
 
-        //Respuesta otraRespuesta = new Respuesta();
-        //otraRespuesta.agregarOpcion(opcionCorrecta);
-
-        int resultado = unaPregunta.responder(respuesta);
-
-        //  int otroResultado = unaPregunta.responder(otraRespuesta);
+        int resultado = unaPregunta.calcularPuntaje(respuestaCorrecta);
 
         assertEquals(10, resultado);
-        //  assertEquals(0,otroResultado);
-
     }
 
     @Test
@@ -67,12 +63,12 @@ public class PreguntaTest {
         opciones.add(opcionCorrecta);
         opciones.add(opcionIncorrecta);
 
-        Pregunta unaPreguntaVoF = new Pregunta(new ModalidadPregunta(new Penalidad()), "Soy pregunta?", opciones);
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionCorrecta);
 
-        Respuesta respuesta = new Respuesta();
-        respuesta.agregarOpcion(opcionCorrecta);
+        Pregunta unaPreguntaVoF = new Pregunta(new ModalidadPregunta(new Penalidad()), "Soy pregunta?", opciones, respuestaCorrecta);
 
-        int puntosObtenidos = unaPreguntaVoF.responder(respuesta);
+        int puntosObtenidos = unaPreguntaVoF.calcularPuntaje(respuestaCorrecta);
 
         assertEquals(10, puntosObtenidos);
 
@@ -103,7 +99,7 @@ public class PreguntaTest {
         assertEquals(20, puntosObtenidos);
     }
 
-    @Test
+   /* @Test
     public void SeCreaUnaPreguntaMultipleChoiceConFormatoParcial(){
         Opcion opcionCorrecta = new Opcion(new OpcionCorrecta(), "Verdadero");
         Opcion otraOpcionCorrecta = new Opcion(new OpcionCorrecta(), "SoyCorrecta");
@@ -125,5 +121,5 @@ public class PreguntaTest {
         int puntosObtenidos = unaPreguntaMultipleChoice.responder(respuesta);
 
         assertEquals(10, puntosObtenidos);
-    }
+    }*/
 }
