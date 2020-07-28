@@ -17,6 +17,26 @@ public class Respuesta {
         }
         return puntos;
     }
+
+    public int obtenerTamanio(){
+        return this.opciones.size();
+    }
+
+    public int calcularAciertos(Respuesta respuestaJugador){
+        int correctas = 0;
+
+        for(Opcion opcionCorrecta: opciones){
+            for(Opcion opcionJugador: respuestaJugador.getOpciones()){
+                correctas += opcionCorrecta.esIgualA(opcionJugador);
+            }
+        }
+        return correctas;
+    }
+
+    public ArrayList<Opcion> getOpciones(){
+        return this.opciones;
+    }
+
   /*  public boolean soyCorrecta() {
 
         return this.tipo.soyCorrecta();

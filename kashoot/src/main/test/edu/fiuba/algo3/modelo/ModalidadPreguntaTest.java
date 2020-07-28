@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ModalidadPreguntaTest {
 
-    @Test
+    /*@Test
      public void DadaUnaModalidadPreguntaDelTipoVerdaderoOFalsoClasicoEntoncesElPuntajeSeraElCorrecto(){
 
         ModalidadPregunta modalidadVoF = new ModalidadPregunta(new Clasico());
@@ -31,7 +31,7 @@ class ModalidadPreguntaTest {
 
         assertEquals(10,resultado);
 
-    }
+    }*/
 
 
 }

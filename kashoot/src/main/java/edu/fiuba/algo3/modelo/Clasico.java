@@ -6,4 +6,12 @@ public class Clasico extends TipoFormato{
     public int puntajeIncorrecto(){
         return 0;
     }
+
+    @Override
+    public int calcularPuntaje(int cantidadAciertos, int cantidadCorrectas){
+        if (cantidadCorrectas == cantidadAciertos){
+            return (cantidadCorrectas * 10);
+        }
+        return 0;
+    }
 }
