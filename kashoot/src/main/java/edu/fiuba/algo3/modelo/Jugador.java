@@ -7,9 +7,9 @@ public class Jugador {
     public Jugador(String unNombre){
         this.nombre = unNombre;
     }
-/*
-    public int responder(Pregunta unaPregunta, String unContenido){
-        return unaPregunta.responder(unContenido);
+
+    public int responder(Pregunta unaPregunta,Respuesta unaRespuesta){
+        return unaPregunta.calcularPuntaje(unaRespuesta);
     }
-*/
+
 }
