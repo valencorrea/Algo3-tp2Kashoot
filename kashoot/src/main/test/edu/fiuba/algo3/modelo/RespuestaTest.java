@@ -10,6 +10,21 @@ public class RespuestaTest {
     public void dadaUnaRespuestaCorrectaDeUnVerdaderoFalsoConPenalidadSeDevuelveSuPuntaje(){
 
         Respuesta respuesta = new Respuesta();
+        Opcion opcionVerdadera = new Opcion(new OpcionCorrecta(),"verdadero");
+        ModalidadPregunta verdaderoOFalso = new ModalidadPregunta(new Penalidad());
+        respuesta.agregarOpcion(opcionVerdadera);
+        int cantidadCorrectas = 1, cantidadAciertos = 1;
+
+        int puntaje = verdaderoOFalso.calcularPuntaje(respuesta, cantidadAciertos, cantidadCorrectas);
+
+        assertEquals(10,puntaje);
+    }
+    /*
+    @Test
+
+    public void dadaUnaRespuestaCorrectaDeUnVerdaderoFalsoConPenalidadSeDevuelveSuPuntaje(){
+
+        Respuesta respuesta = new Respuesta();
         Opcion opcion = new Opcion(new OpcionCorrecta(),"verdadero");
         TipoFormato penalidad = new Penalidad();
         respuesta.agregarOpcion(opcion);
@@ -62,7 +77,7 @@ public class RespuestaTest {
         int puntaje = respuesta.calcularPuntaje(clasico);
         assertEquals(20,puntaje);
 
-    }
+    }*/
 /*
     @Test
     public void unaRespuestaTipoCorrectaEsCorrecta(){
