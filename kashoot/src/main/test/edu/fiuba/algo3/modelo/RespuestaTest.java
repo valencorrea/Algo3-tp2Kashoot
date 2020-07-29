@@ -1,21 +1,14 @@
 package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RespuestaTest {
 
     @Test
-
     public void dadaUnaRespuestaCorrectaElJugadorRespondeCorrectamenteYSuCantidadDeAciertosEs1(){
 
         Opcion opcionCorrecta = new Opcion("Verdadero");
-
-        ArrayList<Opcion> opciones = new ArrayList<Opcion>();
-        opciones.add(opcionCorrecta);
 
         Respuesta respuesta = new Respuesta();
         respuesta.agregarOpcion(opcionCorrecta);
@@ -27,21 +20,66 @@ public class RespuestaTest {
 
         assertEquals(1,aciertos);
     }
-    /*
-    @Test
 
-    public void dadaUnaRespuestaCorrectaDeUnVerdaderoFalsoConPenalidadSeDevuelveSuPuntaje(){
+    @Test
+    public void dadaUnaRespuestaCorrectaDeUnVerdaderoFalsoConPenalidadMalContestadaTieneCeroAciertos(){
+
+        Opcion opcionCorrecta = new Opcion("Verdadera");
+        Opcion opcionIncorrecta = new Opcion("Falsa");
 
         Respuesta respuesta = new Respuesta();
-        Opcion opcion = new Opcion(new OpcionCorrecta(),"verdadero");
-        TipoFormato penalidad = new Penalidad();
-        respuesta.agregarOpcion(opcion);
-        int puntaje = respuesta.calcularPuntaje(penalidad);
-        assertEquals(10,puntaje);
-    }
-*/
-    @Test
+        respuesta.agregarOpcion(opcionCorrecta);
+        Respuesta respuestaJugador= new Respuesta();
 
+        respuestaJugador.agregarOpcion(opcionIncorrecta);
+
+        int aciertos = respuesta.calcularAciertos(respuestaJugador);
+
+        assertEquals(0,aciertos);
+    }
+
+    @Test
+    public void dadasDosRespuestasCorrectasEnUnChoiceSeRespondenAmbasMalYSusAciertosSonCero(){
+
+        Opcion opcionCorrecta = new Opcion("Verdadera");
+        Opcion otraOpcionCorrecta = new Opcion("Otra verdadera");
+        Opcion opcionIncorrecta = new Opcion("Falsa");
+        Opcion otraOpcionIncorrecta = new Opcion("Otra falsa");
+
+        Respuesta respuesta = new Respuesta();
+        respuesta.agregarOpcion(opcionCorrecta);
+        respuesta.agregarOpcion(otraOpcionCorrecta);
+
+        Respuesta respuestaJugador= new Respuesta();
+        respuestaJugador.agregarOpcion(opcionIncorrecta);
+        respuestaJugador.agregarOpcion(otraOpcionIncorrecta);
+
+        int aciertos = respuesta.calcularAciertos(respuestaJugador);
+
+        assertEquals(0,aciertos);
+    }
+
+    @Test
+    public void dadasDosRespuestasCorrectasEnUnChoiceSeRespondeUnaBienYUnaMalYLosAciertosSon1(){
+
+        Opcion opcionCorrecta = new Opcion("Verdadera");
+        Opcion otraOpcionCorrecta = new Opcion("Otra Verdadera");
+        Opcion opcionIncorrecta = new Opcion("Falsa");
+
+        Respuesta respuesta = new Respuesta();
+        respuesta.agregarOpcion(opcionCorrecta);
+        respuesta.agregarOpcion(otraOpcionCorrecta);
+
+        Respuesta respuestaJugador= new Respuesta();
+        respuestaJugador.agregarOpcion(opcionIncorrecta);
+        respuestaJugador.agregarOpcion(opcionCorrecta);
+
+        int aciertos = respuesta.calcularAciertos(respuestaJugador);
+
+        assertEquals(1, aciertos);
+    }
+
+    @Test
     public void dadaUnaRespuestaConMultiplesOpcionesJugadorAciertaTodas(){
 
         Opcion opcionCorrecta1 = new Opcion("Uno");
@@ -61,37 +99,20 @@ public class RespuestaTest {
         respuestaJugador.agregarOpcion(opcionCorrecta3);
 
         int aciertos = respuesta.calcularAciertos(respuestaJugador);
-
         assertEquals(3,aciertos);
     }
-/*
+
     @Test
-
-    public void dadaUnaRespuestaConMultiplesOpcionesConPenalidadSeCalculaElPuntaje(){
-
-        Respuesta respuesta = new Respuesta();
-        Opcion opcion1 = new Opcion(new OpcionIncorrecta(),"Uno");
-        Opcion opcion2 = new Opcion(new OpcionCorrecta(),"Dos");
-        Opcion opcion3 = new Opcion(new OpcionCorrecta(),"Tres");
-        TipoFormato penalidad = new Penalidad();
-        respuesta.agregarOpcion(opcion1);
-        respuesta.agregarOpcion(opcion2);
-        respuesta.agregarOpcion(opcion3);
-        int puntaje = respuesta.calcularPuntaje(penalidad);
-        assertEquals(10,puntaje);
-
-    }
-*/
-    @Test
-
     public void dadaUnaRespuestaRecienInicializadaObtenerTamanioDevuelve0(){
 
         Respuesta respuesta = new Respuesta();
+
         int tamanio = respuesta.obtenerTamanio();
+
         assertEquals(0,tamanio);
     }
-    @Test
 
+    @Test
     public void dadaUnaRespuestaCon3OpcionesObtenerTamanioDevuelve3(){
 
         Respuesta respuesta = new Respuesta();
@@ -102,7 +123,9 @@ public class RespuestaTest {
         respuesta.agregarOpcion(opcion1);
         respuesta.agregarOpcion(opcion2);
         respuesta.agregarOpcion(opcion3);
+
         int tamanio = respuesta.obtenerTamanio();
+
         assertEquals(3,tamanio);
     }
 }
