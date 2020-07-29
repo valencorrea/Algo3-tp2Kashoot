@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PreguntaTest {
-
+/*
     @Test
     public void preguntaVerdaderoFalsoClasicoSeCreaIndicandoLaRespuestaCorrectaSeRespondeMal() {
 
@@ -128,5 +128,5 @@ public class PreguntaTest {
         int puntosObtenidos = unaPreguntaMultipleChoice.calcularPuntaje(respuestaUsuario);
 
         assertEquals(0, puntosObtenidos);
-    }
+    }*/
 }

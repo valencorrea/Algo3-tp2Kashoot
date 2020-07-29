@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RespuestaTest {
-
+/*
     @Test
 
     public void dadaUnaRespuestaCorrectaDeUnVerdaderoFalsoConPenalidadSeDevuelveSuPuntaje(){
@@ -18,7 +18,7 @@ public class RespuestaTest {
         int puntaje = verdaderoOFalso.calcularPuntaje(respuesta, cantidadAciertos, cantidadCorrectas);
 
         assertEquals(10,puntaje);
-    }
+    }*/
     /*
     @Test
 

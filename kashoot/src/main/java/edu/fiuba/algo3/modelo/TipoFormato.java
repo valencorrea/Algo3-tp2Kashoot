@@ -1,7 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
 public abstract class TipoFormato {
-    public abstract int puntajeIncorrecto();
 
-    public abstract int calcularPuntaje(int cantidadAciertos, int cantidadCorrectas);
+    protected int puntaje = 10;//preguntar si es mejor constante
+
+    public abstract int calcularPuntaje(int cantidadOpcionesJugador,int cantidadAciertos, int cantidadCorrectas);
 }
