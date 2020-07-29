@@ -9,7 +9,7 @@ public class Respuesta {
     public void agregarOpcion(Opcion opcion){
         opciones.add(opcion);
     }
-
+/*
     public int calcularPuntaje (TipoFormato formatoPregunta){
         int puntos = 0;
         for(Opcion opcion: opciones){
@@ -17,7 +17,7 @@ public class Respuesta {
         }
         return puntos;
     }
-
+*/
     public int obtenerTamanio(){
         return this.opciones.size();
     }
