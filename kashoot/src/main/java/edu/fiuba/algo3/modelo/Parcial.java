@@ -5,7 +5,7 @@ public class Parcial extends TipoFormato {
     @Override
     public int calcularPuntaje(int cantidadOpcionesJugador,int cantidadAciertos, int cantidadCorrectas){
 
-        if(cantidadCorrectas == cantidadOpcionesJugador && (cantidadCorrectas - cantidadAciertos) != 0){
+        if((cantidadCorrectas == cantidadOpcionesJugador && (cantidadCorrectas - cantidadAciertos) != 0) | (cantidadOpcionesJugador-cantidadAciertos)>0){
             return 0;
         }
 
