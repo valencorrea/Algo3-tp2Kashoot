@@ -8,11 +8,6 @@ public class Opcion {
         this.contenido = contenido;
     }
 
-    /*
-    public int calcularPuntaje(TipoFormato formatoPregunta){
-        return tipo.calcularPuntaje(formatoPregunta);
-    }
-*/
     public int esIgualA(Opcion opcionJugador) {
         boolean esIgual = false;
 
