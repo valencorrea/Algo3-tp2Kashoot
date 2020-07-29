@@ -6,7 +6,9 @@ public class Opcion {
 
     public Opcion(String contenido){
         this.contenido = contenido;
-    }/*
+    }
+
+    /*
     public int calcularPuntaje(TipoFormato formatoPregunta){
         return tipo.calcularPuntaje(formatoPregunta);
     }

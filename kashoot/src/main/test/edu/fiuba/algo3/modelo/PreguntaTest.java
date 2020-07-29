@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PreguntaTest {
 /*
     @Test
-    public void preguntaVerdaderoFalsoClasicoSeCreaIndicandoLaRespuestaCorrectaSeRespondeMal() {
+    public void preguntaVerdaderoFalsoClasicoSeCreaIndicandoLaRespuestaCorrectaSeRespondeMal(){
 
-        Opcion opcionCorrecta = new Opcion(new OpcionCorrecta(), "Verdadero");
-        Opcion opcionIncorrecta = new Opcion(new OpcionIncorrecta(), "Falsa");
+        Opcion opcionCorrecta = new Opcion("Verdadero");
+        Opcion opcionIncorrecta = new Opcion("Falsa");
 
         ArrayList<Opcion> opciones = new ArrayList<Opcion>();
         opciones.add(opcionCorrecta);
@@ -24,7 +24,7 @@ public class PreguntaTest {
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Clasico()), "Soy pregunta?", opciones, respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Clasico()), "Soy pregunta?", respuestaCorrecta);
 
         int puntosObtenidos = unaPregunta.calcularPuntaje(respuestaIncorrecta);
 
@@ -35,8 +35,8 @@ public class PreguntaTest {
 
     public void DadaUnPreguntaDelTipoVerdaderoOFalsoEnModoClasicoSeDevuelveElPuntaje() {
 
-        Opcion opcionCorrecta = new Opcion(new OpcionCorrecta(), "Verdadero");
-        Opcion opcionIncorrecta = new Opcion(new OpcionIncorrecta(), "Falsa");
+        Opcion opcionCorrecta = new Opcion("Verdadero");
+        Opcion opcionIncorrecta = new Opcion("Falsa");
 
         ArrayList<Opcion> opciones = new ArrayList<Opcion>();
         opciones.add(opcionCorrecta);
@@ -45,7 +45,7 @@ public class PreguntaTest {
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Penalidad()), "Soy pregunta?", opciones, respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Penalidad()), "Soy pregunta?", respuestaCorrecta);
 
         int resultado = unaPregunta.calcularPuntaje(respuestaCorrecta);
 
@@ -56,8 +56,8 @@ public class PreguntaTest {
 
     public void seCreaUnaPreguntaDeVerdaderoFalsoConPenalidad() {
 
-        Opcion opcionCorrecta = new Opcion(new OpcionCorrecta(), "Verdadero");
-        Opcion opcionIncorrecta = new Opcion(new OpcionIncorrecta(), "Falsa");
+        Opcion opcionCorrecta = new Opcion("Verdadero");
+        Opcion opcionIncorrecta = new Opcion("Falsa");
 
         ArrayList<Opcion> opciones = new ArrayList<Opcion>();
         opciones.add(opcionCorrecta);
@@ -66,7 +66,7 @@ public class PreguntaTest {
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
 
-        Pregunta unaPreguntaVoF = new Pregunta(new ModalidadPregunta(new Penalidad()), "Soy pregunta?", opciones, respuestaCorrecta);
+        Pregunta unaPreguntaVoF = new Pregunta(new ModalidadPregunta(new Penalidad()), "Soy pregunta?", respuestaCorrecta);
 
         int puntosObtenidos = unaPreguntaVoF.calcularPuntaje(respuestaCorrecta);
 
@@ -76,10 +76,10 @@ public class PreguntaTest {
 
     @Test
     public void SeCreaUnaPreguntaMultipleChoiceConFormatoClasicoYSeRespondeCorrectamente() {
-        Opcion opcionCorrecta = new Opcion(new OpcionCorrecta(), "Verdadero");
-        Opcion otraOpcionCorrecta = new Opcion(new OpcionCorrecta(), "SoyCorrecta");
-        Opcion opcionIncorrecta = new Opcion(new OpcionIncorrecta(), "Falsa");
-        Opcion otraOpcionIncorrecta = new Opcion(new OpcionIncorrecta(), "SoyFalsa");
+        Opcion opcionCorrecta = new Opcion("Verdadero");
+        Opcion otraOpcionCorrecta = new Opcion("SoyCorrecta");
+        Opcion opcionIncorrecta = new Opcion("Falsa");
+        Opcion otraOpcionIncorrecta = new Opcion("SoyFalsa");
 
         ArrayList<Opcion> opciones = new ArrayList<Opcion>();
 
@@ -92,7 +92,7 @@ public class PreguntaTest {
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
         respuestaCorrecta.agregarOpcion(otraOpcionCorrecta);
 
-        Pregunta unaPreguntaMultipleChoice = new Pregunta(new ModalidadPregunta(new Clasico()), "Soy una pregunta?", opciones, respuestaCorrecta);
+        Pregunta unaPreguntaMultipleChoice = new Pregunta(new ModalidadPregunta(new Clasico()), "Soy una pregunta?", respuestaCorrecta);
 
         Respuesta respuestaUsuario = new Respuesta();
         respuestaUsuario.agregarOpcion(opcionCorrecta);
@@ -105,10 +105,10 @@ public class PreguntaTest {
 
    @Test
     public void SeCreaUnaPreguntaMultipleChoiceConFormatoPenalidadYSeRespondeUnaCorrectaYUnaIncorrecta(){
-        Opcion opcionCorrecta = new Opcion(new OpcionCorrecta(), "Verdadero");
-        Opcion otraOpcionCorrecta = new Opcion(new OpcionCorrecta(), "SoyCorrecta");
-        Opcion opcionIncorrecta = new Opcion(new OpcionIncorrecta(), "Falsa");
-        Opcion otraOpcionIncorrecta = new Opcion(new OpcionIncorrecta(), "SoyFalsa");
+        Opcion opcionCorrecta = new Opcion("Verdadero");
+        Opcion otraOpcionCorrecta = new Opcion("SoyCorrecta");
+        Opcion opcionIncorrecta = new Opcion("Falsa");
+        Opcion otraOpcionIncorrecta = new Opcion("SoyFalsa");
 
         ArrayList<Opcion> opciones = new ArrayList<Opcion>();
 
@@ -119,7 +119,7 @@ public class PreguntaTest {
        respuestaCorrecta.agregarOpcion(opcionCorrecta);
        respuestaCorrecta.agregarOpcion(otraOpcionCorrecta);
 
-        Pregunta unaPreguntaMultipleChoice = new Pregunta(new ModalidadPregunta(new Penalidad()), "Soy una pregunta?", opciones, respuestaCorrecta);
+        Pregunta unaPreguntaMultipleChoice = new Pregunta(new ModalidadPregunta(new Penalidad()), "Soy una pregunta?", respuestaCorrecta);
 
         Respuesta respuestaUsuario = new Respuesta();
         respuestaUsuario.agregarOpcion(opcionCorrecta);
