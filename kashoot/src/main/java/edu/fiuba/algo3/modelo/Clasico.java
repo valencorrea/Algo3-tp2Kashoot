@@ -3,15 +3,12 @@ package edu.fiuba.algo3.modelo;
 public class Clasico extends TipoFormato{
 
     @Override
-    public int puntajeIncorrecto(){
-        return 0;
-    }
+    public int calcularPuntaje(int cantidadOpcionesJugador,int cantidadAciertos, int cantidadCorrectas){
 
-    @Override
-    public int calcularPuntaje(int cantidadAciertos, int cantidadCorrectas){
         if (cantidadCorrectas == cantidadAciertos){
-            return (cantidadCorrectas * 10);
+            return (cantidadCorrectas * this.puntaje);
         }
+
         return 0;
     }
 }

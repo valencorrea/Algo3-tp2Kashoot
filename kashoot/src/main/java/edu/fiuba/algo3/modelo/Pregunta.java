@@ -25,7 +25,7 @@ public class Pregunta {
     public int calcularPuntaje(Respuesta respuestaJugador){
         int cantidadAciertos = this.respuestaCorrecta.calcularAciertos(respuestaJugador);
         int cantidadCorrectas = this.cantidadCorrectas();
-        return this.modalidad.calcularPuntaje(respuestaJugador, cantidadAciertos, cantidadCorrectas);
+        return this.modalidad.calcularPuntaje(respuestaJugador.obtenerTamanio(), cantidadAciertos, cantidadCorrectas);
     }
 
     private int cantidadCorrectas() {

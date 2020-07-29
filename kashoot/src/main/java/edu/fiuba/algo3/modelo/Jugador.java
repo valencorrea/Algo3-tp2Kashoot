@@ -3,13 +3,16 @@ package edu.fiuba.algo3.modelo;
 public class Jugador {
 
     private String nombre;
-
+    private int puntajeAcumulado = 0;
     public Jugador(String unNombre){
         this.nombre = unNombre;
     }
 
-    public int responder(Pregunta unaPregunta,Respuesta unaRespuesta){
-        return unaPregunta.calcularPuntaje(unaRespuesta);
+    public void responder(Pregunta unaPregunta,Respuesta unaRespuesta){
+        puntajeAcumulado =+ unaPregunta.calcularPuntaje(unaRespuesta);
+    }
+    public int getPuntajeAcumulado(){
+        return this.puntajeAcumulado;
     }
 
 }
