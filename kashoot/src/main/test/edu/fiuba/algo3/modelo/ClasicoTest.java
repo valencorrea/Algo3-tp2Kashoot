@@ -3,21 +3,35 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ClasicoTest {
-  /*  @Test
-    public void calcularPuntosConRespuestaCorrectaDevuelveElPuntajeCorrecto(){
-        Respuesta respuestaCorrecta = new Respuesta(new OpcionCorrecta(), "soy correcta");
+    @Test
+    public void calcularPuntajeConOpcionesCorrectasDevuelveElPuntajeCorrecto(){
         Clasico clasico = new Clasico();
-        int resultado = clasico.calcularPuntaje(respuestaCorrecta);
+        int cantidadOpcionesJugador = 3;
+        int cantidadAciertos = 3;
+        int cantidadCorrectas = 3;
+        int resultado = clasico.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
 
-        assertEquals(resultado,10);
+        assertEquals(resultado,30);
     }
     @Test
-    public void calcularPuntosConRespuestIncorrectaDevuelveElPuntajeCorrecto(){
-        Respuesta respuestaIncorrecta = new Respuesta(new OpcionIncorrecta(), "soy incorrecta ");
+    public void calcularPuntajeConUnaOpcionCorrectaYUnaIncorrectaDevuelveElPuntajeCorrecto(){
         Clasico clasico = new Clasico();
-        int resultado = clasico.calcularPuntaje(respuestaIncorrecta);
+        int cantidadOpcionesJugador = 3;
+        int cantidadAciertos = 2;
+        int cantidadCorrectas = 3;
+        int resultado = clasico.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
 
         assertEquals(resultado,0);
     }
-*/
+    @Test
+    public void calcularPuntajeConDosOpcionesCorrectasDeTresDevuelveElPuntajeCorrecto(){
+        Clasico clasico = new Clasico();
+        int cantidadOpcionesJugador = 2;
+        int cantidadAciertos = 2;
+        int cantidadCorrectas = 3;
+        int resultado = clasico.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
+
+        assertEquals(resultado,0);
+    }
+
 }
