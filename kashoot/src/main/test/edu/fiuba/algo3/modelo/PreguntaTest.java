@@ -7,16 +7,12 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PreguntaTest {
-/*
+
     @Test
     public void preguntaVerdaderoFalsoClasicoSeCreaIndicandoLaRespuestaCorrectaSeRespondeMal(){
 
         Opcion opcionCorrecta = new Opcion("Verdadero");
         Opcion opcionIncorrecta = new Opcion("Falsa");
-
-        ArrayList<Opcion> opciones = new ArrayList<Opcion>();
-        opciones.add(opcionCorrecta);
-        opciones.add(opcionIncorrecta);
 
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionIncorrecta);
@@ -36,11 +32,6 @@ public class PreguntaTest {
     public void DadaUnPreguntaDelTipoVerdaderoOFalsoEnModoClasicoSeDevuelveElPuntaje() {
 
         Opcion opcionCorrecta = new Opcion("Verdadero");
-        Opcion opcionIncorrecta = new Opcion("Falsa");
-
-        ArrayList<Opcion> opciones = new ArrayList<Opcion>();
-        opciones.add(opcionCorrecta);
-        opciones.add(opcionIncorrecta);
 
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
@@ -57,11 +48,6 @@ public class PreguntaTest {
     public void seCreaUnaPreguntaDeVerdaderoFalsoConPenalidad() {
 
         Opcion opcionCorrecta = new Opcion("Verdadero");
-        Opcion opcionIncorrecta = new Opcion("Falsa");
-
-        ArrayList<Opcion> opciones = new ArrayList<Opcion>();
-        opciones.add(opcionCorrecta);
-        opciones.add(opcionIncorrecta);
 
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
@@ -78,16 +64,6 @@ public class PreguntaTest {
     public void SeCreaUnaPreguntaMultipleChoiceConFormatoClasicoYSeRespondeCorrectamente() {
         Opcion opcionCorrecta = new Opcion("Verdadero");
         Opcion otraOpcionCorrecta = new Opcion("SoyCorrecta");
-        Opcion opcionIncorrecta = new Opcion("Falsa");
-        Opcion otraOpcionIncorrecta = new Opcion("SoyFalsa");
-
-        ArrayList<Opcion> opciones = new ArrayList<Opcion>();
-
-        opciones.add(opcionCorrecta);
-        opciones.add(opcionIncorrecta);
-        opciones.add(otraOpcionCorrecta);
-        opciones.add(otraOpcionIncorrecta);
-
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
         respuestaCorrecta.agregarOpcion(otraOpcionCorrecta);
@@ -108,12 +84,6 @@ public class PreguntaTest {
         Opcion opcionCorrecta = new Opcion("Verdadero");
         Opcion otraOpcionCorrecta = new Opcion("SoyCorrecta");
         Opcion opcionIncorrecta = new Opcion("Falsa");
-        Opcion otraOpcionIncorrecta = new Opcion("SoyFalsa");
-
-        ArrayList<Opcion> opciones = new ArrayList<Opcion>();
-
-        opciones.add(opcionCorrecta);
-        opciones.add(opcionIncorrecta);
 
        Respuesta respuestaCorrecta = new Respuesta();
        respuestaCorrecta.agregarOpcion(opcionCorrecta);
@@ -128,5 +98,5 @@ public class PreguntaTest {
         int puntosObtenidos = unaPreguntaMultipleChoice.calcularPuntaje(respuestaUsuario);
 
         assertEquals(0, puntosObtenidos);
-    }*/
+    }
 }
