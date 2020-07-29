@@ -1,24 +1,33 @@
 package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RespuestaTest {
-/*
+
     @Test
 
     public void dadaUnaRespuestaCorrectaDeUnVerdaderoFalsoConPenalidadSeDevuelveSuPuntaje(){
 
+        Opcion opcionCorrecta = new Opcion("Verdadero");
+
+        ArrayList<Opcion> opciones = new ArrayList<Opcion>();
+        opciones.add(opcionCorrecta);
+
         Respuesta respuesta = new Respuesta();
-        Opcion opcionVerdadera = new Opcion(new OpcionCorrecta(),"verdadero");
-        ModalidadPregunta verdaderoOFalso = new ModalidadPregunta(new Penalidad());
-        respuesta.agregarOpcion(opcionVerdadera);
-        int cantidadCorrectas = 1, cantidadAciertos = 1;
+        respuesta.agregarOpcion(opcionCorrecta);
 
-        int puntaje = verdaderoOFalso.calcularPuntaje(respuesta, cantidadAciertos, cantidadCorrectas);
+        Respuesta respuestaJugador= new Respuesta();
+        respuestaJugador.agregarOpcion(opcionCorrecta);
 
-        assertEquals(10,puntaje);
-    }*/
+        int aciertos = respuesta.calcularAciertos(respuestaJugador);
+
+
+        assertEquals(1,aciertos);
+    }
     /*
     @Test
 
