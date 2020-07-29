@@ -13,7 +13,6 @@ public class Pregunta {
         this.respuestaCorrecta = respuestaCorrecta;
     }
 
-
     public int calcularPuntaje(Respuesta respuestaJugador){
         int cantidadAciertos = this.respuestaCorrecta.calcularAciertos(respuestaJugador);
         int cantidadCorrectas = this.cantidadCorrectas();
