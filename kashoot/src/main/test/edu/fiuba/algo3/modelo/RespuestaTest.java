@@ -10,7 +10,7 @@ public class RespuestaTest {
 
     @Test
 
-    public void dadaUnaRespuestaCorrectaDeUnVerdaderoFalsoConPenalidadSeDevuelveSuPuntaje(){
+    public void dadaUnaRespuestaCorrectaElJugadorRespondeCorrectamenteYSuCantidadDeAciertosEs1(){
 
         Opcion opcionCorrecta = new Opcion("Verdadero");
 
