@@ -30,6 +30,18 @@ class ModalidadPreguntaTest {
         assertEquals(-10,resultado);
     }
 
+    @Test
+    public void DadaUnaModalidadDelTipoParcialSeDevuelveElPuntajeCorrectoParaDosJugadoresQueResponden(){
+        int cantidadOpcionesJugador = 1;
+        int cantidadAciertos = 1;
+        int cantidadOpcionesCorrectas = 2;
+
+        ModalidadPregunta unaModalidad = new ModalidadPregunta(new Parcial());
+        int resultado = unaModalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos,cantidadOpcionesCorrectas);
+
+        assertEquals(10,resultado);
+    }
+
 /*
     @Test
 
