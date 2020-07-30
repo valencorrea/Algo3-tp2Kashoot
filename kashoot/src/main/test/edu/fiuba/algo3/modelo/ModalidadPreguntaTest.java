@@ -5,16 +5,19 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ModalidadPreguntaTest {
-/*
+
     @Test
      public void DadaUnaModalidadDelTipoClasicoSeDevuelveElPuntajeCorrectoParaDosJugadoresQueResponden(){
-        int cantidadOpcionesJugadorUno = 1,cantidadAciertos = 1,cantidadOpcionesCorrectas = 1;
+        int cantidadOpcionesJugador = 1;
+        int cantidadAciertos = 1;
+        int cantidadOpcionesCorrectas = 1;
 
         ModalidadPregunta unaModalidad = new ModalidadPregunta(new Clasico());
         int resultado = unaModalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos,cantidadOpcionesCorrectas);
 
         assertEquals(10,resultado);
     }
+/*
     @Test
 
     public void DadaUnaModalidadPreguntaDelTipoChoiceClasicoEntoncesElPuntajeSeraElCorrecto(){
@@ -30,5 +33,4 @@ class ModalidadPreguntaTest {
 
     }
 */
-
 }
