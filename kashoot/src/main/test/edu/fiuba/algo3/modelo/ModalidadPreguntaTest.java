@@ -17,6 +17,19 @@ class ModalidadPreguntaTest {
 
         assertEquals(10,resultado);
     }
+
+    @Test
+    public void DadaUnaModalidadDelTipoPenalidadSeDevuelveElPuntajeCorrectoParaDosJugadoresQueResponden(){
+        int cantidadOpcionesJugador = 1;
+        int cantidadAciertos = 0;
+        int cantidadOpcionesCorrectas = 1;
+
+        ModalidadPregunta unaModalidad = new ModalidadPregunta(new Penalidad());
+        int resultado = unaModalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos,cantidadOpcionesCorrectas);
+
+        assertEquals(-10,resultado);
+    }
+
 /*
     @Test
 
