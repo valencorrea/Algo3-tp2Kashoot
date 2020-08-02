@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ModalidadPreguntaTest {
-
+/*
     @Test
      public void DadaUnaModalidadDelTipoClasicoSeDevuelveElPuntajeCorrectoParaDosJugadoresQueResponden(){
         int cantidadOpcionesJugador = 1;
@@ -41,7 +41,7 @@ class ModalidadPreguntaTest {
 
         assertEquals(10,resultado);
     }
-
+*/
 /*
     @Test
 

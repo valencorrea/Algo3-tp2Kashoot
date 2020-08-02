@@ -123,4 +123,32 @@ public class PreguntaTest {
 
         assertEquals(0, puntosObtenidos);
     }
+    @Test
+    public void SeCreaUnaPreguntaOrderChoiceEntoncesDevuelveElPuntajeCorrecto(){
+        Opcion opcion1 = new Opcion("opcion1");
+        Opcion opcion2 = new Opcion("opcion2");
+        Opcion opcion3 = new Opcion("opcion3");
+
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcion1);
+        respuestaCorrecta.agregarOpcion(opcion2);
+        respuestaCorrecta.agregarOpcion(opcion3);
+
+        Pregunta unaPreguntaOrdenada = new Pregunta(new ModalidadOrdenada(), "Soy una pregunta?", respuestaCorrecta);
+
+        Respuesta respuestaUsuario = new Respuesta();
+        respuestaUsuario.agregarOpcion(opcion1);
+        respuestaUsuario.agregarOpcion(opcion2);
+        respuestaUsuario.agregarOpcion(opcion3);
+        Respuesta respuestaOtroUsuario = new Respuesta();
+        respuestaOtroUsuario.agregarOpcion(opcion3);
+        respuestaOtroUsuario.agregarOpcion(opcion2);
+        respuestaOtroUsuario.agregarOpcion(opcion1);
+
+        int puntosUsuario = unaPreguntaOrdenada.calcularPuntaje(respuestaUsuario);
+        int puntosOtroUsuario = unaPreguntaOrdenada.calcularPuntaje(respuestaOtroUsuario);
+
+        assertEquals(10, puntosUsuario);
+        assertEquals(0, puntosOtroUsuario);
+    }
 }
