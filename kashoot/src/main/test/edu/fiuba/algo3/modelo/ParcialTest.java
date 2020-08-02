@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ParcialTest {
     @Test
-    public void calcularPunatjeConDosOpcionesCorrectasDe3DevuelveElPuntajeCCorrecto(){
+    public void calcularPuntajeConDosOpcionesCorrectasDe3DevuelveElPuntajeCCorrecto(){
 
         Parcial parcial = new Parcial();
         int cantidadOpcionesJugador = 2;
@@ -12,10 +12,10 @@ public class ParcialTest {
         int cantidadCorrectas = 3;
         int resultado = parcial.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
 
-        assertEquals(resultado,20);
+        assertEquals(20,resultado);
     }
     @Test
-    public void calcularPunatjeConOpcionesCorrectasEIncorrectasDevuelveElPuntajeCCorrecto(){
+    public void calcularPunatjeConOpcionesCorrectasEIncorrectasDevuelveElPuntajeCorrecto(){
 
         Parcial parcial = new Parcial();
         int cantidadOpcionesJugador = 2;
@@ -23,7 +23,7 @@ public class ParcialTest {
         int cantidadCorrectas = 3;
         int resultado = parcial.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
 
-        assertEquals(resultado,0);
+        assertEquals(0,resultado);
     }
     @Test
     public void calcularPunatjeConOpcionesCorrectasDevuelveElPuntajeCCorrecto(){
@@ -34,7 +34,7 @@ public class ParcialTest {
         int cantidadCorrectas = 3;
         int resultado = parcial.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
 
-        assertEquals(resultado,30);
+        assertEquals(30,resultado);
     }
 
 

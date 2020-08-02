@@ -79,6 +79,32 @@ public class PreguntaTest {
         assertEquals(20, puntosObtenidos);
     }
 
+
+    @Test
+    public void SeCreaUnaPreguntaMultipleChoiceConFormatoParcialYSeRespondeCorrectamente() {
+        Opcion opcionCorrecta = new Opcion("Verdadero");
+        Opcion opcionIncorrecta = new Opcion("Soy incorrecta");
+
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionCorrecta);
+
+        Pregunta unaPreguntaMultipleChoice = new Pregunta(new ModalidadPregunta(new Parcial()), "Soy una pregunta?", respuestaCorrecta);
+
+        Respuesta respuestaUnUsuario = new Respuesta();
+        respuestaUnUsuario.agregarOpcion(opcionCorrecta);
+        respuestaUnUsuario.agregarOpcion(opcionIncorrecta);
+
+        Respuesta respuestaOtroUsuario = new Respuesta();
+        respuestaOtroUsuario.agregarOpcion(opcionCorrecta);
+
+        int puntosDeUnUsuario = unaPreguntaMultipleChoice.calcularPuntaje(respuestaUnUsuario);
+        int puntosDeOtroUsuario = unaPreguntaMultipleChoice.calcularPuntaje(respuestaOtroUsuario);
+
+        assertEquals(0, puntosDeUnUsuario);
+        assertEquals(10, puntosDeOtroUsuario);
+
+    }
+
    @Test
     public void SeCreaUnaPreguntaMultipleChoiceConFormatoPenalidadYSeRespondeUnaCorrectaYUnaIncorrecta(){
         Opcion opcionCorrecta = new Opcion("Verdadero");

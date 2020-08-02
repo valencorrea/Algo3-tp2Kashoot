@@ -12,7 +12,7 @@ public class ModalidadPregunta {
         this.formato = unFormato;
     }
 
-    public int calcularPuntaje(int cantidadOpcionesJugador,int cantidadAciertos, int cantidadCorrectas){
-        return this.formato.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
+    public int calcularPuntaje(int cantidadOpcionesJugador,int cantidadAciertosJugador, int cantidadCorrectas){
+        return this.formato.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertosJugador, cantidadCorrectas);
     }
 }
