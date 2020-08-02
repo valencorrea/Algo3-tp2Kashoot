@@ -2,8 +2,6 @@ package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
-
 
 public class JugadorTest {
 
@@ -21,7 +19,7 @@ public class JugadorTest {
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
         unJugador.responder(unaPregunta,respuestaCorrecta);
         otroJugador.responder(unaPregunta,respuestaIncorrecta);
 
@@ -45,7 +43,7 @@ public class JugadorTest {
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Penalidad()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()),"hola soy una pregunta??",respuestaCorrecta);
 
         unJugador.responder(unaPregunta,respuestaCorrecta);
         otroJugador.responder(unaPregunta,respuestaIncorrecta);
@@ -78,7 +76,7 @@ public class JugadorTest {
         respuestaOtroJugador.agregarOpcion(opcionCorrectaDos);
         respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
 
         unJugador.responder(unaPregunta,respuestaUnJugador);
         otroJugador.responder(unaPregunta,respuestaOtroJugador);
@@ -115,7 +113,7 @@ public class JugadorTest {
         Respuesta respuestaTercerJugador = new Respuesta();
         respuestaTercerJugador.agregarOpcion(opcionCorrectaUno);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Parcial()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()),"hola soy una pregunta??",respuestaCorrecta);
 
         unJugador.responder(unaPregunta,respuestaUnJugador);
         otroJugador.responder(unaPregunta,respuestaOtroJugador);
@@ -150,7 +148,7 @@ public class JugadorTest {
         Respuesta respuestaOtroJugador = new Respuesta();
         respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Penalidad()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()),"hola soy una pregunta??",respuestaCorrecta);
 
         unJugador.responder(unaPregunta,respuestaUnJugador);
         otroJugador.responder(unaPregunta,respuestaOtroJugador);

@@ -12,7 +12,7 @@ class ModalidadPreguntaTest {
         int cantidadAciertos = 1;
         int cantidadOpcionesCorrectas = 1;
 
-        ModalidadPregunta unaModalidad = new ModalidadPregunta(new Clasico());
+        ModalidadSinOrden unaModalidad = new ModalidadSinOrden(new Clasico());
         int resultado = unaModalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos,cantidadOpcionesCorrectas);
 
         assertEquals(10,resultado);
@@ -24,7 +24,7 @@ class ModalidadPreguntaTest {
         int cantidadAciertos = 0;
         int cantidadOpcionesCorrectas = 1;
 
-        ModalidadPregunta unaModalidad = new ModalidadPregunta(new Penalidad());
+        ModalidadSinOrden unaModalidad = new ModalidadSinOrden(new Penalidad());
         int resultado = unaModalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos,cantidadOpcionesCorrectas);
 
         assertEquals(-10,resultado);
@@ -36,7 +36,7 @@ class ModalidadPreguntaTest {
         int cantidadAciertos = 1;
         int cantidadOpcionesCorrectas = 2;
 
-        ModalidadPregunta unaModalidad = new ModalidadPregunta(new Parcial());
+        ModalidadSinOrden unaModalidad = new ModalidadSinOrden(new Parcial());
         int resultado = unaModalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos,cantidadOpcionesCorrectas);
 
         assertEquals(10,resultado);

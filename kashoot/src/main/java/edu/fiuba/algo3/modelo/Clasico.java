@@ -3,9 +3,9 @@ package edu.fiuba.algo3.modelo;
 public class Clasico extends TipoFormato{
 
     @Override
-    public int calcularPuntaje(int cantidadOpcionesJugador,int cantidadAciertos, int cantidadCorrectas){
+    public int calcularPuntaje(int cantidadOpcionesJugador,int cantidadAciertosJugador, int cantidadCorrectas){
 
-        if (cantidadCorrectas == cantidadAciertos){
+        if (cantidadCorrectas == cantidadAciertosJugador){
             return (cantidadCorrectas * this.puntaje);
         }
 

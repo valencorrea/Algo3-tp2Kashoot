@@ -3,13 +3,13 @@ package edu.fiuba.algo3.modelo;
 public class Parcial extends TipoFormato {
 
     @Override
-    public int calcularPuntaje(int cantidadOpcionesJugador,int cantidadAciertos, int cantidadCorrectas){
-        //fijar si entra en otra entidad que siga con la misma logica
-        if((cantidadCorrectas == cantidadOpcionesJugador && (cantidadCorrectas - cantidadAciertos) != 0) | (cantidadOpcionesJugador-cantidadAciertos)>0){
+    public int calcularPuntaje(int cantidadOpcionesJugador,int cantidadAciertosJugador, int cantidadCorrectas){
+
+        if((cantidadCorrectas == cantidadOpcionesJugador && (cantidadCorrectas - cantidadAciertosJugador) != 0) | (cantidadOpcionesJugador-cantidadAciertosJugador)>0){
             return 0;
         }
 
-        return this.puntaje * cantidadAciertos;
+        return this.puntaje * cantidadAciertosJugador;
     }
 }
 

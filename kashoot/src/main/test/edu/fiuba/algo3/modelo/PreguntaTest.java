@@ -2,8 +2,6 @@ package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PreguntaTest {
@@ -20,7 +18,7 @@ public class PreguntaTest {
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Clasico()), "Soy pregunta?", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Soy pregunta?", respuestaCorrecta);
 
         int puntosObtenidos = unaPregunta.calcularPuntaje(respuestaIncorrecta);
 
@@ -36,7 +34,7 @@ public class PreguntaTest {
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadPregunta(new Penalidad()), "Soy pregunta?", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Soy pregunta?", respuestaCorrecta);
 
         int resultado = unaPregunta.calcularPuntaje(respuestaCorrecta);
 
@@ -52,7 +50,7 @@ public class PreguntaTest {
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
 
-        Pregunta unaPreguntaVoF = new Pregunta(new ModalidadPregunta(new Penalidad()), "Soy pregunta?", respuestaCorrecta);
+        Pregunta unaPreguntaVoF = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Soy pregunta?", respuestaCorrecta);
 
         int puntosObtenidos = unaPreguntaVoF.calcularPuntaje(respuestaCorrecta);
 
@@ -68,7 +66,7 @@ public class PreguntaTest {
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
         respuestaCorrecta.agregarOpcion(otraOpcionCorrecta);
 
-        Pregunta unaPreguntaMultipleChoice = new Pregunta(new ModalidadPregunta(new Clasico()), "Soy una pregunta?", respuestaCorrecta);
+        Pregunta unaPreguntaMultipleChoice = new Pregunta(new ModalidadSinOrden(new Clasico()), "Soy una pregunta?", respuestaCorrecta);
 
         Respuesta respuestaUsuario = new Respuesta();
         respuestaUsuario.agregarOpcion(opcionCorrecta);
@@ -88,7 +86,7 @@ public class PreguntaTest {
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
 
-        Pregunta unaPreguntaMultipleChoice = new Pregunta(new ModalidadPregunta(new Parcial()), "Soy una pregunta?", respuestaCorrecta);
+        Pregunta unaPreguntaMultipleChoice = new Pregunta(new ModalidadSinOrden(new Parcial()), "Soy una pregunta?", respuestaCorrecta);
 
         Respuesta respuestaUnUsuario = new Respuesta();
         respuestaUnUsuario.agregarOpcion(opcionCorrecta);
@@ -115,7 +113,7 @@ public class PreguntaTest {
        respuestaCorrecta.agregarOpcion(opcionCorrecta);
        respuestaCorrecta.agregarOpcion(otraOpcionCorrecta);
 
-        Pregunta unaPreguntaMultipleChoice = new Pregunta(new ModalidadPregunta(new Penalidad()), "Soy una pregunta?", respuestaCorrecta);
+        Pregunta unaPreguntaMultipleChoice = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Soy una pregunta?", respuestaCorrecta);
 
         Respuesta respuestaUsuario = new Respuesta();
         respuestaUsuario.agregarOpcion(opcionCorrecta);
@@ -125,34 +123,4 @@ public class PreguntaTest {
 
         assertEquals(0, puntosObtenidos);
     }
-    @Test
-    public void SeCreaUnaPreguntaOrderedYRespondeCorrectamenteEnOrdenEntoncesElPuntajeSeraElCorrecto() {
-        Opcion opcion1 = new Opcion("opcion1");
-        Opcion opcion2 = new Opcion("opcion2");
-        Opcion opcion3 = new Opcion("opcion3");
-
-        Respuesta respuestaCorrecta = new Respuesta();
-        respuestaCorrecta.agregarOpcion(opcion1);
-        respuestaCorrecta.agregarOpcion(opcion2);
-        respuestaCorrecta.agregarOpcion(opcion3);
-
-        Pregunta unaPreguntaOrdered = new Pregunta((new ModalidadPregunta(new Ordered())), "soy una pregunta ordenada?", respuestaCorrecta);
-
-        Respuesta respuestaUsuario = new Respuesta();
-        respuestaUsuario.agregarOpcion(opcion1);
-        respuestaUsuario.agregarOpcion(opcion2);
-        respuestaUsuario.agregarOpcion(opcion3);
-
-        Respuesta respuestaUsuario2 = new Respuesta();
-        respuestaUsuario.agregarOpcion(opcion3);
-        respuestaUsuario.agregarOpcion(opcion2);
-        respuestaUsuario.agregarOpcion(opcion1);
-
-        int puntajeUsuario1 = unaPreguntaOrdered.calcularPuntaje(respuestaUsuario);
-        int puntajeUsuario2 = unaPreguntaOrdered.calcularPuntaje(respuestaUsuario2);
-
-        assertEquals(10, puntajeUsuario1);
-        assertEquals(0, puntajeUsuario2);
-    }
-
 }
