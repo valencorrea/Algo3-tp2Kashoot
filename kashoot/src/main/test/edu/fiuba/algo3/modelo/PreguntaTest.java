@@ -125,4 +125,34 @@ public class PreguntaTest {
 
         assertEquals(0, puntosObtenidos);
     }
+    @Test
+    public void SeCreaUnaPreguntaOrderedYRespondeCorrectamenteEnOrdenEntoncesElPuntajeSeraElCorrecto() {
+        Opcion opcion1 = new Opcion("opcion1");
+        Opcion opcion2 = new Opcion("opcion2");
+        Opcion opcion3 = new Opcion("opcion3");
+
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcion1);
+        respuestaCorrecta.agregarOpcion(opcion2);
+        respuestaCorrecta.agregarOpcion(opcion3);
+
+        Pregunta unaPreguntaOrdered = new Pregunta((new ModalidadPregunta(new Ordered())), "soy una pregunta ordenada?", respuestaCorrecta);
+
+        Respuesta respuestaUsuario = new Respuesta();
+        respuestaUsuario.agregarOpcion(opcion1);
+        respuestaUsuario.agregarOpcion(opcion2);
+        respuestaUsuario.agregarOpcion(opcion3);
+
+        Respuesta respuestaUsuario2 = new Respuesta();
+        respuestaUsuario.agregarOpcion(opcion3);
+        respuestaUsuario.agregarOpcion(opcion2);
+        respuestaUsuario.agregarOpcion(opcion1);
+
+        int puntajeUsuario1 = unaPreguntaOrdered.calcularPuntaje(respuestaUsuario);
+        int puntajeUsuario2 = unaPreguntaOrdered.calcularPuntaje(respuestaUsuario2);
+
+        assertEquals(10, puntajeUsuario1);
+        assertEquals(0, puntajeUsuario2);
+    }
+
 }
