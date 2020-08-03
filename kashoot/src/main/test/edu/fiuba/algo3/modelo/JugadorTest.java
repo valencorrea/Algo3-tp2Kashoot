@@ -1,10 +1,13 @@
 package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class JugadorTest {
-
+/*
     @Test
     public void jugadoresRespondenVerdaderoFalsoClasicoRecibenPuntajeCorrecto(){
 
@@ -158,6 +161,34 @@ public class JugadorTest {
 
         assertEquals(20, unResultado);
         assertEquals(-10, otroResultado);
+    }
+
+ */
+    @Test
+    public void UnjugadorElijeCorrectamenteLasOpcionesParaCadaGrupo(){
+        Jugador unJugador = new Jugador("pepe");
+
+        Opcion opcionGrupo1_1 = new Opcion("Celeste");
+        Opcion opcionGrupo1_2 = new Opcion("Azul");
+
+        Opcion opcionGrupo2_1 = new Opcion("Rojo");
+        Opcion opcionGrupo2_2 = new Opcion("Naranja");
+
+        Respuesta respuestaCorrectaDeUnGrupo = new Respuesta();
+
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()),"Colores frios y calidos??",respuestaCorrectaDeUnGrupo);
+
+        Respuesta respuestaJugadorParaElGrupo2 = new Respuesta();
+
+        respuestaJugadorParaElGrupo2.agregarOpcion(opcionGrupo2_1);
+        respuestaJugadorParaElGrupo2.agregarOpcion(opcionGrupo2_2);
+
+        unJugador.responder(unaPregunta,respuestaJugadorParaElGrupo2);
+        int unResultado = unJugador.getPuntajeAcumulado();
+        assertEquals(unResultado, 10);
     }
 }
 
