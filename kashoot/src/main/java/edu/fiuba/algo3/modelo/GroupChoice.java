@@ -10,4 +10,8 @@ public class GroupChoice extends TipoFormato {
         }
         return 0;
     }
+    @Override
+    public boolean puedeMultiplicar(){
+        return false;
+    }
 }

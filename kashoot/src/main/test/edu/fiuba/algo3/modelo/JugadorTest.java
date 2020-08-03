@@ -1,4 +1,5 @@
 package edu.fiuba.algo3.modelo;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -295,5 +296,90 @@ public class JugadorTest {
         int unResultado = unJugador.getPuntajeAcumulado();
         assertEquals(0,unResultado); //UPPPPPPPPPPPPSSSSSSSSSSSSS HAY QUE REPLANTEARLO! :PANIC:
     }
+
+    @Test
+    public void jugadorRespondeVerdaderoFalsoConPenalidadYMultiplicadorX2RecibePuntajeCorrecto() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+        Opcion opcionVerdadera = new Opcion("Verdadera");
+        Opcion opcionFalsa = new Opcion("Falsa");
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionVerdadera);
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionFalsa);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "hola soy una pregunta??", respuestaCorrecta);
+        unJugador.multiplicarX2(unaPregunta);
+        otroJugador.multiplicarX2(unaPregunta);
+        unJugador.responder(unaPregunta, respuestaCorrecta);
+        otroJugador.responder(unaPregunta, respuestaIncorrecta);
+        int unResultado = unJugador.getPuntajeAcumulado();
+        int otroResultado = otroJugador.getPuntajeAcumulado();
+        Assertions.assertEquals(20, unResultado);
+        Assertions.assertEquals(-20, otroResultado);
+    }
+
+    @Test
+    public void jugadorRespondeVerdaderoFalsoConFortatoClasicoYMultiplicadorX2RecibePuntajeCorrecto() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+        Opcion opcionVerdadera = new Opcion("Verdadera");
+        Opcion opcionFalsa = new Opcion("Falsa");
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionVerdadera);
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionFalsa);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        unJugador.multiplicarX2(unaPregunta);
+        otroJugador.multiplicarX2(unaPregunta);
+        unJugador.responder(unaPregunta, respuestaCorrecta);
+        otroJugador.responder(unaPregunta, respuestaIncorrecta);
+        int unResultado = unJugador.getPuntajeAcumulado();
+        int otroResultado = otroJugador.getPuntajeAcumulado();
+        Assertions.assertEquals(10, unResultado);
+        Assertions.assertEquals(0, otroResultado);
+    }
+
+    @Test
+    public void jugadorRespondeVerdaderoFalsoConPenalidadYMultiplicadorX3RecibePuntajeCorrecto() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+        Opcion opcionVerdadera = new Opcion("Verdadera");
+        Opcion opcionFalsa = new Opcion("Falsa");
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionVerdadera);
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionFalsa);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "hola soy una pregunta??", respuestaCorrecta);
+        unJugador.multiplicarX3(unaPregunta);
+        otroJugador.multiplicarX3(unaPregunta);
+        unJugador.responder(unaPregunta, respuestaCorrecta);
+        otroJugador.responder(unaPregunta, respuestaIncorrecta);
+        int unResultado = unJugador.getPuntajeAcumulado();
+        int otroResultado = otroJugador.getPuntajeAcumulado();
+        Assertions.assertEquals(30, unResultado);
+        Assertions.assertEquals(-30, otroResultado);
+    }
+
+    @Test
+    public void jugadorRespondeVerdaderoFalsoConFortatoClasicoYMultiplicadorX3RecibePuntajeCorrecto() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+        Opcion opcionVerdadera = new Opcion("Verdadera");
+        Opcion opcionFalsa = new Opcion("Falsa");
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionVerdadera);
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionFalsa);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        unJugador.multiplicarX2(unaPregunta);
+        otroJugador.multiplicarX2(unaPregunta);
+        unJugador.responder(unaPregunta, respuestaCorrecta);
+        otroJugador.responder(unaPregunta, respuestaIncorrecta);
+        int unResultado = unJugador.getPuntajeAcumulado();
+        int otroResultado = otroJugador.getPuntajeAcumulado();
+        Assertions.assertEquals(10, unResultado);
+        Assertions.assertEquals(0, otroResultado);
+    }
+
 }
 
