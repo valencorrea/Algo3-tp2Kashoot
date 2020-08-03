@@ -3,7 +3,7 @@ package edu.fiuba.algo3.modelo;
 
 public class Pregunta {
 
-    private ModalidadSinOrden modalidad;
+    private Modalidad modalidad;
     private String contenido;
     private Respuesta respuestaCorrecta;
 
