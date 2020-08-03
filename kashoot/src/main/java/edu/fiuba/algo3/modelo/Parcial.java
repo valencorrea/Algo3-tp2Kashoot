@@ -11,5 +11,9 @@ public class Parcial extends TipoFormato {
 
         return this.puntaje * cantidadAciertosJugador;
     }
+    @Override
+    public boolean puedeMultiplicar(){
+        return false;
+    }
 }
 

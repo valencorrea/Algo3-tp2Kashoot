@@ -17,6 +17,11 @@ public class ModalidadSinOrden implements Modalidad{
 
         return this.formato.calcularPuntaje(cantidadOpcionesJugador, cantidadAciertos, cantidadCorrectas);
     }
+    @Override
+    public boolean puedeMultiplicar(){
+
+        return this.formato.puedeMultiplicar();
+    }
 
     private int cantidadCorrectas(Respuesta respuestaCorrecta) {
         return respuestaCorrecta.obtenerTamanio();
