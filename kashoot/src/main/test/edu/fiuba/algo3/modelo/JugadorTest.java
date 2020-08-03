@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class JugadorTest {
-/*
+
     @Test
     public void jugadoresRespondenVerdaderoFalsoClasicoRecibenPuntajeCorrecto(){
 
@@ -163,9 +163,37 @@ public class JugadorTest {
         assertEquals(-10, otroResultado);
     }
 
- */
+
+
     @Test
-    public void UnjugadorElijeCorrectamenteLasOpcionesParaCadaGrupo(){
+    public void UnjugadorElijeCorrectamenteLasOpcionesDEGROUPCHOICEParaCadaGrupoTomandoEncuentaElPrimerGrupoYSeCalculaBienElPuntaje(){
+        Jugador unJugador = new Jugador("pepe");
+
+        Opcion opcionGrupo1_1 = new Opcion("Celeste");
+        Opcion opcionGrupo1_2 = new Opcion("Azul");
+
+        Opcion opcionGrupo2_1 = new Opcion("Rojo");
+        Opcion opcionGrupo2_2 = new Opcion("Naranja");
+
+        Respuesta respuestaCorrectaDeUnGrupo = new Respuesta();
+
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()),"Colores frios y calidos??",respuestaCorrectaDeUnGrupo);
+
+        Respuesta respuestaJugadorParaElGrupo1 = new Respuesta();
+
+        respuestaJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
+        respuestaJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_2);
+
+        unJugador.responder(unaPregunta,respuestaJugadorParaElGrupo1);
+        int unResultado = unJugador.getPuntajeAcumulado();
+        assertEquals(unResultado, 10);
+    }
+
+    @Test
+    public void UnjugadorElijeCorrectamenteLasOpcionesDEGROUPCHOICEParaElGrupo2YSeContabilizaBienLosPuntos(){
         Jugador unJugador = new Jugador("pepe");
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
@@ -189,6 +217,83 @@ public class JugadorTest {
         unJugador.responder(unaPregunta,respuestaJugadorParaElGrupo2);
         int unResultado = unJugador.getPuntajeAcumulado();
         assertEquals(unResultado, 10);
+    }
+
+    @Test
+    public void UnjugadorElijeIncorrectamenteLasOpcionesDEGROUPCHOICEParaElGrupo2YSeContabilizaCorrectamenteLosPuntos(){
+        Jugador unJugador = new Jugador("pepe");
+
+        Opcion opcionGrupo1_1 = new Opcion("Celeste");
+        Opcion opcionGrupo1_2 = new Opcion("Azul");
+
+        Opcion opcionGrupo2_1 = new Opcion("Rojo");
+        Opcion opcionGrupo2_2 = new Opcion("Naranja");
+
+        Respuesta respuestaCorrectaDeUnGrupo = new Respuesta();
+
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()),"Colores frios y calidos??",respuestaCorrectaDeUnGrupo);
+
+        Respuesta respuestaJugadorParaElGrupo2 = new Respuesta();
+
+        respuestaJugadorParaElGrupo2.agregarOpcion(opcionGrupo2_1);
+        respuestaJugadorParaElGrupo2.agregarOpcion(opcionGrupo1_2);
+
+        unJugador.responder(unaPregunta,respuestaJugadorParaElGrupo2);
+        int unResultado = unJugador.getPuntajeAcumulado();
+        assertEquals(unResultado, 0);
+    }
+    @Test
+    public void UnjugadorNoEligeNingunaOpcionParaGroupChoiceYSeContabilizaCorrectamenteLosPuntos(){
+        Jugador unJugador = new Jugador("pepe");
+
+        Opcion opcionGrupo1_1 = new Opcion("Celeste");
+        Opcion opcionGrupo1_2 = new Opcion("Azul");
+
+        Opcion opcionGrupo2_1 = new Opcion("Rojo");
+        Opcion opcionGrupo2_2 = new Opcion("Naranja");
+
+        Respuesta respuestaCorrectaDeUnGrupo = new Respuesta();
+
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()),"Colores frios y calidos??",respuestaCorrectaDeUnGrupo);
+
+        Respuesta respuestaJugadorParaElGrupo2 = new Respuesta();
+
+        unJugador.responder(unaPregunta,respuestaJugadorParaElGrupo2);
+        int unResultado = unJugador.getPuntajeAcumulado();
+        assertEquals(unResultado, 0);
+    }
+//La siguiente prueba falla porque hay que volver a repensar el modelos.
+    @Test
+    public void UnjugadorElijeAlRevesLasRespuestasParaGroupChoiceYSeContabilizaCorrectamenteLosPuntos(){
+        Jugador unJugador = new Jugador("pepe");
+
+        Opcion opcionGrupo1_1 = new Opcion("A");
+        Opcion opcionGrupo1_2 = new Opcion("B");
+
+        Opcion opcionGrupo2_1 = new Opcion("1");
+        Opcion opcionGrupo2_2 = new Opcion("2");
+
+        Respuesta respuestaCorrectaDeGrupo1 = new Respuesta();
+
+        respuestaCorrectaDeGrupo1.agregarOpcion(opcionGrupo1_1);
+        respuestaCorrectaDeGrupo1.agregarOpcion(opcionGrupo1_2);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()),"Diferencia Numeros de Letras",respuestaCorrectaDeGrupo1);
+
+        Respuesta respuestaJugadorParaElGrupo1 = new Respuesta();
+
+        respuestaJugadorParaElGrupo1.agregarOpcion(opcionGrupo2_1);
+        respuestaJugadorParaElGrupo1.agregarOpcion(opcionGrupo2_2);
+
+        unJugador.responder(unaPregunta, respuestaJugadorParaElGrupo1);
+        int unResultado = unJugador.getPuntajeAcumulado();
+        assertEquals(0,unResultado); //UPPPPPPPPPPPPSSSSSSSSSSSSS HAY QUE REPLANTEARLO! :PANIC:
     }
 }
 
