@@ -5,7 +5,7 @@ public class GroupChoice extends TipoFormato {
     @Override
     public int calcularPuntaje(int cantidadOpcionesJugador, int cantidadAciertosJugador, int cantidadCorrectas) {
 
-        if (cantidadAciertosJugador == cantidadCorrectas) {
+        if (cantidadOpcionesJugador == cantidadCorrectas && cantidadAciertosJugador == cantidadCorrectas || cantidadAciertosJugador == 0) {
             return this.puntaje;
         }
         return 0;
