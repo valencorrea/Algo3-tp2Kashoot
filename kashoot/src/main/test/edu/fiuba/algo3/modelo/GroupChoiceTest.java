@@ -14,27 +14,29 @@ public class GroupChoiceTest {
         int cantidadCorrectas = 3;
         int resultado = groupChoice.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
 
-        assertEquals(resultado,10);
+        assertEquals(10,resultado);
     }
     @Test
-    public void calcularPuntajeConUnaOpcionCorrectaYUnaIncorrectaDevuelveElPuntajeCorrecto(){
+    public void DadaUnasOpcionesCorrectasSeEligeUnaIncorrectaYELPuntajeSeCalculaCorrectamente(){
         GroupChoice groupChoice = new GroupChoice();
         int cantidadOpcionesJugador = 3;
         int cantidadAciertos = 2;
         int cantidadCorrectas = 3;
         int resultado = groupChoice.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
 
-        assertEquals(resultado,0);
+        assertEquals(0,resultado);
     }
     @Test
-    public void calcularPuntajeConDosOpcionesCorrectasDeTresDevuelveElPuntajeCorrecto(){
+    public void calcularPuntajeConCeroOpcionesCorrectasDeTresDevuelveElPuntajeCorrecto(){
         GroupChoice groupChoice = new GroupChoice();
-        int cantidadOpcionesJugador = 2;
-        int cantidadAciertos = 2;
+        int cantidadOpcionesJugador = 3;
+        int cantidadAciertos = 0;
         int cantidadCorrectas = 3;
         int resultado = groupChoice.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
 
-        assertEquals(resultado,0);
+        //Es 10 porque quiere decir que eligió correctamente las del otro grupo, por ende este grupo tambien esta bien.
+
+        assertEquals(10,resultado);
     }
 
 
