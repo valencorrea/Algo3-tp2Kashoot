@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class JugadorTest {
-/*
+
     @Test
     public void jugadoresRespondenVerdaderoFalsoClasicoRecibenPuntajeCorrecto(){
 
@@ -32,6 +32,8 @@ public class JugadorTest {
         assertEquals(unResultado, 10);
         assertEquals(otroResultado, 0);
     }
+
+/*
     @Test
     public void jugadoresRespondenVerdaderoFalsoConPenalidadRecibenPuntajeCorrecto(){
 
