@@ -11,4 +11,8 @@ public class Clasico extends TipoFormato{
 
         return 0;
     }
+    @Override
+    public boolean puedeMultiplicar(){
+        return false;
+    }
 }

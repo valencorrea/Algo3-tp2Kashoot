@@ -8,4 +8,8 @@ public class Penalidad extends TipoFormato {
         return this.puntaje * ((cantidadAciertosJugador) - (cantidadOpcionesJugador - cantidadAciertosJugador));
 
     }
+    @Override
+    public boolean puedeMultiplicar(){
+        return true;
+    }
 }

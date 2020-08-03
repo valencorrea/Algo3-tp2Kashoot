@@ -10,4 +10,8 @@ public class ModalidadOrdenada implements Modalidad {
        return 0;
 
     }
+    @Override
+    public boolean puedeMultiplicar(){
+        return false;
+    }
 }

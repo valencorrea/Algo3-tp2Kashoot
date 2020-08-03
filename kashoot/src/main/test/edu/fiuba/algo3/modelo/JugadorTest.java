@@ -159,5 +159,120 @@ public class JugadorTest {
         assertEquals(20, unResultado);
         assertEquals(-10, otroResultado);
     }
+    @Test
+    public void jugadorRespondeVerdaderoFalsoConPenalidadYMultiplicadorX2RecibePuntajeCorrecto(){
+
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+
+        Opcion opcionVerdadera = new Opcion("Verdadera");
+        Opcion opcionFalsa = new Opcion("Falsa");
+
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionVerdadera);
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionFalsa);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()),"hola soy una pregunta??",respuestaCorrecta);
+        unJugador.multiplicarX2(unaPregunta);
+        otroJugador.multiplicarX2(unaPregunta);
+        unJugador.responder(unaPregunta,respuestaCorrecta);
+        otroJugador.responder(unaPregunta,respuestaIncorrecta);
+
+        int unResultado = unJugador.getPuntajeAcumulado();
+        int otroResultado = otroJugador.getPuntajeAcumulado();
+
+
+        assertEquals(20, unResultado);
+        assertEquals(-20, otroResultado);
+
+    }
+    @Test
+    // este test tendria que agarra una excepcion
+    public void jugadorRespondeVerdaderoFalsoConFortatoClasicoYMultiplicadorX2RecibePuntajeCorrecto(){
+
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+
+        Opcion opcionVerdadera = new Opcion("Verdadera");
+        Opcion opcionFalsa = new Opcion("Falsa");
+
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionVerdadera);
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionFalsa);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
+        unJugador.multiplicarX2(unaPregunta);
+        otroJugador.multiplicarX2(unaPregunta);
+        unJugador.responder(unaPregunta,respuestaCorrecta);
+        otroJugador.responder(unaPregunta,respuestaIncorrecta);
+
+        int unResultado = unJugador.getPuntajeAcumulado();
+        int otroResultado = otroJugador.getPuntajeAcumulado();
+
+
+        assertEquals(10, unResultado);
+        assertEquals(0, otroResultado);
+
+    }
+    @Test
+    public void jugadorRespondeVerdaderoFalsoConPenalidadYMultiplicadorX3RecibePuntajeCorrecto(){
+
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+
+        Opcion opcionVerdadera = new Opcion("Verdadera");
+        Opcion opcionFalsa = new Opcion("Falsa");
+
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionVerdadera);
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionFalsa);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()),"hola soy una pregunta??",respuestaCorrecta);
+        unJugador.multiplicarX3(unaPregunta);
+        otroJugador.multiplicarX3(unaPregunta);
+        unJugador.responder(unaPregunta,respuestaCorrecta);
+        otroJugador.responder(unaPregunta,respuestaIncorrecta);
+
+        int unResultado = unJugador.getPuntajeAcumulado();
+        int otroResultado = otroJugador.getPuntajeAcumulado();
+
+
+        assertEquals(30, unResultado);
+        assertEquals(-30, otroResultado);
+
+    }
+    @Test
+    // este test tendria que agarra una excepcion
+    public void jugadorRespondeVerdaderoFalsoConFortatoClasicoYMultiplicadorX3RecibePuntajeCorrecto(){
+
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+
+        Opcion opcionVerdadera = new Opcion("Verdadera");
+        Opcion opcionFalsa = new Opcion("Falsa");
+
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionVerdadera);
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionFalsa);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
+        unJugador.multiplicarX2(unaPregunta);
+        otroJugador.multiplicarX2(unaPregunta);
+        unJugador.responder(unaPregunta,respuestaCorrecta);
+        otroJugador.responder(unaPregunta,respuestaIncorrecta);
+
+        int unResultado = unJugador.getPuntajeAcumulado();
+        int otroResultado = otroJugador.getPuntajeAcumulado();
+
+
+        assertEquals(10, unResultado);
+        assertEquals(0, otroResultado);
+
+    }
+
 }
 
