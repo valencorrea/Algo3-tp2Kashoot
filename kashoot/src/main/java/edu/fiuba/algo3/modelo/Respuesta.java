@@ -30,4 +30,8 @@ public class Respuesta {
     }
 
 
+    public boolean tieneIgualOrdenA(Respuesta respuestaJugador) {
+
+       return this.opciones.equals(respuestaJugador.getOpciones());
+    }
 }
