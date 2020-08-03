@@ -7,7 +7,7 @@ public class Pregunta {
     private String contenido;
     private Respuesta respuestaCorrecta;
 
-    public Pregunta(ModalidadSinOrden unaModalidad, String unContenido, Respuesta respuestaCorrecta){
+    public Pregunta(Modalidad unaModalidad, String unContenido, Respuesta respuestaCorrecta){
         this.modalidad = unaModalidad;
         this.contenido = unContenido;
         this.respuestaCorrecta = respuestaCorrecta;
