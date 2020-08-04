@@ -2,7 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PreguntaTest {
 
@@ -151,4 +151,36 @@ public class PreguntaTest {
         assertEquals(10, puntosUsuario);
         assertEquals(0, puntosOtroUsuario);
     }
+    @Test
+    public void dadaUnaPreguntaSinOrdenParaCadaFormatoSeConsultaSiPuedenUtilizarMultiplicadorDePuntaje(){
+        // ver si hace falta inicializar la respuesta, si se puede usar mockito o si se puede dejar asi
+        Respuesta respuesta = new Respuesta();
+
+        Pregunta preguntaFormatoClasico = new Pregunta(new ModalidadSinOrden(new Clasico()),"De que color es el cielo?",respuesta);
+        Pregunta preguntaFormatoConPenalidad = new Pregunta(new ModalidadSinOrden(new Penalidad()),"De que color es el agua?",respuesta);
+        Pregunta preguntaFormatoParcial = new Pregunta(new ModalidadSinOrden(new Parcial()),"De que color es la tierra?",respuesta);
+
+        boolean puedeMultiplicarClasico = preguntaFormatoClasico.puedeMultiplicar();
+        boolean puedeMultiplicarPenalidad = preguntaFormatoConPenalidad.puedeMultiplicar();
+        boolean puedeMultiplicarParcial = preguntaFormatoParcial.puedeMultiplicar();
+
+        assertFalse(puedeMultiplicarClasico);
+        assertTrue(puedeMultiplicarPenalidad);
+        assertFalse(puedeMultiplicarParcial);
+    }
+
+    @Test
+    public void dadaUnaPreguntaConOrdenSeConsultaSiPuedenUtilizarMultiplicadorDePuntaje(){
+        // ver si hace falta inicializar la respuesta, si se puede usar mockito o si se puede dejar asi
+        Respuesta respuesta = new Respuesta();
+
+        Pregunta preguntaOrdenada = new Pregunta(new ModalidadSinOrden(new Clasico()),"De que color es el cielo?",respuesta);
+
+        boolean puedeMultiplicar = preguntaOrdenada.puedeMultiplicar();
+
+        assertFalse(puedeMultiplicar);
+
+    }
+
+
 }
