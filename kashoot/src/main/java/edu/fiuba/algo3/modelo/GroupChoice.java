@@ -5,10 +5,10 @@ public class GroupChoice extends TipoFormato {
     @Override
     public int calcularPuntaje(int cantidadOpcionesJugador, int cantidadAciertosJugador, int cantidadCorrectas) {
 
-        if (cantidadOpcionesJugador != cantidadCorrectas && cantidadAciertosJugador == cantidadCorrectas || cantidadAciertosJugador == 0) {
-            return this.puntaje;
+        if (cantidadAciertosJugador != cantidadCorrectas /*&& cantidadAciertosJugador == cantidadCorrectas || cantidadAciertosJugador == 0*/) {
+            return 0;
         }
-        return 0;
+        return this.puntaje;
     }
     @Override
     public boolean puedeMultiplicar(){
