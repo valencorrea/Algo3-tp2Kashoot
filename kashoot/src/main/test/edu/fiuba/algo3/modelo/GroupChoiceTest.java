@@ -34,9 +34,7 @@ public class GroupChoiceTest {
         int cantidadCorrectas = 3;
         int resultado = groupChoice.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
 
-        //Es 10 porque quiere decir que eligió correctamente las del otro grupo, por ende este grupo tambien esta bien.
-
-        assertEquals(10,resultado);
+        assertEquals(0,resultado);
     }
 
 
