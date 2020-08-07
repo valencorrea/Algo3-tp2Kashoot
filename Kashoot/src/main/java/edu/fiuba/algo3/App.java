@@ -8,12 +8,13 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.geometry.Insets;
-
+import javafx.stage.StageStyle;
 
 
 /**
@@ -59,8 +60,8 @@ public class App extends Application {
 
         Scene escena= new Scene(contenedorPrincipal, 900, 600);
         stage.setScene(escena);
-
         stage.show();
+        stage.setFullScreen(true);
     }
 
     public static void main(String[] args) {
