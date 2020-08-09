@@ -1,5 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.multiplicadores.Multiplicador;
+import edu.fiuba.algo3.modelo.multiplicadores.MultiplicadorX2;
+import edu.fiuba.algo3.modelo.multiplicadores.MultiplicadorX3;
+
 import java.util.ArrayList;
 
 public class Jugador {

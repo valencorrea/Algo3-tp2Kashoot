@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.multiplicadores;
 
 public class MultiplicadorX1 extends Multiplicador {
 
