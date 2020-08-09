@@ -51,11 +51,8 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()),"hola soy una pregunta??",respuestaCorrecta);
 
-        unJugador.responder(unaPregunta,respuestaCorrecta);
-        otroJugador.responder(unaPregunta,respuestaIncorrecta);
-
-        int unResultado = unJugador.getPuntajeAcumulado();
-        int otroResultado = otroJugador.getPuntajeAcumulado();
+        int unResultado = unJugador.responder(unaPregunta,respuestaCorrecta);
+        int otroResultado = otroJugador.responder(unaPregunta,respuestaIncorrecta);
 
         assertEquals(unResultado, 10);
         assertEquals(otroResultado, -10);
@@ -84,11 +81,8 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
 
-        unJugador.responder(unaPregunta,respuestaUnJugador);
-        otroJugador.responder(unaPregunta,respuestaOtroJugador);
-
-        int unResultado = unJugador.getPuntajeAcumulado();
-        int otroResultado = otroJugador.getPuntajeAcumulado();
+        int unResultado = unJugador.responder(unaPregunta,respuestaUnJugador);
+        int otroResultado = otroJugador.responder(unaPregunta,respuestaOtroJugador);
 
         assertEquals(20, unResultado);
         assertEquals(0, otroResultado);
@@ -121,13 +115,9 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()),"hola soy una pregunta??",respuestaCorrecta);
 
-        unJugador.responder(unaPregunta,respuestaUnJugador);
-        otroJugador.responder(unaPregunta,respuestaOtroJugador);
-        tercerJugador.responder(unaPregunta,respuestaTercerJugador);
-
-        int unResultado = unJugador.getPuntajeAcumulado();
-        int otroResultado = otroJugador.getPuntajeAcumulado();
-        int tercerResultado = tercerJugador.getPuntajeAcumulado();
+        int unResultado = unJugador.responder(unaPregunta,respuestaUnJugador);
+        int otroResultado = otroJugador.responder(unaPregunta,respuestaOtroJugador);
+        int tercerResultado = tercerJugador.responder(unaPregunta,respuestaTercerJugador);
 
         assertEquals(20, unResultado);
         assertEquals(0, otroResultado);
@@ -156,11 +146,8 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()),"hola soy una pregunta??",respuestaCorrecta);
 
-        unJugador.responder(unaPregunta,respuestaUnJugador);
-        otroJugador.responder(unaPregunta,respuestaOtroJugador);
-
-        int unResultado = unJugador.getPuntajeAcumulado();
-        int otroResultado = otroJugador.getPuntajeAcumulado();
+        int unResultado = unJugador.responder(unaPregunta,respuestaUnJugador);
+        int otroResultado = otroJugador.responder(unaPregunta,respuestaOtroJugador);
 
         assertEquals(20, unResultado);
         assertEquals(-10, otroResultado);
@@ -190,8 +177,7 @@ public class JugadorTest {
         respuestaJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
         respuestaJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_2);
 
-        unJugador.responder(unaPregunta,respuestaJugadorParaElGrupo1);
-        int unResultado = unJugador.getPuntajeAcumulado();
+        int unResultado = unJugador.responder(unaPregunta,respuestaJugadorParaElGrupo1);
         assertEquals(unResultado, 10);
     }
 
@@ -296,11 +282,8 @@ public class JugadorTest {
         unJugador.multiplicarX2(respuestaCorrecta);
         otroJugador.multiplicarX2(respuestaIncorrecta);
 
-        unJugador.responder(unaPregunta, respuestaCorrecta);
-        otroJugador.responder(unaPregunta, respuestaIncorrecta);
-
-        int unResultado = unJugador.getPuntajeAcumulado();
-        int otroResultado = otroJugador.getPuntajeAcumulado();
+        int unResultado = unJugador.responder(unaPregunta, respuestaCorrecta);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaIncorrecta);
 
         Assertions.assertEquals(20, unResultado);
         Assertions.assertEquals(-20, otroResultado);
@@ -325,11 +308,8 @@ public class JugadorTest {
         unJugador.multiplicarX2(respuestaCorrecta);
         otroJugador.multiplicarX2(respuestaIncorrecta);
 
-        unJugador.responder(unaPregunta, respuestaCorrecta);
-        otroJugador.responder(unaPregunta, respuestaIncorrecta);
-
-        int unResultado = unJugador.getPuntajeAcumulado();
-        int otroResultado = otroJugador.getPuntajeAcumulado();
+        int unResultado = unJugador.responder(unaPregunta, respuestaCorrecta);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaIncorrecta);
 
         Assertions.assertEquals(10, unResultado);
         Assertions.assertEquals(0, otroResultado);
@@ -354,11 +334,8 @@ public class JugadorTest {
         unJugador.multiplicarX3(respuestaCorrecta);
         otroJugador.multiplicarX3(respuestaIncorrecta);
 
-        unJugador.responder(unaPregunta, respuestaCorrecta);
-        otroJugador.responder(unaPregunta, respuestaIncorrecta);
-
-        int unResultado = unJugador.getPuntajeAcumulado();
-        int otroResultado = otroJugador.getPuntajeAcumulado();
+        int unResultado = unJugador.responder(unaPregunta, respuestaCorrecta);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaIncorrecta);
 
         Assertions.assertEquals(30, unResultado);
         Assertions.assertEquals(-30, otroResultado);
