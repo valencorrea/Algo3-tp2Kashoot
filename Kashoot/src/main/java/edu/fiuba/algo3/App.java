@@ -5,16 +5,16 @@ import edu.fiuba.algo3.modelo.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.shape.Box;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.geometry.Insets;
-
+import javafx.stage.StageStyle;
 
 
 /**
@@ -24,9 +24,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage){
-        //crear el modelo (new juego new controlador(recibe el juego) la vista pasarle el juego y el controlador
-        //el flujo de ejecucuion lo maneja la vista
-        //el controlador realiza los cambios y el juego se actualiza.
+
         stage.setTitle("Bienvenidos a kashoot");
 
         Opcion opcionCorrecta = new Opcion("holis soy correcta");
@@ -37,8 +35,7 @@ public class App extends Application {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"una pregunta????????",respuestaCorrecta);
 
-        var pregunta = new Label(unaPregunta.getContenido());
-
+        var label = new Label(unaPregunta.getContenido());
 
         Button button = new Button();
         button.setText(opcionCorrecta.getContenido());
@@ -57,14 +54,14 @@ public class App extends Application {
         hbox.setSpacing(200);
         hbox.setAlignment(Pos.CENTER);
 
-        VBox contenedorPrincipal = new VBox(pregunta, hbox, new Label());
+        VBox contenedorPrincipal = new VBox(label, hbox, new Label());
         contenedorPrincipal.setSpacing(100);
         contenedorPrincipal.setPadding(new Insets(20));
 
         Scene escena= new Scene(contenedorPrincipal, 900, 600);
         stage.setScene(escena);
-
         stage.show();
+        stage.setFullScreen(true);
     }
 
     public static void main(String[] args) {
