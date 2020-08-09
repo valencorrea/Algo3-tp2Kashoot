@@ -2,6 +2,8 @@ package edu.fiuba.algo3;
 
 import edu.fiuba.algo3.modelo.*;
 
+import edu.fiuba.algo3.modelo.modalidades.ModalidadSinOrden;
+import edu.fiuba.algo3.modelo.formatos.Clasico;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -13,7 +15,6 @@ import javafx.stage.Stage;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.geometry.Insets;
-
 
 
 /**
@@ -59,8 +60,8 @@ public class App extends Application {
 
         Scene escena= new Scene(contenedorPrincipal, 900, 600);
         stage.setScene(escena);
-
         stage.show();
+        stage.setFullScreen(true);
     }
 
     public static void main(String[] args) {

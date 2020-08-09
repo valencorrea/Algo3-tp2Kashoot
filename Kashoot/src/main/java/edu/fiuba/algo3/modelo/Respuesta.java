@@ -1,10 +1,15 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.multiplicadores.Multiplicador;
+import edu.fiuba.algo3.modelo.multiplicadores.MultiplicadorX1;
+
 import java.util.ArrayList;
 
 public class Respuesta {
 
     private ArrayList<Opcion> opciones = new ArrayList<Opcion>();
+    private Multiplicador multiplicador = new MultiplicadorX1();
+
 
     public void agregarOpcion(Opcion opcion){
         opciones.add(opcion);
@@ -33,5 +38,13 @@ public class Respuesta {
     public boolean tieneIgualOrdenA(Respuesta respuestaJugador) {
 
        return this.opciones.equals(respuestaJugador.getOpciones());
+    }
+    public int multiplicar(int puntaje){
+
+        return this.multiplicador.multiplicar(puntaje);
+    }
+
+    public void modificarMultiplicador(Multiplicador unMultiplicador) {
+        this.multiplicador = unMultiplicador;
     }
 }
