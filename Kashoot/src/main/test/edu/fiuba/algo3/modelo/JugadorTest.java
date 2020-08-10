@@ -28,11 +28,9 @@ public class JugadorTest {
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
-        unJugador.responder(unaPregunta,respuestaCorrecta);
-        otroJugador.responder(unaPregunta,respuestaIncorrecta);
 
-        int unResultado = unJugador.getPuntajeAcumulado();
-        int otroResultado = otroJugador.getPuntajeAcumulado();
+        int unResultado = unJugador.responder(unaPregunta,respuestaCorrecta);
+        int otroResultado = otroJugador.responder(unaPregunta,respuestaIncorrecta);
 
         assertEquals(unResultado, 10);
         assertEquals(otroResultado, 0);
@@ -385,13 +383,8 @@ public class JugadorTest {
         unJugador.multiplicarX2(respuestaCorrecta);
         otroJugador.multiplicarX2(respuestaIncorrecta);
 
-        unJugador.responder(unaPregunta, respuestaCorrecta);
-        otroJugador.responder(unaPregunta, respuestaIncorrecta);
-
-
-
-        int unResultado = unJugador.getPuntajeAcumulado();
-        int otroResultado = otroJugador.getPuntajeAcumulado();
+        int unResultado = unJugador.responder(unaPregunta, respuestaCorrecta);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaIncorrecta);
 
         Assertions.assertEquals(10, unResultado);
         Assertions.assertEquals(0, otroResultado);
@@ -472,19 +465,26 @@ public class JugadorTest {
     public void ambosJugadoresElijenExclusividadYUnoRespondeBien() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
+
         Opcion opcionVerdadera = new Opcion("Verdadera");
         Opcion opcionFalsa = new Opcion("Falsa");
+
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionVerdadera);
+
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
+
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+
         int cantExclusividades = unJugador.usarExclusividad();
         cantExclusividades += otroJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
+
         int unResultado = unJugador.responder(unaPregunta, respuestaCorrecta);
         int otroResultado = otroJugador.responder(unaPregunta, respuestaIncorrecta);
         unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+
         assertEquals(40, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
