@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class JugadorTest {
 
     @Test
-    public void jugadoresRespondenVerdaderoFalsoClasicoRecibenPuntajeCorrecto(){
+    public void jugadoresRespondenVerdaderoFalsoClasicoRecibenPuntajeCorrecto() {
 
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
@@ -27,16 +27,17 @@ public class JugadorTest {
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
 
-        int unResultado = unJugador.responder(unaPregunta,respuestaCorrecta);
-        int otroResultado = otroJugador.responder(unaPregunta,respuestaIncorrecta);
+        int unResultado = unJugador.responder(unaPregunta, respuestaCorrecta);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaIncorrecta);
 
         assertEquals(unResultado, 10);
         assertEquals(otroResultado, 0);
     }
+
     @Test
-    public void jugadoresRespondenVerdaderoFalsoConPenalidadRecibenPuntajeCorrecto(){
+    public void jugadoresRespondenVerdaderoFalsoConPenalidadRecibenPuntajeCorrecto() {
 
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
@@ -49,17 +50,17 @@ public class JugadorTest {
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "hola soy una pregunta??", respuestaCorrecta);
 
-        int unResultado = unJugador.responder(unaPregunta,respuestaCorrecta);
-        int otroResultado = otroJugador.responder(unaPregunta,respuestaIncorrecta);
+        int unResultado = unJugador.responder(unaPregunta, respuestaCorrecta);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaIncorrecta);
 
         assertEquals(unResultado, 10);
         assertEquals(otroResultado, -10);
     }
 
     @Test
-    public void jugadoresRespondenMultipleChoiceClasicoRecibenPuntajeCorrecto(){
+    public void jugadoresRespondenMultipleChoiceClasicoRecibenPuntajeCorrecto() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
 
@@ -79,17 +80,17 @@ public class JugadorTest {
         respuestaOtroJugador.agregarOpcion(opcionCorrectaDos);
         respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
 
-        int unResultado = unJugador.responder(unaPregunta,respuestaUnJugador);
-        int otroResultado = otroJugador.responder(unaPregunta,respuestaOtroJugador);
+        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugador);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugador);
 
         assertEquals(20, unResultado);
         assertEquals(0, otroResultado);
     }
 
     @Test
-    public void jugadoresRespondenMultipleChoiceParcialRecibenPuntajeCorrecto(){
+    public void jugadoresRespondenMultipleChoiceParcialRecibenPuntajeCorrecto() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
         Jugador tercerJugador = new Jugador("pepesito");
@@ -113,11 +114,11 @@ public class JugadorTest {
         Respuesta respuestaTercerJugador = new Respuesta();
         respuestaTercerJugador.agregarOpcion(opcionCorrectaUno);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "hola soy una pregunta??", respuestaCorrecta);
 
-        int unResultado = unJugador.responder(unaPregunta,respuestaUnJugador);
-        int otroResultado = otroJugador.responder(unaPregunta,respuestaOtroJugador);
-        int tercerResultado = tercerJugador.responder(unaPregunta,respuestaTercerJugador);
+        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugador);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugador);
+        int tercerResultado = tercerJugador.responder(unaPregunta, respuestaTercerJugador);
 
         assertEquals(20, unResultado);
         assertEquals(0, otroResultado);
@@ -125,7 +126,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void jugadoresRespondenMultipleChoiceConPenalidadRecibenPuntajeCorrecto(){
+    public void jugadoresRespondenMultipleChoiceConPenalidadRecibenPuntajeCorrecto() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
 
@@ -144,19 +145,18 @@ public class JugadorTest {
         Respuesta respuestaOtroJugador = new Respuesta();
         respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "hola soy una pregunta??", respuestaCorrecta);
 
-        int unResultado = unJugador.responder(unaPregunta,respuestaUnJugador);
-        int otroResultado = otroJugador.responder(unaPregunta,respuestaOtroJugador);
+        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugador);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugador);
 
         assertEquals(20, unResultado);
         assertEquals(-10, otroResultado);
     }
 
 
-
     @Test
-    public void UnjugadorElijeCorrectamenteLasOpcionesDEGROUPCHOICEParaCadaGrupoTomandoEncuentaElPrimerGrupoYSeCalculaBienElPuntaje(){
+    public void UnjugadorElijeCorrectamenteLasOpcionesDEGROUPCHOICEParaCadaGrupoTomandoEncuentaElPrimerGrupoYSeCalculaBienElPuntaje() {
         Jugador unJugador = new Jugador("pepe");
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
@@ -170,19 +170,19 @@ public class JugadorTest {
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()),"Colores frios y calidos??",respuestaCorrectaDeUnGrupo);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
 
         Respuesta respuestaJugadorParaElGrupo1 = new Respuesta();
 
         respuestaJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
         respuestaJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_2);
 
-        int unResultado = unJugador.responder(unaPregunta,respuestaJugadorParaElGrupo1);
+        int unResultado = unJugador.responder(unaPregunta, respuestaJugadorParaElGrupo1);
         assertEquals(unResultado, 10);
     }
 
     @Test
-    public void UnjugadorElijeIncorrectamenteLasOpcionesDEGROUPCHOICEParaElGrupo2YSeContabilizaCorrectamenteLosPuntos(){
+    public void UnjugadorElijeIncorrectamenteLasOpcionesDEGROUPCHOICEParaElGrupo2YSeContabilizaCorrectamenteLosPuntos() {
         Jugador unJugador = new Jugador("pepe");
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
@@ -196,19 +196,20 @@ public class JugadorTest {
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()),"Colores frios y calidos??",respuestaCorrectaDeUnGrupo);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
 
         Respuesta respuestaJugadorParaElGrupo2 = new Respuesta();
 
         respuestaJugadorParaElGrupo2.agregarOpcion(opcionGrupo2_1);
         respuestaJugadorParaElGrupo2.agregarOpcion(opcionGrupo1_2);
 
-        unJugador.responder(unaPregunta,respuestaJugadorParaElGrupo2);
+        unJugador.responder(unaPregunta, respuestaJugadorParaElGrupo2);
         int unResultado = unJugador.getPuntajeAcumulado();
         assertEquals(unResultado, 0);
     }
+
     @Test
-    public void UnjugadorNoEligeNingunaOpcionParaGroupChoiceYSeContabilizaCorrectamenteLosPuntos(){
+    public void UnjugadorNoEligeNingunaOpcionParaGroupChoiceYSeContabilizaCorrectamenteLosPuntos() {
         Jugador unJugador = new Jugador("pepe");
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
@@ -222,11 +223,11 @@ public class JugadorTest {
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()),"Colores frios y calidos??",respuestaCorrectaDeUnGrupo);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
 
         Respuesta respuestaJugadorParaElGrupo2 = new Respuesta();
 
-        unJugador.responder(unaPregunta,respuestaJugadorParaElGrupo2);
+        unJugador.responder(unaPregunta, respuestaJugadorParaElGrupo2);
         int unResultado = unJugador.getPuntajeAcumulado();
         assertEquals(0, unResultado);
     }
@@ -234,7 +235,7 @@ public class JugadorTest {
 
     //La siguiente prueba falla porque hay que volver a repensar el modelos.
     @Test
-    public void UnjugadorElijeAlRevesLasRespuestasParaGroupChoiceYSeContabilizaCorrectamenteLosPuntos(){
+    public void UnjugadorElijeAlRevesLasRespuestasParaGroupChoiceYSeContabilizaCorrectamenteLosPuntos() {
         Jugador unJugador = new Jugador("pepe");
 
         Opcion opcionGrupo1_1 = new Opcion("A");
@@ -248,7 +249,7 @@ public class JugadorTest {
         respuestaCorrectaDeGrupo1.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeGrupo1.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()),"Diferencia Numeros de Letras",respuestaCorrectaDeGrupo1);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Diferencia Numeros de Letras", respuestaCorrectaDeGrupo1);
 
         Respuesta respuestaJugadorParaElGrupo1 = new Respuesta();
 
@@ -257,7 +258,7 @@ public class JugadorTest {
 
         unJugador.responder(unaPregunta, respuestaJugadorParaElGrupo1);
         int unResultado = unJugador.getPuntajeAcumulado();
-        assertEquals(0,unResultado); //UPPPPPPPPPPPPSSSSSSSSSSSSS HAY QUE REPLANTEARLO! :PANIC:
+        assertEquals(0, unResultado); //UPPPPPPPPPPPPSSSSSSSSSSSSS HAY QUE REPLANTEARLO! :PANIC:
     }
 
 
@@ -385,6 +386,7 @@ public class JugadorTest {
         unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
         assertEquals(20, unJugador.getPuntajeAcumulado());
     }
+
     @Test
     public void jugadorElijeExclusividadYSeAnulaSuPuntajeAlResponderMal() {
         Jugador unJugador = new Jugador("pepe");
@@ -403,6 +405,7 @@ public class JugadorTest {
         unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
+
     @Test
     public void dosJugadoresElijenExclusividadYSeAnulaSuPuntajeAlResponderAmbosMal() {
         Jugador unJugador = new Jugador("pepe");
@@ -422,6 +425,7 @@ public class JugadorTest {
         assertEquals(0, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
+
     @Test
     public void dosJugadoresElijenExclusividadYSeAnulaSuPuntajeAlResponderAmbosBien() {
         Jugador unJugador = new Jugador("pepe");
@@ -438,6 +442,7 @@ public class JugadorTest {
         assertEquals(0, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
+
     @Test
     public void ambosJugadoresElijenExclusividadYUnoRespondeBien() {
         Jugador unJugador = new Jugador("pepe");
@@ -467,7 +472,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void unJugadorElijeExclusividadYRespondeBienUnChoiceClasico(){
+    public void unJugadorElijeExclusividadYRespondeBienUnChoiceClasico() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
 
@@ -484,7 +489,7 @@ public class JugadorTest {
         Respuesta respuestaOtroJugador = new Respuesta();
         respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
 
         int cantExclusividades = unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
@@ -499,7 +504,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void unJugadorElijeExclusividadYRespondeMalUnChoiceClasico(){
+    public void unJugadorElijeExclusividadYRespondeMalUnChoiceClasico() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
 
@@ -518,7 +523,7 @@ public class JugadorTest {
         Respuesta respuestaOtroJugador = new Respuesta();
         respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
 
         int cantExclusividades = unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
@@ -533,7 +538,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void unJugadorElijeExclusividadYRespondeMejorQueOtroEnFormatoParcial(){
+    public void unJugadorElijeExclusividadYRespondeMejorQueOtroEnFormatoParcial() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
 
@@ -551,7 +556,7 @@ public class JugadorTest {
         Respuesta respuestaOtroJugador = new Respuesta();
         respuestaOtroJugador.agregarOpcion(opcionCorrectaUno);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "hola soy una pregunta??", respuestaCorrecta);
 
         int cantExclusividades = unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
@@ -566,7 +571,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void dosJugadoresElijenExclusividadesYRespondenAmbosBien(){
+    public void dosJugadoresElijenExclusividadesYRespondenAmbosBien() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
 
@@ -585,7 +590,7 @@ public class JugadorTest {
         respuestaOtroJugador.agregarOpcion(opcionCorrectaUno);
         respuestaOtroJugador.agregarOpcion(opcionCorrectaDos);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "hola soy una pregunta??", respuestaCorrecta);
 
         int cantExclusividades = unJugador.usarExclusividad();
         cantExclusividades += otroJugador.usarExclusividad();
@@ -601,7 +606,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void dosJugadoresElijenExclusividadesYRespondenAmbosMal(){
+    public void dosJugadoresElijenExclusividadesYRespondenAmbosMal() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
 
@@ -622,7 +627,7 @@ public class JugadorTest {
         Respuesta respuestaOtroJugador = new Respuesta();
         respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()),"hola soy una pregunta??",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "hola soy una pregunta??", respuestaCorrecta);
 
         int cantExclusividades = unJugador.usarExclusividad();
         cantExclusividades += otroJugador.usarExclusividad();
@@ -637,6 +642,205 @@ public class JugadorTest {
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
 
+    @Test
+    public void JugadoresRespondenUnaPreguntaTipoGroupChoiceUtilizandoUnaExclusividadYSeCalculaBienElPuntaje() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepe");
 
+        Opcion opcionGrupo1_1 = new Opcion("Celeste");
+        Opcion opcionGrupo1_2 = new Opcion("Azul");
 
+        Opcion opcionGrupo2_1 = new Opcion("Naranja");
+
+        Respuesta respuestaCorrectaDeUnGrupo = new Respuesta();
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+
+        Respuesta respuestaUnJugadorParaElGrupo1 = new Respuesta();
+        respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
+        respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_2);
+
+        Respuesta respuestaOtroJugadorParaElGrupo1 = new Respuesta();
+        respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
+        respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo2_1);
+
+        int cantExclusividades = unJugador.usarExclusividad();
+        Exclusividad unaExclusividad = new Exclusividad();
+
+        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
+
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+        assertEquals(20, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+    }
+
+    @Test
+    public void JugadoresRespondenCorrectamenteUnaPreguntaTipoGroupChoiceUtilizandoUnaExclusividadYSeCalculaBienElPuntaje() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepe");
+
+        Opcion opcionGrupo1_1 = new Opcion("Celeste");
+        Opcion opcionGrupo1_2 = new Opcion("Azul");
+
+        Respuesta respuestaCorrectaDeUnGrupo = new Respuesta();
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+
+        Respuesta respuestaUnJugadorParaElGrupo1 = new Respuesta();
+        respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
+        respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_2);
+
+        Respuesta respuestaOtroJugadorParaElGrupo1 = new Respuesta();
+        respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
+        respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_2);
+
+        int cantExclusividades = unJugador.usarExclusividad();
+        Exclusividad unaExclusividad = new Exclusividad();
+
+        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+
+        assertEquals(0, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+    }
+
+    @Test
+    public void JugadoresRespondenUnaPreguntaTipoGroupChoiceUtilizandoDosExclusividadesYSeCalculaBienElPuntaje() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepe");
+
+        Opcion opcionGrupo1_1 = new Opcion("Celeste");
+        Opcion opcionGrupo1_2 = new Opcion("Azul");
+
+        Opcion opcionGrupo2_1 = new Opcion("Naranja");
+
+        Respuesta respuestaCorrectaDeUnGrupo = new Respuesta();
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+
+        Respuesta respuestaUnJugadorParaElGrupo1 = new Respuesta();
+        respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
+        respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_2);
+
+        Respuesta respuestaOtroJugadorParaElGrupo1 = new Respuesta();
+        respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
+        respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo2_1);
+
+        int cantExclusividades = unJugador.usarExclusividad();
+        cantExclusividades += otroJugador.usarExclusividad();
+        Exclusividad unaExclusividad = new Exclusividad();
+
+        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+
+        assertEquals(40, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+    }
+
+    @Test
+    public void JugadoresRespondenCorrectamenteUnaPreguntaTipoGroupChoiceUtilizandoDosExclusividadesYSeCalculaBienElPuntaje() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepe");
+
+        Opcion opcionGrupo1_1 = new Opcion("Celeste");
+        Opcion opcionGrupo1_2 = new Opcion("Azul");
+
+        Respuesta respuestaCorrectaDeUnGrupo = new Respuesta();
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+
+        Respuesta respuestaUnJugadorParaElGrupo1 = new Respuesta();
+        respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
+        respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_2);
+
+        Respuesta respuestaOtroJugadorParaElGrupo1 = new Respuesta();
+        respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
+        respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_2);
+
+        int cantExclusividades = unJugador.usarExclusividad();
+        cantExclusividades += otroJugador.usarExclusividad();
+        Exclusividad unaExclusividad = new Exclusividad();
+
+        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+
+        assertEquals(0, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+    }
+
+    @Test
+    public void JugadoresRespondenIncorrectamenteUnaPreguntaTipoGroupChoiceUtilizandoUnaExclusividadYSeCalculaBienElPuntaje() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepe");
+
+        Opcion opcionGrupo1_1 = new Opcion("Celeste");
+        Opcion opcionGrupo1_2 = new Opcion("Azul");
+
+        Respuesta respuestaCorrectaDeUnGrupo = new Respuesta();
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+
+        Respuesta respuestaUnJugadorParaElGrupo1 = new Respuesta();
+        respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
+
+        Respuesta respuestaOtroJugadorParaElGrupo1 = new Respuesta();
+        respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
+
+        int cantExclusividades = unJugador.usarExclusividad();
+        cantExclusividades += otroJugador.usarExclusividad();
+        Exclusividad unaExclusividad = new Exclusividad();
+
+        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+
+        assertEquals(0, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+    }
+
+    @Test
+    public void JugadoresRespondenIncorrectamenteUnaPreguntaTipoGroupChoiceUtilizandoDosExclusividadesYSeCalculaBienElPuntaje() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepe");
+
+        Opcion opcionGrupo1_1 = new Opcion("Celeste");
+        Opcion opcionGrupo1_2 = new Opcion("Azul");
+
+        Respuesta respuestaCorrectaDeUnGrupo = new Respuesta();
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
+        respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+
+        Respuesta respuestaUnJugadorParaElGrupo1 = new Respuesta();
+        respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
+
+        Respuesta respuestaOtroJugadorParaElGrupo1 = new Respuesta();
+        respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
+
+        int cantExclusividades = unJugador.usarExclusividad();
+        cantExclusividades += otroJugador.usarExclusividad();
+
+        Exclusividad unaExclusividad = new Exclusividad();
+        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+
+        assertEquals(0, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+    }
 }
