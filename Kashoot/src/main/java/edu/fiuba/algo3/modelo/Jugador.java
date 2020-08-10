@@ -11,12 +11,18 @@ public class Jugador {
     private String nombre;
     private int puntajeAcumulado = 0;
     private ArrayList<Multiplicador> multiplicadores= new ArrayList<Multiplicador>();
+    private ArrayList<Exclusividad> exclusividades = new ArrayList<Exclusividad>();
 
     public Jugador(String unNombre){
 
         this.nombre = unNombre;
         this.inicializarMultiplicadores();
+        inicializarExclusividades();
+    }
 
+    private void inicializarExclusividades() {
+        this.exclusividades.add(new Exclusividad());
+        this.exclusividades.add(new Exclusividad());
     }
 
     private void inicializarMultiplicadores() {
@@ -27,13 +33,14 @@ public class Jugador {
     }
 //ver como quedaria mandar el la respuesta su multiplicador.
     // no tener una referencia al multiplicador actual sino ver tener la el vector solo
-    public void responder(Pregunta unaPregunta, Respuesta unaRespuesta){
+    public int responder(Pregunta unaPregunta, Respuesta unaRespuesta) {
         int puntaje = unaPregunta.calcularPuntaje(unaRespuesta);
-        if(unaPregunta.puedeMultiplicar()){
+        if (unaPregunta.puedeMultiplicar()) {
             puntaje = unaRespuesta.multiplicar(puntaje);
         }
-        puntajeAcumulado =+ puntaje;
-        }
+        return puntaje;
+    }
+
     public int getPuntajeAcumulado(){
         return this.puntajeAcumulado;
     }
@@ -59,5 +66,11 @@ public class Jugador {
         unaRespuesta.modificarMultiplicador(unMultiplicador);
         return;
     }
-
+    public void asignarPuntajeRonda(int unPuntaje) {
+        this.puntajeAcumulado += unPuntaje;
+    }
+    public int usarExclusividad() {
+        this.exclusividades.remove(exclusividades.size()-1);
+        return 1;
+    }
 }

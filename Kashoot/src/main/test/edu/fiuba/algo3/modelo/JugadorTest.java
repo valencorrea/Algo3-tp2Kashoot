@@ -248,7 +248,7 @@ public class JugadorTest {
     }
 
 
-//La siguiente prueba falla porque hay que volver a repensar el modelos.
+    //La siguiente prueba falla porque hay que volver a repensar el modelos.
     @Test
     public void UnjugadorElijeAlRevesLasRespuestasParaGroupChoiceYSeContabilizaCorrectamenteLosPuntos(){
         Jugador unJugador = new Jugador("pepe");
@@ -295,8 +295,8 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "hola soy una pregunta??", respuestaCorrecta);
 
-         unJugador.multiplicarX2(respuestaCorrecta);
-         otroJugador.multiplicarX2(respuestaIncorrecta);
+        unJugador.multiplicarX2(respuestaCorrecta);
+        otroJugador.multiplicarX2(respuestaIncorrecta);
 
         unJugador.responder(unaPregunta, respuestaCorrecta);
         otroJugador.responder(unaPregunta, respuestaIncorrecta);
@@ -388,6 +388,8 @@ public class JugadorTest {
         unJugador.responder(unaPregunta, respuestaCorrecta);
         otroJugador.responder(unaPregunta, respuestaIncorrecta);
 
+
+
         int unResultado = unJugador.getPuntajeAcumulado();
         int otroResultado = otroJugador.getPuntajeAcumulado();
 
@@ -395,5 +397,96 @@ public class JugadorTest {
         Assertions.assertEquals(0, otroResultado);
     }
 
-}
+    @Test
+    public void jugadorElijeExclusividadYSeDuplicaSuPuntajeAlResponderCorrectamente() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+        Opcion opcionVerdadera = new Opcion("Verdadera");
+        Opcion opcionFalsa = new Opcion("Falsa");
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionVerdadera);
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionFalsa);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        int cantExclusividades = unJugador.usarExclusividad();
+        Exclusividad unaExclusividad = new Exclusividad();
+        int unResultado = unJugador.responder(unaPregunta, respuestaCorrecta);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaIncorrecta);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+        assertEquals(20, unJugador.getPuntajeAcumulado());
+    }
+    @Test
+    public void jugadorElijeExclusividadYSeAnulaSuPuntajeAlResponderMal() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+        Opcion opcionVerdadera = new Opcion("Verdadera");
+        Opcion opcionFalsa = new Opcion("Falsa");
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionVerdadera);
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionFalsa);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        int cantExclusividades = unJugador.usarExclusividad();
+        Exclusividad unaExclusividad = new Exclusividad();
+        int unResultado = unJugador.responder(unaPregunta, respuestaCorrecta);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaIncorrecta);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+    }
+    @Test
+    public void dosJugadoresElijenExclusividadYSeAnulaSuPuntajeAlResponderAmbosMal() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+        Opcion opcionVerdadera = new Opcion("Verdadera");
+        Opcion opcionFalsa = new Opcion("Falsa");
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionVerdadera);
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionFalsa);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        int cantExclusividades = unJugador.usarExclusividad();
+        Exclusividad unaExclusividad = new Exclusividad();
+        int unResultado = unJugador.responder(unaPregunta, respuestaIncorrecta);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaIncorrecta);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+        assertEquals(0, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+    }
+    @Test
+    public void dosJugadoresElijenExclusividadYSeAnulaSuPuntajeAlResponderAmbosBien() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+        Opcion opcionVerdadera = new Opcion("Verdadera");
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionVerdadera);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        int cantExclusividades = unJugador.usarExclusividad();
+        Exclusividad unaExclusividad = new Exclusividad();
+        int unResultado = unJugador.responder(unaPregunta, respuestaCorrecta);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaCorrecta);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+        assertEquals(0, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+    }
+    @Test
+    public void ambosJugadoresElijenExclusividadYUnoRespondeBien() {
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+        Opcion opcionVerdadera = new Opcion("Verdadera");
+        Opcion opcionFalsa = new Opcion("Falsa");
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionVerdadera);
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionFalsa);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        int cantExclusividades = unJugador.usarExclusividad();
+        cantExclusividades += otroJugador.usarExclusividad();
+        Exclusividad unaExclusividad = new Exclusividad();
+        int unResultado = unJugador.responder(unaPregunta, respuestaCorrecta);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaIncorrecta);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+        assertEquals(40, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+    }
 
+}
