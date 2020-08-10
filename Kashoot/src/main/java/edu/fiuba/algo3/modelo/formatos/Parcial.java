@@ -8,14 +8,6 @@ public class Parcial extends TipoFormato {
             return 0;
         }
         return this.puntaje * cantidadAciertosJugador;
-
-
-        /*if((cantidadCorrectas == cantidadOpcionesJugador && (cantidadCorrectas - cantidadAciertosJugador) != 0) | (cantidadOpcionesJugador-cantidadAciertosJugador)>0){
-            return 0;
-        }
-
-        return this.puntaje * cantidadAciertosJugador;
-    */
     }
 
     @Override
