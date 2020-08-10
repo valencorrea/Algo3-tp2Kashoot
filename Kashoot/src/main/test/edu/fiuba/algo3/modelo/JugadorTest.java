@@ -489,4 +489,104 @@ public class JugadorTest {
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
 
+    @Test
+    public void unJugadorElijeExclusividadYRespondeBienUnChoiceClasico(){
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+
+        Opcion opcionCorrectaUno = new Opcion("uno");
+        Opcion opcionCorrectaDos = new Opcion("dos");
+        Opcion opcionIncorrectaTres = new Opcion("tres");
+
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionCorrectaUno);
+        respuestaCorrecta.agregarOpcion(opcionCorrectaDos);
+
+        Respuesta respuestaUnJugador = respuestaCorrecta;
+
+        Respuesta respuestaOtroJugador = new Respuesta();
+        respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
+
+        int cantExclusividades = unJugador.usarExclusividad();
+        Exclusividad unaExclusividad = new Exclusividad();
+
+        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugador);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugador);
+
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+
+        assertEquals(40, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+    }
+
+    @Test
+    public void unJugadorElijeExclusividadYRespondeMalUnChoiceClasico(){
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+
+        Opcion opcionCorrectaUno = new Opcion("uno");
+        Opcion opcionCorrectaDos = new Opcion("dos");
+        Opcion opcionIncorrectaTres = new Opcion("tres");
+
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionCorrectaUno);
+        respuestaCorrecta.agregarOpcion(opcionCorrectaDos);
+
+        Respuesta respuestaUnJugador = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionCorrectaUno);
+        respuestaCorrecta.agregarOpcion(opcionIncorrectaTres);
+
+        Respuesta respuestaOtroJugador = new Respuesta();
+        respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"hola soy una pregunta??",respuestaCorrecta);
+
+        int cantExclusividades = unJugador.usarExclusividad();
+        Exclusividad unaExclusividad = new Exclusividad();
+
+        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugador);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugador);
+
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+
+        assertEquals(0, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+    }
+
+    @Test
+    public void unJugadorElijeExclusividadYRespondeMejorQueOtroEnFormatoParcial(){
+        Jugador unJugador = new Jugador("pepe");
+        Jugador otroJugador = new Jugador("pepito");
+
+        Opcion opcionCorrectaUno = new Opcion("uno");
+        Opcion opcionCorrectaDos = new Opcion("dos");
+
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionCorrectaUno);
+        respuestaCorrecta.agregarOpcion(opcionCorrectaDos);
+
+        Respuesta respuestaUnJugador = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionCorrectaUno);
+        respuestaCorrecta.agregarOpcion(opcionCorrectaDos);
+
+        Respuesta respuestaOtroJugador = new Respuesta();
+        respuestaOtroJugador.agregarOpcion(opcionCorrectaUno);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()),"hola soy una pregunta??",respuestaCorrecta);
+
+        int cantExclusividades = unJugador.usarExclusividad();
+        Exclusividad unaExclusividad = new Exclusividad();
+
+        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugador);
+        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugador);
+
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+
+        assertEquals(40, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+    }
+
+
 }
