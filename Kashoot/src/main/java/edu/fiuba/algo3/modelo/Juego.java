@@ -1,25 +1,19 @@
-package edu.fiuba.algo3;
-
-import edu.fiuba.algo3.modelo.*;
-
-import edu.fiuba.algo3.modelo.modalidades.ModalidadSinOrden;
-import edu.fiuba.algo3.modelo.formatos.Clasico;
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-
-import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.geometry.Insets;
-
+package edu.fiuba.algo3.modelo;
 
 /**
- * JavaFX App
- */
+     * JavaFX App
+     *
+     */
+
+    public class Juego {
+
+        public static void main(String args[]) {
+
+            Kashoot kashoot = new Kashoot();
+            kashoot.iniciar();
+        }
+    }
+/*
 public class App extends Application {
 
     @Override
@@ -65,7 +59,10 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        Kashoot kashoot = new Kashoot();
+        kashoot.iniciar();
+        //launch();
     }
+*/
 
-}
+
