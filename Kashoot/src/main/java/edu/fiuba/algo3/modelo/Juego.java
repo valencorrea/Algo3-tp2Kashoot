@@ -1,18 +1,36 @@
 package edu.fiuba.algo3.modelo;
 
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
 /**
      * JavaFX App
      *
      */
 
-    public class Juego {
+    public class Juego extends Application {
 
-        public static void main(String args[]) {
-
-            Kashoot kashoot = new Kashoot();
-            kashoot.iniciar();
-        }
+    public static void main(String[] args) {
+        launch(args);
     }
+    @Override
+    public void start(Stage stage) throws Exception{
+        stage.setTitle("Kashoot");
+        Kashoot kashoot = new Kashoot();
+        VBox vbox = kashoot.mostrarPregunta();
+       // vbox.getChildren().add(new TextField());
+       // vbox.getChildren().add(new TextField());
+        //vbox.setOnKeyPressed(new MainKeyboardController(playerModel,  map));
+        Scene theScene = new Scene(vbox);
+        stage.setScene(theScene);
+        stage.show();
+        stage.setFullScreen(true);
+    }
+}
+
 /*
 public class App extends Application {
 
