@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+//import edu.fiuba.algo3.resources.*;
 import edu.fiuba.algo3.modelo.modalidades.*;
 import edu.fiuba.algo3.modelo.formatos.*;
 import javafx.application.Application;
@@ -9,12 +10,15 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.io.File;
+import java.util.*;
+
 
 public class Kashoot  {
 
     private int tamanio = 20;
     ModeloObservable modelo;
-
+    private ArrayList<PreguntasYOpciones> preguntasYOpciones;
 
     public VBox mostrarPregunta(){
 
@@ -51,6 +55,21 @@ public class Kashoot  {
 
         return contenedorPrincipal;
     }
+/*
+    public void iniciar(){
+        this.preguntasYOpciones = this.leerArchivo("archivo.txt");
+    }
+
+    private ArrayList<PreguntasYOpciones> leerArchivo(String nombreArchivo){
+        ArrayList<PreguntasYOpciones> preguntasYOpciones = new ArrayList<PreguntasYOpciones>();
+        Scanner input = new Scanner(new File(nombreArchivo));
+        while (input.hasNextLine()) {
+            String line = input.nextLine();
+            System.out.println(line);
+        }
+        return preguntasYOpciones;
+    }
+*/
     private void inicializarModelo() {
 
         modelo = new ModeloObservable();
