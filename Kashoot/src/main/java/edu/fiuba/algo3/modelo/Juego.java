@@ -1,10 +1,13 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.vista.ContenedorBienvenidos;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 /**
      * JavaFX App
@@ -16,6 +19,35 @@ import javafx.stage.Stage;
     public static void main(String[] args) {
         launch(args);
     }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.setTitle("Kashoot");
+
+        Kashoot kashoot = crearModelo();
+
+        ContenedorBienvenidos contenedorPrincipal = new ContenedorBienvenidos(stage/*, kashoot*/);
+        Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
+
+        //AplicacionOnKeyPressEventHandler AplicacionOnKeyPressEventHandler = new AplicacionOnKeyPressEventHandler(stage, contenedorPrincipal.getBarraDeMenu());
+        //escenaJuego.setOnKeyPressed(AplicacionOnKeyPressEventHandler);
+
+        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage/*, escenaJuego*/);
+        Scene escenaBienvenidos = new Scene(contenedorBienvenidos, 640, 480);
+
+        stage.setScene(escenaBienvenidos);
+        stage.setFullScreen(true);
+
+        stage.show();
+    }
+
+    private Kashoot crearModelo() {
+        //ArrayList <PreguntasYOpciones> preguntasYOpciones = leerArchivo("file:src/main/java/edu.fiuba.algo3/resources/archivo.txt");
+        Kashoot kashoot = new Kashoot(/*preguntasYOpciones*/);
+        return kashoot;
+    }
+
+    /*
     @Override
     public void start(Stage stage) throws Exception{
         stage.setTitle("Kashoot");
@@ -28,7 +60,7 @@ import javafx.stage.Stage;
         stage.setScene(theScene);
         stage.show();
         stage.setFullScreen(true);
-    }
+    }*/
 }
 
 /*
