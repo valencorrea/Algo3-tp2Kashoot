@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.vista.ContenedorBienvenidos;
+import edu.fiuba.algo3.vista.ContenedorPreguntas;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
@@ -26,13 +27,13 @@ import java.util.ArrayList;
 
         Kashoot kashoot = crearModelo();
 
-        ContenedorBienvenidos contenedorPrincipal = new ContenedorBienvenidos(stage/*, kashoot*/);
-        Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
+        ContenedorPreguntas contenedorPreguntas = new ContenedorPreguntas(stage, kashoot);
+        Scene escenaJuego = new Scene(contenedorPreguntas, 640, 480);
 
         //AplicacionOnKeyPressEventHandler AplicacionOnKeyPressEventHandler = new AplicacionOnKeyPressEventHandler(stage, contenedorPrincipal.getBarraDeMenu());
         //escenaJuego.setOnKeyPressed(AplicacionOnKeyPressEventHandler);
 
-        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage/*, escenaJuego*/);
+        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego);
         Scene escenaBienvenidos = new Scene(contenedorBienvenidos, 640, 480);
 
         stage.setScene(escenaBienvenidos);

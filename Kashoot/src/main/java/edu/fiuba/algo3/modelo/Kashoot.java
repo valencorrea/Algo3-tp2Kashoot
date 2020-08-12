@@ -74,4 +74,17 @@ public class Kashoot  {
 
         modelo = new ModeloObservable();
     }
+
+    public ArrayList<Opcion> getOpciones() {// antes llamar a getpregunta
+        PreguntasYOpciones preguntaYOpciones = this.preguntasYOpciones.get(-1);
+        ArrayList<Opcion> opciones = preguntaYOpciones.getOpciones();
+        this.preguntasYOpciones.remove(-1);
+        return opciones;
+    }
+
+    public Pregunta getPregunta() {
+        PreguntasYOpciones preguntaYOpciones = this.preguntasYOpciones.get(-1);
+        Pregunta pregunta = preguntaYOpciones.getPregunta();
+        return pregunta;
+    }
 }
