@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.modelo.Opcion;
+import edu.fiuba.algo3.modelo.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
@@ -40,7 +40,8 @@ public class ContenedorPreguntas extends StackPane {
         this.preguntaYOpciones.setAlignment(Pos.TOP_CENTER);
         this.botonesExtra.setAlignment(Pos.BOTTOM_LEFT);
         this.preguntaYOpciones.setSpacing(100);
-        this.getChildren().addAll(preguntaYOpciones, botonesExtra);
+        this.getChildren().addAll(botonesExtra, preguntaYOpciones);
+
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
 
@@ -78,12 +79,18 @@ public class ContenedorPreguntas extends StackPane {
 
         HBox contenedorOpciones = new HBox();
         ArrayList<Opcion> opciones = kashoot.getOpciones();
+        Respuesta unaRespuesta = new Respuesta();
 
         for (Opcion opcion : opciones) {
             Button unBoton = new Button();
             unBoton.setText(opcion.getContenido());
             contenedorOpciones.getChildren().add(unBoton);
+
+            BotonOpcionEventHandler botonOpcionEventHandler = new BotonOpcionEventHandler(unaRespuesta, opcion);
+            unBoton.setOnAction(botonOpcionEventHandler);
         }
+
+
         contenedorOpciones.setSpacing(200);
         contenedorOpciones.setAlignment(Pos.CENTER);
         this.preguntaYOpciones.getChildren().add(contenedorOpciones);

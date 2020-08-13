@@ -33,7 +33,7 @@ import java.util.ArrayList;
         ContenedorPreguntas contenedorPreguntas = new ContenedorPreguntas(stage, kashoot);
         Scene escenaJuego = new Scene(contenedorPreguntas, 640, 480);
 
-        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego);
+        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego, kashoot);
         Scene escenaBienvenidos = new Scene(contenedorBienvenidos, 640, 480);
 
         stage.setScene(escenaBienvenidos);

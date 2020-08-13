@@ -19,6 +19,8 @@ public class Kashoot  {
     private int tamanio = 20;
     ModeloObservable modelo;
     private ArrayList<PreguntasYOpciones> preguntasYOpciones;
+    private Jugador jugador1;
+    private Jugador jugador2;
 
     public Kashoot(ArrayList<PreguntasYOpciones> unasPreguntasYOpciones){
         //NOS FALTA RECIBIR TMB LOS JUGADORES
@@ -91,5 +93,11 @@ public class Kashoot  {
         PreguntasYOpciones preguntaYOpciones = this.preguntasYOpciones.get(preguntasYOpciones.size()-1);
         Pregunta pregunta = preguntaYOpciones.getPregunta();
         return pregunta;
+    }
+
+    public void agregarJugadores(Jugador jugador1, Jugador jugador2) {
+
+        this.jugador1 = jugador1;
+        this.jugador2 = jugador2;
     }
 }
