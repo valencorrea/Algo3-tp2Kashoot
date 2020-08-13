@@ -32,7 +32,7 @@ public class Kashoot  {
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"una pregunta????????",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"una pregunta?",respuestaCorrecta);
 
         var label = new Label(unaPregunta.getContenido());
 

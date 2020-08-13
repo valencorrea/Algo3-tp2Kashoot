@@ -63,9 +63,7 @@ import java.util.ArrayList;
 
 
         PreguntasYOpciones prgyOpc1= new PreguntasYOpciones(unaPregunta,opciones);
-
         ArrayList <PreguntasYOpciones> preguntasYOpciones= new ArrayList<PreguntasYOpciones>();
-        preguntasYOpciones.add(prgyOpc1);
 
         Kashoot kashoot = new Kashoot(preguntasYOpciones);
         return kashoot;

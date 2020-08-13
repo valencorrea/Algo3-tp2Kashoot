@@ -22,39 +22,51 @@ public class ContenedorPreguntas extends BorderPane {
 
     //BarraDeMenu menuBar;
     //VistaKashoot vistaKashoot;
+    VBox botonesExtra;
+    VBox preguntaYOpciones;
+
     Canvas canvasCentral;
     VBox contenedorCentral;
-    Label pregunta;
+
 
     public ContenedorPreguntas(Stage stage, Kashoot kashoot) {
         //this.setMenu(stage);
         //this.setCentro(kashoot);
         //this.setConsola();
-        this.contenedorCentral = new VBox();
-
+        //this.contenedorCentral = new VBox();
         this.setPregunta(kashoot);
-        this.setBotoneraOpciones(kashoot);
         this.setBotoneraExtras(kashoot);
 
-
+        this.getChildren().addAll(preguntaYOpciones, botonesExtra);
+        this.setHeight(500);
     }
 
     private void setBotoneraExtras(Kashoot kashoot){
-        VBox botoneraExtras = new VBox(new Button("Usar Exclusividad"), new Button("Usar multiplicador x2"), new Button("Usar multiplicador x3"));
+        VBox botoneraExtras = new VBox();
+        Button boton1 = new Button();
+        boton1.setText("Usar Exclusividad");
 
-        contenedorCentral.getChildren().add(botoneraExtras);
+        Button boton2 =new Button();
+        boton2.setText("Usar multiplicador x2");
+
+        Button boton3 =new Button();
+        boton3.setText("Usar multiplicador x3");
+
+        botoneraExtras.getChildren().addAll(boton1,boton2,boton3);
+        this.botonesExtra = botoneraExtras;
     }
 
     private void setPregunta(Kashoot kashoot){
-        Label textoPregunta = new Label();
+        /*Label textoPregunta = new Label();
         Pregunta pregunta = kashoot.getPregunta();
         String unContenido = pregunta.getContenido();
-        textoPregunta.setText(unContenido);
-        this.pregunta = textoPregunta;
 
-        contenedorCentral.getChildren().add(textoPregunta);
+        textoPregunta.setText(unContenido);
+        */
+        this.preguntaYOpciones = kashoot.mostrarPregunta(); //esto es un Vbox
     }
 //FALTAN GUARDAR LOS SETTERS EN EL VERTICAL BOX
+/*
     private void setBotoneraOpciones(Kashoot kashoot) {
 
         HBox contenedorOpciones = new HBox();
@@ -65,7 +77,8 @@ public class ContenedorPreguntas extends BorderPane {
             unBoton.setText(opcion.getContenido());
             contenedorOpciones.getChildren().add(unBoton);
         }
-        contenedorCentral.getChildren().add(contenedorOpciones);
+        this.botonesOpciones = contenedorOpciones;
+        this.botonesOpciones.setSpacing(300);
 /*
         Button botonMover = new Button();
         botonMover.setText("Mover");
@@ -83,7 +96,7 @@ public class ContenedorPreguntas extends BorderPane {
 
         this.setLeft(contenedorVertical);
 */
-    }
+
 /*
     private void setMenu(Stage stage) {
         this.menuBar = new BarraDeMenu(stage);
