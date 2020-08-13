@@ -39,10 +39,10 @@ public class ContenedorBienvenidos extends VBox {
             labelIngresarNombre.setTextFill(Color.web("#66A7C5"));
 
             TextField textoJugador1 = new TextField();
-            textoJugador1.setPromptText("Nombre del jugador 1:");
+            textoJugador1.setPromptText("Nombre del jugador 1");
             textoJugador1.setAlignment(Pos.CENTER);
             TextField textoJugador2 = new TextField();
-            textoJugador2.setPromptText("Nombre del jugador 2:");
+            textoJugador2.setPromptText("Nombre del jugador 2");
             textoJugador2.setAlignment(Pos.CENTER);
 
             HBox contenedorDeNombres = new HBox(textoJugador1, textoJugador2);
@@ -52,11 +52,17 @@ public class ContenedorBienvenidos extends VBox {
             Button botonJugar = new Button();
             botonJugar.setText("Jugar");
 
-            BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena, textoJugador1, textoJugador2);
+            Label mensajeError = new Label();
+            mensajeError.setAlignment(Pos.CENTER);
+            contenedorDeNombres.getChildren().add(mensajeError);
+
+
+
+            BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena, textoJugador1, textoJugador2, mensajeError);
 
             botonJugar.setOnAction(botonJugarEventHandler);
 
-            this.getChildren().addAll(labelBienvenida, labelIngresarNombre, contenedorDeNombres, botonJugar);
+            this.getChildren().addAll(labelBienvenida, labelIngresarNombre, contenedorDeNombres,mensajeError, botonJugar);
 
 /*
             Button botonEntrar = new Button();

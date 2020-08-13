@@ -16,11 +16,12 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
     TextField otroNombre;
     Label mensajeError;
 
-    public BotonJugarEventHandler(Stage stage, Scene proximaEscena, TextField unTexto, TextField otroTexto) {
+    public BotonJugarEventHandler(Stage stage, Scene proximaEscena, TextField unTexto, TextField otroTexto, Label mensajeDeError) {
         this.stage = stage;
         this.proximaEscena = proximaEscena;
         this.unNombre = unTexto;
         this.otroNombre = otroTexto;
+        this.mensajeError = mensajeDeError;
     }
 
     public boolean nombresSonValidos(){
