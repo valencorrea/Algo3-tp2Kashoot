@@ -20,6 +20,10 @@ public class Kashoot  {
     ModeloObservable modelo;
     private ArrayList<PreguntasYOpciones> preguntasYOpciones;
 
+    public Kashoot(ArrayList<PreguntasYOpciones> unasPreguntasYOpciones){
+        //NOS FALTA RECIBIR TMB LOS JUGADORES
+        this.preguntasYOpciones = unasPreguntasYOpciones;
+    }
     public VBox mostrarPregunta(){
 
         Opcion opcionCorrecta = new Opcion("holis soy correcta");
@@ -28,7 +32,7 @@ public class Kashoot  {
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"una pregunta????????",respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()),"una pregunta?",respuestaCorrecta);
 
         var label = new Label(unaPregunta.getContenido());
 
@@ -73,5 +77,18 @@ public class Kashoot  {
     private void inicializarModelo() {
 
         modelo = new ModeloObservable();
+    }
+
+    public ArrayList<Opcion> getOpciones() {// antes llamar a getpregunta
+        PreguntasYOpciones preguntaYOpciones = this.preguntasYOpciones.get(preguntasYOpciones.size()-1);
+        ArrayList<Opcion> opciones = preguntaYOpciones.getOpciones();
+        this.preguntasYOpciones.remove(preguntasYOpciones.size()-1);
+        return opciones;
+    }
+
+    public Pregunta getPregunta() {
+        PreguntasYOpciones preguntaYOpciones = this.preguntasYOpciones.get(preguntasYOpciones.size()-1);
+        Pregunta pregunta = preguntaYOpciones.getPregunta();
+        return pregunta;
     }
 }
