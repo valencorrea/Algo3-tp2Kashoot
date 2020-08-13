@@ -29,11 +29,11 @@ public class ContenedorBienvenidos extends VBox {
             this.setSpacing(20);
             this.setPadding(new Insets(25));
 
-
-            Image imagen = new Image("resources/imagenFondo.jpg");
+            /*SIGUE SIN FUNCIONAR :( *
+           /* Image imagen = new Image("resources/imagenFondo.jpg");
             BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
             this.setBackground(new Background(imagenDeFondo));
-
+    */
 
             var labelBienvenida = new Label("Bienvenidos al kashoot!");
             labelBienvenida.setFont(Font.font("Tahoma", FontWeight.BOLD, 30));

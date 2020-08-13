@@ -18,7 +18,7 @@ import edu.fiuba.algo3.modelo.Pregunta;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class ContenedorPreguntas extends StackPane {
+public class ContenedorPreguntas extends VBox {
 
     //BarraDeMenu menuBar;
     //VistaKashoot vistaKashoot;
