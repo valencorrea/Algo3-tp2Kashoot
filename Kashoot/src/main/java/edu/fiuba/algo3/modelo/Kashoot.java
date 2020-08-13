@@ -20,6 +20,10 @@ public class Kashoot  {
     ModeloObservable modelo;
     private ArrayList<PreguntasYOpciones> preguntasYOpciones;
 
+    public Kashoot(ArrayList<PreguntasYOpciones> unasPreguntasYOpciones){
+        //NOS FALTA RECIBIR TMB LOS JUGADORES
+        this.preguntasYOpciones = unasPreguntasYOpciones;
+    }
     public VBox mostrarPregunta(){
 
         Opcion opcionCorrecta = new Opcion("holis soy correcta");
@@ -76,14 +80,14 @@ public class Kashoot  {
     }
 
     public ArrayList<Opcion> getOpciones() {// antes llamar a getpregunta
-        PreguntasYOpciones preguntaYOpciones = this.preguntasYOpciones.get(-1);
+        PreguntasYOpciones preguntaYOpciones = this.preguntasYOpciones.get(preguntasYOpciones.size()-1);
         ArrayList<Opcion> opciones = preguntaYOpciones.getOpciones();
-        this.preguntasYOpciones.remove(-1);
+        this.preguntasYOpciones.remove(preguntasYOpciones.size()-1);
         return opciones;
     }
 
     public Pregunta getPregunta() {
-        PreguntasYOpciones preguntaYOpciones = this.preguntasYOpciones.get(-1);
+        PreguntasYOpciones preguntaYOpciones = this.preguntasYOpciones.get(preguntasYOpciones.size()-1);
         Pregunta pregunta = preguntaYOpciones.getPregunta();
         return pregunta;
     }

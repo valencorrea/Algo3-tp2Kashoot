@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.formatos.Clasico;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadSinOrden;
 import edu.fiuba.algo3.vista.ContenedorBienvenidos;
 import edu.fiuba.algo3.vista.ContenedorPreguntas;
 import javafx.application.Application;
@@ -8,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -44,7 +47,27 @@ import java.util.ArrayList;
 
     private Kashoot crearModelo() {
         //ArrayList <PreguntasYOpciones> preguntasYOpciones = leerArchivo("file:src/main/java/edu.fiuba.algo3/resources/archivo.txt");
-        Kashoot kashoot = new Kashoot(/*preguntasYOpciones*/);
+
+        Opcion opcionCorrecta = new Opcion("Verdadero");
+        Opcion opcionIncorrecta = new Opcion("Falsa");
+
+        ArrayList <Opcion> opciones = new ArrayList<Opcion>();
+        opciones.add(opcionCorrecta);
+        opciones.add(opcionIncorrecta);
+
+        Respuesta respuestaIncorrecta = new Respuesta();
+        respuestaIncorrecta.agregarOpcion(opcionIncorrecta);
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Soy pregunta?", respuestaCorrecta);
+
+
+        PreguntasYOpciones prgyOpc1= new PreguntasYOpciones(unaPregunta,opciones);
+
+        ArrayList <PreguntasYOpciones> preguntasYOpciones= new ArrayList<PreguntasYOpciones>();
+        preguntasYOpciones.add(prgyOpc1);
+
+        Kashoot kashoot = new Kashoot(preguntasYOpciones);
         return kashoot;
     }
 

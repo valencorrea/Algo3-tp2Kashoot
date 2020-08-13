@@ -30,14 +30,19 @@ public class ContenedorPreguntas extends BorderPane {
         //this.setMenu(stage);
         //this.setCentro(kashoot);
         //this.setConsola();
+        this.contenedorCentral = new VBox();
+
         this.setPregunta(kashoot);
         this.setBotoneraOpciones(kashoot);
         this.setBotoneraExtras(kashoot);
+
+
     }
 
     private void setBotoneraExtras(Kashoot kashoot){
         VBox botoneraExtras = new VBox(new Button("Usar Exclusividad"), new Button("Usar multiplicador x2"), new Button("Usar multiplicador x3"));
 
+        contenedorCentral.getChildren().add(botoneraExtras);
     }
 
     private void setPregunta(Kashoot kashoot){
@@ -46,6 +51,8 @@ public class ContenedorPreguntas extends BorderPane {
         String unContenido = pregunta.getContenido();
         textoPregunta.setText(unContenido);
         this.pregunta = textoPregunta;
+
+        contenedorCentral.getChildren().add(textoPregunta);
     }
 //FALTAN GUARDAR LOS SETTERS EN EL VERTICAL BOX
     private void setBotoneraOpciones(Kashoot kashoot) {
@@ -58,6 +65,7 @@ public class ContenedorPreguntas extends BorderPane {
             unBoton.setText(opcion.getContenido());
             contenedorOpciones.getChildren().add(unBoton);
         }
+        contenedorCentral.getChildren().add(contenedorOpciones);
 /*
         Button botonMover = new Button();
         botonMover.setText("Mover");
