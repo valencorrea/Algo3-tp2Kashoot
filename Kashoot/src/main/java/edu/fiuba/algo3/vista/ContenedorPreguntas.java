@@ -23,7 +23,7 @@ public class ContenedorPreguntas extends BorderPane {
     //BarraDeMenu menuBar;
     //VistaKashoot vistaKashoot;
     VBox botonesExtra;
-    VBox preguntaYOpciones;
+    VBox preguntaYOpciones = new VBox();
 
     Canvas canvasCentral;
     VBox contenedorCentral;
@@ -35,6 +35,7 @@ public class ContenedorPreguntas extends BorderPane {
         //this.setConsola();
         //this.contenedorCentral = new VBox();
         this.setPregunta(kashoot);
+        this.setBotoneraOpciones(kashoot);
         this.setBotoneraExtras(kashoot);
 
         this.getChildren().addAll(preguntaYOpciones, botonesExtra);
@@ -54,31 +55,34 @@ public class ContenedorPreguntas extends BorderPane {
 
         botoneraExtras.getChildren().addAll(boton1,boton2,boton3);
         this.botonesExtra = botoneraExtras;
+
     }
 
     private void setPregunta(Kashoot kashoot){
-        /*Label textoPregunta = new Label();
+        Label textoPregunta = new Label();
         Pregunta pregunta = kashoot.getPregunta();
         String unContenido = pregunta.getContenido();
 
         textoPregunta.setText(unContenido);
-        */
-        this.preguntaYOpciones = kashoot.mostrarPregunta(); //esto es un Vbox
+        this.preguntaYOpciones.getChildren().add(textoPregunta);
+        //this.preguntaYOpciones = kashoot.mostrarPregunta(); //esto es un Vbox
     }
 //FALTAN GUARDAR LOS SETTERS EN EL VERTICAL BOX
-/*
+
     private void setBotoneraOpciones(Kashoot kashoot) {
 
         HBox contenedorOpciones = new HBox();
         ArrayList<Opcion> opciones = kashoot.getOpciones();
 
-        for(Opcion opcion: opciones){
+        for (Opcion opcion : opciones) {
             Button unBoton = new Button();
             unBoton.setText(opcion.getContenido());
             contenedorOpciones.getChildren().add(unBoton);
         }
-        this.botonesOpciones = contenedorOpciones;
-        this.botonesOpciones.setSpacing(300);
+        this.preguntaYOpciones.getChildren().add(contenedorOpciones);
+    }
+        //this.botonesOpciones = contenedorOpciones;
+        //this.botonesOpciones.setSpacing(300);
 /*
         Button botonMover = new Button();
         botonMover.setText("Mover");

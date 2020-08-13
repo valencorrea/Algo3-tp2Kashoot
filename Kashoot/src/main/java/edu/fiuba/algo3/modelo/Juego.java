@@ -55,8 +55,6 @@ import java.util.ArrayList;
         opciones.add(opcionCorrecta);
         opciones.add(opcionIncorrecta);
 
-        Respuesta respuestaIncorrecta = new Respuesta();
-        respuestaIncorrecta.agregarOpcion(opcionIncorrecta);
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Soy pregunta?", respuestaCorrecta);
@@ -64,6 +62,7 @@ import java.util.ArrayList;
 
         PreguntasYOpciones prgyOpc1= new PreguntasYOpciones(unaPregunta,opciones);
         ArrayList <PreguntasYOpciones> preguntasYOpciones= new ArrayList<PreguntasYOpciones>();
+        preguntasYOpciones.add(prgyOpc1);
 
         Kashoot kashoot = new Kashoot(preguntasYOpciones);
         return kashoot;
