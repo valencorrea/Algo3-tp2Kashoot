@@ -18,7 +18,7 @@ import edu.fiuba.algo3.modelo.Pregunta;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class ContenedorPreguntas extends BorderPane {
+public class ContenedorPreguntas extends StackPane {
 
     //BarraDeMenu menuBar;
     //VistaKashoot vistaKashoot;
@@ -37,9 +37,13 @@ public class ContenedorPreguntas extends BorderPane {
         this.setPregunta(kashoot);
         this.setBotoneraOpciones(kashoot);
         this.setBotoneraExtras(kashoot);
-
+        this.preguntaYOpciones.setAlignment(Pos.TOP_CENTER);
+        this.botonesExtra.setAlignment(Pos.BOTTOM_LEFT);
+        this.preguntaYOpciones.setSpacing(100);
         this.getChildren().addAll(preguntaYOpciones, botonesExtra);
         this.setHeight(500);
+        this.setAlignment(Pos.CENTER);
+
     }
 
     private void setBotoneraExtras(Kashoot kashoot){
@@ -59,13 +63,14 @@ public class ContenedorPreguntas extends BorderPane {
     }
 
     private void setPregunta(Kashoot kashoot){
-        Label textoPregunta = new Label();
+        var textoPregunta = new Label();
+
         Pregunta pregunta = kashoot.getPregunta();
         String unContenido = pregunta.getContenido();
 
         textoPregunta.setText(unContenido);
+        textoPregunta.setFont(Font.font("Tahoma",FontWeight.BOLD, 40));
         this.preguntaYOpciones.getChildren().add(textoPregunta);
-        //this.preguntaYOpciones = kashoot.mostrarPregunta(); //esto es un Vbox
     }
 //FALTAN GUARDAR LOS SETTERS EN EL VERTICAL BOX
 
@@ -79,7 +84,10 @@ public class ContenedorPreguntas extends BorderPane {
             unBoton.setText(opcion.getContenido());
             contenedorOpciones.getChildren().add(unBoton);
         }
+        contenedorOpciones.setSpacing(200);
+        contenedorOpciones.setAlignment(Pos.CENTER);
         this.preguntaYOpciones.getChildren().add(contenedorOpciones);
+
     }
         //this.botonesOpciones = contenedorOpciones;
         //this.botonesOpciones.setSpacing(300);

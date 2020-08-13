@@ -24,6 +24,7 @@ public class Kashoot  {
         //NOS FALTA RECIBIR TMB LOS JUGADORES
         this.preguntasYOpciones = unasPreguntasYOpciones;
     }
+    /*
     public VBox mostrarPregunta(){
 
         Opcion opcionCorrecta = new Opcion("holis soy correcta");
@@ -59,7 +60,7 @@ public class Kashoot  {
 
         return contenedorPrincipal;
     }
-/*
+
     public void iniciar(){
         this.preguntasYOpciones = this.leerArchivo("archivo.txt");
     }
