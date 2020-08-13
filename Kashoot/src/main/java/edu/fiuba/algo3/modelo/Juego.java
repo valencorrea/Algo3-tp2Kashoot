@@ -26,6 +26,7 @@ import java.util.ArrayList;
 
     @Override
     public void start(Stage stage) throws Exception {
+
         stage.setTitle("Kashoot");
 
         Kashoot kashoot = crearModelo();
@@ -39,6 +40,14 @@ import java.util.ArrayList;
         stage.setScene(escenaBienvenidos);
         stage.setFullScreen(true);
 
+        /*musica:
+         *
+         *  String musicFile = "file:src/main/java/edu.fiuba.algo3/resources/Pam.mp3";
+         *  Media sound = new Media(new File(musicFile).toURI().toString());
+         *  MediaPlayer mediaPlayer = new MediaPlayer(sound);
+         *  mediaPlayer.play();
+         *
+         */
         stage.show();
     }
 

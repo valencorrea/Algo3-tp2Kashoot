@@ -37,8 +37,8 @@ public class ContenedorPreguntas extends StackPane {
         this.setPregunta(kashoot);
         this.setBotoneraOpciones(kashoot);
         this.setBotoneraExtras(kashoot);
-        this.preguntaYOpciones.setAlignment(Pos.TOP_CENTER);
-        this.botonesExtra.setAlignment(Pos.BOTTOM_LEFT);
+        this.preguntaYOpciones.setAlignment(Pos.CENTER);
+        this.botonesExtra.setAlignment(Pos.TOP_RIGHT);
         this.preguntaYOpciones.setSpacing(100);
         this.getChildren().addAll(botonesExtra, preguntaYOpciones);
 
@@ -71,6 +71,8 @@ public class ContenedorPreguntas extends StackPane {
 
         textoPregunta.setText(unContenido);
         textoPregunta.setFont(Font.font("Tahoma",FontWeight.BOLD, 40));
+        textoPregunta.setTextFill(Color.CORNFLOWERBLUE);
+
         this.preguntaYOpciones.getChildren().add(textoPregunta);
     }
 //FALTAN GUARDAR LOS SETTERS EN EL VERTICAL BOX

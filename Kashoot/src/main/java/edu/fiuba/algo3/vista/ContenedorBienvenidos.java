@@ -9,6 +9,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.*;
@@ -27,13 +28,16 @@ public class ContenedorBienvenidos extends VBox {
             this.setAlignment(Pos.CENTER);
             this.setSpacing(20);
             this.setPadding(new Insets(25));
-            //Image imagen = new Image("file:src/vista/imagenes/textura.png");
-            //BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-            //this.setBackground(new Background(imagenDeFondo));
+
+            /*NO FUNCIONA :(
+            Image imagen = new Image("file:src/main/java/edu.fiuba.algo3/resources/imagenFondo.jpg");
+            BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+            this.setBackground(new Background(imagenDeFondo));
+            */
 
             var labelBienvenida = new Label("Bienvenidos al kashoot!");
             labelBienvenida.setFont(Font.font("Tahoma", FontWeight.BOLD, 30));
-            labelBienvenida.setTextFill(Color.RED);
+            labelBienvenida.setTextFill(Color.HOTPINK);
 
             var labelIngresarNombre = new Label("ingresen sus nombres para comenzar");
             labelIngresarNombre.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
