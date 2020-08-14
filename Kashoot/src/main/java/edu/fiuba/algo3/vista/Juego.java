@@ -35,9 +35,9 @@ import java.util.ArrayList;
         /* música */
 
         Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
+
         MediaPlayer musica = new MediaPlayer(mp3MusicFile);
         musica.setAutoPlay(true);
-
         musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
 
         musica.play();
@@ -57,8 +57,6 @@ import java.util.ArrayList;
         stage.setFullScreen(true);
 
 
-
-
         stage.show();
     }
 
@@ -75,7 +73,7 @@ import java.util.ArrayList;
 
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Soy pregunta?", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Soy una pregunta?", respuestaCorrecta);
 
 
         PreguntasYOpciones prgyOpc1= new PreguntasYOpciones(unaPregunta,opciones);

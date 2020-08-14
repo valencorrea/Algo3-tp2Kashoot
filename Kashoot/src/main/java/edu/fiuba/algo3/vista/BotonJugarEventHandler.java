@@ -6,6 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
@@ -29,11 +30,13 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
         if(unNombre.getText().trim().equals("")){
             mensajeError.setText("No se puede tener un nombre vacio, por favor vuelva a intentar");
             mensajeError.setAlignment(Pos.CENTER_LEFT);
+            mensajeError.setTextFill(Color.DARKREDdasda);
             estado = false;
         }
         else if(otroNombre.getText().trim().equals("")){
             mensajeError.setText("No se puede tener un nombre vacio, por favor vuelva a intentar");
             mensajeError.setAlignment(Pos.CENTER_RIGHT);
+            mensajeError.setTextFill(Color.DARKRED);
             estado = false;
         }
         return estado;

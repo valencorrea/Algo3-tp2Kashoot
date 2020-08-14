@@ -1,16 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
-//import edu.fiuba.algo3.resources.*;
-import edu.fiuba.algo3.modelo.modalidades.*;
-import edu.fiuba.algo3.modelo.formatos.*;
-import javafx.application.Application;
-import javafx.geometry.*;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.io.File;
+import edu.fiuba.algo3.vista.ModeloObservable;
+
 import java.util.*;
 
 

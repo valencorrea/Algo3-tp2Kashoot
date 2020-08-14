@@ -33,7 +33,6 @@ public class ContenedorBienvenidos extends VBox {
             BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
             this.setBackground(new Background(imagenDeFondo));
 
-
             var labelBienvenida = new Label("Bienvenidos al kashoot!");
             labelBienvenida.setFont(Font.font("Tahoma", FontWeight.BOLD, 30));
             labelBienvenida.setTextFill(Color.HOTPINK);
@@ -54,7 +53,6 @@ public class ContenedorBienvenidos extends VBox {
 
             kashoot.agregarJugadores(jugador1, jugador2);
 
-
             HBox contenedorDeNombres = new HBox(textoJugador1, textoJugador2);
             contenedorDeNombres.setSpacing(100);
             contenedorDeNombres.setAlignment(Pos.CENTER);
@@ -67,27 +65,12 @@ public class ContenedorBienvenidos extends VBox {
             contenedorDeNombres.getChildren().add(mensajeError);
 
 
-
             BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena, textoJugador1, textoJugador2, mensajeError);
 
             botonJugar.setOnAction(botonJugarEventHandler);
 
             this.getChildren().addAll(labelBienvenida, labelIngresarNombre, contenedorDeNombres,mensajeError, botonJugar);
 
-/*
-            Button botonEntrar = new Button();
-            botonEntrar.setText("Entrar");
-
-            Label etiqueta = new Label();
-            etiqueta.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
-
-            etiqueta.setText("Bienvenidos a la aplicación MVC con JAVA FX de algoritmos y programación III. Haga click en entrar");
-            etiqueta.setTextFill(Color.web("#66A7C5"));
-
-            BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(stage, proximaEscena);
-            botonEntrar.setOnAction(botonEntrarHandler);
-
-            this.getChildren().addAll(etiqueta, botonEntrar);
-        */}
+        }
 
 }
