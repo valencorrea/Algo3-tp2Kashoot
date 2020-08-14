@@ -30,7 +30,7 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
         if(unNombre.getText().trim().equals("")){
             mensajeError.setText("No se puede tener un nombre vacio, por favor vuelva a intentar");
             mensajeError.setAlignment(Pos.CENTER_LEFT);
-            mensajeError.setTextFill(Color.DARKREDdasda);
+            mensajeError.setTextFill(Color.DARKRED);
             estado = false;
         }
         else if(otroNombre.getText().trim().equals("")){
