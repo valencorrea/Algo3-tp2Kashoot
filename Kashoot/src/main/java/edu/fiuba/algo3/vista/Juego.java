@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.lang.reflect.Array;
@@ -31,6 +32,17 @@ import java.util.ArrayList;
     @Override
     public void start(Stage stage) throws Exception {
 
+        /* música */
+
+        Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
+        MediaPlayer musica = new MediaPlayer(mp3MusicFile);
+        musica.setAutoPlay(true);
+
+        musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
+
+        musica.play();
+        /**/
+
         stage.setTitle("Kashoot");
 
         Kashoot kashoot = crearModelo();
@@ -44,11 +56,8 @@ import java.util.ArrayList;
         stage.setScene(escenaBienvenidos);
         stage.setFullScreen(true);
 
-        Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
 
-        MediaPlayer musicplayer = new MediaPlayer(mp3MusicFile);
-        musicplayer.setAutoPlay(true);
-        musicplayer.play();
+
 
         stage.show();
     }
