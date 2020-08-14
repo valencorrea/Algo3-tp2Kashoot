@@ -34,6 +34,12 @@ public class ContenedorPreguntas extends VBox {
         //this.setCentro(kashoot);
         //this.setConsola();
         //this.contenedorCentral = new VBox();
+
+        Image imagen = new Image("patronpreguntas.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        this.setBackground(new Background(imagenDeFondo));
+
+
         this.setPregunta(kashoot);
         this.setBotoneraOpciones(kashoot);
         this.setBotoneraExtras(kashoot);

@@ -9,8 +9,11 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -41,20 +44,19 @@ import java.util.ArrayList;
         stage.setScene(escenaBienvenidos);
         stage.setFullScreen(true);
 
-        /*musica:
-         *
-         *  String musicFile = "";
-         *  Media sound = new Media(new File(musicFile).toURI().toString());
-         *  MediaPlayer mediaPlayer = new MediaPlayer(sound);
-         *  mediaPlayer.play();
-         *
-         */
+//        Media mp3MusicFile = new Media(getClass().getResource("mipan.mp3").toExternalForm());
+
+        /*MediaPlayer musicplayer = new MediaPlayer(mp3MusicFile);
+        musicplayer.setAutoPlay(true);
+        musicplayer.setVolume(0.9);
+        musicplayer.play();*/
+
         stage.show();
     }
 
     private Kashoot crearModelo() {
 
-        //ArrayList <PreguntasYOpciones> preguntasYOpciones = leerArchivo("file:src/main/java/edu.fiuba.algo3/resources/archivo.txt");
+        //ArrayList <PreguntasYOpciones> preguntasYOpciones = leerArchivo("resources/archivo.txt");
 
         Opcion opcionCorrecta = new Opcion("Verdadero");
         Opcion opcionIncorrecta = new Opcion("Falsa");
