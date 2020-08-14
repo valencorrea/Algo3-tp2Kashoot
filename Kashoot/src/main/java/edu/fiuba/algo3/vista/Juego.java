@@ -44,12 +44,11 @@ import java.util.ArrayList;
         stage.setScene(escenaBienvenidos);
         stage.setFullScreen(true);
 
-//        Media mp3MusicFile = new Media(getClass().getResource("mipan.mp3").toExternalForm());
+        Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
 
-        /*MediaPlayer musicplayer = new MediaPlayer(mp3MusicFile);
+        MediaPlayer musicplayer = new MediaPlayer(mp3MusicFile);
         musicplayer.setAutoPlay(true);
-        musicplayer.setVolume(0.9);
-        musicplayer.play();*/
+        musicplayer.play();
 
         stage.show();
     }
