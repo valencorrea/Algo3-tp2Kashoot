@@ -34,13 +34,13 @@ import java.util.ArrayList;
 
         /* música */
 
-        Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
+        //Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
 
-        MediaPlayer musica = new MediaPlayer(mp3MusicFile);
-        musica.setAutoPlay(true);
-        musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
+        //MediaPlayer musica = new MediaPlayer(mp3MusicFile);
+        //musica.setAutoPlay(true);
+        //musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
 
-        musica.play();
+        //musica.play();
         /**/
 
         stage.setTitle("Kashoot");
@@ -75,12 +75,12 @@ import java.util.ArrayList;
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Soy una pregunta?", respuestaCorrecta);
 
+        Ronda ronda = new Ronda();
+        ronda.agregarPregunta(unaPregunta);
+        ronda.agregarOpciones(opciones);
 
-        PreguntasYOpciones prgyOpc1= new PreguntasYOpciones(unaPregunta,opciones);
-        ArrayList <PreguntasYOpciones> preguntasYOpciones= new ArrayList<PreguntasYOpciones>();
-        preguntasYOpciones.add(prgyOpc1);
-
-        Kashoot kashoot = new Kashoot(preguntasYOpciones);
+        Kashoot kashoot = new Kashoot();
+        kashoot.agregarRonda(ronda);
         return kashoot;
     }
 
