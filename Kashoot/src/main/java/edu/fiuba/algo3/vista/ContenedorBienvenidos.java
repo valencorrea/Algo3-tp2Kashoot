@@ -68,6 +68,7 @@ public class ContenedorBienvenidos extends VBox {
 
             Button botonJugar = new Button();
             botonJugar.setText("JUGAR");
+            botonJugar.setFont(Font.font("Tahoma", FontWeight.EXTRA_LIGHT, 36));
             //botonJugar.setScaleX(2);
             //botonJugar.setScaleY(2);
             botonJugar.setPrefSize(200, 80);
