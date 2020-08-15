@@ -26,6 +26,7 @@ public class ContenedorPreguntas extends VBox {
     VBox preguntaYOpciones = new VBox();
     Canvas canvasCentral;
     VBox contenedorCentral;
+    Stage stage;
 
 
     public ContenedorPreguntas(Stage stage, Kashoot kashoot) {
@@ -46,16 +47,16 @@ public class ContenedorPreguntas extends VBox {
         this.botonesExtra.setAlignment(Pos.TOP_RIGHT);
         this.preguntaYOpciones.setSpacing(100);
         this.getChildren().addAll(botonesExtra, preguntaYOpciones);
-
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
-
+        this.stage = stage;
     }
 
     private void setBotoneraExtras(Kashoot kashoot){
         VBox botoneraExtras = new VBox();
         Button boton1 = new Button();
-        boton1.setText("Usar Exclusividad");
+        boton1.setText("Responder con exclusividad");
+
 
         Button multiplicadorX2 =new Button();
         multiplicadorX2.setText("Responder con multiplicador x2");
