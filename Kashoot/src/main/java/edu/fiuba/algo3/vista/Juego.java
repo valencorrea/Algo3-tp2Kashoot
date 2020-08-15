@@ -34,13 +34,13 @@ import java.util.ArrayList;
 
         /* música */
 
-        Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
+       // Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
 
-        MediaPlayer musica = new MediaPlayer(mp3MusicFile);
-        musica.setAutoPlay(true);
-        musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
+      //  MediaPlayer musica = new MediaPlayer(mp3MusicFile);
+       // musica.setAutoPlay(true);
+       // musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
 
-        musica.play();
+      //  musica.play();
         /**/
 
         stage.setTitle("Kashoot");
