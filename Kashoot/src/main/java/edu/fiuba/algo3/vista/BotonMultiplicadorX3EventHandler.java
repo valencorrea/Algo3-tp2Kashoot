@@ -23,8 +23,7 @@ public class BotonMultiplicadorX3EventHandler implements EventHandler<ActionEven
 
         Jugador jugadorActual = kashoot.obtenerJugadorActual();
         jugadorActual.multiplicarX2(this.vista.getRespuesta());
-        int puntaje = jugadorActual.responder(this.vista.getPregunta(), this.vista.getRespuesta());
-        jugadorActual.asignarPuntajeRonda(puntaje);
+        jugadorActual.responder(this.vista.getPregunta(), this.vista.getRespuesta());
         /*if(vista.terminoElJuego()){
             stage.setScene()
         }*/

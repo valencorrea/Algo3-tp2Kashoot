@@ -21,9 +21,7 @@ public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
     @Override
     public void handle(ActionEvent actionEvent) {
         Jugador jugadorActual = kashoot.obtenerJugadorActual();
-        int resultado = jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
-        jugadorActual.asignarPuntajeRonda(resultado);
-
+        jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
         this.vista.actualizar();
     }
 }

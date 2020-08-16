@@ -74,7 +74,7 @@ import java.util.ArrayList;
 
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Soy una pregunta?", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Soy una pregunta?", respuestaCorrecta);
 
         Ronda ronda1 = new Ronda();
         ronda1.agregarPregunta(unaPregunta);
