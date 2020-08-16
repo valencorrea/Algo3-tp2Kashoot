@@ -38,18 +38,21 @@ public class ContenedorPreguntas extends VBox {
         Image imagen = new Image("patronpreguntas.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
-
-
-        this.setPregunta(kashoot);
-        this.setBotoneraOpciones(kashoot);
-        this.setBotoneraExtras(kashoot);
+        this.stage = stage;
+        this.setDatos(kashoot);
+        this.setHeight(500);
+        this.setAlignment(Pos.CENTER);
         this.preguntaYOpciones.setAlignment(Pos.CENTER);
         this.botonesExtra.setAlignment(Pos.TOP_RIGHT);
         this.preguntaYOpciones.setSpacing(100);
         this.getChildren().addAll(botonesExtra, preguntaYOpciones);
-        this.setHeight(500);
-        this.setAlignment(Pos.CENTER);
-        this.stage = stage;
+    }
+
+    private void setDatos(Kashoot kashoot) {
+        this.setPregunta(kashoot);
+        this.setBotoneraOpciones(kashoot);
+        this.setBotoneraExtras(kashoot);
+
     }
 
     private void setBotoneraExtras(Kashoot kashoot){
