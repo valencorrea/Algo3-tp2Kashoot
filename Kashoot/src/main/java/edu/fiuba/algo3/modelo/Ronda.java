@@ -7,6 +7,10 @@ public class Ronda {
     private Pregunta pregunta;
     private ArrayList<Opcion> opciones;
     private int turnosJugados = 0;
+    private Exclusividad exclusividad = null;
+    private int cantidadExclusividades = 0;
+
+    //private ArrayList<int> puntajes = new ArrayList<int>();
 
     public void agregarOpciones(ArrayList<Opcion> opciones){
         this.opciones = opciones;
@@ -31,5 +35,12 @@ public class Ronda {
 
     public Pregunta getPregunta() {
         return this.pregunta;
+    }
+
+    public void jugarConExclusividad() {
+        if(this.exclusividad == null){
+            this.exclusividad = new Exclusividad();
+        }
+        this.cantidadExclusividades += 1;
     }
 }
