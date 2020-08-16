@@ -9,9 +9,11 @@ public class Kashoot  {
 
     private int tamanio = 20;
     VistaKashoot modelo;
-    private ArrayList<Ronda> rondas = new ArrayList<Ronda>();
+    private Queue<Ronda> rondas = new LinkedList<Ronda>();
     private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-    private ListIterator jugadorActual = jugadores.listIterator();
+    private ListIterator jugadorActual = jugadores.listIterator();//cambiar por cola
+
+    private Iterator iteradorRonda;
     //private Jugador jugador1;
     //private Jugador jugador2;
     //private Jugador jugadorActual;
@@ -63,4 +65,20 @@ public class Kashoot  {
         this.rondas.add(ronda);
 
     }
+
+    public void jugarRondaConExclusividad() {
+
+        Ronda rondaActual = this.rondas.element();
+        rondaActual.jugarConExclusividad();
+    }
+
+    public void jugarRonda(){
+        Ronda rondaActual = this.rondas.element();
+        if(rondaActual.rondaContinua()){
+            rondaActual.jugarRonda(this.jugadorActual.next()/*cambiar esto*/);
+        }
+        rondas.pull();
+    }
+
+
 }

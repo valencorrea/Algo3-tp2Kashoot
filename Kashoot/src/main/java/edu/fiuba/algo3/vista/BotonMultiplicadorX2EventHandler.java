@@ -10,7 +10,8 @@ public class BotonMultiplicadorX2EventHandler implements EventHandler<ActionEven
     private Pregunta pregunta;
     private Respuesta respuesta;
     private VistaKashoot vista;
-    public BotonMultiplicadorX2EventHandler(Kashoot kashoot, Pregunta unaPregunta, Respuesta unaRespuesta, VistaKashhot unaVista){
+
+    public BotonMultiplicadorX2EventHandler(Kashoot kashoot, Pregunta unaPregunta, Respuesta unaRespuesta, VistaKashoot unaVista){
         this.kashoot = kashoot;
         this.pregunta = unaPregunta;
         this.respuesta = unaRespuesta;
