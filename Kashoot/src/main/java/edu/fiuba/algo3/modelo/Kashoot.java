@@ -8,7 +8,6 @@ import java.util.*;
 public class Kashoot  {
 
     private int tamanio = 20;
-    VistaKashoot modelo;
     private Queue<Ronda> rondas = new LinkedList<Ronda>();
     private Queue<Jugador> jugadores = new LinkedList<Jugador>();
 
@@ -49,6 +48,7 @@ public class Kashoot  {
          if(!rondas.element().rondaContinua()){
              rondas.remove();
          }
+         //si no hay rondas hay que cerrar el juego
     }
 
     public void jugarRondaConExclusividad() {
