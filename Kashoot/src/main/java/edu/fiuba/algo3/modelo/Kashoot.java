@@ -30,13 +30,13 @@ public class Kashoot  {
     }
 
     public ArrayList<Opcion> getOpciones() {// antes llamar a getpregunta
-        Ronda ronda = this.rondas.get(rondas.size()-1);
+        Ronda ronda = this.rondas.element();
         ArrayList<Opcion> opciones = ronda.getOpciones();
         return opciones;
     }
 
     public Pregunta getPregunta() {
-        Ronda ronda = this.rondas.get(rondas.size()-1);
+        Ronda ronda = this.rondas.element();
         Pregunta pregunta = ronda.getPregunta();
         return pregunta;
     }
@@ -65,6 +65,15 @@ public class Kashoot  {
         this.rondas.add(ronda);
 
     }
+<<<<<<< HEAD
+    public void actualizar(){
+
+        rondas.element().aumentarturnos();
+         if(!rondas.element().rondaContinua()){
+             rondas.remove();
+         }
+    }
+=======
 
     public void jugarRondaConExclusividad() {
 
