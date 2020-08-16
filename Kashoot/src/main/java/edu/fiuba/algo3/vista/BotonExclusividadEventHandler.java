@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.vista;
 
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Kashoot;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,7 +21,9 @@ public class BotonExclusividadEventHandler implements EventHandler<ActionEvent> 
 
     @Override
     public void handle(ActionEvent actionEvent) {
-
-
+        Jugador jugadorActual = kashoot.obtenerJugadorActual();
+        jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
+        kashoot.jugarRondaConExclusividad();
+        this.vista.actualizar();
     }
 }

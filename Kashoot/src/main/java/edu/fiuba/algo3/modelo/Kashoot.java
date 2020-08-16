@@ -46,6 +46,7 @@ public class Kashoot  {
 
         rondas.element().aumentarturnos();
          if(!rondas.element().rondaContinua()){
+             rondas.element().asignarPuntajes(jugadores);
              rondas.remove();
          }
          //si no hay rondas hay que cerrar el juego
@@ -56,15 +57,5 @@ public class Kashoot  {
         Ronda rondaActual = this.rondas.element();
         rondaActual.jugarConExclusividad();
     }
-
-    public void jugarRonda(){
-
-        Ronda rondaActual = this.rondas.element();
-        if(rondaActual.rondaContinua()){
-            rondaActual.jugarRonda(jugadores.element());
-        }
-        rondas.poll();
-    }
-
 
 }
