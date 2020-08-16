@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.vista;
 
+import edu.fiuba.algo3.modelo.Kashoot;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -10,10 +11,13 @@ import javafx.stage.Stage;
 public class BotonExclusividadEventHandler implements EventHandler<ActionEvent> {
 
     Stage stage;
-    public BotonExclusividadEventHandler(Stage stage,Kashoot kashoot,Contenedor contenedor) {
-        this.stage = stage;
-        //this.proximaEscena = proximaEscena;
+    ContenedorPreguntas contenedor;
+    Kashoot kashoot;
 
+    public BotonExclusividadEventHandler(Stage stage, Kashoot kashoot, ContenedorPreguntas contenedor) {
+        this.stage = stage;
+        this.contenedor = contenedor;
+        this.kashoot = kashoot;
     }
 
     @Override

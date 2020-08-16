@@ -54,9 +54,10 @@ public class ContenedorPreguntas extends VBox {
 
     private void setBotoneraExtras(Kashoot kashoot){
         VBox botoneraExtras = new VBox();
-        Button boton1 = new Button();
-        boton1.setText("Responder con exclusividad");
-
+        Button botonExclusividad = new Button();
+        botonExclusividad.setText("Responder con exclusividad");
+        BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(stage,kashoot,this);
+        botonExclusividad.setOnAction(botonExclusividadEventHandler);
 
         Button multiplicadorX2 =new Button();
         multiplicadorX2.setText("Responder con multiplicador x2");
@@ -70,7 +71,7 @@ public class ContenedorPreguntas extends VBox {
         BotonMultiplicadorX3EventHandler botonMultiplicarX3EventHandler = new BotonOpcionEventHandler();
         multiplicadorX3.setOnAction(botonMultiplicarX3EventHandler);
 
-        botoneraExtras.getChildren().addAll(boton1,multiplicadorX2,multiplicadorX3);
+        botoneraExtras.getChildren().addAll(botonExclusividad,multiplicadorX2,multiplicadorX3);
         if(!kashoot.getPregunta().puedeMultiplicar()){
             multiplicadorX2.setDisable(true);
             multiplicadorX3.setDisable(true);
