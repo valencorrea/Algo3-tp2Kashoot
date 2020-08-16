@@ -76,9 +76,9 @@ import java.util.ArrayList;
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Soy una pregunta?", respuestaCorrecta);
 
-        Ronda ronda = new Ronda();
-        ronda.agregarPregunta(unaPregunta);
-        ronda.agregarOpciones(opciones);
+        Ronda ronda1 = new Ronda();
+        ronda1.agregarPregunta(unaPregunta);
+        ronda1.agregarOpciones(opciones);
 
        /* Opcion opcionCorrecta1 = new Opcion("opcion1");
         Opcion opcionIncorrecta2 = new Opcion("opcion2");
@@ -91,14 +91,14 @@ import java.util.ArrayList;
 
         Respuesta respuestaCorrecta2 = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta1);
-        Pregunta unaPregunta2 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Soy otra pregunta?", respuestaCorrecta2);
+        Pregunta unaPregunta2 = new Pregunta(new ModalidadSinOrden(new Clasico()), "de que color es el cielo?", respuestaCorrecta2);
 
         Ronda ronda1 = new Ronda();
         ronda.agregarPregunta(unaPregunta2);
         ronda.agregarOpciones(opciones1);
 */
         Kashoot kashoot = new Kashoot();
-        kashoot.agregarRonda(ronda);
+        kashoot.agregarRonda(ronda1);
         //kashoot.agregarRonda(ronda1);
         return kashoot;
     }
