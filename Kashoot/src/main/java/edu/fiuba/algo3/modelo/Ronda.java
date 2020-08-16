@@ -37,6 +37,11 @@ public class Ronda {
         return this.pregunta;
     }
 
+<<<<<<< HEAD
+    public void aumentarturnos() {
+
+        this.turnosJugados += 1;
+=======
     public void jugarConExclusividad() {
         if(this.exclusividad == null){
             this.exclusividad = new Exclusividad();
