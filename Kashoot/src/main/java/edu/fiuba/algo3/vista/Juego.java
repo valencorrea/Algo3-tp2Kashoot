@@ -40,7 +40,7 @@ import java.util.ArrayList;
         MediaPlayer musica = new MediaPlayer(mp3MusicFile);
         musica.setAutoPlay(true);
         musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
-
+        musica.setVolume(0.1);
         musica.play();
         /**/
 
@@ -79,27 +79,28 @@ import java.util.ArrayList;
         Ronda ronda1 = new Ronda();
         ronda1.agregarPregunta(unaPregunta);
         ronda1.agregarOpciones(opciones);
-
-       /* Opcion opcionCorrecta1 = new Opcion("opcion1");
+    //-------------------------------------------//
+        Opcion opcionCorrecta1 = new Opcion("opcion1");
         Opcion opcionIncorrecta2 = new Opcion("opcion2");
         Opcion opcionIncorrecta3 = new Opcion("opcion3");
 
-        ArrayList <Opcion> opciones1 = new ArrayList<Opcion>();
-        opciones.add(opcionCorrecta1);
-        opciones.add(opcionIncorrecta2);
-        //opciones.add(opcionIncorrecta3);
+        ArrayList <Opcion> opciones2 = new ArrayList<Opcion>();
+        opciones2.add(opcionCorrecta1);
+        opciones2.add(opcionIncorrecta2);
+        opciones2.add(opcionIncorrecta3);
 
         Respuesta respuestaCorrecta2 = new Respuesta();
-        respuestaCorrecta.agregarOpcion(opcionCorrecta1);
+        respuestaCorrecta2.agregarOpcion(opcionCorrecta1);
         Pregunta unaPregunta2 = new Pregunta(new ModalidadSinOrden(new Clasico()), "de que color es el cielo?", respuestaCorrecta2);
 
-        Ronda ronda1 = new Ronda();
-        ronda.agregarPregunta(unaPregunta2);
-        ronda.agregarOpciones(opciones1);
-*/
+        Ronda ronda2 = new Ronda();
+        ronda2.agregarPregunta(unaPregunta2);
+        ronda2.agregarOpciones(opciones2);
+
         Kashoot kashoot = new Kashoot();
         kashoot.agregarRonda(ronda1);
-        //kashoot.agregarRonda(ronda1);
+        kashoot.agregarRonda(ronda2);
+
         return kashoot;
     }
 
