@@ -10,20 +10,17 @@ import javafx.stage.Stage;
 
 public class BotonExclusividadEventHandler implements EventHandler<ActionEvent> {
 
-    Stage stage;
-    ContenedorPreguntas contenedor;
+   private VistaKashoot vista;
     Kashoot kashoot;
 
-    public BotonExclusividadEventHandler(Stage stage, Kashoot kashoot, ContenedorPreguntas contenedor) {
-        this.stage = stage;
-        this.contenedor = contenedor;
+    public BotonExclusividadEventHandler(Kashoot kashoot, VistaKashoot unaVista) {
+        this.vista = unaVista;
         this.kashoot = kashoot;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        contenedor.setDatos();
-        stage.setFullScreenExitHint("");
-        stage.setFullScreen(true);
+
+
     }
 }

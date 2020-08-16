@@ -5,11 +5,12 @@ import edu.fiuba.algo3.vista.VistaKashoot;
 import java.util.*;
 
 
+
 public class Kashoot  {
 
     private int tamanio = 20;
-    VistaKashoot modelo;
-    private ArrayList<Ronda> rondas = new ArrayList<Ronda>();
+    private Queue<Ronda> rondas = new LinkedList<Ronda>();
+
     private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
     private ListIterator jugadorActual = jugadores.listIterator();
     //private Jugador jugador1;
@@ -22,19 +23,16 @@ public class Kashoot  {
         this.preguntasYOpciones = unasPreguntasYOpciones;
     }
 */
-    private void inicializarModelo() {
 
-        modelo = new VistaKashoot();
-    }
 
     public ArrayList<Opcion> getOpciones() {// antes llamar a getpregunta
-        Ronda ronda = this.rondas.get(rondas.size()-1);
+        Ronda ronda = this.rondas.element();
         ArrayList<Opcion> opciones = ronda.getOpciones();
         return opciones;
     }
 
     public Pregunta getPregunta() {
-        Ronda ronda = this.rondas.get(rondas.size()-1);
+        Ronda ronda = this.rondas.element();
         Pregunta pregunta = ronda.getPregunta();
         return pregunta;
     }
@@ -62,5 +60,12 @@ public class Kashoot  {
 
         this.rondas.add(ronda);
 
+    }
+    public void actualizar(){
+
+        rondas.element().aumentarturnos();
+         if(!rondas.element().rondaContinua()){
+             rondas.remove();
+         }
     }
 }

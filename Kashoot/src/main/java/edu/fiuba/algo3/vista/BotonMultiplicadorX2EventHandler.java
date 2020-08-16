@@ -7,13 +7,11 @@ import javafx.event.EventHandler;
 public class BotonMultiplicadorX2EventHandler implements EventHandler<ActionEvent> {
 
     private Kashoot kashoot;
-    private Pregunta pregunta;
-    private Respuesta respuesta;
     private VistaKashoot vista;
-    public BotonMultiplicadorX2EventHandler(Kashoot kashoot, Pregunta unaPregunta, Respuesta unaRespuesta, VistaKashhot unaVista){
+
+    public BotonMultiplicadorX2EventHandler(Kashoot kashoot, VistaKashoot unaVista){
+
         this.kashoot = kashoot;
-        this.pregunta = unaPregunta;
-        this.respuesta = unaRespuesta;
         this.vista = unaVista;
     }
 
@@ -21,11 +19,11 @@ public class BotonMultiplicadorX2EventHandler implements EventHandler<ActionEven
     public void handle(ActionEvent actionEvent){
 
         Jugador jugadorActual = kashoot.obtenerJugadorActual();
-        jugadorActual.multiplicarX2(this.respuesta);
-        jugadorActual.responder(this.pregunta, this.respuesta);
-        int puntajeAcumulado = jugadorActual.getPuntajeAcumulado();
+        jugadorActual.multiplicarX2(this.vista.getRespuesta());
+        int puntaje = jugadorActual.responder(this.vista.getPregunta(), this.vista.getRespuesta());
+        jugadorActual.asignarPuntajeRonda(puntaje);
 
-        this.vista.actualizar(puntajeAcumulado);
+        this.vista.actualizar();
 
     }
 

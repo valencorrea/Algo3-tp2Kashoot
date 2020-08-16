@@ -38,6 +38,7 @@ public class ContenedorPreguntas extends VBox {
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
         this.stage = stage;
+        this.vistaKashoot = new VistaKashoot(kashoot);
         this.setDatos(kashoot);
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
@@ -48,33 +49,41 @@ public class ContenedorPreguntas extends VBox {
     }
 
     private void setDatos(Kashoot kashoot) {
-        this.setPregunta(kashoot);
-        this.setBotoneraOpciones(kashoot);
+
+        this.setcentro(kashoot);
         this.setBotoneraExtras(kashoot);
+
+    }
+    private void setcentro(Kashoot kashoot){
+
+        this.vistaKashoot = new VistaKashoot(kashoot);
+        this.setPregunta();
+        this.setBotoneraOpciones();
 
     }
 
     private void setBotoneraExtras(Kashoot kashoot){
+
         VBox botoneraExtras = new VBox();
         Button botonExclusividad = new Button();
         botonExclusividad.setText("Responder con exclusividad");
-        BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(stage,kashoot,this);
-        botonExclusividad.setOnAction(botonExclusividadEventHandler);
+        //BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(stage,kashoot,this);
+        //botonExclusividad.setOnAction(botonExclusividadEventHandler);
 
         Button multiplicadorX2 =new Button();
         multiplicadorX2.setText("Responder con multiplicador x2");
 
-        BotonMultiplicadorX2EventHandler botonMultiplicarX2EventHandler = new BotonOpcionEventHandler(kashoot);
+        BotonMultiplicadorX2EventHandler botonMultiplicarX2EventHandler = new BotonMultiplicadorX2EventHandler(kashoot, this.vistaKashoot);
         multiplicadorX2.setOnAction(botonMultiplicarX2EventHandler);
 
         Button multiplicadorX3 =new Button();
         multiplicadorX3.setText("Responder con multiplicador x3");
 
-        BotonMultiplicadorX3EventHandler botonMultiplicarX3EventHandler = new BotonOpcionEventHandler();
+        BotonMultiplicadorX3EventHandler botonMultiplicarX3EventHandler = new BotonMultiplicadorX3EventHandler(kashoot,this.vistaKashoot);
         multiplicadorX3.setOnAction(botonMultiplicarX3EventHandler);
 
         botoneraExtras.getChildren().addAll(botonExclusividad,multiplicadorX2,multiplicadorX3);
-        if(!kashoot.getPregunta().puedeMultiplicar()){
+        if(!this.vistaKashoot.getPregunta().puedeMultiplicar()){
             multiplicadorX2.setDisable(true);
             multiplicadorX3.setDisable(true);
         }
@@ -82,10 +91,10 @@ public class ContenedorPreguntas extends VBox {
 
     }
 
-    private void setPregunta(Kashoot kashoot){
+    private void setPregunta(){
         var textoPregunta = new Label();
 
-        Pregunta pregunta = kashoot.getPregunta();
+        Pregunta pregunta = this.vistaKashoot.getPregunta();
         String unContenido = pregunta.getContenido();
 
         textoPregunta.setText(unContenido);
@@ -96,10 +105,10 @@ public class ContenedorPreguntas extends VBox {
     }
 //FALTAN GUARDAR LOS SETTERS EN EL VERTICAL BOX
 
-    private void setBotoneraOpciones(Kashoot kashoot) {
+    private void setBotoneraOpciones() {
 
         HBox contenedorOpciones = new HBox();
-        ArrayList<Opcion> opciones = kashoot.getOpciones();
+        ArrayList<Opcion> opciones = this.vistaKashoot.getOpciones();
         Respuesta unaRespuesta = new Respuesta();
 
         for (Opcion opcion : opciones) {
