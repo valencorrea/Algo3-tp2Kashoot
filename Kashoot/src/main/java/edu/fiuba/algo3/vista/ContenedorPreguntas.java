@@ -59,7 +59,7 @@ public class ContenedorPreguntas extends VBox {
         VBox botoneraExtras = new VBox();
         Button botonExclusividad = new Button();
         botonExclusividad.setText("Responder con exclusividad");
-        BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(stage,kashoot,this);
+        BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(stage,kashoot);
         botonExclusividad.setOnAction(botonExclusividadEventHandler);
 
         Button multiplicadorX2 =new Button();
