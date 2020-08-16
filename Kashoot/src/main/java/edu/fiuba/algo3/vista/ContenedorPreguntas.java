@@ -21,12 +21,11 @@ import java.util.ArrayList;
 public class ContenedorPreguntas extends VBox {
 
     //BarraDeMenu menuBar;
-    //VistaKashoot vistaKashoot;
+    VistaKashoot vistaKashoot;
     VBox botonesExtra;
     VBox preguntaYOpciones = new VBox();
-
-    Canvas canvasCentral;
     VBox contenedorCentral;
+    Stage stage;
 
 
     public ContenedorPreguntas(Stage stage, Kashoot kashoot) {
@@ -38,33 +37,47 @@ public class ContenedorPreguntas extends VBox {
         Image imagen = new Image("patronpreguntas.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
-
-
-        this.setPregunta(kashoot);
-        this.setBotoneraOpciones(kashoot);
-        this.setBotoneraExtras(kashoot);
+        this.stage = stage;
+        this.setDatos(kashoot);
+        this.setHeight(500);
+        this.setAlignment(Pos.CENTER);
         this.preguntaYOpciones.setAlignment(Pos.CENTER);
         this.botonesExtra.setAlignment(Pos.TOP_RIGHT);
         this.preguntaYOpciones.setSpacing(100);
         this.getChildren().addAll(botonesExtra, preguntaYOpciones);
+    }
 
-        this.setHeight(500);
-        this.setAlignment(Pos.CENTER);
+    private void setDatos(Kashoot kashoot) {
+        this.setPregunta(kashoot);
+        this.setBotoneraOpciones(kashoot);
+        this.setBotoneraExtras(kashoot);
 
     }
 
     private void setBotoneraExtras(Kashoot kashoot){
         VBox botoneraExtras = new VBox();
-        Button boton1 = new Button();
-        boton1.setText("Usar Exclusividad");
+        Button botonExclusividad = new Button();
+        botonExclusividad.setText("Responder con exclusividad");
+        BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(stage,kashoot,this);
+        botonExclusividad.setOnAction(botonExclusividadEventHandler);
 
-        Button boton2 =new Button();
-        boton2.setText("Usar multiplicador x2");
+        Button multiplicadorX2 =new Button();
+        multiplicadorX2.setText("Responder con multiplicador x2");
 
-        Button boton3 =new Button();
-        boton3.setText("Usar multiplicador x3");
+        BotonMultiplicadorX2EventHandler botonMultiplicarX2EventHandler = new BotonOpcionEventHandler(kashoot);
+        multiplicadorX2.setOnAction(botonMultiplicarX2EventHandler);
 
-        botoneraExtras.getChildren().addAll(boton1,boton2,boton3);
+        Button multiplicadorX3 =new Button();
+        multiplicadorX3.setText("Responder con multiplicador x3");
+
+        BotonMultiplicadorX3EventHandler botonMultiplicarX3EventHandler = new BotonOpcionEventHandler();
+        multiplicadorX3.setOnAction(botonMultiplicarX3EventHandler);
+
+        botoneraExtras.getChildren().addAll(botonExclusividad,multiplicadorX2,multiplicadorX3);
+        if(!kashoot.getPregunta().puedeMultiplicar()){
+            multiplicadorX2.setDisable(true);
+            multiplicadorX3.setDisable(true);
+        }
         this.botonesExtra = botoneraExtras;
 
     }
