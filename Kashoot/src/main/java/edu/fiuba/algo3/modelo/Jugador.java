@@ -12,6 +12,7 @@ public class Jugador {
     private int puntajeAcumulado = 0;
     private ArrayList<Multiplicador> multiplicadores= new ArrayList<Multiplicador>();
     private ArrayList<Exclusividad> exclusividades = new ArrayList<Exclusividad>();
+    private int puntajeObtenidoEnRonda = 0;
 
     public Jugador(String unNombre){
 
@@ -67,7 +68,8 @@ public class Jugador {
         return;
     }
     public void asignarPuntajeRonda(int unPuntaje) {
-        this.puntajeAcumulado += unPuntaje;
+        this.puntajeObtenidoEnRonda = unPuntaje;
+        //this.puntajeAcumulado += unPuntaje;
     }
     public int usarExclusividad() {
         this.exclusividades.remove(exclusividades.size()-1);

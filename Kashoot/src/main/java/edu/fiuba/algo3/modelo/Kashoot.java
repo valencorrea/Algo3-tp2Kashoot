@@ -5,14 +5,15 @@ import edu.fiuba.algo3.vista.VistaKashoot;
 import java.util.*;
 
 
-
 public class Kashoot  {
 
     private int tamanio = 20;
+    VistaKashoot modelo;
     private Queue<Ronda> rondas = new LinkedList<Ronda>();
-
     private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-    private ListIterator jugadorActual = jugadores.listIterator();
+    private ListIterator jugadorActual = jugadores.listIterator();//cambiar por cola
+
+    private Iterator iteradorRonda;
     //private Jugador jugador1;
     //private Jugador jugador2;
     //private Jugador jugadorActual;
@@ -23,16 +24,19 @@ public class Kashoot  {
         this.preguntasYOpciones = unasPreguntasYOpciones;
     }
 */
+    private void inicializarModelo() {
 
+        modelo = new VistaKashoot();
+    }
 
     public ArrayList<Opcion> getOpciones() {// antes llamar a getpregunta
-        Ronda ronda = this.rondas.element();
+        Ronda ronda = this.rondas.get(rondas.size()-1);
         ArrayList<Opcion> opciones = ronda.getOpciones();
         return opciones;
     }
 
     public Pregunta getPregunta() {
-        Ronda ronda = this.rondas.element();
+        Ronda ronda = this.rondas.get(rondas.size()-1);
         Pregunta pregunta = ronda.getPregunta();
         return pregunta;
     }
@@ -61,11 +65,20 @@ public class Kashoot  {
         this.rondas.add(ronda);
 
     }
-    public void actualizar(){
 
-        rondas.element().aumentarturnos();
-         if(!rondas.element().rondaContinua()){
-             rondas.remove();
-         }
+    public void jugarRondaConExclusividad() {
+
+        Ronda rondaActual = this.rondas.element();
+        rondaActual.jugarConExclusividad();
     }
+
+    public void jugarRonda(){
+        Ronda rondaActual = this.rondas.element();
+        if(rondaActual.rondaContinua()){
+            rondaActual.jugarRonda(this.jugadorActual.next()/*cambiar esto*/);
+        }
+        rondas.pull();
+    }
+
+
 }
