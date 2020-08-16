@@ -17,11 +17,8 @@ public class VistaKashoot {
     }
 
     public void actualizar(){
-
         this.kashoot.actualizar();
         this.respuestaActual = new Respuesta();
-
-
     }
 
     public ArrayList<Opcion> getOpciones() {
@@ -30,5 +27,8 @@ public class VistaKashoot {
 
     public Respuesta getRespuesta() {
         return this.respuestaActual;
+    }
+    public Pregunta getPregunta(){
+        return this.kashoot.getPregunta();
     }
 }
