@@ -1,14 +1,14 @@
 package edu.fiuba.algo3.modelo;
 
 
-import edu.fiuba.algo3.vista.ModeloObservable;
+import edu.fiuba.algo3.vista.VistaKashoot;
 import java.util.*;
 
 
 public class Kashoot  {
 
     private int tamanio = 20;
-    ModeloObservable modelo;
+    VistaKashoot modelo;
     private ArrayList<Ronda> rondas = new ArrayList<Ronda>();
     private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
     private ListIterator jugadorActual = jugadores.listIterator();
@@ -24,7 +24,7 @@ public class Kashoot  {
 */
     private void inicializarModelo() {
 
-        modelo = new ModeloObservable();
+        modelo = new VistaKashoot();
     }
 
     public ArrayList<Opcion> getOpciones() {// antes llamar a getpregunta

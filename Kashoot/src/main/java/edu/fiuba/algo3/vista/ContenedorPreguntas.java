@@ -21,10 +21,9 @@ import java.util.ArrayList;
 public class ContenedorPreguntas extends VBox {
 
     //BarraDeMenu menuBar;
-    //VistaKashoot vistaKashoot;
+    VistaKashoot vistaKashoot;
     VBox botonesExtra;
     VBox preguntaYOpciones = new VBox();
-    Canvas canvasCentral;
     VBox contenedorCentral;
     Stage stage;
 
