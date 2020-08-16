@@ -65,7 +65,7 @@ public class Kashoot  {
         this.rondas.add(ronda);
 
     }
-<<<<<<< HEAD
+    
     public void actualizar(){
 
         rondas.element().aumentarturnos();
@@ -73,7 +73,6 @@ public class Kashoot  {
              rondas.remove();
          }
     }
-=======
 
     public void jugarRondaConExclusividad() {
 
