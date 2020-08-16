@@ -25,8 +25,11 @@ public class BotonMultiplicadorX3EventHandler implements EventHandler<ActionEven
         jugadorActual.multiplicarX2(this.vista.getRespuesta());
         int puntaje = jugadorActual.responder(this.vista.getPregunta(), this.vista.getRespuesta());
         jugadorActual.asignarPuntajeRonda(puntaje);
-
+        /*if(vista.terminoElJuego()){
+            stage.setScene()
+        }*/
         this.vista.actualizar();
+
 
     }
 }

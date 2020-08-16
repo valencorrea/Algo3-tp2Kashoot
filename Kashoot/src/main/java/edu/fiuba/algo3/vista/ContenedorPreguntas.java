@@ -26,6 +26,7 @@ public class ContenedorPreguntas extends VBox {
     VBox preguntaYOpciones = new VBox();
     VBox contenedorCentral;
     Stage stage;
+    Kashoot kashoot;
 
 
     public ContenedorPreguntas(Stage stage, Kashoot kashoot) {
@@ -34,11 +35,12 @@ public class ContenedorPreguntas extends VBox {
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
         this.stage = stage;
+        this.kashoot = kashoot;
 
         //var puntaje = new Label();
        // this.getChildren().
 
-        this.vistaKashoot = new VistaKashoot(kashoot);
+        this.vistaKashoot = new VistaKashoot(kashoot,this);
         this.setDatos(kashoot);
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
@@ -54,15 +56,16 @@ public class ContenedorPreguntas extends VBox {
         this.setBotoneraExtras(kashoot);
 
     }
+
     private void setcentro(Kashoot kashoot){
 
-        this.vistaKashoot = new VistaKashoot(kashoot);
+        //this.vistaKashoot = new VistaKashoot(kashoot,this);
         this.setPregunta();
         this.setBotoneraOpciones();
 
     }
 
-    private void setBotoneraExtras(Kashoot kashoot){
+    public void setBotoneraExtras(Kashoot kashoot){
 
         VBox botoneraExtras = new VBox();
         Button botonExclusividad = new Button();
@@ -102,7 +105,7 @@ public class ContenedorPreguntas extends VBox {
 
     }
 
-    private void setPregunta(){
+    public void setPregunta(){
         var textoPregunta = new Label();
 
         Pregunta pregunta = this.vistaKashoot.getPregunta();
@@ -116,7 +119,7 @@ public class ContenedorPreguntas extends VBox {
     }
 //FALTAN GUARDAR LOS SETTERS EN EL VERTICAL BOX
 
-    private void setBotoneraOpciones() {
+    public void setBotoneraOpciones() {
 
         HBox contenedorOpciones = new HBox();
         ArrayList<Opcion> opciones = this.vistaKashoot.getOpciones();
@@ -139,5 +142,7 @@ public class ContenedorPreguntas extends VBox {
     }
         //this.botonesOpciones = contenedorOpciones;
         //this.botonesOpciones.setSpacing(300);
+
+
 
 }
