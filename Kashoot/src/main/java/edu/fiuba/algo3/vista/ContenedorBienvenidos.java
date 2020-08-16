@@ -34,11 +34,11 @@ public class ContenedorBienvenidos extends VBox {
             this.setBackground(new Background(imagenDeFondo));
 
             var labelBienvenida = new Label("¡Bienvenidos al kashoot!");
-            labelBienvenida.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 80));
+            labelBienvenida.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
             labelBienvenida.setTextFill(Color.HOTPINK);
 
             var labelIngresarNombre = new Label("Ingresen sus nombres para comenzar");
-            labelIngresarNombre.setFont(Font.font("Tahoma", FontWeight.EXTRA_LIGHT, 45));
+            labelIngresarNombre.setFont(Font.font("Tahoma", FontWeight.EXTRA_LIGHT, 40));
             labelIngresarNombre.setTextFill(Color.web("#66A7C5"));
 
             VBox contenedorEtiquetas = new VBox(labelBienvenida, labelIngresarNombre);
