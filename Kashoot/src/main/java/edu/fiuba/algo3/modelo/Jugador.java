@@ -76,7 +76,15 @@ public class Jugador {
         return this.puntajeObtenidoEnRonda;
     }
 
-    public void asignarPuntajeRonda(int puntajeObtenidoEnRonda) {
+    public void asignarPuntajeRonda() {
         this.puntajeAcumulado = this.puntajeAcumulado + puntajeObtenidoEnRonda;
+    }
+
+    public void actualizarPuntajeObtenido(int puntajeActualizado) {
+        this.puntajeObtenidoEnRonda = puntajeActualizado;
+    }
+
+    public String getNombre() {
+        return this.nombre;
     }
 }

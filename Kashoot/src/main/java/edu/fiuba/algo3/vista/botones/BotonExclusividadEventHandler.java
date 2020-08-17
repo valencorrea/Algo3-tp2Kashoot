@@ -1,7 +1,8 @@
-package edu.fiuba.algo3.vista;
+package edu.fiuba.algo3.vista.botones;
 
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Kashoot;
+import edu.fiuba.algo3.vista.VistaKashoot;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;

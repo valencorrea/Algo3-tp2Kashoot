@@ -1,10 +1,10 @@
-package edu.fiuba.algo3.vista;
+package edu.fiuba.algo3.vista.contenedores;
 
 import edu.fiuba.algo3.modelo.*;
-import javafx.geometry.Insets;
+import edu.fiuba.algo3.vista.*;
+import edu.fiuba.algo3.vista.botones.*;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -16,19 +16,17 @@ import javafx.stage.Stage;
 import edu.fiuba.algo3.modelo.Kashoot;
 import edu.fiuba.algo3.modelo.Pregunta;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ContenedorPreguntas extends VBox {
 
-    private Scene escenaFinal; //ponerle el private a todos
-    //BarraDeMenu menuBar;
-    VistaKashoot vistaKashoot;
-    VBox botonesExtra;
-    VBox preguntaYOpciones = new VBox();
-    VBox contenedorCentral;
-    Stage stage;
-    Kashoot kashoot;
+    private Scene escenaFinal;
+    private VistaKashoot vistaKashoot;
+    private VBox botonesExtra;
+    private VBox preguntaYOpciones = new VBox();
+    private VBox contenedorCentral;
+    private Stage stage;
+    private Kashoot kashoot;
 
 
     public ContenedorPreguntas(Stage stage, Kashoot kashoot, Scene escenaFinal) {
