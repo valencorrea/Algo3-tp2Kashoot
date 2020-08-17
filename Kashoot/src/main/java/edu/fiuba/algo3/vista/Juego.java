@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.formatos.Clasico;
+import edu.fiuba.algo3.modelo.formatos.Parcial;
 import edu.fiuba.algo3.modelo.formatos.Penalidad;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadSinOrden;
 import edu.fiuba.algo3.vista.ContenedorBienvenidos;
@@ -97,11 +98,32 @@ import java.util.ArrayList;
         Ronda ronda2 = new Ronda();
         ronda2.agregarPregunta(unaPregunta2);
         ronda2.agregarOpciones(opciones2);
+        //---------------------------------//
+        Opcion opcionCorrecta31 = new Opcion("opcion1");
+        Opcion opcionIncorrecta32 = new Opcion("opcion2");
+        Opcion opcionIncorrecta33 = new Opcion("opcion3");
+        Opcion opcionCorrecta34 = new Opcion("opcion4");
 
+        ArrayList <Opcion> opciones3 = new ArrayList<Opcion>();
+        opciones3.add(opcionCorrecta31);
+        opciones3.add(opcionIncorrecta32);
+        opciones3.add(opcionIncorrecta33);
+        opciones3.add(opcionCorrecta34);
+
+        Respuesta respuestaCorrecta3 = new Respuesta();
+        respuestaCorrecta3.agregarOpcion(opcionCorrecta31);
+        respuestaCorrecta3.agregarOpcion(opcionCorrecta34);
+        Pregunta unaPregunta3 = new Pregunta(new ModalidadSinOrden(new Parcial()), "Esta es otra pregunta?", respuestaCorrecta3);
+
+        Ronda ronda3 = new Ronda();
+        ronda3.agregarPregunta(unaPregunta3);
+        ronda3.agregarOpciones(opciones3);
+
+        //---------------------------------//
         Kashoot kashoot = new Kashoot();
         kashoot.agregarRonda(ronda1);
         kashoot.agregarRonda(ronda2);
-
+        kashoot.agregarRonda(ronda3);
         return kashoot;
     }
 
