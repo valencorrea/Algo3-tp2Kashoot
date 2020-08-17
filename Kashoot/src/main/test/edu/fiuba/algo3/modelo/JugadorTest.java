@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class JugadorTest {
-/*
+
     @Test
     public void jugadoresRespondenVerdaderoFalsoClasicoRecibenPuntajeCorrecto() {
 
@@ -29,11 +29,14 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
 
-        int unResultado = unJugador.responder(unaPregunta, respuestaCorrecta);
-        int otroResultado = otroJugador.responder(unaPregunta, respuestaIncorrecta);
+        unJugador.responder(unaPregunta, respuestaCorrecta);
+        otroJugador.responder(unaPregunta, respuestaIncorrecta);
 
-        assertEquals(unResultado, 10);
-        assertEquals(otroResultado, 0);
+        unJugador.asignarPuntajeRonda(unJugador.getPuntajeRonda());
+        otroJugador.asignarPuntajeRonda(otroJugador.getPuntajeRonda());
+
+        assertEquals(10, unJugador.getPuntajeAcumulado());
+        assertEquals(otroJugador.getPuntajeAcumulado(), 0);
     }
 
     @Test
@@ -52,11 +55,14 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "hola soy una pregunta??", respuestaCorrecta);
 
-        int unResultado = unJugador.responder(unaPregunta, respuestaCorrecta);
-        int otroResultado = otroJugador.responder(unaPregunta, respuestaIncorrecta);
+        unJugador.responder(unaPregunta, respuestaCorrecta);
+        otroJugador.responder(unaPregunta, respuestaIncorrecta);
 
-        assertEquals(unResultado, 10);
-        assertEquals(otroResultado, -10);
+        unJugador.asignarPuntajeRonda(unJugador.getPuntajeRonda());
+        otroJugador.asignarPuntajeRonda(otroJugador.getPuntajeRonda());
+
+        assertEquals(10, unJugador.getPuntajeAcumulado());
+        assertEquals(-10, otroJugador.getPuntajeAcumulado());
     }
 
     @Test
@@ -82,11 +88,14 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
 
-        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugador);
-        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugador);
+        unJugador.responder(unaPregunta, respuestaUnJugador);
+        otroJugador.responder(unaPregunta, respuestaOtroJugador);
 
-        assertEquals(20, unResultado);
-        assertEquals(0, otroResultado);
+        unJugador.asignarPuntajeRonda(unJugador.getPuntajeRonda());
+        otroJugador.asignarPuntajeRonda(otroJugador.getPuntajeRonda());
+
+        assertEquals(20, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
 
     @Test
@@ -116,13 +125,17 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "hola soy una pregunta??", respuestaCorrecta);
 
-        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugador);
-        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugador);
-        int tercerResultado = tercerJugador.responder(unaPregunta, respuestaTercerJugador);
+        unJugador.responder(unaPregunta, respuestaUnJugador);
+        otroJugador.responder(unaPregunta, respuestaOtroJugador);
+        tercerJugador.responder(unaPregunta, respuestaTercerJugador);
 
-        assertEquals(20, unResultado);
-        assertEquals(0, otroResultado);
-        assertEquals(10, tercerResultado);
+        unJugador.asignarPuntajeRonda(unJugador.getPuntajeRonda());
+        otroJugador.asignarPuntajeRonda(otroJugador.getPuntajeRonda());
+        tercerJugador.asignarPuntajeRonda(tercerJugador.getPuntajeRonda());
+
+        assertEquals(20, unJugador.getPuntajeAcumulado());
+        assertEquals(0, otroJugador.getPuntajeAcumulado());
+        assertEquals(10, tercerJugador.getPuntajeAcumulado());
     }
 
     @Test
@@ -147,13 +160,13 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "hola soy una pregunta??", respuestaCorrecta);
 
-        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugador);
-        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugador);
+        unJugador.responder(unaPregunta, respuestaUnJugador);
+        otroJugador.responder(unaPregunta, respuestaOtroJugador);
 
-        assertEquals(20, unResultado);
-        assertEquals(-10, otroResultado);
+        assertEquals(20, unJugador.getPuntajeAcumulado());
+        assertEquals(-10, otroJugador.getPuntajeAcumulado());
     }
-
+/*
 
     @Test
     public void UnjugadorElijeCorrectamenteLasOpcionesDEGROUPCHOICEParaCadaGrupoTomandoEncuentaElPrimerGrupoYSeCalculaBienElPuntaje() {
