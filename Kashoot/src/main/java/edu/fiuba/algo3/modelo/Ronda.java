@@ -51,10 +51,10 @@ public class Ronda {
         jugadores.add(jugador2);
 
         if(this.exclusividad != null){
-            exclusividad.determinarPuntaje(jugador1,jugador2,jugador1.getPuntajeRonda(),jugador2.getPuntajeRonda(),this.cantidadExclusividades);
+            exclusividad.determinarPuntaje(jugador1,jugador2,this.cantidadExclusividades);
             return;
         }
-        jugador1.asignarPuntajeRonda(jugador1.getPuntajeRonda());
-        jugador2.asignarPuntajeRonda(jugador2.getPuntajeRonda());
+        jugador1.asignarPuntajeRonda();
+        jugador2.asignarPuntajeRonda();
     }
 }

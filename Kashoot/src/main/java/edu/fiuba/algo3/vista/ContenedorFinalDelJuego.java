@@ -36,7 +36,7 @@ public class ContenedorFinalDelJuego extends VBox {
 
 
 
-        int puntajeAcumuladoJugador1 = kashoot.obtenerJugadorActual().getPuntajeAcumulado();
+        int puntajeAcumuladoJugador1 = (kashoot.obtenerJugadorActual()).getPuntajeAcumulado();
         System.out.println(puntajeAcumuladoJugador1);
 
         int puntajeAcumuladoJugador2 = kashoot.obtenerJugadorActual().getPuntajeAcumulado();
