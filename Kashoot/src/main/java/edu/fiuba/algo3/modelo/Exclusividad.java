@@ -9,9 +9,7 @@ public class Exclusividad {
         if(unResultado == otroResultado){
             unJugador.actualizarPuntajeObtenido(0);
             otroJugador.actualizarPuntajeObtenido(0);
-        }
-
-        if(unResultado > otroResultado){
+        }else if(unResultado > otroResultado){
             unJugador.actualizarPuntajeObtenido(2 * cantExclusividades * unResultado);
             otroJugador.actualizarPuntajeObtenido(0);
         }else{
