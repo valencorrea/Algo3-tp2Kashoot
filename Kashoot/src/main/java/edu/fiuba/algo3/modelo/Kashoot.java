@@ -35,7 +35,7 @@ public class Kashoot  {
 
         jugadores.add(jugadorActual);
 
-        return jugadorActual;
+        return (Jugador)jugadorActual;
     }
 
     public void agregarRonda(Ronda ronda) {
@@ -62,4 +62,8 @@ public class Kashoot  {
         return (this.rondas.isEmpty());
     }
 
+    public Jugador getJugador1() {
+        Jugador jugador1 = jugadores.poll();
+        return jugador1;
+    }
 }

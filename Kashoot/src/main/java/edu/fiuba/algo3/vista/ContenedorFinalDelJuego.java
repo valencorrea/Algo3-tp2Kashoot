@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.vista;
 
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Kashoot;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -33,12 +34,19 @@ public class ContenedorFinalDelJuego extends VBox {
         labelPuntajes.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
         labelPuntajes.setTextFill(Color.HOTPINK);
 
-        var labelPuntajeJugador1 = new Label("2");
+
+
+        int puntajeAcumuladoJugador1 = kashoot.obtenerJugadorActual().getPuntajeAcumulado();
+        System.out.println(puntajeAcumuladoJugador1);
+
+        int puntajeAcumuladoJugador2 = kashoot.obtenerJugadorActual().getPuntajeAcumulado();
+
+        var labelPuntajeJugador1 = new Label(Integer.toString(puntajeAcumuladoJugador1));
 
         labelPuntajeJugador1.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
         labelPuntajeJugador1.setTextFill(Color.HOTPINK);
 
-        var labelPuntajeJugador2 = new Label("3");
+        var labelPuntajeJugador2 = new Label(Integer.toString(puntajeAcumuladoJugador2));
 
         labelPuntajeJugador2.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
         labelPuntajeJugador2.setTextFill(Color.HOTPINK);
@@ -46,10 +54,6 @@ public class ContenedorFinalDelJuego extends VBox {
         HBox contenedorPuntajesJugadores = new HBox(labelPuntajeJugador1, labelPuntajeJugador2);
         contenedorPuntajesJugadores.setSpacing(170);
         contenedorPuntajesJugadores.setAlignment(Pos.CENTER);
-
-        //BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena, textoJugador1, textoJugador2, mensajeError);
-
-        //botonJugar.setOnAction(botonJugarEventHandler);
 
         this.getChildren().add(contenedorPuntajesJugadores);
 

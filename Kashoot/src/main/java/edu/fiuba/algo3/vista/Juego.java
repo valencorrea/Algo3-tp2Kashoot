@@ -66,6 +66,18 @@ import java.util.ArrayList;
 
     private Kashoot crearModelo() {
 
+        Jugador jugador1 = new Jugador("pepe");
+        Jugador jugador2 = new Jugador("fulano");
+
+        Kashoot kashoot = new Kashoot();
+        agregarRondas(kashoot);
+
+        kashoot.agregarJugadores(jugador1, jugador2);
+
+        return kashoot;
+    }
+
+    public void agregarRondas(Kashoot kashoot){
         //ArrayList <PreguntasYOpciones> preguntasYOpciones = leerArchivo("resources/archivo.txt");
         //multipleChoice; Clasico; de que color es el cielo?;rojo;mostaza;rosita;/celeste
         Opcion opcionCorrecta11 = new Opcion("Celeste");
@@ -87,7 +99,7 @@ import java.util.ArrayList;
         Ronda ronda1 = new Ronda();
         ronda1.agregarPregunta(unaPregunta1);
         ronda1.agregarOpciones(opciones1);
-    //-------------------------------------------//
+        //-------------------------------------------//
         //multipleChoice; Penalidad; que numeros son pares?;7;pi;e;/2
 
         Opcion opcionCorrecta21 = new Opcion("2");
@@ -147,8 +159,6 @@ import java.util.ArrayList;
         opciones4.add(opcionCorrecta44);
         opciones4.add(opcionCorrecta42);
 
-
-
         Respuesta respuestaCorrecta4 = new Respuesta();
         respuestaCorrecta4.agregarOpcion(opcionCorrecta41);
         respuestaCorrecta4.agregarOpcion(opcionCorrecta42);
@@ -188,7 +198,7 @@ import java.util.ArrayList;
         ronda5.agregarOpciones(opciones5);
 
         //-------------------------------------------//
-       // orderedChoice; Ordenar las sigueintes letras alfabeticamente;M;S;V;A;R
+        // orderedChoice; Ordenar las sigueintes letras alfabeticamente;M;S;V;A;R
 
         Opcion opcionCorrecta61 = new Opcion("A");
         Opcion opcionCorrecta62 = new Opcion("M");
@@ -218,7 +228,7 @@ import java.util.ArrayList;
         ronda6.agregarOpciones(opciones6);
 
         //-------------------------------------------//
-       // verdaderoFalso; Penalidad; kashoot was sent to nil?;/verdadero;falso
+        // verdaderoFalso; Penalidad; kashoot was sent to nil?;/verdadero;falso
 
         Opcion opcionCorrecta71 = new Opcion("Verdadero");
         Opcion opcionIncorrecta71 = new Opcion("Falso");
@@ -237,7 +247,7 @@ import java.util.ArrayList;
         ronda7.agregarOpciones(opciones7);
 
         //-------------------------------------------//
-       // verdaderoFalso; Penalidad; los michis son malos?; verdadero;/falso
+        // verdaderoFalso; Penalidad; los michis son malos?; verdadero;/falso
 
         Opcion opcionCorrecta81 = new Opcion("Verdadero");
         Opcion opcionIncorrecta81 = new Opcion("Falso");
@@ -256,8 +266,6 @@ import java.util.ArrayList;
         ronda8.agregarOpciones(opciones8);
 
         //-------------------------------------------//
-
-        Kashoot kashoot = new Kashoot();
         kashoot.agregarRonda(ronda1);
         kashoot.agregarRonda(ronda2);
         kashoot.agregarRonda(ronda3);
@@ -266,8 +274,6 @@ import java.util.ArrayList;
         kashoot.agregarRonda(ronda6);
         kashoot.agregarRonda(ronda7);
         kashoot.agregarRonda(ronda8);
-
-        return kashoot;
     }
 
 }

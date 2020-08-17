@@ -9,10 +9,10 @@ import java.util.ArrayList;
 public class Jugador {
 
     private String nombre;
-    private int puntajeAcumulado = 0;
+    private int puntajeAcumulado = 7;
     private ArrayList<Multiplicador> multiplicadores= new ArrayList<Multiplicador>();
     private ArrayList<Exclusividad> exclusividades = new ArrayList<Exclusividad>();
-    private int puntajeObtenidoEnRonda = 0;
+    private int puntajeObtenidoEnRonda = 12;
 
     public Jugador(String unNombre){
 
@@ -79,7 +79,7 @@ public class Jugador {
         return this.puntajeObtenidoEnRonda;
     }
 
-    public void asignarPuntajeRonda(int puntajeAcumulado) {
-        this.puntajeAcumulado += this.puntajeObtenidoEnRonda;
+    public void asignarPuntajeRonda(int puntajeObtenidoEnRonda) {
+        this.puntajeAcumulado = this.puntajeAcumulado + puntajeObtenidoEnRonda;
     }
 }

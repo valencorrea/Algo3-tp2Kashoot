@@ -57,11 +57,11 @@ public class ContenedorBienvenidos extends VBox {
             textoJugador2.setScaleX(1.5);
             textoJugador2.setScaleY(1.5);
 
-            Jugador jugador1 = new Jugador(textoJugador1.getText());
+  /*          Jugador jugador1 = new Jugador(textoJugador1.getText());
             Jugador jugador2 = new Jugador(textoJugador2.getText());
 
             kashoot.agregarJugadores(jugador1, jugador2);
-
+*/
             HBox contenedorDeNombres = new HBox(textoJugador1, textoJugador2);
             contenedorDeNombres.setSpacing(200);
             contenedorDeNombres.setAlignment(Pos.CENTER);
