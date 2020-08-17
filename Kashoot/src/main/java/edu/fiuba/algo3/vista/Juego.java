@@ -80,6 +80,7 @@ import java.util.ArrayList;
     public void agregarRondas(Kashoot kashoot){
         //ArrayList <PreguntasYOpciones> preguntasYOpciones = leerArchivo("resources/archivo.txt");
         //multipleChoice; Clasico; de que color es el cielo?;rojo;mostaza;rosita;/celeste
+
         Opcion opcionCorrecta11 = new Opcion("Celeste");
         Opcion opcionIncorrecta11 = new Opcion("rojo");
         Opcion opcionIncorrecta12 = new Opcion("Rosita");

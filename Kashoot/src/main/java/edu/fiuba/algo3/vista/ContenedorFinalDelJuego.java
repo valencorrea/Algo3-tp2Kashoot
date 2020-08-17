@@ -36,17 +36,13 @@ public class ContenedorFinalDelJuego extends VBox {
 
 
 
-        int puntajeAcumuladoJugador1 = kashoot.obtenerJugadorActual().getPuntajeAcumulado();
-        System.out.println(puntajeAcumuladoJugador1);
-
-        int puntajeAcumuladoJugador2 = kashoot.obtenerJugadorActual().getPuntajeAcumulado();
-
-        var labelPuntajeJugador1 = new Label(Integer.toString(puntajeAcumuladoJugador1));
+        // Obtener jugador actual te devuelve el mismo;
+        var labelPuntajeJugador1 = new Label(Integer.toString(kashoot.obtenerJugadorActual().getPuntajeAcumulado()));
 
         labelPuntajeJugador1.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
         labelPuntajeJugador1.setTextFill(Color.HOTPINK);
 
-        var labelPuntajeJugador2 = new Label(Integer.toString(puntajeAcumuladoJugador2));
+        var labelPuntajeJugador2 = new Label(Integer.toString(kashoot.obtenerJugadorActual().getPuntajeAcumulado()));
 
         labelPuntajeJugador2.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
         labelPuntajeJugador2.setTextFill(Color.HOTPINK);

@@ -31,6 +31,8 @@ public class BotonExclusividadEventHandler implements EventHandler<ActionEvent> 
         System.out.println(jugadorActual.getPuntajeRonda());
 
         this.vista.actualizar();
+        System.out.println(jugadorActual.getPuntajeAcumulado());
+
         if(vista.terminoJuego()){
             this.stage.setScene(this.escenaFinal);
             this.stage.setFullScreen(true);
