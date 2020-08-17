@@ -30,13 +30,8 @@ public class VistaKashoot {
             this.pregunta = kashoot.getPregunta();
             this.opciones = kashoot.getOpciones();
         }
-        this.contenedor.actualizar();
-       /* contenedor.clean();
-        contenedor.setPregunta();
-        contenedor.setBotoneraExtras(kashoot);
-        contenedor.setBotoneraOpciones();*/
+        contenedor.actualizar();
     }
-
     public ArrayList<Opcion> getOpciones() {
        return this.opciones;
         // return kashoot.getOpciones();
@@ -53,4 +48,6 @@ public class VistaKashoot {
     public boolean terminoJuego() {
         return kashoot.terminoJuego();
     }
+
+
 }

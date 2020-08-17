@@ -81,7 +81,7 @@ import java.util.ArrayList;
         ronda1.agregarPregunta(unaPregunta);
         ronda1.agregarOpciones(opciones);
     //-------------------------------------------//
-        /*Opcion opcionCorrecta1 = new Opcion("opcion1");
+        Opcion opcionCorrecta1 = new Opcion("opcion1");
         Opcion opcionIncorrecta2 = new Opcion("opcion2");
         Opcion opcionIncorrecta3 = new Opcion("opcion3");
 
@@ -97,10 +97,10 @@ import java.util.ArrayList;
         Ronda ronda2 = new Ronda();
         ronda2.agregarPregunta(unaPregunta2);
         ronda2.agregarOpciones(opciones2);
-*/
+
         Kashoot kashoot = new Kashoot();
         kashoot.agregarRonda(ronda1);
-        //kashoot.agregarRonda(ronda2);
+        kashoot.agregarRonda(ronda2);
 
         return kashoot;
     }

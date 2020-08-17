@@ -32,20 +32,28 @@ public class ContenedorPreguntas extends VBox {
 
 
     public ContenedorPreguntas(Stage stage, Kashoot kashoot, Scene escenaFinal) {
-
         Image imagen = new Image("patronpreguntas.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
         this.stage = stage;
         this.kashoot = kashoot;
         this.escenaFinal = escenaFinal;
-
+        this.setHeight(500);
+        this.setAlignment(Pos.CENTER);
         //var puntaje = new Label();
-       // this.getChildren().
-
+        // this.getChildren().
         this.vistaKashoot = new VistaKashoot(kashoot,this);
-        this.setDatos(kashoot);
+        this.actualizar();
+    }
 
+    public void actualizar() {
+        this.getChildren().clear();
+        preguntaYOpciones = new VBox();
+        this.setDatos(kashoot);
+        this.preguntaYOpciones.setAlignment(Pos.CENTER);
+        this.botonesExtra.setAlignment(Pos.TOP_RIGHT);
+        this.preguntaYOpciones.setSpacing(100);
+        this.getChildren().addAll(botonesExtra, preguntaYOpciones);
     }
 
     private void setDatos(Kashoot kashoot) {
@@ -135,20 +143,7 @@ public class ContenedorPreguntas extends VBox {
         this.preguntaYOpciones.getChildren().add(contenedorOpciones);
 
     }
-
-    public void actualizar() {
-        this.getChildren().clear();
-        preguntaYOpciones = new VBox();
-        this.setDatos(kashoot);
-        this.setHeight(500);
-        this.setAlignment(Pos.CENTER);
-        this.preguntaYOpciones.setAlignment(Pos.CENTER);
-        this.botonesExtra.setAlignment(Pos.TOP_RIGHT);
-        this.preguntaYOpciones.setSpacing(100);
-        this.getChildren().addAll(botonesExtra, preguntaYOpciones);
-
-    }
-    //this.botonesOpciones = contenedorOpciones;
+        //this.botonesOpciones = contenedorOpciones;
         //this.botonesOpciones.setSpacing(300);
 
 
