@@ -1,9 +1,7 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.formatos.Clasico;
-import edu.fiuba.algo3.modelo.formatos.Parcial;
-import edu.fiuba.algo3.modelo.formatos.Penalidad;
+import edu.fiuba.algo3.modelo.formatos.*;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadOrdenada;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadSinOrden;
 import edu.fiuba.algo3.vista.contenedores.ContenedorBienvenidos;
@@ -11,8 +9,12 @@ import edu.fiuba.algo3.vista.contenedores.ContenedorFinalDelJuego;
 import edu.fiuba.algo3.vista.contenedores.ContenedorPreguntas;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -29,17 +31,8 @@ import java.util.ArrayList;
     @Override
     public void start(Stage stage) throws Exception {
 
-        /* música */
-/*
-        Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
+        agregarMusica();
 
-        MediaPlayer musica = new MediaPlayer(mp3MusicFile);
-        musica.setAutoPlay(true);
-        musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
-        musica.setVolume(0.1);
-        musica.play();
-
-*/
         stage.setTitle("Kashoot");
 
         Kashoot kashoot = crearModelo();
@@ -56,6 +49,16 @@ import java.util.ArrayList;
         stage.setScene(escenaBienvenidos);
         stage.setFullScreen(true);
         stage.show();
+    }
+
+    private void agregarMusica(){
+        Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
+
+        MediaPlayer musica = new MediaPlayer(mp3MusicFile);
+        musica.setAutoPlay(true);
+        musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
+        musica.setVolume(0.1);
+        musica.play();
     }
 
     private Kashoot crearModelo() {
