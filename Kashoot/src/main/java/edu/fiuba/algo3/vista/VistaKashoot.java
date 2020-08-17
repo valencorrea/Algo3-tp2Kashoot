@@ -1,10 +1,10 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.vista.contenedores.ContenedorPreguntas;
 
 
 import java.util.ArrayList;
-import java.util.Observable;
 
 public class VistaKashoot {
 

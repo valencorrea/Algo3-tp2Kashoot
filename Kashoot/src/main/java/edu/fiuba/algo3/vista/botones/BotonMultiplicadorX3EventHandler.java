@@ -1,25 +1,25 @@
-package edu.fiuba.algo3.vista;
+package edu.fiuba.algo3.vista.botones;
 
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Kashoot;
 import edu.fiuba.algo3.modelo.Pregunta;
 import edu.fiuba.algo3.modelo.Respuesta;
+import edu.fiuba.algo3.vista.VistaKashoot;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
+public class BotonMultiplicadorX3EventHandler implements EventHandler<ActionEvent> {
 
-    private VistaKashoot vista;
-    private Kashoot kashoot;
     private Scene escenaFinal;
     private Stage stage;
+    private Kashoot kashoot;
+    private VistaKashoot vista;
 
-
-    public BotonResponderEventHandler(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage) {
-        this.vista = unaVista;
+    public BotonMultiplicadorX3EventHandler(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage){
         this.kashoot = kashoot;
+        this.vista = unaVista;
         this.escenaFinal = escenaFinal;
         this.stage = stage;
         this.stage.setFullScreen(true);
@@ -27,14 +27,20 @@ public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
     }
 
     @Override
-    public void handle(ActionEvent actionEvent) {
+    public void handle(ActionEvent actionEvent){
+
         Jugador jugadorActual = kashoot.obtenerJugadorActual();
-        jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
+        jugadorActual.multiplicarX2(this.vista.getRespuesta());
+        jugadorActual.responder(this.vista.getPregunta(), this.vista.getRespuesta());
         System.out.println(jugadorActual.getPuntajeRonda());
 
+        /*if(vista.terminoElJuego()){
+            stage.setScene()
+        }*/
         this.vista.actualizar();
         if(vista.terminoJuego()){
             this.stage.setScene(this.escenaFinal);
         }
+
     }
 }
