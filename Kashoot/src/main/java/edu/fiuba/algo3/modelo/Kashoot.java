@@ -56,6 +56,7 @@ public class Kashoot  {
 
         Ronda rondaActual = this.rondas.element();
         rondaActual.jugarConExclusividad();
+
     }
 
 }
