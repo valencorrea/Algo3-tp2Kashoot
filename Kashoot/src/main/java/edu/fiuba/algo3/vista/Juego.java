@@ -36,7 +36,7 @@ import java.util.ArrayList;
     public void start(Stage stage) throws Exception {
 
         /* música */
-
+/*
         Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
 
         MediaPlayer musica = new MediaPlayer(mp3MusicFile);
@@ -45,7 +45,7 @@ import java.util.ArrayList;
         musica.setVolume(0.1);
         musica.play();
 
-
+*/
         stage.setTitle("Kashoot");
 
         Kashoot kashoot = crearModelo();

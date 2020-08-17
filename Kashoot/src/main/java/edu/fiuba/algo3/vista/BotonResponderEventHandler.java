@@ -22,6 +22,8 @@ public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
         this.kashoot = kashoot;
         this.escenaFinal = escenaFinal;
         this.stage = stage;
+        this.stage.setFullScreen(true);
+        this.stage.show();
     }
 
     @Override

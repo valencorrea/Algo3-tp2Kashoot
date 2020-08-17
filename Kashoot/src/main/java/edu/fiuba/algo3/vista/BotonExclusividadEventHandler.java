@@ -31,6 +31,8 @@ public class BotonExclusividadEventHandler implements EventHandler<ActionEvent> 
         this.vista.actualizar();
         if(vista.terminoJuego()){
             this.stage.setScene(this.escenaFinal);
+            this.stage.setFullScreen(true);
+            this.stage.show();
         }
     }
 }

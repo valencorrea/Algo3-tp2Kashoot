@@ -29,6 +29,8 @@ public class BotonMultiplicadorX2EventHandler implements EventHandler<ActionEven
         this.vista.actualizar();
         if(vista.terminoJuego()){
             this.stage.setScene(this.escenaFinal);
+            this.stage.setFullScreen(true);
+            this.stage.show();
         }
     }
 

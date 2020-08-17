@@ -21,6 +21,8 @@ public class BotonMultiplicadorX3EventHandler implements EventHandler<ActionEven
         this.vista = unaVista;
         this.escenaFinal = escenaFinal;
         this.stage = stage;
+        this.stage.setFullScreen(true);
+        this.stage.show();
     }
 
     @Override
