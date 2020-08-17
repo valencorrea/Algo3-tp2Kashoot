@@ -30,6 +30,7 @@ public class VistaKashoot {
             this.pregunta = kashoot.getPregunta();
             this.opciones = kashoot.getOpciones();
         }
+        this.contenedor.actualizar();
        /* contenedor.clean();
         contenedor.setPregunta();
         contenedor.setBotoneraExtras(kashoot);

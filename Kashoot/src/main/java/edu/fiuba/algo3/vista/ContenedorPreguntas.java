@@ -45,12 +45,7 @@ public class ContenedorPreguntas extends VBox {
 
         this.vistaKashoot = new VistaKashoot(kashoot,this);
         this.setDatos(kashoot);
-        this.setHeight(500);
-        this.setAlignment(Pos.CENTER);
-        this.preguntaYOpciones.setAlignment(Pos.CENTER);
-        this.botonesExtra.setAlignment(Pos.TOP_RIGHT);
-        this.preguntaYOpciones.setSpacing(100);
-        this.getChildren().addAll(botonesExtra, preguntaYOpciones);
+
     }
 
     private void setDatos(Kashoot kashoot) {
@@ -140,7 +135,20 @@ public class ContenedorPreguntas extends VBox {
         this.preguntaYOpciones.getChildren().add(contenedorOpciones);
 
     }
-        //this.botonesOpciones = contenedorOpciones;
+
+    public void actualizar() {
+        this.getChildren().clear();
+        preguntaYOpciones = new VBox();
+        this.setDatos(kashoot);
+        this.setHeight(500);
+        this.setAlignment(Pos.CENTER);
+        this.preguntaYOpciones.setAlignment(Pos.CENTER);
+        this.botonesExtra.setAlignment(Pos.TOP_RIGHT);
+        this.preguntaYOpciones.setSpacing(100);
+        this.getChildren().addAll(botonesExtra, preguntaYOpciones);
+
+    }
+    //this.botonesOpciones = contenedorOpciones;
         //this.botonesOpciones.setSpacing(300);
 
 
