@@ -24,11 +24,6 @@ public class Kashoot  {
         this.preguntasYOpciones = unasPreguntasYOpciones;
     }
 */
-    private void inicializarModelo() {
-
-        modelo = new VistaKashoot();
-    }
-
     public ArrayList<Opcion> getOpciones() {// antes llamar a getpregunta
         Ronda ronda = this.rondas.element();
         ArrayList<Opcion> opciones = ronda.getOpciones();
@@ -48,7 +43,7 @@ public class Kashoot  {
        // this.jugador1 = jugador1;
        // this.jugador2 = jugador2;
     }
-//cambiar esta medio rancio
+    //cambiar esta medio rancio
     public Jugador obtenerJugadorActual(){
 
         if(jugadorActual.hasNext()){
@@ -65,7 +60,7 @@ public class Kashoot  {
         this.rondas.add(ronda);
 
     }
-<<<<<<< HEAD
+
     public void actualizar(){
 
         rondas.element().aumentarturnos();
@@ -73,7 +68,6 @@ public class Kashoot  {
              rondas.remove();
          }
     }
-=======
 
     public void jugarRondaConExclusividad() {
 

@@ -21,7 +21,6 @@ public class VistaKashoot {
         this.kashoot.actualizar();
         this.respuestaActual = new Respuesta();
 
-
     }
 
     public ArrayList<Opcion> getOpciones() {
