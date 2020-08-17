@@ -58,4 +58,7 @@ public class Kashoot  {
         rondaActual.jugarConExclusividad();
     }
 
+    public boolean terminoJuego() {
+        return (this.rondas.isEmpty());
+    }
 }

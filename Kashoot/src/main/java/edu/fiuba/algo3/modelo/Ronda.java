@@ -21,11 +21,6 @@ public class Ronda {
         this.pregunta = pregunta;
     }
 
-    public void jugarRonda(Jugador jugador){
-
-        this.turnosJugados += 1;
-    }
-
     public boolean rondaContinua(){
         return (this.turnosJugados < 2);
     }
