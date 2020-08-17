@@ -35,20 +35,23 @@ import java.util.ArrayList;
 
         /* música */
 
-        Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
+       // Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
 
-        MediaPlayer musica = new MediaPlayer(mp3MusicFile);
-        musica.setAutoPlay(true);
-        musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
-
-        musica.play();
+       // MediaPlayer musica = new MediaPlayer(mp3MusicFile);
+      //  musica.setAutoPlay(true);
+       // musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
+       // musica.setVolume(0.1);
+       // musica.play();
         /**/
 
         stage.setTitle("Kashoot");
 
         Kashoot kashoot = crearModelo();
 
-        ContenedorPreguntas contenedorPreguntas = new ContenedorPreguntas(stage, kashoot);
+        ContenedorFinalDelJuego contenedorFinalDeJuego = new ContenedorFinalDelJuego(stage, kashoot);
+        Scene escenaFinalDeJuego = new Scene(contenedorFinalDeJuego, 640, 480);
+
+        ContenedorPreguntas contenedorPreguntas = new ContenedorPreguntas(stage, kashoot, escenaFinalDeJuego);
         Scene escenaJuego = new Scene(contenedorPreguntas, 640, 480);
 
         ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego, kashoot);
@@ -56,8 +59,6 @@ import java.util.ArrayList;
 
         stage.setScene(escenaBienvenidos);
         stage.setFullScreen(true);
-
-
         stage.show();
     }
 
@@ -74,32 +75,33 @@ import java.util.ArrayList;
 
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Soy una pregunta?", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Soy una pregunta?", respuestaCorrecta);
 
         Ronda ronda1 = new Ronda();
         ronda1.agregarPregunta(unaPregunta);
         ronda1.agregarOpciones(opciones);
-
-       /* Opcion opcionCorrecta1 = new Opcion("opcion1");
+    //-------------------------------------------//
+        /*Opcion opcionCorrecta1 = new Opcion("opcion1");
         Opcion opcionIncorrecta2 = new Opcion("opcion2");
         Opcion opcionIncorrecta3 = new Opcion("opcion3");
 
-        ArrayList <Opcion> opciones1 = new ArrayList<Opcion>();
-        opciones.add(opcionCorrecta1);
-        opciones.add(opcionIncorrecta2);
-        //opciones.add(opcionIncorrecta3);
+        ArrayList <Opcion> opciones2 = new ArrayList<Opcion>();
+        opciones2.add(opcionCorrecta1);
+        opciones2.add(opcionIncorrecta2);
+        opciones2.add(opcionIncorrecta3);
 
         Respuesta respuestaCorrecta2 = new Respuesta();
-        respuestaCorrecta.agregarOpcion(opcionCorrecta1);
+        respuestaCorrecta2.agregarOpcion(opcionCorrecta1);
         Pregunta unaPregunta2 = new Pregunta(new ModalidadSinOrden(new Clasico()), "de que color es el cielo?", respuestaCorrecta2);
 
-        Ronda ronda1 = new Ronda();
-        ronda.agregarPregunta(unaPregunta2);
-        ronda.agregarOpciones(opciones1);
+        Ronda ronda2 = new Ronda();
+        ronda2.agregarPregunta(unaPregunta2);
+        ronda2.agregarOpciones(opciones2);
 */
         Kashoot kashoot = new Kashoot();
         kashoot.agregarRonda(ronda1);
-        //kashoot.agregarRonda(ronda1);
+        //kashoot.agregarRonda(ronda2);
+
         return kashoot;
     }
 

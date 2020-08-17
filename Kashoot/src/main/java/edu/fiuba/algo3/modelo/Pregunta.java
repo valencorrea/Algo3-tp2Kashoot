@@ -23,6 +23,7 @@ public class Pregunta {
     public boolean puedeMultiplicar() {
         return this.modalidad.puedeMultiplicar();
     }
+
     public String getContenido(){
         return this.contenido;
     }

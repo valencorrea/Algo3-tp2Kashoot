@@ -3,6 +3,7 @@ package edu.fiuba.algo3.vista;
 import edu.fiuba.algo3.modelo.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,25 +21,29 @@ import java.util.ArrayList;
 
 public class ContenedorPreguntas extends VBox {
 
+    private Scene escenaFinal; //ponerle el private a todos
     //BarraDeMenu menuBar;
     VistaKashoot vistaKashoot;
     VBox botonesExtra;
     VBox preguntaYOpciones = new VBox();
     VBox contenedorCentral;
     Stage stage;
+    Kashoot kashoot;
 
 
-    public ContenedorPreguntas(Stage stage, Kashoot kashoot) {
-        //this.setMenu(stage);
-        //this.setCentro(kashoot);
-        //this.setConsola();
-        //this.contenedorCentral = new VBox();
+    public ContenedorPreguntas(Stage stage, Kashoot kashoot, Scene escenaFinal) {
 
         Image imagen = new Image("patronpreguntas.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
         this.stage = stage;
-        this.vistaKashoot = new VistaKashoot(kashoot);
+        this.kashoot = kashoot;
+        this.escenaFinal = escenaFinal;
+
+        //var puntaje = new Label();
+       // this.getChildren().
+
+        this.vistaKashoot = new VistaKashoot(kashoot,this);
         this.setDatos(kashoot);
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
@@ -54,35 +59,45 @@ public class ContenedorPreguntas extends VBox {
         this.setBotoneraExtras(kashoot);
 
     }
+
     private void setcentro(Kashoot kashoot){
 
-        this.vistaKashoot = new VistaKashoot(kashoot);
+        //this.vistaKashoot = new VistaKashoot(kashoot,this);
         this.setPregunta();
         this.setBotoneraOpciones();
 
     }
 
-    private void setBotoneraExtras(Kashoot kashoot){
+    public void setBotoneraExtras(Kashoot kashoot){
 
         VBox botoneraExtras = new VBox();
         Button botonExclusividad = new Button();
         botonExclusividad.setText("Responder con exclusividad");
-        //BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(stage,kashoot,this);
-        //botonExclusividad.setOnAction(botonExclusividadEventHandler);
+        BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(kashoot,vistaKashoot,escenaFinal,stage);
+        botonExclusividad.setOnAction(botonExclusividadEventHandler);
+        if(this.vistaKashoot.getPregunta().puedeMultiplicar()){
+            botonExclusividad.setDisable(true);
+        }
 
         Button multiplicadorX2 =new Button();
         multiplicadorX2.setText("Responder con multiplicador x2");
 
-        BotonMultiplicadorX2EventHandler botonMultiplicarX2EventHandler = new BotonMultiplicadorX2EventHandler(kashoot, this.vistaKashoot);
+        BotonMultiplicadorX2EventHandler botonMultiplicarX2EventHandler = new BotonMultiplicadorX2EventHandler(kashoot, this.vistaKashoot, this.escenaFinal, this.stage);
         multiplicadorX2.setOnAction(botonMultiplicarX2EventHandler);
 
         Button multiplicadorX3 =new Button();
         multiplicadorX3.setText("Responder con multiplicador x3");
 
-        BotonMultiplicadorX3EventHandler botonMultiplicarX3EventHandler = new BotonMultiplicadorX3EventHandler(kashoot,this.vistaKashoot);
+        BotonMultiplicadorX3EventHandler botonMultiplicarX3EventHandler = new BotonMultiplicadorX3EventHandler(kashoot,this.vistaKashoot, this.escenaFinal, this.stage);
         multiplicadorX3.setOnAction(botonMultiplicarX3EventHandler);
 
-        botoneraExtras.getChildren().addAll(botonExclusividad,multiplicadorX2,multiplicadorX3);
+        Button responderNormal =new Button();
+        responderNormal.setText("Responder");
+
+        BotonResponderEventHandler botonResponderNormalEventHandler = new BotonResponderEventHandler(kashoot, vistaKashoot, this.escenaFinal, this.stage);
+        responderNormal.setOnAction(botonResponderNormalEventHandler);
+
+        botoneraExtras.getChildren().addAll(botonExclusividad,multiplicadorX2,multiplicadorX3,responderNormal);
         if(!this.vistaKashoot.getPregunta().puedeMultiplicar()){
             multiplicadorX2.setDisable(true);
             multiplicadorX3.setDisable(true);
@@ -91,7 +106,7 @@ public class ContenedorPreguntas extends VBox {
 
     }
 
-    private void setPregunta(){
+    public void setPregunta(){
         var textoPregunta = new Label();
 
         Pregunta pregunta = this.vistaKashoot.getPregunta();
@@ -105,7 +120,7 @@ public class ContenedorPreguntas extends VBox {
     }
 //FALTAN GUARDAR LOS SETTERS EN EL VERTICAL BOX
 
-    private void setBotoneraOpciones() {
+    public void setBotoneraOpciones() {
 
         HBox contenedorOpciones = new HBox();
         ArrayList<Opcion> opciones = this.vistaKashoot.getOpciones();
@@ -120,7 +135,6 @@ public class ContenedorPreguntas extends VBox {
             unBoton.setOnAction(botonOpcionEventHandler);
         }
 
-
         contenedorOpciones.setSpacing(200);
         contenedorOpciones.setAlignment(Pos.CENTER);
         this.preguntaYOpciones.getChildren().add(contenedorOpciones);
@@ -128,64 +142,7 @@ public class ContenedorPreguntas extends VBox {
     }
         //this.botonesOpciones = contenedorOpciones;
         //this.botonesOpciones.setSpacing(300);
-/*
-        Button botonMover = new Button();
-        botonMover.setText("Mover");
-        BotonMoverHandler moveButtonHandler = new BotonMoverHandler(vistaRobot, robot);
-        botonMover.setOnAction(moveButtonHandler);
 
-        Button botonDireccion = new Button();
-        botonDireccion.setText("Cambiar direccion");
-        BotonDireccionHandler directionButtonHandler = new BotonDireccionHandler(robot);
-        botonDireccion.setOnAction(directionButtonHandler);
 
-        VBox contenedorVertical = new VBox(botonMover, botonDireccion);
-        contenedorVertical.setSpacing(10);
-        contenedorVertical.setPadding(new Insets(15));
 
-        this.setLeft(contenedorVertical);
-*/
-
-/*
-    private void setMenu(Stage stage) {
-        this.menuBar = new BarraDeMenu(stage);
-        this.setTop(menuBar);
-    }
-
-    private void setCentro(Robot robot) {
-
-        canvasCentral = new Canvas(460, 220);
-        vistaRobot = new VistaRobot(robot, canvasCentral);
-        vistaRobot.dibujar();
-
-        contenedorCentral = new VBox(canvasCentral);
-        contenedorCentral.setAlignment(Pos.CENTER);
-        contenedorCentral.setSpacing(20);
-        contenedorCentral.setPadding(new Insets(25));
-        Image imagen = new Image("file:src/vista/imagenes/fondo-verde.jpg");
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        contenedorCentral.setBackground(new Background(imagenDeFondo));
-
-        this.setCenter(contenedorCentral);
-    }
-
-    private void setConsola() {
-
-        Label etiqueta = new Label();
-        etiqueta.setText("consola...");
-        etiqueta.setFont(Font.font("courier new", FontWeight.SEMI_BOLD, 14));
-        etiqueta.setTextFill(Color.WHITE);
-
-        VBox contenedorConsola = new VBox(etiqueta);
-        contenedorConsola.setSpacing(10);
-        contenedorConsola.setPadding(new Insets(15));
-        contenedorConsola.setStyle("-fx-background-color: black;");
-
-        this.setBottom(contenedorConsola);
-    }
-
-    public BarraDeMenu getBarraDeMenu() {
-        return menuBar;
-    }
-*/
 }

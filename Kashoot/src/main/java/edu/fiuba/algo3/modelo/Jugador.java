@@ -34,12 +34,12 @@ public class Jugador {
     }
 //ver como quedaria mandar el la respuesta su multiplicador.
     // no tener una referencia al multiplicador actual sino ver tener la el vector solo
-    public int responder(Pregunta unaPregunta, Respuesta unaRespuesta) {
+    public void responder(Pregunta unaPregunta, Respuesta unaRespuesta) {
         int puntaje = unaPregunta.calcularPuntaje(unaRespuesta);
         if (unaPregunta.puedeMultiplicar()) {
             puntaje = unaRespuesta.multiplicar(puntaje);
         }
-        return puntaje;
+        this.puntajeObtenidoEnRonda = puntaje;
     }
 
     public int getPuntajeAcumulado(){
@@ -55,24 +55,31 @@ public class Jugador {
         return;
 
     }
+
     public void multiplicarX3(Respuesta unaRespuesta) {
 
         MultiplicadorX3 multiplicador = new MultiplicadorX3();
         this.modificarMultiplicador(unaRespuesta, multiplicador);
         return;
     }
+
     public void modificarMultiplicador(Respuesta unaRespuesta, Multiplicador unMultiplicador){
 
         multiplicadores.remove(unMultiplicador);
         unaRespuesta.modificarMultiplicador(unMultiplicador);
         return;
     }
-    public void asignarPuntajeRonda(int unPuntaje) {
-        this.puntajeObtenidoEnRonda = unPuntaje;
-        //this.puntajeAcumulado += unPuntaje;
-    }
+
     public int usarExclusividad() {
         this.exclusividades.remove(exclusividades.size()-1);
         return 1;
+    }
+
+    public int getPuntajeRonda() {
+        return this.puntajeObtenidoEnRonda;
+    }
+
+    public void asignarPuntajeRonda(int puntajeAcumulado) {
+        this.puntajeAcumulado += this.puntajeObtenidoEnRonda;
     }
 }
