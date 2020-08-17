@@ -7,6 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -38,8 +39,7 @@ public class ContenedorPreguntas extends VBox {
         this.escenaFinal = escenaFinal;
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
-        //var puntaje = new Label();
-        // this.getChildren().
+
         this.vistaKashoot = new VistaKashoot(kashoot,this);
         this.actualizar();
     }
@@ -56,14 +56,13 @@ public class ContenedorPreguntas extends VBox {
 
     private void setDatos(Kashoot kashoot) {
 
-        this.setcentro(kashoot);
+        this.setcentro();
         this.setBotoneraExtras(kashoot);
 
     }
 
-    private void setcentro(Kashoot kashoot){
+    private void setcentro(){
 
-        //this.vistaKashoot = new VistaKashoot(kashoot,this);
         this.setPregunta();
         this.setBotoneraOpciones();
 
@@ -119,7 +118,6 @@ public class ContenedorPreguntas extends VBox {
 
         this.preguntaYOpciones.getChildren().add(textoPregunta);
     }
-//FALTAN GUARDAR LOS SETTERS EN EL VERTICAL BOX
 
     public void setBotoneraOpciones() {
 
@@ -128,7 +126,7 @@ public class ContenedorPreguntas extends VBox {
 
 
         for (Opcion opcion : opciones) {
-            Button unBoton = new Button();
+            ToggleButton unBoton = new ToggleButton();
             unBoton.setText(opcion.getContenido());
             contenedorOpciones.getChildren().add(unBoton);
 
@@ -141,9 +139,5 @@ public class ContenedorPreguntas extends VBox {
         this.preguntaYOpciones.getChildren().add(contenedorOpciones);
 
     }
-        //this.botonesOpciones = contenedorOpciones;
-        //this.botonesOpciones.setSpacing(300);
-
-
 
 }
