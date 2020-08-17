@@ -32,8 +32,7 @@ public class Jugador {
         this.multiplicadores.add(new MultiplicadorX3());
 
     }
-//ver como quedaria mandar el la respuesta su multiplicador.
-    // no tener una referencia al multiplicador actual sino ver tener la el vector solo
+
     public void responder(Pregunta unaPregunta, Respuesta unaRespuesta) {
         int puntaje = unaPregunta.calcularPuntaje(unaRespuesta);
         if (unaPregunta.puedeMultiplicar()) {
@@ -46,8 +45,6 @@ public class Jugador {
         return this.puntajeAcumulado;
     }
 
-    //NUNCA SE DA EL CASO DE QUE EL JUGADOR ELIJA MULTIPLICAR CUANDO NO ESTE YA QUE NO VA A ESTAR EN LA VISTA.
-    //UNA VEZ QUE LO USA DESAPARECE DEL JUEGO
     public void multiplicarX2(Respuesta unaRespuesta) {
 
         MultiplicadorX2 multiplicador = new MultiplicadorX2();
