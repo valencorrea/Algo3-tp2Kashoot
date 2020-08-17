@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class JugadorTest {
-
+/*
     @Test
     public void jugadoresRespondenVerdaderoFalsoClasicoRecibenPuntajeCorrecto() {
 
@@ -418,7 +418,7 @@ public class JugadorTest {
         unJugador.responder(unaPregunta, respuestaCorrecta);
         otroJugador.responder(unaPregunta, respuestaIncorrecta);
 
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unJugador.getPuntajeRonda(), otroJugador.getPuntajeRonda(), cantExclusividades);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
 
         assertEquals(20, unJugador.getPuntajeAcumulado());
     }
@@ -443,7 +443,7 @@ public class JugadorTest {
         unJugador.asignarPuntajeRonda(unJugador.getPuntajeRonda());
         otroJugador.asignarPuntajeRonda(otroJugador.getPuntajeRonda());
 
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unJugador.getPuntajeRonda(), otroJugador.getPuntajeRonda(), cantExclusividades);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
 
@@ -467,7 +467,7 @@ public class JugadorTest {
         unJugador.asignarPuntajeRonda(unJugador.getPuntajeRonda());
         otroJugador.asignarPuntajeRonda(otroJugador.getPuntajeRonda());
 
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador,unJugador.getPuntajeRonda(), otroJugador.getPuntajeRonda(), cantExclusividades);
+        unaExclusividad.determinarPuntaje(unJugador,otroJugador,cantExclusividades);
         assertEquals(0, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
@@ -486,7 +486,7 @@ public class JugadorTest {
         unJugador.responder(unaPregunta, respuestaCorrecta);
         otroJugador.responder(unaPregunta, respuestaCorrecta);
 
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador,unJugador.getPuntajeRonda(), otroJugador.getPuntajeRonda(), cantExclusividades);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
 
         assertEquals(0, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -515,7 +515,7 @@ public class JugadorTest {
         unJugador.responder(unaPregunta, respuestaCorrecta);
         otroJugador.responder(unaPregunta, respuestaIncorrecta);
 
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador,unJugador.getPuntajeRonda(), otroJugador.getPuntajeRonda(),cantExclusividades);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador,cantExclusividades);
 
         assertEquals(40, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -547,7 +547,7 @@ public class JugadorTest {
         unJugador.responder(unaPregunta, respuestaUnJugador);
         otroJugador.responder(unaPregunta, respuestaOtroJugador);
 
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unJugador.getPuntajeRonda(), otroJugador.getPuntajeRonda(), cantExclusividades);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador,cantExclusividades);
 
         assertEquals(40, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -581,7 +581,7 @@ public class JugadorTest {
         unJugador.responder(unaPregunta, respuestaUnJugador);
         otroJugador.responder(unaPregunta, respuestaOtroJugador);
 
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unJugador.getPuntajeRonda(), otroJugador.getPuntajeRonda(), cantExclusividades);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
 
         assertEquals(0, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -614,7 +614,7 @@ public class JugadorTest {
         unJugador.responder(unaPregunta, respuestaUnJugador);
         otroJugador.responder(unaPregunta, respuestaOtroJugador);
 
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unJugador.getPuntajeRonda(), otroJugador.getPuntajeRonda(), cantExclusividades);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
 
         assertEquals(40, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -649,7 +649,7 @@ public class JugadorTest {
         unJugador.responder(unaPregunta, respuestaUnJugador);
         otroJugador.responder(unaPregunta, respuestaOtroJugador);
 
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unJugador.getPuntajeRonda(), otroJugador.getPuntajeRonda(), cantExclusividades);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
 
         assertEquals(0, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -686,7 +686,7 @@ public class JugadorTest {
         unJugador.responder(unaPregunta, respuestaUnJugador);
         otroJugador.responder(unaPregunta, respuestaOtroJugador);
 
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unJugador.getPuntajeRonda(), otroJugador.getPuntajeRonda(), cantExclusividades);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
 
         assertEquals(0, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -722,7 +722,7 @@ public class JugadorTest {
         unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
         otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
 
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unJugador.getPuntajeRonda(), otroJugador.getPuntajeRonda(), cantExclusividades);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
         assertEquals(20, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
@@ -795,7 +795,7 @@ public class JugadorTest {
         assertEquals(40, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
-/*
+
     @Test
     public void JugadoresRespondenCorrectamenteUnaPreguntaTipoGroupChoiceUtilizandoDosExclusividadesYSeCalculaBienElPuntaje() {
         Jugador unJugador = new Jugador("pepe");
