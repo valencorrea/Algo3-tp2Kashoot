@@ -73,8 +73,8 @@ public class ContenedorPreguntas extends VBox {
         VBox botoneraExtras = new VBox();
         Button botonExclusividad = new Button();
         botonExclusividad.setText("Responder con exclusividad");
-        //BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(stage,kashoot,this);
-        //botonExclusividad.setOnAction(botonExclusividadEventHandler);
+        BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(kashoot,vistaKashoot,escenaFinal,stage);
+        botonExclusividad.setOnAction(botonExclusividadEventHandler);
         if(this.vistaKashoot.getPregunta().puedeMultiplicar()){
             botonExclusividad.setDisable(true);
         }
@@ -134,7 +134,6 @@ public class ContenedorPreguntas extends VBox {
             BotonOpcionEventHandler botonOpcionEventHandler = new BotonOpcionEventHandler(unaRespuesta, opcion);
             unBoton.setOnAction(botonOpcionEventHandler);
         }
-
 
         contenedorOpciones.setSpacing(200);
         contenedorOpciones.setAlignment(Pos.CENTER);

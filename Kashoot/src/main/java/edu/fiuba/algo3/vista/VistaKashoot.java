@@ -26,8 +26,10 @@ public class VistaKashoot {
     public void actualizar(){
         this.kashoot.actualizar();
         this.respuestaActual = new Respuesta();
-        this.pregunta = kashoot.getPregunta();
-        this.opciones = kashoot.getOpciones();
+        if(!this.kashoot.terminoJuego()) {
+            this.pregunta = kashoot.getPregunta();
+            this.opciones = kashoot.getOpciones();
+        }
        /* contenedor.clean();
         contenedor.setPregunta();
         contenedor.setBotoneraExtras(kashoot);

@@ -100,7 +100,7 @@ import java.util.ArrayList;
 */
         Kashoot kashoot = new Kashoot();
         kashoot.agregarRonda(ronda1);
-  //      kashoot.agregarRonda(ronda2);
+        //kashoot.agregarRonda(ronda2);
 
         return kashoot;
     }

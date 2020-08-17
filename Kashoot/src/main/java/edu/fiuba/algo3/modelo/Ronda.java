@@ -58,8 +58,5 @@ public class Ronda {
         }
         jugador1.asignarPuntajeRonda(jugador1.getPuntajeRonda());
         jugador2.asignarPuntajeRonda(jugador2.getPuntajeRonda());
-
-
-
     }
 }
