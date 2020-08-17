@@ -33,11 +33,13 @@ public class ContenedorFinalDelJuego extends VBox {
         labelPuntajes.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
         labelPuntajes.setTextFill(Color.HOTPINK);
 
-        var labelPuntajeJugador1 = new Label("3");
+        var labelPuntajeJugador1 = new Label("2");
+
         labelPuntajeJugador1.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
         labelPuntajeJugador1.setTextFill(Color.HOTPINK);
 
-        var labelPuntajeJugador2 = new Label("4");
+        var labelPuntajeJugador2 = new Label("3");
+
         labelPuntajeJugador2.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
         labelPuntajeJugador2.setTextFill(Color.HOTPINK);
 
