@@ -48,7 +48,10 @@ import java.util.ArrayList;
 
         Kashoot kashoot = crearModelo();
 
-        ContenedorPreguntas contenedorPreguntas = new ContenedorPreguntas(stage, kashoot);
+        ContenedorFinalDelJuego contenedorFinalDeJuego = new ContenedorFinalDelJuego(stage, kashoot);
+        Scene escenaFinalDeJuego = new Scene(contenedorFinalDeJuego, 640, 480);
+
+        ContenedorPreguntas contenedorPreguntas = new ContenedorPreguntas(stage, kashoot, escenaFinalDeJuego);
         Scene escenaJuego = new Scene(contenedorPreguntas, 640, 480);
 
         ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego, kashoot);
@@ -56,8 +59,6 @@ import java.util.ArrayList;
 
         stage.setScene(escenaBienvenidos);
         stage.setFullScreen(true);
-
-
         stage.show();
     }
 
@@ -74,13 +75,13 @@ import java.util.ArrayList;
 
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrecta);
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Soy una pregunta?", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Soy una pregunta?", respuestaCorrecta);
 
         Ronda ronda1 = new Ronda();
         ronda1.agregarPregunta(unaPregunta);
         ronda1.agregarOpciones(opciones);
     //-------------------------------------------//
-        Opcion opcionCorrecta1 = new Opcion("opcion1");
+       /* Opcion opcionCorrecta1 = new Opcion("opcion1");
         Opcion opcionIncorrecta2 = new Opcion("opcion2");
         Opcion opcionIncorrecta3 = new Opcion("opcion3");
 
@@ -96,10 +97,10 @@ import java.util.ArrayList;
         Ronda ronda2 = new Ronda();
         ronda2.agregarPregunta(unaPregunta2);
         ronda2.agregarOpciones(opciones2);
-
+*/
         Kashoot kashoot = new Kashoot();
         kashoot.agregarRonda(ronda1);
-        kashoot.agregarRonda(ronda2);
+  //      kashoot.agregarRonda(ronda2);
 
         return kashoot;
     }

@@ -6,24 +6,31 @@ import edu.fiuba.algo3.modelo.Pregunta;
 import edu.fiuba.algo3.modelo.Respuesta;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
 
-    private final VistaKashoot vista;
-    private final Kashoot kashoot;
+    private VistaKashoot vista;
+    private Kashoot kashoot;
+    private Scene escenaFinal;
+    private Stage stage;
 
 
-    public BotonResponderEventHandler(Kashoot kashoot, VistaKashoot unaVista) {
+    public BotonResponderEventHandler(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage) {
         this.vista = unaVista;
         this.kashoot = kashoot;
+        this.escenaFinal = escenaFinal;
+        this.stage = stage;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
         Jugador jugadorActual = kashoot.obtenerJugadorActual();
-        int resultado = jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
-        jugadorActual.asignarPuntajeRonda(resultado);
-
+        jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
         this.vista.actualizar();
+        if(vista.terminoJuego()){
+            this.stage.setScene(this.escenaFinal);
+        }
     }
 }

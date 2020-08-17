@@ -6,16 +6,21 @@ import edu.fiuba.algo3.modelo.Pregunta;
 import edu.fiuba.algo3.modelo.Respuesta;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class BotonMultiplicadorX3EventHandler implements EventHandler<ActionEvent> {
 
+    private Scene escenaFinal;
+    private Stage stage;
     private Kashoot kashoot;
     private VistaKashoot vista;
 
-    public BotonMultiplicadorX3EventHandler(Kashoot kashoot, VistaKashoot unaVista){
+    public BotonMultiplicadorX3EventHandler(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage){
         this.kashoot = kashoot;
         this.vista = unaVista;
-
+        this.escenaFinal = escenaFinal;
+        this.stage = stage;
     }
 
     @Override
@@ -23,13 +28,14 @@ public class BotonMultiplicadorX3EventHandler implements EventHandler<ActionEven
 
         Jugador jugadorActual = kashoot.obtenerJugadorActual();
         jugadorActual.multiplicarX2(this.vista.getRespuesta());
-        int puntaje = jugadorActual.responder(this.vista.getPregunta(), this.vista.getRespuesta());
-        jugadorActual.asignarPuntajeRonda(puntaje);
+        jugadorActual.responder(this.vista.getPregunta(), this.vista.getRespuesta());
         /*if(vista.terminoElJuego()){
             stage.setScene()
         }*/
         this.vista.actualizar();
-
+        if(vista.terminoJuego()){
+            this.stage.setScene(this.escenaFinal);
+        }
 
     }
 }

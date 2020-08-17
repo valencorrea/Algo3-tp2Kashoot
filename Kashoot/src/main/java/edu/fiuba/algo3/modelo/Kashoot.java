@@ -59,4 +59,7 @@ public class Kashoot  {
 
     }
 
+    public boolean terminoJuego() {
+        return (this.rondas.isEmpty());
+    }
 }

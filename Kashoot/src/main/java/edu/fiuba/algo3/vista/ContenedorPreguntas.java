@@ -3,6 +3,7 @@ package edu.fiuba.algo3.vista;
 import edu.fiuba.algo3.modelo.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 
 public class ContenedorPreguntas extends VBox {
 
+    private Scene escenaFinal; //ponerle el private a todos
     //BarraDeMenu menuBar;
     VistaKashoot vistaKashoot;
     VBox botonesExtra;
@@ -29,13 +31,14 @@ public class ContenedorPreguntas extends VBox {
     Kashoot kashoot;
 
 
-    public ContenedorPreguntas(Stage stage, Kashoot kashoot) {
+    public ContenedorPreguntas(Stage stage, Kashoot kashoot, Scene escenaFinal) {
 
         Image imagen = new Image("patronpreguntas.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
         this.stage = stage;
         this.kashoot = kashoot;
+        this.escenaFinal = escenaFinal;
 
         //var puntaje = new Label();
        // this.getChildren().
@@ -79,22 +82,20 @@ public class ContenedorPreguntas extends VBox {
         Button multiplicadorX2 =new Button();
         multiplicadorX2.setText("Responder con multiplicador x2");
 
-        BotonMultiplicadorX2EventHandler botonMultiplicarX2EventHandler = new BotonMultiplicadorX2EventHandler(kashoot, this.vistaKashoot);
+        BotonMultiplicadorX2EventHandler botonMultiplicarX2EventHandler = new BotonMultiplicadorX2EventHandler(kashoot, this.vistaKashoot, this.escenaFinal, this.stage);
         multiplicadorX2.setOnAction(botonMultiplicarX2EventHandler);
 
         Button multiplicadorX3 =new Button();
         multiplicadorX3.setText("Responder con multiplicador x3");
 
-        BotonMultiplicadorX3EventHandler botonMultiplicarX3EventHandler = new BotonMultiplicadorX3EventHandler(kashoot,this.vistaKashoot);
+        BotonMultiplicadorX3EventHandler botonMultiplicarX3EventHandler = new BotonMultiplicadorX3EventHandler(kashoot,this.vistaKashoot, this.escenaFinal, this.stage);
         multiplicadorX3.setOnAction(botonMultiplicarX3EventHandler);
 
         Button responderNormal =new Button();
         responderNormal.setText("Responder");
 
-        BotonResponderEventHandler botonResponderNormalEventHandler = new BotonResponderEventHandler(kashoot, vistaKashoot);
+        BotonResponderEventHandler botonResponderNormalEventHandler = new BotonResponderEventHandler(kashoot, vistaKashoot, this.escenaFinal, this.stage);
         responderNormal.setOnAction(botonResponderNormalEventHandler);
-
-
 
         botoneraExtras.getChildren().addAll(botonExclusividad,multiplicadorX2,multiplicadorX3,responderNormal);
         if(!this.vistaKashoot.getPregunta().puedeMultiplicar()){

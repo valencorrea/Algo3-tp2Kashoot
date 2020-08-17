@@ -46,4 +46,8 @@ public class VistaKashoot {
         return this.pregunta;
         //return this.kashoot.getPregunta();
     }
+
+    public boolean terminoJuego() {
+        return kashoot.terminoJuego();
+    }
 }
