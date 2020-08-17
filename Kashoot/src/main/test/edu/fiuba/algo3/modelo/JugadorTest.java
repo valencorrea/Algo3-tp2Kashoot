@@ -170,7 +170,6 @@ public class JugadorTest {
         assertEquals(-10, otroJugador.getPuntajeAcumulado());
     }
 
-
     @Test
     public void UnjugadorElijeCorrectamenteLasOpcionesDEGROUPCHOICEParaCadaGrupoTomandoEncuentaElPrimerGrupoYSeCalculaBienElPuntaje() {
         Jugador unJugador = new Jugador("pepe");
