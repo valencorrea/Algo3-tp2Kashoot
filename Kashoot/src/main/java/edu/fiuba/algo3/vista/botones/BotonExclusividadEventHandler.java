@@ -30,7 +30,6 @@ public class BotonExclusividadEventHandler implements EventHandler<ActionEvent> 
         jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
         kashoot.jugarRondaConExclusividad();
         kashoot.obtenerJugadorActual().usarExclusividad();
-        System.out.println(jugadorActual.getPuntajeRonda());
 
         this.vista.actualizar();
         if(vista.terminoJuego()){

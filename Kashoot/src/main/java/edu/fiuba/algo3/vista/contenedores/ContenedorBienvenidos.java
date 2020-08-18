@@ -52,11 +52,10 @@ public class ContenedorBienvenidos extends VBox {
 
             TextField textoJugador2 = new TextField();
             textoJugador2.setPromptText("Nombre del jugador 2");
+            String nombreJugador2 = textoJugador2.getText();
             textoJugador2.setAlignment(Pos.CENTER);
             textoJugador2.setScaleX(1.5);
             textoJugador2.setScaleY(1.5);
-
-            kashoot.setNombrejugadores(textoJugador1.getText(),textoJugador2.getText());
 
 
             HBox contenedorDeNombres = new HBox(textoJugador1, textoJugador2);
@@ -75,7 +74,7 @@ public class ContenedorBienvenidos extends VBox {
             mensajeError.setFont(Font.font("Tahoma", FontWeight.BLACK, 15));
             contenedorDeNombres.getChildren().add(mensajeError);
 
-            BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena, textoJugador1, textoJugador2, mensajeError);
+            BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena, textoJugador1, textoJugador2, mensajeError,kashoot);
 
             botonJugar.setOnAction(botonJugarEventHandler);
 
