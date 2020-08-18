@@ -2,23 +2,14 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.formatos.Clasico;
-import edu.fiuba.algo3.modelo.formatos.Parcial;
-import edu.fiuba.algo3.modelo.formatos.Penalidad;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadSinOrden;
-import edu.fiuba.algo3.modelo.modalidades.ModalidadOrdenada;
-import edu.fiuba.algo3.vista.ContenedorBienvenidos;
-import edu.fiuba.algo3.vista.ContenedorPreguntas;
+import edu.fiuba.algo3.vista.contenedores.ContenedorBienvenidos;
+import edu.fiuba.algo3.vista.contenedores.ContenedorFinalDelJuego;
+import edu.fiuba.algo3.vista.contenedores.ContenedorPreguntas;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
-import java.io.File;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**

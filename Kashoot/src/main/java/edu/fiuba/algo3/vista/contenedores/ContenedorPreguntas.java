@@ -1,10 +1,10 @@
-package edu.fiuba.algo3.vista;
+package edu.fiuba.algo3.vista.contenedores;
 
 import edu.fiuba.algo3.modelo.*;
-import javafx.geometry.Insets;
+import edu.fiuba.algo3.vista.*;
+import edu.fiuba.algo3.vista.botones.*;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 import edu.fiuba.algo3.modelo.Kashoot;
 import edu.fiuba.algo3.modelo.Pregunta;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ContenedorPreguntas extends VBox {

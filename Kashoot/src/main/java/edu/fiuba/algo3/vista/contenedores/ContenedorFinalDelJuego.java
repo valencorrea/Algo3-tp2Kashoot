@@ -1,7 +1,7 @@
-package edu.fiuba.algo3.vista;
+package edu.fiuba.algo3.vista.contenedores;
 
-import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Kashoot;
+import edu.fiuba.algo3.vista.botones.BotonFinDeJuegoEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
