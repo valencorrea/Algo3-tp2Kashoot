@@ -263,14 +263,14 @@ import java.util.ArrayList;
         ronda8.agregarOpciones(opciones8);
 
         //-------------------------------------------//
-        kashoot.agregarRonda(ronda1);
-       /* kashoot.agregarRonda(ronda2);
-        kashoot.agregarRonda(ronda3);
+      /*  kashoot.agregarRonda(ronda1);*/
+        kashoot.agregarRonda(ronda2);
+        /*kashoot.agregarRonda(ronda3);
         kashoot.agregarRonda(ronda4);
-        kashoot.agregarRonda(ronda5);
+        kashoot.agregarRonda(ronda5);*/
         kashoot.agregarRonda(ronda6);
         kashoot.agregarRonda(ronda7);
-        kashoot.agregarRonda(ronda8);*/
+        kashoot.agregarRonda(ronda8);
     }
 
 }
