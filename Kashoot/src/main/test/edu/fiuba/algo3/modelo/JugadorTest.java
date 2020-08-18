@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 
 public class JugadorTest {
@@ -140,6 +141,7 @@ public class JugadorTest {
 
     @Test
     public void jugadoresRespondenMultipleChoiceConPenalidadRecibenPuntajeCorrecto() {
+
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
 
@@ -171,7 +173,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void UnjugadorEligeCorrectamenteLasOpcionesDEGROUPCHOICEParaCadaGrupoTomandoEncuentaElPrimerGrupoYSeCalculaBienElPuntaje() {
+    public void UnjugadorEligeCorrectamenteLasOpcionesDeGroupChoiceParaCadaGrupoTomandoEncuentaElPrimerGrupoYSeCalculaBienElPuntaje() {
         Jugador unJugador = new Jugador();
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
@@ -200,7 +202,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void UnjugadorEligeIncorrectamenteLasOpcionesDEGROUPCHOICEParaElGrupo2YSeContabilizaCorrectamenteLosPuntos() {
+    public void UnjugadorEligeIncorrectamenteLasOpcionesDeGroupChoiceParaElGrupo2YSeContabilizaCorrectamenteLosPuntos() {
         Jugador unJugador = new Jugador();
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
@@ -372,7 +374,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void jugadorRespondeVerdaderoFalsoConFortatoClasicoYMultiplicadorX3RecibePuntajeCorrecto() {
+    public void jugadorRespondeVerdaderoFalsoConFormatoClasicoYMultiplicadorX3RecibePuntajeCorrecto() {
 
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
@@ -536,6 +538,7 @@ public class JugadorTest {
 
     @Test
     public void unJugadorEligeExclusividadYRespondeBienUnChoiceClasico() {
+
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
 
@@ -923,4 +926,41 @@ public class JugadorTest {
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
 
+    @Test
+    public void jugadorNoPuedeUsarExclusividadLuegoDeDosUsos(){
+
+        Jugador unJugador = new Jugador();
+
+        unJugador.usarExclusividad();
+        unJugador.usarExclusividad();
+
+        assertFalse(unJugador.tieneExclusividad());
+    }
+/*
+    @Test
+    public void jugadorNoPuedeUsarMultiplicadorX2NiX3LuegoDeUnUso(){
+
+        Jugador unJugador = new Jugador();
+
+        Opcion opcionUno = new Opcion("uno");
+        Opcion opcionDos = new Opcion("dos");
+        Opcion opcionTres = new Opcion("tres");
+        Opcion opcionCuatro = new Opcion("cuatro");
+
+
+        Respuesta unaRespuesta = new Respuesta();
+        unaRespuesta.agregarOpcion(opcionUno);
+        unaRespuesta.agregarOpcion(opcionDos);
+
+        Respuesta otraRespuesta = new Respuesta();
+        otraRespuesta.agregarOpcion(opcionTres);
+        otraRespuesta.agregarOpcion(opcionCuatro);
+
+        unJugador.multiplicarX2(unaRespuesta);
+        unJugador.multiplicarX3(otraRespuesta);
+
+        assertFalse(unJugador.);
+
+    }
+    */
 }
