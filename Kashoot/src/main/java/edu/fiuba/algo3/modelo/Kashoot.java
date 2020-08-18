@@ -73,7 +73,7 @@ public class Kashoot  {
     }
 
 
-    public void setNombrejugadores(String nombreJugadorUno, String nombreJugadorDos) {
+    public void setNombreJugadores(String nombreJugadorUno, String nombreJugadorDos) {
         Jugador jugadorUno = this.jugadores.poll();
         jugadorUno.setNombre(nombreJugadorUno);
         this.jugadores.add(jugadorUno);
