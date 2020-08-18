@@ -70,42 +70,82 @@ public class ContenedorPreguntas extends VBox {
     public void setBotoneraExtras(Kashoot kashoot){
 
         VBox botoneraExtras = new VBox();
-        Button botonExclusividad = new Button();
-        botonExclusividad.setText("Responder con exclusividad");
-        BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(kashoot,vistaKashoot,escenaFinal,stage);
-        botonExclusividad.setOnAction(botonExclusividadEventHandler);
+
+        ToggleButton botonExclusividad = crearBotonExclusividad();
+        verificacionExclusividad(botonExclusividad);
+
+        ToggleButton responderNormal = crearBotonRespuestaNormal();
+
+        ToggleButton multiplicadorX2 = crearBotonMultiplicadorx2();
+        ToggleButton multiplicadorX3 = crearBotonMultiplicadorx3();
+        verificacionMultiplicadores(multiplicadorX2, multiplicadorX3);
+
+        botoneraExtras.getChildren().addAll(botonExclusividad,multiplicadorX2,multiplicadorX3,responderNormal);
+        this.botonesExtra = botoneraExtras;
+
+
+    }
+
+    private void verificacionExclusividad(ToggleButton botonExclusividad) {
+
         if(this.vistaKashoot.getPregunta().puedeMultiplicar() || !kashoot.obtenerJugadorActual().tieneExclusividad()){
             botonExclusividad.setDisable(true);
         }
+    }
 
-        Button multiplicadorX2 =new Button();
-        multiplicadorX2.setText("Responder con multiplicador x2");
+    private ToggleButton crearBotonExclusividad() {
 
-        BotonMultiplicadorX2EventHandler botonMultiplicarX2EventHandler = new BotonMultiplicadorX2EventHandler(kashoot, this.vistaKashoot, this.escenaFinal, this.stage);
-        multiplicadorX2.setOnAction(botonMultiplicarX2EventHandler);
+        ToggleButton botonExclusividad = new ToggleButton();
+        botonExclusividad.setText("Responder con exclusividad");
+        BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(kashoot,vistaKashoot,escenaFinal,stage);
+        botonExclusividad.setOnAction(botonExclusividadEventHandler);
 
-        Button multiplicadorX3 =new Button();
-        multiplicadorX3.setText("Responder con multiplicador x3");
+        return botonExclusividad;
+    }
 
-        BotonMultiplicadorX3EventHandler botonMultiplicarX3EventHandler = new BotonMultiplicadorX3EventHandler(kashoot,this.vistaKashoot, this.escenaFinal, this.stage);
-        multiplicadorX3.setOnAction(botonMultiplicarX3EventHandler);
+    private void verificacionMultiplicadores(ToggleButton multiplicadorX2, ToggleButton multiplicadorX3) {
 
-        Button responderNormal =new Button();
+        if(!this.vistaKashoot.getPregunta().puedeMultiplicar()){
+            multiplicadorX2.setDisable(true);
+            multiplicadorX3.setDisable(true);
+        }
+    }
+
+    private ToggleButton crearBotonRespuestaNormal() {
+
+        ToggleButton responderNormal = new ToggleButton();
         responderNormal.setText("Responder");
 
         BotonResponderEventHandler botonResponderNormalEventHandler = new BotonResponderEventHandler(kashoot, vistaKashoot, this.escenaFinal, this.stage);
         responderNormal.setOnAction(botonResponderNormalEventHandler);
 
-        botoneraExtras.getChildren().addAll(botonExclusividad,multiplicadorX2,multiplicadorX3,responderNormal);
-        if(!this.vistaKashoot.getPregunta().puedeMultiplicar()){
-            multiplicadorX2.setDisable(true);
-            multiplicadorX3.setDisable(true);
-        }
-        this.botonesExtra = botoneraExtras;
+        return responderNormal;
+    }
 
+    private ToggleButton crearBotonMultiplicadorx3() {
+
+        ToggleButton multiplicadorX3 =new ToggleButton();
+        multiplicadorX3.setText("Responder con multiplicador x3");
+
+        BotonMultiplicadorX3EventHandler botonMultiplicarX3EventHandler = new BotonMultiplicadorX3EventHandler(kashoot,this.vistaKashoot, this.escenaFinal, this.stage);
+        multiplicadorX3.setOnAction(botonMultiplicarX3EventHandler);
+
+        return multiplicadorX3;
+    }
+
+    private ToggleButton crearBotonMultiplicadorx2() {
+
+        ToggleButton multiplicadorX2 = new ToggleButton();
+        multiplicadorX2.setText("Responder con multiplicador x2");
+
+        BotonMultiplicadorX2EventHandler botonMultiplicarX2EventHandler = new BotonMultiplicadorX2EventHandler(kashoot, this.vistaKashoot, this.escenaFinal, this.stage);
+        multiplicadorX2.setOnAction(botonMultiplicarX2EventHandler);
+
+        return multiplicadorX2;
     }
 
     public void setPregunta(){
+
         var textoPregunta = new Label();
 
         Pregunta pregunta = this.vistaKashoot.getPregunta();
