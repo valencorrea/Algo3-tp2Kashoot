@@ -12,12 +12,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class JugadorTest {
-/*
+
     @Test
     public void jugadoresRespondenVerdaderoFalsoClasicoRecibenPuntajeCorrecto() {
 
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionVerdadera = new Opcion("Verdadera");
         Opcion opcionFalsa = new Opcion("Falsa");
@@ -42,8 +42,8 @@ public class JugadorTest {
     @Test
     public void jugadoresRespondenVerdaderoFalsoConPenalidadRecibenPuntajeCorrecto() {
 
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionVerdadera = new Opcion("Verdadera");
         Opcion opcionFalsa = new Opcion("Falsa");
@@ -67,8 +67,8 @@ public class JugadorTest {
 
     @Test
     public void jugadoresRespondenMultipleChoiceClasicoRecibenPuntajeCorrecto() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
@@ -100,9 +100,9 @@ public class JugadorTest {
 
     @Test
     public void jugadoresRespondenMultipleChoiceParcialRecibenPuntajeCorrecto() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
-        Jugador tercerJugador = new Jugador("pepesito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
+        Jugador tercerJugador = new Jugador();
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
@@ -140,8 +140,8 @@ public class JugadorTest {
 
     @Test
     public void jugadoresRespondenMultipleChoiceConPenalidadRecibenPuntajeCorrecto() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
@@ -171,8 +171,8 @@ public class JugadorTest {
     }
 
     @Test
-    public void UnjugadorElijeCorrectamenteLasOpcionesDEGROUPCHOICEParaCadaGrupoTomandoEncuentaElPrimerGrupoYSeCalculaBienElPuntaje() {
-        Jugador unJugador = new Jugador("pepe");
+    public void UnjugadorEligeCorrectamenteLasOpcionesDEGROUPCHOICEParaCadaGrupoTomandoEncuentaElPrimerGrupoYSeCalculaBienElPuntaje() {
+        Jugador unJugador = new Jugador();
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
         Opcion opcionGrupo1_2 = new Opcion("Azul");
@@ -200,8 +200,8 @@ public class JugadorTest {
     }
 
     @Test
-    public void UnjugadorElijeIncorrectamenteLasOpcionesDEGROUPCHOICEParaElGrupo2YSeContabilizaCorrectamenteLosPuntos() {
-        Jugador unJugador = new Jugador("pepe");
+    public void UnjugadorEligeIncorrectamenteLasOpcionesDEGROUPCHOICEParaElGrupo2YSeContabilizaCorrectamenteLosPuntos() {
+        Jugador unJugador = new Jugador();
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
         Opcion opcionGrupo1_2 = new Opcion("Azul");
@@ -230,7 +230,7 @@ public class JugadorTest {
 
     @Test
     public void UnjugadorNoEligeNingunaOpcionParaGroupChoiceYSeContabilizaCorrectamenteLosPuntos() {
-        Jugador unJugador = new Jugador("pepe");
+        Jugador unJugador = new Jugador();
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
         Opcion opcionGrupo1_2 = new Opcion("Azul");
@@ -255,8 +255,8 @@ public class JugadorTest {
     }
 
     @Test
-    public void UnjugadorElijeAlRevesLasRespuestasParaGroupChoiceYSeContabilizaCorrectamenteLosPuntos() {
-        Jugador unJugador = new Jugador("pepe");
+    public void UnjugadorEligeAlRevesLasRespuestasParaGroupChoiceYSeContabilizaCorrectamenteLosPuntos() {
+        Jugador unJugador = new Jugador();
 
         Opcion opcionGrupo1_1 = new Opcion("A");
         Opcion opcionGrupo1_2 = new Opcion("B");
@@ -286,9 +286,8 @@ public class JugadorTest {
     @Test
     public void jugadorRespondeVerdaderoFalsoConPenalidadYMultiplicadorX2RecibePuntajeCorrecto() {
 
-        Jugador unJugador = new Jugador("pepe");
-
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionVerdadera = new Opcion("Verdadera");
         Opcion opcionFalsa = new Opcion("Falsa");
@@ -317,8 +316,8 @@ public class JugadorTest {
     @Test
     public void jugadorRespondeVerdaderoFalsoConFortatoClasicoYMultiplicadorX2RecibePuntajeCorrecto() {
 
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionVerdadera = new Opcion("Verdadera");
         Opcion opcionFalsa = new Opcion("Falsa");
@@ -346,8 +345,8 @@ public class JugadorTest {
     @Test
     public void jugadorRespondeVerdaderoFalsoConPenalidadYMultiplicadorX3RecibePuntajeCorrecto() {
 
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionVerdadera = new Opcion("Verdadera");
         Opcion opcionFalsa = new Opcion("Falsa");
@@ -375,8 +374,8 @@ public class JugadorTest {
     @Test
     public void jugadorRespondeVerdaderoFalsoConFortatoClasicoYMultiplicadorX3RecibePuntajeCorrecto() {
 
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionVerdadera = new Opcion("Verdadera");
         Opcion opcionFalsa = new Opcion("Falsa");
@@ -403,15 +402,19 @@ public class JugadorTest {
 
     @Test
     public void jugadorEligeExclusividadYSeDuplicaSuPuntajeAlResponderCorrectamente() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
+
         Opcion opcionVerdadera = new Opcion("Verdadera");
         Opcion opcionFalsa = new Opcion("Falsa");
+
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionVerdadera);
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
+
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+
         int cantExclusividades = unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
@@ -419,14 +422,16 @@ public class JugadorTest {
         otroJugador.responder(unaPregunta, respuestaIncorrecta);
 
         unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
+        unJugador.asignarPuntajeRonda();
+        otroJugador.asignarPuntajeRonda();
 
         assertEquals(20, unJugador.getPuntajeAcumulado());
     }
 
     @Test
     public void jugadorEligeExclusividadYSeAnulaSuPuntajeAlResponderMal() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
         Opcion opcionVerdadera = new Opcion("Verdadera");
         Opcion opcionFalsa = new Opcion("Falsa");
         Respuesta respuestaCorrecta = new Respuesta();
@@ -449,10 +454,13 @@ public class JugadorTest {
 
     @Test
     public void dosJugadoresEligenExclusividadYSeAnulaSuPuntajeAlResponderAmbosMal() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
+
         Opcion opcionVerdadera = new Opcion("Verdadera");
         Opcion opcionFalsa = new Opcion("Falsa");
+
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionVerdadera);
         Respuesta respuestaIncorrecta = new Respuesta();
@@ -475,8 +483,8 @@ public class JugadorTest {
     @Test
     public void unJugadorEligeExclusividadYSeAnulaSuPuntajeAlResponderAmbosJugadoresBien() {
 
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
         Opcion opcionVerdadera = new Opcion("Verdadera");
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionVerdadera);
@@ -497,8 +505,8 @@ public class JugadorTest {
 
     @Test
     public void ambosJugadoresEligenExclusividadYUnoRespondeBien() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionVerdadera = new Opcion("Verdadera");
         Opcion opcionFalsa = new Opcion("Falsa");
@@ -519,6 +527,8 @@ public class JugadorTest {
         otroJugador.responder(unaPregunta, respuestaIncorrecta);
 
         unaExclusividad.determinarPuntaje(unJugador, otroJugador,cantExclusividades);
+        unJugador.asignarPuntajeRonda();
+        otroJugador.asignarPuntajeRonda();
 
         assertEquals(40, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -526,8 +536,8 @@ public class JugadorTest {
 
     @Test
     public void unJugadorEligeExclusividadYRespondeBienUnChoiceClasico() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
@@ -551,6 +561,8 @@ public class JugadorTest {
         otroJugador.responder(unaPregunta, respuestaOtroJugador);
 
         unaExclusividad.determinarPuntaje(unJugador, otroJugador,cantExclusividades);
+        unJugador.asignarPuntajeRonda();
+        otroJugador.asignarPuntajeRonda();
 
         assertEquals(40, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -558,8 +570,8 @@ public class JugadorTest {
 
     @Test
     public void unJugadorEligeExclusividadYRespondeMalUnChoiceClasico() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
@@ -592,8 +604,8 @@ public class JugadorTest {
 
     @Test
     public void unJugadorEligeExclusividadYRespondeMejorQueOtroEnFormatoParcial() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
@@ -618,6 +630,8 @@ public class JugadorTest {
         otroJugador.responder(unaPregunta, respuestaOtroJugador);
 
         unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
+        unJugador.asignarPuntajeRonda();
+        otroJugador.asignarPuntajeRonda();
 
         assertEquals(40, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -626,8 +640,8 @@ public class JugadorTest {
     @Test
     public void dosJugadoresElijenExclusividadesYRespondenAmbosBien() {
 
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
@@ -661,8 +675,8 @@ public class JugadorTest {
 
     @Test
     public void dosJugadoresElijenExclusividadesYRespondenAmbosMal() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepito");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
@@ -698,8 +712,8 @@ public class JugadorTest {
 
     @Test
     public void JugadoresRespondenUnaPreguntaTipoGroupChoiceUtilizandoUnaExclusividadYSeCalculaBienElPuntaje() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepe");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
         Opcion opcionGrupo1_2 = new Opcion("Azul");
@@ -727,14 +741,17 @@ public class JugadorTest {
         otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
 
         unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
+        unJugador.asignarPuntajeRonda();
+        otroJugador.asignarPuntajeRonda();
+
         assertEquals(20, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
 
     @Test
     public void JugadoresRespondenCorrectamenteUnaPreguntaTipoGroupChoiceUtilizandoUnaExclusividadYSeCalculaBienElPuntaje() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepe");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
         Opcion opcionGrupo1_2 = new Opcion("Azul");
@@ -760,6 +777,8 @@ public class JugadorTest {
         otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
 
         unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
+        unJugador.asignarPuntajeRonda();
+        otroJugador.asignarPuntajeRonda();
 
         assertEquals(0, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -768,8 +787,8 @@ public class JugadorTest {
     @Test
     public void JugadoresRespondenUnaPreguntaTipoGroupChoiceUtilizandoDosExclusividadesYSeCalculaBienElPuntaje() {
 
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepe");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
         Opcion opcionGrupo1_2 = new Opcion("Azul");
@@ -796,7 +815,10 @@ public class JugadorTest {
 
         unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
         otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
+
         unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
+        unJugador.asignarPuntajeRonda();
+        otroJugador.asignarPuntajeRonda();
 
         assertEquals(40, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -804,8 +826,8 @@ public class JugadorTest {
 
     @Test
     public void JugadoresRespondenCorrectamenteUnaPreguntaTipoGroupChoiceUtilizandoDosExclusividadesYSeCalculaBienElPuntaje() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepe");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
         Opcion opcionGrupo1_2 = new Opcion("Azul");
@@ -839,8 +861,8 @@ public class JugadorTest {
 
     @Test
     public void JugadoresRespondenIncorrectamenteUnaPreguntaTipoGroupChoiceUtilizandoUnaExclusividadYSeCalculaBienElPuntaje() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepe");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
         Opcion opcionGrupo1_2 = new Opcion("Azul");
@@ -871,8 +893,8 @@ public class JugadorTest {
 
     @Test
     public void JugadoresRespondenIncorrectamenteUnaPreguntaTipoGroupChoiceUtilizandoDosExclusividadesYSeCalculaBienElPuntaje() {
-        Jugador unJugador = new Jugador("pepe");
-        Jugador otroJugador = new Jugador("pepe");
+        Jugador unJugador = new Jugador();
+        Jugador otroJugador = new Jugador();
 
         Opcion opcionGrupo1_1 = new Opcion("Celeste");
         Opcion opcionGrupo1_2 = new Opcion("Azul");
@@ -900,5 +922,5 @@ public class JugadorTest {
         assertEquals(0, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
-*/
+
 }
