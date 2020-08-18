@@ -87,4 +87,8 @@ public class Jugador {
     public String getNombre() {
         return this.nombre;
     }
+
+    public boolean tieneExclusividad() {
+        return (!exclusividades.isEmpty());
+    }
 }
