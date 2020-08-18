@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.vista.contenedores.ContenedorFinalDelJuego;
 import edu.fiuba.algo3.vista.contenedores.ContenedorPreguntas;
 
 
@@ -8,18 +9,20 @@ import java.util.ArrayList;
 
 public class VistaKashoot {
 
-    private final ContenedorPreguntas contenedor;
+    private ContenedorPreguntas contenedorPreguntas;
+    private ContenedorFinalDelJuego contenedorFinal;
     private Kashoot kashoot;
     private Respuesta respuestaActual;
     private Pregunta pregunta;
     private ArrayList<Opcion> opciones;
 
-    public VistaKashoot(Kashoot kashoot,ContenedorPreguntas contenedor){
+    public VistaKashoot(Kashoot kashoot, ContenedorPreguntas contenedorPreguntas, ContenedorFinalDelJuego contenedorFinal){
         this.respuestaActual = new Respuesta();
         this.kashoot = kashoot;
         this.pregunta = kashoot.getPregunta();
         this.opciones = kashoot.getOpciones();
-        this.contenedor = contenedor;
+        this.contenedorPreguntas = contenedorPreguntas;
+        this.contenedorFinal = contenedorFinal;
 
     }
 
@@ -30,7 +33,7 @@ public class VistaKashoot {
             this.pregunta = kashoot.getPregunta();
             this.opciones = kashoot.getOpciones();
         }
-        contenedor.actualizar();
+        contenedorPreguntas.actualizar();
     }
     public ArrayList<Opcion> getOpciones() {
        return this.opciones;
@@ -50,4 +53,7 @@ public class VistaKashoot {
     }
 
 
+    public void setDatosFinales() {
+        this.contenedorFinal.setDatosFinales();
+    }
 }

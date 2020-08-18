@@ -31,11 +31,14 @@ public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
     public void handle(ActionEvent actionEvent) {
         Jugador jugadorActual = kashoot.obtenerJugadorActual();
         jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
-        System.out.println(jugadorActual.getPuntajeRonda());
+        //System.out.println(jugadorActual.getPuntajeRonda());
 
         this.vista.actualizar();
         if(vista.terminoJuego()){
+            this.vista.setDatosFinales();
             this.stage.setScene(this.escenaFinal);
+            this.stage.setFullScreen(true);
+            this.stage.show();
         }
     }
 }

@@ -40,7 +40,7 @@ import java.util.ArrayList;
         ContenedorFinalDelJuego contenedorFinalDeJuego = new ContenedorFinalDelJuego(stage, kashoot);
         Scene escenaFinalDeJuego = new Scene(contenedorFinalDeJuego, 640, 480);
 
-        ContenedorPreguntas contenedorPreguntas = new ContenedorPreguntas(stage, kashoot, escenaFinalDeJuego);
+        ContenedorPreguntas contenedorPreguntas = new ContenedorPreguntas(stage, kashoot, escenaFinalDeJuego,contenedorFinalDeJuego);
         Scene escenaJuego = new Scene(contenedorPreguntas, 640, 480);
 
         ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego, kashoot);
@@ -63,8 +63,8 @@ import java.util.ArrayList;
 
     private Kashoot crearModelo() {
 
-        Jugador jugador1 = new Jugador("pepe");
-        Jugador jugador2 = new Jugador("fulano");
+        Jugador jugador1 = new Jugador();
+        Jugador jugador2 = new Jugador();
 
         Kashoot kashoot = new Kashoot();
         agregarRondas(kashoot);

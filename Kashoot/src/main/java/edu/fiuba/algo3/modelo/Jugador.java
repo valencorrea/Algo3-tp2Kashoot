@@ -14,9 +14,8 @@ public class Jugador {
     private ArrayList<Exclusividad> exclusividades = new ArrayList<Exclusividad>();
     private int puntajeObtenidoEnRonda = 0;
 
-    public Jugador(String unNombre){
+    public Jugador(){
 
-        this.nombre = unNombre;
         this.inicializarMultiplicadores();
         inicializarExclusividades();
     }

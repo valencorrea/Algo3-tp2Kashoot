@@ -85,6 +85,7 @@ public class ContenedorFinalDelJuego extends VBox {
         int puntajeAcumuladoJugador2 = kashoot.obtenerJugadorActual().getPuntajeAcumulado();
 
         var labelNombreJugador2 = new Label(kashoot.obtenerJugadorActual().getNombre());
+
         labelNombreJugador2.setFont(Font.font("Tahoma", FontWeight.MEDIUM, 50));
         var labelPuntajeJugador2 = new Label(Integer.toString(puntajeAcumuladoJugador2));
 
@@ -98,9 +99,10 @@ public class ContenedorFinalDelJuego extends VBox {
     private VBox mostrarJugador1() {
 
         int puntajeAcumuladoJugador1 = kashoot.obtenerJugadorActual().getPuntajeAcumulado();
-        System.out.println(puntajeAcumuladoJugador1);
 
         var labelNombreJugador1 = new Label(kashoot.obtenerJugadorActual().getNombre());
+        kashoot.actualizarJugadorActual();
+
         labelNombreJugador1.setFont(Font.font("Tahoma", FontWeight.MEDIUM, 50));
         var labelPuntajeJugador1 = new Label(Integer.toString(puntajeAcumuladoJugador1));
 
@@ -117,4 +119,26 @@ public class ContenedorFinalDelJuego extends VBox {
         this.setBackground(new Background(imagenDeFondo));
     }
 
+    public void setDatosFinales() {
+
+        var labelPuntajes = new Label("Puntajes finales");
+        labelPuntajes.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
+        labelPuntajes.setTextFill(Color.HOTPINK);
+
+        this.getChildren().clear();
+        VBox datosJugador1 = this.mostrarJugador1();
+        VBox datosJugador2 = this.mostrarJugador2();
+
+        HBox contenedorPuntajesJugadores = new HBox(datosJugador1, datosJugador2);
+        contenedorPuntajesJugadores.setSpacing(170);
+        contenedorPuntajesJugadores.setAlignment(Pos.CENTER);
+
+        Button botonFinDeJuego = this.crearBotonSalir();
+
+        VBox contenedorPrincipal = agregarContenedoresSecundarios(labelPuntajes, contenedorPuntajesJugadores, botonFinDeJuego);
+        contenedorPrincipal.setAlignment(Pos.CENTER);
+        contenedorPrincipal.setSpacing(100);
+
+        this.getChildren().add(contenedorPrincipal);
+    }
 }
