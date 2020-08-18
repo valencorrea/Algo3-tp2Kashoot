@@ -29,13 +29,18 @@ public class Kashoot  {
 
     }
 
-    public Jugador obtenerJugadorActual(){
+    public void actualizarJugadorActual(){
 
         Jugador jugadorActual = jugadores.poll();
 
         jugadores.add(jugadorActual);
 
-        return (Jugador)jugadorActual;
+    }
+
+    public Jugador obtenerJugadorActual(){
+
+        return jugadores.element();
+
     }
 
     public void agregarRonda(Ronda ronda) {
@@ -43,7 +48,7 @@ public class Kashoot  {
     }
 
     public void actualizar(){
-
+        this.actualizarJugadorActual();
         rondas.element().aumentarturnos();
          if(!rondas.element().rondaContinua()){
              rondas.element().asignarPuntajes(jugadores);

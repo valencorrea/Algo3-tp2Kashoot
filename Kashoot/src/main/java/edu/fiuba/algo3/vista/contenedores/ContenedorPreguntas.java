@@ -74,7 +74,7 @@ public class ContenedorPreguntas extends VBox {
         botonExclusividad.setText("Responder con exclusividad");
         BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(kashoot,vistaKashoot,escenaFinal,stage);
         botonExclusividad.setOnAction(botonExclusividadEventHandler);
-        if(this.vistaKashoot.getPregunta().puedeMultiplicar()){
+        if(this.vistaKashoot.getPregunta().puedeMultiplicar() || !kashoot.obtenerJugadorActual().tieneExclusividad()){
             botonExclusividad.setDisable(true);
         }
 
