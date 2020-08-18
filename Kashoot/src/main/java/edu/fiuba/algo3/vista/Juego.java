@@ -40,7 +40,7 @@ import java.util.ArrayList;
         ContenedorFinalDelJuego contenedorFinalDeJuego = new ContenedorFinalDelJuego(stage, kashoot);
         Scene escenaFinalDeJuego = new Scene(contenedorFinalDeJuego, 640, 480);
 
-        ContenedorPreguntas contenedorPreguntas = new ContenedorPreguntas(stage, kashoot, escenaFinalDeJuego);
+        ContenedorPreguntas contenedorPreguntas = new ContenedorPreguntas(stage, kashoot, escenaFinalDeJuego,contenedorFinalDeJuego);
         Scene escenaJuego = new Scene(contenedorPreguntas, 640, 480);
 
         ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego, kashoot);
@@ -264,13 +264,13 @@ import java.util.ArrayList;
 
         //-------------------------------------------//
         kashoot.agregarRonda(ronda1);
-     /*   kashoot.agregarRonda(ronda2);
+        kashoot.agregarRonda(ronda2);
         kashoot.agregarRonda(ronda3);
         kashoot.agregarRonda(ronda4);
         kashoot.agregarRonda(ronda5);
         kashoot.agregarRonda(ronda6);
         kashoot.agregarRonda(ronda7);
-        kashoot.agregarRonda(ronda8);*/
+        kashoot.agregarRonda(ronda8);
     }
 
 }

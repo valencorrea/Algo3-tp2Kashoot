@@ -29,7 +29,8 @@ public class ContenedorPreguntas extends VBox {
     private Kashoot kashoot;
 
 
-    public ContenedorPreguntas(Stage stage, Kashoot kashoot, Scene escenaFinal) {
+    public ContenedorPreguntas(Stage stage, Kashoot kashoot, Scene escenaFinal,ContenedorFinalDelJuego contenedorFinalDeJuego) {
+
         Image imagen = new Image("patronpreguntas.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
@@ -39,7 +40,7 @@ public class ContenedorPreguntas extends VBox {
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
 
-        this.vistaKashoot = new VistaKashoot(kashoot,this);
+        this.vistaKashoot = new VistaKashoot(kashoot,this,contenedorFinalDeJuego);
         this.actualizar();
     }
 

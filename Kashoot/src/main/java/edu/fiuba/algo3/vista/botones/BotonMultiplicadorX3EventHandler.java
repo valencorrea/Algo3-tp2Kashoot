@@ -34,10 +34,12 @@ public class BotonMultiplicadorX3EventHandler implements EventHandler<ActionEven
         jugadorActual.responder(this.vista.getPregunta(), this.vista.getRespuesta());
         System.out.println(jugadorActual.getPuntajeRonda());
 
-
         this.vista.actualizar();
         if(vista.terminoJuego()){
+            this.vista.setDatosFinales();
             this.stage.setScene(this.escenaFinal);
+            this.stage.setFullScreen(true);
+            this.stage.show();
         }
 
     }
