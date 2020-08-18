@@ -24,7 +24,6 @@ public class ContenedorPreguntas extends VBox {
     private VistaKashoot vistaKashoot;
     private VBox botonesExtra;
     private VBox preguntaYOpciones = new VBox();
-    private VBox contenedorCentral;
     private Stage stage;
     private Kashoot kashoot;
 
