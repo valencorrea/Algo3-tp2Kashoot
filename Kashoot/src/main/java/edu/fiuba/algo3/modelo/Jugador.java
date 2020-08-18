@@ -14,9 +14,8 @@ public class Jugador {
     private ArrayList<Exclusividad> exclusividades = new ArrayList<Exclusividad>();
     private int puntajeObtenidoEnRonda = 0;
 
-    public Jugador(String unNombre){
+    public Jugador(){
 
-        this.nombre = unNombre;
         this.inicializarMultiplicadores();
         inicializarExclusividades();
     }
@@ -86,5 +85,13 @@ public class Jugador {
 
     public String getNombre() {
         return this.nombre;
+    }
+
+    public boolean tieneExclusividad() {
+        return (!exclusividades.isEmpty());
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }

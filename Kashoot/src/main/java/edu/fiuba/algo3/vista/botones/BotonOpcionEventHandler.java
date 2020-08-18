@@ -13,7 +13,6 @@ public class BotonOpcionEventHandler implements EventHandler<ActionEvent> {
         this.opcion = unaOpcion;
     }
 
-
     @Override
     public void handle(ActionEvent actionEvent) {
 
