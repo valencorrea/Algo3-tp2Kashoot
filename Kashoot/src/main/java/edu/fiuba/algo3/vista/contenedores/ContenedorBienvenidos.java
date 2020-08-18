@@ -57,8 +57,6 @@ public class ContenedorBienvenidos extends VBox {
             textoJugador2.setScaleX(1.5);
             textoJugador2.setScaleY(1.5);
 
-            kashoot.setNombrejugadores(textoJugador1.getText(),nombreJugador2);
-            System.out.println(textoJugador1.getText());
 
             HBox contenedorDeNombres = new HBox(textoJugador1, textoJugador2);
             contenedorDeNombres.setSpacing(200);
