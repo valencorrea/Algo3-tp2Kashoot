@@ -126,14 +126,14 @@ public class ContenedorPreguntas extends VBox {
 
         HBox contenedorOpciones = new HBox();
         ArrayList<Opcion> opciones = this.vistaKashoot.getOpciones();
-        Respuesta unaRespuesta = new Respuesta();
+
 
         for (Opcion opcion : opciones) {
             Button unBoton = new Button();
             unBoton.setText(opcion.getContenido());
             contenedorOpciones.getChildren().add(unBoton);
 
-            BotonOpcionEventHandler botonOpcionEventHandler = new BotonOpcionEventHandler(unaRespuesta, opcion);
+            BotonOpcionEventHandler botonOpcionEventHandler = new BotonOpcionEventHandler(this.vistaKashoot.getRespuesta(), opcion);
             unBoton.setOnAction(botonOpcionEventHandler);
         }
 
