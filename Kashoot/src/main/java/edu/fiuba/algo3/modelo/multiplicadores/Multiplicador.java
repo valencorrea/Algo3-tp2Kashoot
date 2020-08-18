@@ -10,5 +10,4 @@ public abstract class Multiplicador {
             return puntaje*this.valorAMultiplicar;
     }
 
-
 }
