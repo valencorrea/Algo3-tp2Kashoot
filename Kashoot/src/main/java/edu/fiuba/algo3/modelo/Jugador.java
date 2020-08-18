@@ -83,4 +83,8 @@ public class Jugador {
     public void actualizarPuntajeObtenido(int puntajeActualizado) {
         this.puntajeObtenidoEnRonda = puntajeActualizado;
     }
+
+    public String getNombre() {
+        return this.nombre;
+    }
 }
