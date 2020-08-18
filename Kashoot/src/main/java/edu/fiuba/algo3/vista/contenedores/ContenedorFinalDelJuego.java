@@ -21,13 +21,8 @@ public class ContenedorFinalDelJuego extends VBox {
     public ContenedorFinalDelJuego(Stage stage, Kashoot kashoot) {
 
         super();
-        this.stage = stage;
-        this.setAlignment(Pos.CENTER);
-        this.setSpacing(20);
-        this.setPadding(new Insets(25));
-        this.kashoot = kashoot;
 
-        this.agregarImagenFondo();
+        seteosVisuales(stage, kashoot);
 
         var labelPuntajes = new Label("Puntajes finales");
         labelPuntajes.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
@@ -42,14 +37,32 @@ public class ContenedorFinalDelJuego extends VBox {
 
         Button botonFinDeJuego = this.crearBotonSalir();
 
-        VBox contenedorPrincipal = new VBox();
-        contenedorPrincipal.getChildren().add(labelPuntajes);
-        contenedorPrincipal.getChildren().add(contenedorPuntajesJugadores);
-        contenedorPrincipal.getChildren().add(botonFinDeJuego);
+        VBox contenedorPrincipal = agregarContenedoresSecundarios(labelPuntajes, contenedorPuntajesJugadores, botonFinDeJuego);
         contenedorPrincipal.setAlignment(Pos.CENTER);
         contenedorPrincipal.setSpacing(100);
 
         this.getChildren().add(contenedorPrincipal);
+    }
+
+    private void seteosVisuales(Stage stage, Kashoot kashoot) {
+
+        this.agregarImagenFondo();
+
+        this.stage = stage;
+        this.setAlignment(Pos.CENTER);
+        this.setSpacing(20);
+        this.setPadding(new Insets(25));
+        this.kashoot = kashoot;
+    }
+
+    private VBox agregarContenedoresSecundarios(Label labelPuntajes, HBox contenedorPuntajesJugadores, Button botonFinDeJuego) {
+
+        VBox contenedorPrincipal = new VBox();
+        contenedorPrincipal.getChildren().add(labelPuntajes);
+        contenedorPrincipal.getChildren().add(contenedorPuntajesJugadores);
+        contenedorPrincipal.getChildren().add(botonFinDeJuego);
+
+        return contenedorPrincipal;
     }
 
     private Button crearBotonSalir() {
