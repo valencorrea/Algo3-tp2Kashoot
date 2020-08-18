@@ -119,13 +119,15 @@ public class ContenedorFinalDelJuego extends VBox {
         this.setBackground(new Background(imagenDeFondo));
     }
 
+    //REFACTORIZARRRRRRRRRRRRRRRRR
     public void setDatosFinales() {
+
+        this.getChildren().clear();
 
         var labelPuntajes = new Label("Puntajes finales");
         labelPuntajes.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
         labelPuntajes.setTextFill(Color.HOTPINK);
 
-        this.getChildren().clear();
         VBox datosJugador1 = this.mostrarJugador1();
         VBox datosJugador2 = this.mostrarJugador2();
 

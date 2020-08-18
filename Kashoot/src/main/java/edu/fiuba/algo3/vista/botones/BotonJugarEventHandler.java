@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.vista.botones;
 
+import edu.fiuba.algo3.modelo.Kashoot;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -11,18 +12,20 @@ import javafx.stage.Stage;
 
 public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 
+    private Kashoot kashoot;
     Stage stage;
     Scene proximaEscena;
     TextField unNombre;
     TextField otroNombre;
     Label mensajeError;
 
-    public BotonJugarEventHandler(Stage stage, Scene proximaEscena, TextField unTexto, TextField otroTexto, Label mensajeDeError) {
+    public BotonJugarEventHandler(Stage stage, Scene proximaEscena, TextField unTexto, TextField otroTexto, Label mensajeDeError,Kashoot kashoot) {
         this.stage = stage;
         this.proximaEscena = proximaEscena;
         this.unNombre = unTexto;
         this.otroNombre = otroTexto;
         this.mensajeError = mensajeDeError;
+        this.kashoot = kashoot;
     }
 
     public boolean nombresSonValidos(){
@@ -38,6 +41,9 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
             mensajeError.setAlignment(Pos.CENTER_RIGHT);
             mensajeError.setTextFill(Color.DARKRED);
             estado = false;
+        }else{
+            kashoot.setNombrejugadores(unNombre.getText(),otroNombre.getText());
+
         }
         return estado;
     }
