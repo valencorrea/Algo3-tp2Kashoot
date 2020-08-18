@@ -11,8 +11,6 @@ public class Ronda {
     private Exclusividad exclusividad = null;
     private int cantidadExclusividades = 0;
 
-    //private ArrayList<int> puntajes = new ArrayList<int>();
-
     public void agregarOpciones(ArrayList<Opcion> opciones){
         this.opciones = opciones;
     }
