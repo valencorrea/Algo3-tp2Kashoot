@@ -29,13 +29,18 @@ public class Kashoot  {
 
     }
 
-    public Jugador obtenerJugadorActual(){
+    public void actualizarJugadorActual(){
 
         Jugador jugadorActual = jugadores.poll();
 
         jugadores.add(jugadorActual);
 
-        return (Jugador)jugadorActual;
+    }
+
+    public Jugador obtenerJugadorActual(){
+
+        return jugadores.element();
+
     }
 
     public void agregarRonda(Ronda ronda) {
@@ -43,7 +48,7 @@ public class Kashoot  {
     }
 
     public void actualizar(){
-
+        this.actualizarJugadorActual();
         rondas.element().aumentarturnos();
          if(!rondas.element().rondaContinua()){
              rondas.element().asignarPuntajes(jugadores);
@@ -65,5 +70,16 @@ public class Kashoot  {
     public Jugador getJugador1() {
         Jugador jugador1 = jugadores.poll();
         return jugador1;
+    }
+
+
+    public void setNombrejugadores(String nombreJugadorUno, String nombreJugadorDos) {
+        Jugador jugadorUno = this.jugadores.poll();
+        jugadorUno.setNombre(nombreJugadorUno);
+        this.jugadores.add(jugadorUno);
+        Jugador jugadorDos = this.jugadores.poll();
+        jugadorDos.setNombre(nombreJugadorDos);
+        this.jugadores.add(jugadorDos);
+
     }
 }
