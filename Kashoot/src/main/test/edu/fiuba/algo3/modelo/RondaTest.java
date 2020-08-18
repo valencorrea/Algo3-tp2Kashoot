@@ -12,7 +12,7 @@ import java.util.Queue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RondaTest {
-
+/*
     @Test
     public void dadaUnaRondaQueTerminaSeVerificanLosPuntajesDeLosJugadores(){
 
@@ -49,5 +49,5 @@ public class RondaTest {
         assertEquals(10, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
-
+*/
 }
