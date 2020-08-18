@@ -5,7 +5,7 @@ public class Clasico extends TipoFormato {
     @Override
     public int calcularPuntaje(int cantidadOpcionesJugador,int cantidadAciertosJugador, int cantidadCorrectas){
 
-        if (cantidadCorrectas == cantidadAciertosJugador){
+        if (cantidadCorrectas == cantidadAciertosJugador && cantidadOpcionesJugador == cantidadCorrectas){
             return (cantidadCorrectas * this.puntaje);
         }
 

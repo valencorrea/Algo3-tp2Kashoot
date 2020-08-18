@@ -110,6 +110,12 @@ public class ContenedorPreguntas extends VBox {
             multiplicadorX2.setDisable(true);
             multiplicadorX3.setDisable(true);
         }
+        if(!kashoot.obtenerJugadorActual().tieneMultiplicadorX2()){
+            multiplicadorX2.setDisable(true);
+        }
+        if(!kashoot.obtenerJugadorActual().tieneMultiplicadorX3()){
+            multiplicadorX3.setDisable(true);
+        }
     }
 
     private ToggleButton crearBotonRespuestaNormal() {
