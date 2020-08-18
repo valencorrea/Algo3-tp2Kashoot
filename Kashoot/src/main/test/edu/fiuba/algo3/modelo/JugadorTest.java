@@ -137,7 +137,7 @@ public class JugadorTest {
         assertEquals(0, otroJugador.getPuntajeAcumulado());
         assertEquals(10, tercerJugador.getPuntajeAcumulado());
     }
-
+/*
     @Test
     public void jugadoresRespondenMultipleChoiceConPenalidadRecibenPuntajeCorrecto() {
         Jugador unJugador = new Jugador("pepe");
@@ -165,7 +165,7 @@ public class JugadorTest {
 
         assertEquals(20, unJugador.getPuntajeAcumulado());
         assertEquals(-10, otroJugador.getPuntajeAcumulado());
-    }
+    }*/
 /*
 
     @Test

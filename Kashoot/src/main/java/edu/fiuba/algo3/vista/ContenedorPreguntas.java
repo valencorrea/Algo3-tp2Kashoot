@@ -21,14 +21,13 @@ import java.util.ArrayList;
 
 public class ContenedorPreguntas extends VBox {
 
-    private Scene escenaFinal; //ponerle el private a todos
-    //BarraDeMenu menuBar;
-    VistaKashoot vistaKashoot;
-    VBox botonesExtra;
-    VBox preguntaYOpciones = new VBox();
-    VBox contenedorCentral;
-    Stage stage;
-    Kashoot kashoot;
+    private Scene escenaFinal;
+    private VistaKashoot vistaKashoot;
+    private VBox botonesExtra;
+    private VBox preguntaYOpciones = new VBox();
+    private VBox contenedorCentral;
+    private Stage stage;
+    private Kashoot kashoot;
 
 
     public ContenedorPreguntas(Stage stage, Kashoot kashoot, Scene escenaFinal) {
