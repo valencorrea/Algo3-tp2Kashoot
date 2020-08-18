@@ -63,8 +63,8 @@ import java.util.ArrayList;
 
     private Kashoot crearModelo() {
 
-        Jugador jugador1 = new Jugador("pepe");
-        Jugador jugador2 = new Jugador("fulano");
+        Jugador jugador1 = new Jugador();
+        Jugador jugador2 = new Jugador();
 
         Kashoot kashoot = new Kashoot();
         agregarRondas(kashoot);

@@ -39,6 +39,7 @@ public class ContenedorBienvenidos extends VBox {
             labelIngresarNombre.setFont(Font.font("Tahoma", FontWeight.EXTRA_LIGHT, 40));
             labelIngresarNombre.setTextFill(Color.web("#66A7C5"));
 
+
             VBox contenedorEtiquetas = new VBox(labelBienvenida, labelIngresarNombre);
             contenedorEtiquetas.setSpacing(170);
             contenedorEtiquetas.setAlignment(Pos.CENTER);
@@ -54,6 +55,8 @@ public class ContenedorBienvenidos extends VBox {
             textoJugador2.setAlignment(Pos.CENTER);
             textoJugador2.setScaleX(1.5);
             textoJugador2.setScaleY(1.5);
+
+            kashoot.setNombrejugadores(textoJugador1.getText(),textoJugador2.getText());
 
 
             HBox contenedorDeNombres = new HBox(textoJugador1, textoJugador2);
