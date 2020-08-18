@@ -91,4 +91,8 @@ public class Jugador {
     public boolean tieneExclusividad() {
         return (!exclusividades.isEmpty());
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }
