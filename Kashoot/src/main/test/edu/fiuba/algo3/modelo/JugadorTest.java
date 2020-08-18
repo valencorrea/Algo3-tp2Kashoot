@@ -170,7 +170,6 @@ public class JugadorTest {
         assertEquals(-10, otroJugador.getPuntajeAcumulado());
     }
 
-
     @Test
     public void UnjugadorElijeCorrectamenteLasOpcionesDEGROUPCHOICEParaCadaGrupoTomandoEncuentaElPrimerGrupoYSeCalculaBienElPuntaje() {
         Jugador unJugador = new Jugador("pepe");
@@ -403,7 +402,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void jugadorElijeExclusividadYSeDuplicaSuPuntajeAlResponderCorrectamente() {
+    public void jugadorEligeExclusividadYSeDuplicaSuPuntajeAlResponderCorrectamente() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
         Opcion opcionVerdadera = new Opcion("Verdadera");
@@ -425,7 +424,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void jugadorElijeExclusividadYSeAnulaSuPuntajeAlResponderMal() {
+    public void jugadorEligeExclusividadYSeAnulaSuPuntajeAlResponderMal() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
         Opcion opcionVerdadera = new Opcion("Verdadera");
@@ -449,7 +448,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void dosJugadoresElijenExclusividadYSeAnulaSuPuntajeAlResponderAmbosMal() {
+    public void dosJugadoresEligenExclusividadYSeAnulaSuPuntajeAlResponderAmbosMal() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
         Opcion opcionVerdadera = new Opcion("Verdadera");
@@ -474,13 +473,16 @@ public class JugadorTest {
     }
 
     @Test
-    public void dosJugadoresElijenExclusividadYSeAnulaSuPuntajeAlResponderAmbosBien() {
+    public void unJugadorEligeExclusividadYSeAnulaSuPuntajeAlResponderAmbosJugadoresBien() {
+
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
         Opcion opcionVerdadera = new Opcion("Verdadera");
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionVerdadera);
+
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+
         int cantExclusividades = unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
@@ -494,7 +496,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void ambosJugadoresElijenExclusividadYUnoRespondeBien() {
+    public void ambosJugadoresEligenExclusividadYUnoRespondeBien() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
 
@@ -521,9 +523,9 @@ public class JugadorTest {
         assertEquals(40, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
-/*
+
     @Test
-    public void unJugadorElijeExclusividadYRespondeBienUnChoiceClasico() {
+    public void unJugadorEligeExclusividadYRespondeBienUnChoiceClasico() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
 
@@ -555,7 +557,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void unJugadorElijeExclusividadYRespondeMalUnChoiceClasico() {
+    public void unJugadorEligeExclusividadYRespondeMalUnChoiceClasico() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
 
@@ -589,7 +591,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void unJugadorElijeExclusividadYRespondeMejorQueOtroEnFormatoParcial() {
+    public void unJugadorEligeExclusividadYRespondeMejorQueOtroEnFormatoParcial() {
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
 
@@ -623,6 +625,7 @@ public class JugadorTest {
 
     @Test
     public void dosJugadoresElijenExclusividadesYRespondenAmbosBien() {
+
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepito");
 
@@ -755,7 +758,8 @@ public class JugadorTest {
 
         unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
         otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unJugador.getPuntajeRonda(), otroJugador.getPuntajeRonda(), cantExclusividades);
+
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
 
         assertEquals(0, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -763,6 +767,7 @@ public class JugadorTest {
 
     @Test
     public void JugadoresRespondenUnaPreguntaTipoGroupChoiceUtilizandoDosExclusividadesYSeCalculaBienElPuntaje() {
+
         Jugador unJugador = new Jugador("pepe");
         Jugador otroJugador = new Jugador("pepe");
 
@@ -791,7 +796,7 @@ public class JugadorTest {
 
         unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
         otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unJugador.getPuntajeRonda(), otroJugador.getPuntajeRonda(), cantExclusividades);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
 
         assertEquals(40, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -823,9 +828,10 @@ public class JugadorTest {
         cantExclusividades += otroJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
-        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
-        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+        unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
+        otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
+
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
 
         assertEquals(0, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -855,9 +861,9 @@ public class JugadorTest {
         cantExclusividades += otroJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
-        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
-        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+        unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
+        otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador,cantExclusividades);
 
         assertEquals(0, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
@@ -887,11 +893,11 @@ public class JugadorTest {
         cantExclusividades += otroJugador.usarExclusividad();
 
         Exclusividad unaExclusividad = new Exclusividad();
-        int unResultado = unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
-        int otroResultado = otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
-        unaExclusividad.determinarPuntaje(unJugador, otroJugador, unResultado, otroResultado, cantExclusividades);
+        unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
+        otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
+        unaExclusividad.determinarPuntaje(unJugador, otroJugador,cantExclusividades);
 
         assertEquals(0, unJugador.getPuntajeAcumulado());
         assertEquals(0, otroJugador.getPuntajeAcumulado());
-    }*/
+    }
 }

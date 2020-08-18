@@ -1,15 +1,20 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.formatos.Clasico;
+import edu.fiuba.algo3.modelo.formatos.*;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadOrdenada;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadSinOrden;
 import edu.fiuba.algo3.vista.contenedores.ContenedorBienvenidos;
 import edu.fiuba.algo3.vista.contenedores.ContenedorFinalDelJuego;
 import edu.fiuba.algo3.vista.contenedores.ContenedorPreguntas;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -26,17 +31,8 @@ import java.util.ArrayList;
     @Override
     public void start(Stage stage) throws Exception {
 
-        /* música */
-/*
-        Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
+        agregarMusica();
 
-        MediaPlayer musica = new MediaPlayer(mp3MusicFile);
-        musica.setAutoPlay(true);
-        musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
-        musica.setVolume(0.1);
-        musica.play();
-
-*/
         stage.setTitle("Kashoot");
 
         Kashoot kashoot = crearModelo();
@@ -53,6 +49,16 @@ import java.util.ArrayList;
         stage.setScene(escenaBienvenidos);
         stage.setFullScreen(true);
         stage.show();
+    }
+
+    private void agregarMusica(){
+        Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
+
+        MediaPlayer musica = new MediaPlayer(mp3MusicFile);
+        musica.setAutoPlay(true);
+        musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
+        musica.setVolume(0.1);
+        musica.play();
     }
 
     private Kashoot crearModelo() {
@@ -93,7 +99,7 @@ import java.util.ArrayList;
         //-------------------------------------------//
         //multipleChoice; Penalidad; que numeros son pares?;7;pi;e;/2
 
-       /* Opcion opcionCorrecta21 = new Opcion("2");
+        Opcion opcionCorrecta21 = new Opcion("2");
         Opcion opcionIncorrecta21 = new Opcion("7");
         Opcion opcionIncorrecta22 = new Opcion("Pi");
         Opcion opcionCorrecta22 = new Opcion("4");
@@ -236,10 +242,10 @@ import java.util.ArrayList;
         Ronda ronda7 = new Ronda();
         ronda7.agregarPregunta(unaPregunta7);
         ronda7.agregarOpciones(opciones7);
-*/
+
         //-------------------------------------------//
         // verdaderoFalso; Penalidad; los michis son malos?; verdadero;/falso
-/*
+
         Opcion opcionCorrecta81 = new Opcion("Verdadero");
         Opcion opcionIncorrecta81 = new Opcion("Falso");
 
@@ -254,17 +260,17 @@ import java.util.ArrayList;
 
         Ronda ronda8 = new Ronda();
         ronda8.agregarPregunta(unaPregunta8);
-        ronda8.agregarOpciones(opciones8);*/
+        ronda8.agregarOpciones(opciones8);
 
         //-------------------------------------------//
         kashoot.agregarRonda(ronda1);
-        //kashoot.agregarRonda(ronda2);
-        //kashoot.agregarRonda(ronda3);
-        //kashoot.agregarRonda(ronda4);
-        //kashoot.agregarRonda(ronda5);
-        //kashoot.agregarRonda(ronda6);
-        //kashoot.agregarRonda(ronda7);
-        //kashoot.agregarRonda(ronda8);
+        kashoot.agregarRonda(ronda2);
+        kashoot.agregarRonda(ronda3);
+        kashoot.agregarRonda(ronda4);
+        kashoot.agregarRonda(ronda5);
+        kashoot.agregarRonda(ronda6);
+        kashoot.agregarRonda(ronda7);
+        kashoot.agregarRonda(ronda8);
     }
 
 }
