@@ -42,7 +42,7 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
             mensajeError.setTextFill(Color.DARKRED);
             estado = false;
         }else{
-            kashoot.setNombrejugadores(unNombre.getText(),otroNombre.getText());
+            kashoot.setNombreJugadores(unNombre.getText(),otroNombre.getText());
 
         }
         return estado;

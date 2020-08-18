@@ -52,7 +52,6 @@ public class Ronda {
 
         if(this.exclusividad != null){
             exclusividad.determinarPuntaje(jugador1,jugador2,this.cantidadExclusividades);
-            return;
         }
         jugador1.asignarPuntajeRonda();
         jugador2.asignarPuntajeRonda();

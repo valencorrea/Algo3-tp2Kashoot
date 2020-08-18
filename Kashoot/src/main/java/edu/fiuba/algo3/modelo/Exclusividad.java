@@ -16,8 +16,5 @@ public class Exclusividad {
             unJugador.actualizarPuntajeObtenido(0);
             otroJugador.actualizarPuntajeObtenido(2 * cantExclusividades * otroResultado);
         }
-        unJugador.asignarPuntajeRonda();
-        otroJugador.asignarPuntajeRonda();
-
     }
 }

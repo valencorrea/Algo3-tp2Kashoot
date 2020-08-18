@@ -15,7 +15,6 @@ public class BotonOpcionEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-
         this.respuesta.agregarOpcion(this.opcion);
     }
 }
