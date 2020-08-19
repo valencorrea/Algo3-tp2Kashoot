@@ -22,7 +22,7 @@ public class PenalidadTest {
     }
 
     @Test
-    public void seCalculaElPuntajeParaUnaRespuestaConUnaOpcionDesacertadaDevuelveElPuntajeCorrecto(){
+    public void seCalculaElPuntajeParaUnaRespuestaConUnaOpcionIncorrectaDevuelveElPuntajeCorrecto(){
 
         int cantidadOpcionesCorrectas = 3;
         int cantidadAciertosJugador = 2;
