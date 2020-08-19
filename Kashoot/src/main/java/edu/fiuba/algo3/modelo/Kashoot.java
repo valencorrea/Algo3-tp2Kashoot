@@ -47,6 +47,7 @@ public class Kashoot  {
     }
 
     public void actualizar(){
+
         this.actualizarJugadorActual();
         rondas.element().aumentarTurnos();
          if(!rondas.element().rondaContinua()){
@@ -65,12 +66,6 @@ public class Kashoot  {
     public boolean terminoJuego() {
         return (this.rondas.isEmpty());
     }
-
-    public Jugador getJugador1() {
-        Jugador jugador1 = jugadores.poll();
-        return jugador1;
-    }
-
 
     public void setNombreJugadores(String nombreJugadorUno, String nombreJugadorDos) {
         Jugador jugadorUno = this.jugadores.poll();

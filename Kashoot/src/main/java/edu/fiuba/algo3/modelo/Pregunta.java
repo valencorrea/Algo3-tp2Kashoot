@@ -19,7 +19,6 @@ public class Pregunta {
         return (this.modalidad.calcularPuntaje(respuestaJugador, this.respuestaCorrecta));
     }
 
-
     public boolean puedeMultiplicar() {
         return this.modalidad.puedeMultiplicar();
     }
