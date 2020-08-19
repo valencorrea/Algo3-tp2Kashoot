@@ -19,7 +19,7 @@ public class Jugador {
     public Jugador(){
 
         this.inicializarMultiplicadores();
-        inicializarExclusividades();
+        this.inicializarExclusividades();
     }
 
     private void inicializarExclusividades() {
@@ -47,7 +47,8 @@ public class Jugador {
     }
 
     public void multiplicarX2(Respuesta unaRespuesta) {
-        unaRespuesta.modificarMultiplicador(new MultiplicadorX3());
+
+        unaRespuesta.modificarMultiplicador(new MultiplicadorX2());
         this.multiplicadorX2 = null;
     }
 
