@@ -34,17 +34,20 @@ public class Respuesta {
         return this.opciones;
     }
 
-
     public boolean tieneIgualOrdenA(Respuesta respuestaJugador) {
 
        return this.opciones.equals(respuestaJugador.getOpciones());
     }
+
     public int multiplicar(int puntaje){
 
         return this.multiplicador.multiplicar(puntaje);
     }
 
     public void modificarMultiplicador(Multiplicador unMultiplicador) {
+        if(unMultiplicador==null){
+            this.multiplicador = new MultiplicadorX1();
+        }
         this.multiplicador = unMultiplicador;
     }
 }
