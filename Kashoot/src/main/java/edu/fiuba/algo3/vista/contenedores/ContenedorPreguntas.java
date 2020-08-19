@@ -81,15 +81,22 @@ public class ContenedorPreguntas extends VBox {
         this.setPuntajesJugadores(this.kashoot);
     }
 
+
     public void setPuntajesJugadores(Kashoot kashoot){
+
 
         var puntajeJugador1 = new Label();
 
         Jugador jugador1 = kashoot.obtenerJugadorActual();
 
-        puntajeJugador1.setText("Jugador 1: ".concat(Integer.toString(jugador1.getPuntajeAcumulado())));
+        puntajeJugador1.setText(": ".concat(Integer.toString(jugador1.getPuntajeAcumulado())));
         puntajeJugador1.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
         puntajeJugador1.setTextFill(Color.MEDIUMVIOLETRED);
+
+        var labelConNombreJugador1 = new Label();
+        labelConNombreJugador1.setText(jugador1.getNombre());
+        labelConNombreJugador1.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
+        labelConNombreJugador1.setTextFill(Color.MEDIUMVIOLETRED);
 
         kashoot.actualizarJugadorActual();
 
@@ -97,13 +104,25 @@ public class ContenedorPreguntas extends VBox {
 
         Jugador jugador2 = kashoot.obtenerJugadorActual();
 
-        puntajeJugador2.setText("Jugador 2: ".concat(Integer.toString(jugador2.getPuntajeAcumulado())));
+        puntajeJugador2.setText(": ".concat(Integer.toString(jugador2.getPuntajeAcumulado())));
         puntajeJugador2.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
         puntajeJugador2.setTextFill(Color.MEDIUMVIOLETRED);
 
+        var labelConNombreJugador2 = new Label();
+        labelConNombreJugador2.setText(jugador2.getNombre());
+        labelConNombreJugador2.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
+        labelConNombreJugador2.setTextFill(Color.MEDIUMVIOLETRED);
+
         kashoot.actualizarJugadorActual();
 
-        this.informacionJugadores.getChildren().addAll(puntajeJugador1,puntajeJugador2);
+        HBox boxJugador1 = new HBox();
+        boxJugador1.getChildren().addAll(labelConNombreJugador1,puntajeJugador1);
+
+
+        HBox boxJugador2 = new HBox();
+        boxJugador2.getChildren().addAll(labelConNombreJugador2,puntajeJugador2);
+
+        this.informacionJugadores.getChildren().addAll(boxJugador1,boxJugador2);
     }
 
     public void setJugadorActual(){
