@@ -45,6 +45,9 @@ public class Respuesta {
     }
 
     public void modificarMultiplicador(Multiplicador unMultiplicador) {
+        if(unMultiplicador==null){
+            this.multiplicador = new MultiplicadorX1();
+        }
         this.multiplicador = unMultiplicador;
     }
 }

@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.multiplicadores.Multiplicador;
+import edu.fiuba.algo3.modelo.multiplicadores.MultiplicadorX1;
 import edu.fiuba.algo3.modelo.multiplicadores.MultiplicadorX2;
 import edu.fiuba.algo3.modelo.multiplicadores.MultiplicadorX3;
 
@@ -10,8 +11,8 @@ public class Jugador {
 
     private String nombre;
     private int puntajeAcumulado = 0;
-    private MultiplicadorX2 multiplicadorX2;
-    private MultiplicadorX3 multiplicadorX3;
+    private Multiplicador multiplicadorX2;
+    private Multiplicador multiplicadorX3;
 
     private ArrayList<Exclusividad> exclusividades = new ArrayList<Exclusividad>();
     private int puntajeObtenidoEnRonda = 0;
@@ -48,13 +49,13 @@ public class Jugador {
 
     public void multiplicarX2(Respuesta unaRespuesta) {
         unaRespuesta.modificarMultiplicador(this.multiplicadorX2);
-        this.multiplicadorX2 = null;
+        this.multiplicadorX2 = desabilitarMultiplicador();
     }
 
     public void multiplicarX3(Respuesta unaRespuesta) {
 
         unaRespuesta.modificarMultiplicador(this.multiplicadorX3);
-        this.multiplicadorX3 = null;
+        this.multiplicadorX3 = desabilitarMultiplicador();
     }
 
     public int usarExclusividad() {
@@ -93,4 +94,9 @@ public class Jugador {
     public boolean tieneMultiplicadorX2(){
         return (this.multiplicadorX2 != null);
     }
+
+    private Multiplicador desabilitarMultiplicador(){
+        return (new MultiplicadorX1());
+    }
+
 }
