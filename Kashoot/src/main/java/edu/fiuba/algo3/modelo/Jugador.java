@@ -47,13 +47,13 @@ public class Jugador {
     }
 
     public void multiplicarX2(Respuesta unaRespuesta) {
-        unaRespuesta.modificarMultiplicador(this.multiplicadorX2);
+        unaRespuesta.modificarMultiplicador(new MultiplicadorX3());
         this.multiplicadorX2 = null;
     }
 
     public void multiplicarX3(Respuesta unaRespuesta) {
 
-        unaRespuesta.modificarMultiplicador(this.multiplicadorX3);
+        unaRespuesta.modificarMultiplicador(new MultiplicadorX3());
         this.multiplicadorX3 = null;
     }
 
