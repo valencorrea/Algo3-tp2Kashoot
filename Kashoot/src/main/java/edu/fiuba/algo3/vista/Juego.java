@@ -264,14 +264,69 @@ import java.util.ArrayList;
         ronda8.agregarOpciones(opciones8);
 
         //-------------------------------------------//
-      /*  kashoot.agregarRonda(ronda1);*/
+
+        Opcion opcionCorrectaG1_91 = new Opcion("Celeste");
+        Opcion opcionCorrectaG2_92 = new Opcion("Azul");
+        Opcion opcionCorrectaG1_93 = new Opcion("Amarillo");
+        Opcion opcionCorrectaG2_94 = new Opcion("Violeta");
+        Opcion opcionCorrectaG1_95 = new Opcion("Naranja");
+
+        ArrayList <Opcion> opciones9 = new ArrayList<Opcion>();
+        opciones9.add(opcionCorrectaG1_91);
+        opciones9.add(opcionCorrectaG2_92);
+        opciones9.add(opcionCorrectaG1_93);
+        opciones9.add(opcionCorrectaG2_94);
+        opciones9.add(opcionCorrectaG1_95);
+
+        Respuesta respuestaCorrectaDeGrupo1 = new Respuesta();
+        respuestaCorrectaDeGrupo1.agregarOpcion(opcionCorrectaG1_91);
+        respuestaCorrectaDeGrupo1.agregarOpcion(opcionCorrectaG1_93);
+        respuestaCorrectaDeGrupo1.agregarOpcion(opcionCorrectaG1_95);
+
+        Pregunta unaPregunta9 = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos?\n\t selecciones solo los calidos \n\t GroupChoice ?", respuestaCorrectaDeGrupo1);
+
+        Ronda ronda9 = new Ronda();
+        ronda9.agregarPregunta(unaPregunta9);
+        ronda9.agregarOpciones(opciones9);
+
+        //-------------------------------------------//
+        Opcion opcionCorrecta101 = new Opcion("Maven");
+        Opcion opcionCorrecta102 = new Opcion("Verificar modulo");
+        Opcion opcionCorrecta103 = new Opcion("Built - rebuilt");
+        Opcion opcionCorrecta104 = new Opcion("Clonar el repo devuelta");
+
+
+        ArrayList <Opcion> opciones10 = new ArrayList<Opcion>();
+        opciones10.add(opcionCorrecta101);
+        opciones10.add(opcionCorrecta102);
+        opciones10.add(opcionCorrecta103);
+        opciones10.add(opcionCorrecta104);
+
+        Respuesta respuestaCorrecta10 = new Respuesta();
+        respuestaCorrecta10.agregarOpcion(opcionCorrecta101);
+        respuestaCorrecta10.agregarOpcion(opcionCorrecta102);
+        respuestaCorrecta10.agregarOpcion(opcionCorrecta103);
+        respuestaCorrecta10.agregarOpcion(opcionCorrecta104);
+
+        Pregunta unaPregunta10 = new Pregunta(new ModalidadSinOrden(new Parcial()), "Que hacemos cuando falla intellij?\n\t multipleChoice", respuestaCorrecta10);
+
+        Ronda ronda10 = new Ronda();
+        ronda10.agregarPregunta(unaPregunta10);
+        ronda10.agregarOpciones(opciones10);
+
+        //-------------------------------------------//
+
+        kashoot.agregarRonda(ronda1);
         kashoot.agregarRonda(ronda2);
-        /*kashoot.agregarRonda(ronda3);
+        kashoot.agregarRonda(ronda3);
         kashoot.agregarRonda(ronda4);
-        kashoot.agregarRonda(ronda5);*/
+        kashoot.agregarRonda(ronda5);
         kashoot.agregarRonda(ronda6);
         kashoot.agregarRonda(ronda7);
         kashoot.agregarRonda(ronda8);
+        kashoot.agregarRonda(ronda9);
+        kashoot.agregarRonda(ronda10);
+
     }
 
 }
