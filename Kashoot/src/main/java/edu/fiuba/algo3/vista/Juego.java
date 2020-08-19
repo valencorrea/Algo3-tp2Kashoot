@@ -315,6 +315,8 @@ import java.util.ArrayList;
         ronda10.agregarOpciones(opciones10);
 
         //-------------------------------------------//
+        //-------------------------------------------//
+
 
         kashoot.agregarRonda(ronda1);
         kashoot.agregarRonda(ronda2);
