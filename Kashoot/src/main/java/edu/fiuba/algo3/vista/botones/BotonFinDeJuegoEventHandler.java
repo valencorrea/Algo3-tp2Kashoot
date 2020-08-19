@@ -1,10 +1,6 @@
 package edu.fiuba.algo3.vista.botones;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.event.*;
 import javafx.stage.Stage;
 
 public class BotonFinDeJuegoEventHandler implements EventHandler<ActionEvent> {

@@ -2,8 +2,7 @@ package edu.fiuba.algo3.vista.botones;
 
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.vista.VistaKashoot;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.event.*;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -31,11 +30,15 @@ public class BotonMultiplicadorX2EventHandler implements EventHandler<ActionEven
 
         this.vista.actualizar();
         if(vista.terminoJuego()){
-            this.vista.setDatosFinales();
-            this.stage.setScene(this.escenaFinal);
-            this.stage.setFullScreen(true);
-            this.stage.show();
+            terminarJuego();
         }
+    }
+
+    private void terminarJuego() {
+        this.vista.setDatosFinales();
+        this.stage.setScene(this.escenaFinal);
+        this.stage.setFullScreen(true);
+        this.stage.show();
     }
 
 
