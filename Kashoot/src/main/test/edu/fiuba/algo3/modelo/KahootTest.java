@@ -11,20 +11,7 @@ import java.util.Queue;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class KahootTest {
-/*
-    @Test
-    public void se(){
 
-
-actualizarJugadorActual
-obtenerJugadorActual
-actualizar
-jugarRondaConExclusividad
-terminoJuego
-
-    }
-
-*/
     @Test
     public void luegoDeQueJuegueUnoDeLosJugadoresSeActualizaKashootYSeActualizaCorrectamente(){
         Jugador jugador1 = new Jugador();
@@ -91,12 +78,12 @@ terminoJuego
 
         assertTrue(kashoot.terminoJuego());
     }
-/*
+
     @Test
     public void seJuegaUnaRondaConExclusividadYLosPuntajesDeAmbosJugadoresSonCorrectosCorrectos(){
 
-        Jugador unJugador = new Jugador();
-        Jugador otroJugador = new Jugador();
+        Jugador jugador1 = new Jugador();
+        Jugador jugador2 = new Jugador();
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
@@ -118,21 +105,28 @@ terminoJuego
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "hola soy una pregunta??", respuestaCorrecta);
         Queue<Jugador> jugadores = new LinkedList<Jugador>();
-        jugadores.add(unJugador);
-        jugadores.add(otroJugador);
+        jugadores.add(jugador1);
+        jugadores.add(jugador2);
 
         Ronda ronda = new Ronda();
         ronda.agregarOpciones(opciones);
         ronda.agregarPregunta(unaPregunta);
 
-        kashoot.
-        unJugador.responder(unaPregunta, respuestaUnJugador);
-        otroJugador.responder(unaPregunta, respuestaOtroJugador);
+        Kashoot kashoot = new Kashoot();
 
-        ronda.asignarPuntajes(jugadores);
+        kashoot.agregarJugadores(jugador1,jugador2);
+        kashoot.agregarRonda(ronda);
+        kashoot.jugarRondaConExclusividad();
 
-        assertEquals(40, unJugador.getPuntajeAcumulado());
-        assertEquals(0, otroJugador.getPuntajeAcumulado());
+        jugador1.responder(unaPregunta, respuestaUnJugador);
+        jugador2.responder(unaPregunta, respuestaOtroJugador);
 
-    }*/
+        /*ambos jugadores juegan la ronda*/
+        kashoot.actualizar();
+        kashoot.actualizar();
+
+        assertEquals(40, jugador1.getPuntajeAcumulado());
+        assertEquals(0, jugador2.getPuntajeAcumulado());
+
+    }
 }
