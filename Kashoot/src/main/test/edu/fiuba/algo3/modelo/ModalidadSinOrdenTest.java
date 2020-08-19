@@ -49,6 +49,7 @@ class ModalidadSinOrdenTest {
 
     @Test
     public void DadaUnaModalidadDelTipoClasicoSeDevuelveElPuntajeCorrectoParaJugadorQueRespondeUnaBienUnaMal(){
+
         ModalidadSinOrden modalidadChoiceParcial = new ModalidadSinOrden(new Clasico());
 
         Opcion opcionCorrecta = new Opcion("verde");
@@ -63,7 +64,7 @@ class ModalidadSinOrdenTest {
 
         int puntaje = modalidadChoiceParcial.calcularPuntaje(respuestaJugador, respuestaCorrecta);
 
-        assertEquals(10,puntaje);
+        assertEquals(0,puntaje);
     }
 
     @Test
@@ -129,7 +130,6 @@ class ModalidadSinOrdenTest {
         assertEquals(0,puntaje);
     }
 
-
     @Test
     public void DadaUnaModalidadDelTipoParcialSeDevuelveElPuntajeCorrectoCuandoContestaUnaBien(){
         ModalidadSinOrden modalidadChoiceParcial = new ModalidadSinOrden(new Parcial());
@@ -169,7 +169,6 @@ class ModalidadSinOrdenTest {
 
         assertEquals(0,puntaje);
     }
-
 
     @Test
     public void DadaUnaModalidadPreguntaDelTipoChoiceClasicoEntoncesElPuntajeSeraElCorrecto(){
