@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ModalidadSinOrdenTest {
 
+    /*Tests formato clasico*/
     @Test
      public void DadaUnaModalidadDelTipoClasicoSeDevuelveElPuntajeCorrectoParaJugadorQueRespondeUnaBien(){
         ModalidadSinOrden modalidadChoiceParcial = new ModalidadSinOrden(new Clasico());
@@ -24,7 +25,7 @@ class ModalidadSinOrdenTest {
 
         int puntaje = modalidadChoiceParcial.calcularPuntaje(respuestaJugador, respuestaCorrecta);
 
-        assertEquals(10,puntaje);
+        assertEquals(10, puntaje);
     }
 
     @Test
@@ -44,7 +45,7 @@ class ModalidadSinOrdenTest {
 
         int puntaje = modalidadChoiceParcial.calcularPuntaje(respuestaJugador, respuestaCorrecta);
 
-        assertEquals(20,puntaje);
+        assertEquals(20, puntaje);
     }
 
     @Test
@@ -64,9 +65,28 @@ class ModalidadSinOrdenTest {
 
         int puntaje = modalidadChoiceParcial.calcularPuntaje(respuestaJugador, respuestaCorrecta);
 
-        assertEquals(0,puntaje);
+        assertEquals(0, puntaje);
     }
 
+    @Test
+    public void DadaUnaModalidadPreguntaDelTipoChoiceClasicoEntoncesElPuntajeSeraElCorrecto(){
+
+        ModalidadSinOrden modalidadChoiceClasico = new ModalidadSinOrden(new Clasico());
+
+        Opcion opcionCorrecta = new Opcion("verde");
+        Opcion otraOpcionCorrecta = new Opcion("rojo");
+
+        Respuesta respuestaJugador = new Respuesta();
+        respuestaJugador.agregarOpcion(opcionCorrecta);
+        respuestaJugador.agregarOpcion(otraOpcionCorrecta);
+
+        int puntaje = modalidadChoiceClasico.calcularPuntaje(respuestaJugador, respuestaJugador);
+
+        assertEquals(20, puntaje);
+
+    }
+
+    /*Tests formato penalidad*/
     @Test
     public void DadaUnaModalidadDelTipoPenalidadSeDevuelveElPuntajeCorrectoParaJugadorQueRespondeDosBien(){
         ModalidadSinOrden modalidadChoiceParcial = new ModalidadSinOrden(new Penalidad());
@@ -84,7 +104,7 @@ class ModalidadSinOrdenTest {
 
         int puntaje = modalidadChoiceParcial.calcularPuntaje(respuestaJugador, respuestaCorrecta);
 
-        assertEquals(20,puntaje);
+        assertEquals(20, puntaje);
     }
 
     @Test
@@ -106,7 +126,7 @@ class ModalidadSinOrdenTest {
 
         int puntaje = modalidadChoiceParcial.calcularPuntaje(respuestaJugador, respuestaCorrecta);
 
-        assertEquals(-20,puntaje);
+        assertEquals(-20, puntaje);
     }
 
     @Test
@@ -127,9 +147,10 @@ class ModalidadSinOrdenTest {
 
         int puntaje = modalidadChoiceParcial.calcularPuntaje(respuestaJugador, respuestaCorrecta);
 
-        assertEquals(0,puntaje);
+        assertEquals(0, puntaje);
     }
 
+    /*Tests formato parcial*/
     @Test
     public void DadaUnaModalidadDelTipoParcialSeDevuelveElPuntajeCorrectoCuandoContestaUnaBien(){
         ModalidadSinOrden modalidadChoiceParcial = new ModalidadSinOrden(new Parcial());
@@ -146,7 +167,7 @@ class ModalidadSinOrdenTest {
 
         int puntaje = modalidadChoiceParcial.calcularPuntaje(respuestaJugador, respuestaCorrecta);
 
-        assertEquals(10,puntaje);
+        assertEquals(10, puntaje);
     }
 
     @Test
@@ -167,25 +188,7 @@ class ModalidadSinOrdenTest {
 
         int puntaje = modalidadChoiceParcial.calcularPuntaje(respuestaJugador, respuestaCorrecta);
 
-        assertEquals(0,puntaje);
-    }
-
-    @Test
-    public void DadaUnaModalidadPreguntaDelTipoChoiceClasicoEntoncesElPuntajeSeraElCorrecto(){
-
-        ModalidadSinOrden modalidadChoiceClasico = new ModalidadSinOrden(new Clasico());
-
-        Opcion opcionCorrecta = new Opcion("verde");
-        Opcion otraOpcionCorrecta = new Opcion("rojo");
-
-        Respuesta respuestaJugador = new Respuesta();
-        respuestaJugador.agregarOpcion(opcionCorrecta);
-        respuestaJugador.agregarOpcion(otraOpcionCorrecta);
-
-        int puntaje = modalidadChoiceClasico.calcularPuntaje(respuestaJugador, respuestaJugador);
-
-        assertEquals(20,puntaje);
-
+        assertEquals(0, puntaje);
     }
 
 }
