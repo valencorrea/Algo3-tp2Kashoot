@@ -1,8 +1,13 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.multiplicadores.MultiplicadorX2;
+import edu.fiuba.algo3.modelo.multiplicadores.MultiplicadorX3;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
 
 public class RespuestaTest {
 
@@ -86,8 +91,6 @@ public class RespuestaTest {
         Opcion opcionCorrecta1 = new Opcion("Uno");
         Opcion opcionCorrecta2 = new Opcion("Dos");
         Opcion opcionCorrecta3 = new Opcion("Tres");
-        Opcion opcionIncorrecta1 = new Opcion("Tiburon");
-        Opcion opcionIncorrecta2 = new Opcion("silla");
 
         Respuesta respuesta = new Respuesta();
         respuesta.agregarOpcion(opcionCorrecta1);
@@ -129,4 +132,102 @@ public class RespuestaTest {
 
         assertEquals(3,tamanio);
     }
+
+    @Test
+    public void dadaUnaRespuestaSeVerificaQueTieneElMismoOrdenQueLaCorrecta(){
+
+        Respuesta respuesta = new Respuesta();
+        Opcion opcion1 = new Opcion("Uno");
+        Opcion opcion2 = new Opcion("Dos");
+        Opcion opcion3 = new Opcion("Tres");
+
+        respuesta.agregarOpcion(opcion1);
+        respuesta.agregarOpcion(opcion2);
+        respuesta.agregarOpcion(opcion3);
+
+        Respuesta respuestaCorrecta = new Respuesta();
+
+        respuestaCorrecta.agregarOpcion(opcion1);
+        respuestaCorrecta.agregarOpcion(opcion2);
+        respuestaCorrecta.agregarOpcion(opcion3);
+
+        assertTrue(respuestaCorrecta.tieneIgualOrdenA(respuesta));
+    }
+
+    @Test
+    public void dadaUnaRespuestaNoSeVerificaQueTieneElMismoOrdenQueLaCorrecta(){
+
+        Respuesta respuesta = new Respuesta();
+        Opcion opcion1 = new Opcion("Uno");
+        Opcion opcion2 = new Opcion("Dos");
+        Opcion opcion3 = new Opcion("Tres");
+
+        respuesta.agregarOpcion(opcion1);
+        respuesta.agregarOpcion(opcion2);
+        respuesta.agregarOpcion(opcion3);
+
+        Respuesta respuestaCorrecta = new Respuesta();
+
+        respuestaCorrecta.agregarOpcion(opcion3);
+        respuestaCorrecta.agregarOpcion(opcion2);
+        respuestaCorrecta.agregarOpcion(opcion1);
+
+        assertFalse(respuestaCorrecta.tieneIgualOrdenA(respuesta));
+    }
+
+    @Test
+    public void dadaUnaRespuestaConMultiplicadorX1SuPuntajeSeMultiplicaEnUno(){
+
+        Respuesta respuesta = new Respuesta();
+        Opcion opcion1 = new Opcion("Uno");
+        Opcion opcion2 = new Opcion("Dos");
+        Opcion opcion3 = new Opcion("Tres");
+
+        respuesta.agregarOpcion(opcion1);
+        respuesta.agregarOpcion(opcion2);
+        respuesta.agregarOpcion(opcion3);
+
+        int puntaje = 10;
+
+        assertEquals(10,respuesta.multiplicar(puntaje));
+    }
+
+    @Test
+    public void dadaUnaRespuestaConMultiplicadorX2SuPuntajeSeMultiplicaEnDos(){
+
+        Respuesta respuesta = new Respuesta();
+        Opcion opcion1 = new Opcion("Uno");
+        Opcion opcion2 = new Opcion("Dos");
+        Opcion opcion3 = new Opcion("Tres");
+
+        respuesta.agregarOpcion(opcion1);
+        respuesta.agregarOpcion(opcion2);
+        respuesta.agregarOpcion(opcion3);
+
+        int puntaje = 10;
+
+        respuesta.modificarMultiplicador(new MultiplicadorX2());
+
+        assertEquals(20,respuesta.multiplicar(puntaje));
+    }
+
+    @Test
+    public void dadaUnaRespuestaConMultiplicadorX3SuPuntajeSeMultiplicaEnTres(){
+
+        Respuesta respuesta = new Respuesta();
+        Opcion opcion1 = new Opcion("Uno");
+        Opcion opcion2 = new Opcion("Dos");
+        Opcion opcion3 = new Opcion("Tres");
+
+        respuesta.agregarOpcion(opcion1);
+        respuesta.agregarOpcion(opcion2);
+        respuesta.agregarOpcion(opcion3);
+
+        int puntaje = 10;
+
+        respuesta.modificarMultiplicador(new MultiplicadorX3());
+
+        assertEquals(30,respuesta.multiplicar(puntaje));
+    }
+
 }
