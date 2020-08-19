@@ -117,7 +117,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta2 = new Respuesta();
         respuestaCorrecta2.agregarOpcion(opcionCorrecta21);
         respuestaCorrecta2.agregarOpcion(opcionCorrecta22);
-        Pregunta unaPregunta2 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Que numeros son pares?", respuestaCorrecta2);
+        Pregunta unaPregunta2 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Que numeros son pares? \n\t MultipleChoice", respuestaCorrecta2);
 
         Ronda ronda2 = new Ronda();
         ronda2.agregarPregunta(unaPregunta2);
@@ -135,7 +135,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta3 = new Respuesta();
         respuestaCorrecta3.agregarOpcion(opcionCorrecta31);
 
-        Pregunta unaPregunta3 = new Pregunta(new ModalidadSinOrden(new Clasico()), "C es un lenguaje terrible?", respuestaCorrecta3);
+        Pregunta unaPregunta3 = new Pregunta(new ModalidadSinOrden(new Clasico()), "C es un lenguaje terrible?\n\t Verdadero o falso", respuestaCorrecta3);
 
         Ronda ronda3 = new Ronda();
         ronda3.agregarPregunta(unaPregunta3);
@@ -162,7 +162,7 @@ import java.util.ArrayList;
         respuestaCorrecta4.agregarOpcion(opcionCorrecta43);
         respuestaCorrecta4.agregarOpcion(opcionCorrecta44);
 
-        Pregunta unaPregunta4 = new Pregunta(new ModalidadOrdenada(), "Seleccionar los numeros de forma acendente?", respuestaCorrecta4);
+        Pregunta unaPregunta4 = new Pregunta(new ModalidadOrdenada(), "Seleccionar los numeros de forma acendente? \n\t OrderedChoice ", respuestaCorrecta4);
 
         Ronda ronda4 = new Ronda();
         ronda4.agregarPregunta(unaPregunta4);
