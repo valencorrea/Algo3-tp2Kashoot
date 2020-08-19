@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ParcialTest {
+
     @Test
     public void calcularPuntajeConDosOpcionesCorrectasDe3DevuelveElPuntajeCorrecto(){
 
@@ -15,7 +16,7 @@ public class ParcialTest {
         int cantidadCorrectas = 3;
         int resultado = parcial.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
 
-        assertEquals(20,resultado);
+        assertEquals(20, resultado);
     }
 
     @Test
@@ -27,10 +28,11 @@ public class ParcialTest {
         int cantidadCorrectas = 3;
         int resultado = parcial.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
 
-        assertEquals(0,resultado);
+        assertEquals(0, resultado);
     }
+
     @Test
-    public void calcularPuntajeConOpcionesCorrectasDevuelveElPuntajeCCorrecto(){
+    public void calcularPuntajeConOpcionesCorrectasDevuelveElPuntajeCorrecto(){
 
         Parcial parcial = new Parcial();
         int cantidadOpcionesJugador = 3;
@@ -38,6 +40,30 @@ public class ParcialTest {
         int cantidadCorrectas = 3;
         int resultado = parcial.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
 
-        assertEquals(30,resultado);
+        assertEquals(30, resultado);
+    }
+
+    @Test
+    public void calcularPuntajeConOpcionesDelJugadorVaciasDevuelveElPuntajeCorrecto(){
+
+        Parcial parcial = new Parcial();
+        int cantidadOpcionesJugador = 0;
+        int cantidadAciertos = 0;
+        int cantidadCorrectas = 3;
+        int resultado = parcial.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
+
+        assertEquals(0, resultado);
+    }
+
+    @Test
+    public void calcularPuntajeConTodasCorrectasYUnaIncorrectaDevuelveElPuntajeCorrecto(){
+
+        Parcial parcial = new Parcial();
+        int cantidadOpcionesJugador = 4;
+        int cantidadAciertos = 3;
+        int cantidadCorrectas = 3;
+        int resultado = parcial.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertos, cantidadCorrectas);
+
+        assertEquals(0, resultado);
     }
 }
