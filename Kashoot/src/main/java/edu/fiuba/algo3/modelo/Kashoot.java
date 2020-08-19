@@ -33,7 +33,7 @@ public class Kashoot  {
         Jugador jugadorActual = jugadores.poll();
 
         jugadores.add(jugadorActual); //jugadores es una cola, lo pone al final
-        System.out.println("Actualice Jugador");
+
     }
 
     public Jugador obtenerJugadorActual(){
