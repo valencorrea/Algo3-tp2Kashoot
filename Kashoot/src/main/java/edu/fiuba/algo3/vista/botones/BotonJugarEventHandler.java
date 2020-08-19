@@ -35,21 +35,23 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
     public boolean nombresSonValidos(){
         boolean estado = true;
         if(unNombre.getText().trim().equals("")){
-            mensajeError.setText("No se puede tener un nombre vacio, por favor vuelva a intentar");
-            mensajeError.setAlignment(Pos.CENTER_LEFT);
-            mensajeError.setTextFill(Color.DARKRED);
+            imprimirMensajeError();
             estado = false;
         }
         else if(otroNombre.getText().trim().equals("")){
-            mensajeError.setText("No se puede tener un nombre vacio, por favor vuelva a intentar");
-            mensajeError.setAlignment(Pos.CENTER_RIGHT);
-            mensajeError.setTextFill(Color.DARKRED);
+            imprimirMensajeError();
             estado = false;
         }else{
             kashoot.setNombreJugadores(unNombre.getText(),otroNombre.getText());
 
         }
         return estado;
+    }
+
+    private void imprimirMensajeError() {
+        mensajeError.setText("No se puede tener un nombre vacio, por favor vuelva a intentar");
+        mensajeError.setAlignment(Pos.CENTER_LEFT);
+        mensajeError.setTextFill(Color.DARKRED);
     }
 
     @Override
