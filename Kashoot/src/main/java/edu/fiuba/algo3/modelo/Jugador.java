@@ -10,7 +10,9 @@ public class Jugador {
 
     private String nombre;
     private int puntajeAcumulado = 0;
-    private ArrayList<Multiplicador> multiplicadores= new ArrayList<Multiplicador>();
+    private MultiplicadorX2 multiplicadorX2;
+    private MultiplicadorX3 multiplicadorX3;
+
     private ArrayList<Exclusividad> exclusividades = new ArrayList<Exclusividad>();
     private int puntajeObtenidoEnRonda = 0;
 
@@ -27,8 +29,8 @@ public class Jugador {
 
     private void inicializarMultiplicadores() {
 
-        this.multiplicadores.add(new MultiplicadorX2());
-        this.multiplicadores.add(new MultiplicadorX3());
+        this.multiplicadorX2 = new MultiplicadorX2();
+        this.multiplicadorX3 = new MultiplicadorX3();
 
     }
 
@@ -45,25 +47,14 @@ public class Jugador {
     }
 
     public void multiplicarX2(Respuesta unaRespuesta) {
-
-        MultiplicadorX2 multiplicador = new MultiplicadorX2();
-        this.modificarMultiplicador(unaRespuesta, multiplicador);
-        return;
-
+        unaRespuesta.modificarMultiplicador(this.multiplicadorX2);
+        this.multiplicadorX2 = null;
     }
 
     public void multiplicarX3(Respuesta unaRespuesta) {
 
-        MultiplicadorX3 multiplicador = new MultiplicadorX3();
-        this.modificarMultiplicador(unaRespuesta, multiplicador);
-        return;
-    }
-
-    public void modificarMultiplicador(Respuesta unaRespuesta, Multiplicador unMultiplicador){
-
-        multiplicadores.remove(unMultiplicador);
-        unaRespuesta.modificarMultiplicador(unMultiplicador);
-        return;
+        unaRespuesta.modificarMultiplicador(this.multiplicadorX3);
+        this.multiplicadorX3 = null;
     }
 
     public int usarExclusividad() {
@@ -93,5 +84,13 @@ public class Jugador {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public boolean tieneMultiplicadorX3(){
+        return (this.multiplicadorX3 != null);
+    }
+
+    public boolean tieneMultiplicadorX2(){
+        return (this.multiplicadorX2 != null);
     }
 }

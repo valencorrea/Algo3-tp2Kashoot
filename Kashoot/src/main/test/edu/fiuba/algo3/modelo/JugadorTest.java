@@ -936,7 +936,7 @@ public class JugadorTest {
 
         assertFalse(unJugador.tieneExclusividad());
     }
-/*
+
     @Test
     public void jugadorNoPuedeUsarMultiplicadorX2NiX3LuegoDeUnUso(){
 
@@ -959,8 +959,9 @@ public class JugadorTest {
         unJugador.multiplicarX2(unaRespuesta);
         unJugador.multiplicarX3(otraRespuesta);
 
-        assertFalse(unJugador.);
+        assertFalse(unJugador.tieneMultiplicadorX2());
+        assertFalse(unJugador.tieneMultiplicadorX3());
 
     }
-    */
+
 }
