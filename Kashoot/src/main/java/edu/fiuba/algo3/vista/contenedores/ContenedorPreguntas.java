@@ -25,6 +25,8 @@ public class ContenedorPreguntas extends VBox {
     private VistaKashoot vistaKashoot;
     private VBox botonesExtra;
     private VBox preguntaYOpciones = new VBox();
+    private VBox informacionJugadores = new VBox();
+
     private Stage stage;
     private Kashoot kashoot;
 
@@ -34,6 +36,7 @@ public class ContenedorPreguntas extends VBox {
         Image imagen = new Image("patronpreguntas.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
+
         this.stage = stage;
         this.kashoot = kashoot;
         this.escenaFinal = escenaFinal;
@@ -46,26 +49,61 @@ public class ContenedorPreguntas extends VBox {
 
     public void actualizar() {
         this.getChildren().clear();
+
         preguntaYOpciones = new VBox();
+        informacionJugadores = new VBox();
+
         this.setDatos(kashoot);
+
         this.preguntaYOpciones.setAlignment(Pos.CENTER);
         this.botonesExtra.setAlignment(Pos.TOP_RIGHT);
         this.preguntaYOpciones.setSpacing(100);
-        this.getChildren().addAll(botonesExtra, preguntaYOpciones);
+
+        this.informacionJugadores.setAlignment(Pos.TOP_LEFT);
+        this.informacionJugadores.setSpacing(50);
+
+        this.getChildren().addAll(informacionJugadores, botonesExtra, preguntaYOpciones);
     }
 
     private void setDatos(Kashoot kashoot) {
-
         this.setcentro();
         this.setBotoneraExtras(kashoot);
-
     }
 
     private void setcentro(){
-
+        this.setJugadorActual();
         this.setPregunta();
         this.setBotoneraOpciones();
+        this.setInfo();
+    }
+    public void setInfo(){
+        this.setPuntajesJugadores(this.kashoot);
 
+    }
+
+    public void setPuntajesJugadores(Kashoot kashoot){
+
+        var puntajeJugador1 = new Label();
+        var puntajeJugador2 =new Label();
+
+        Jugador jugador1 = kashoot.obtenerJugadorActual();
+
+        puntajeJugador1.setText("Jugador 1: ".concat(Integer.toString(jugador1.getPuntajeAcumulado())));
+
+        kashoot.actualizarJugadorActual();
+
+        Jugador jugador2 = kashoot.obtenerJugadorActual();
+        puntajeJugador2.setText("Jugador 2: ".concat(Integer.toString(jugador2.getPuntajeAcumulado())));
+
+        kashoot.actualizarJugadorActual();
+
+        this.informacionJugadores.getChildren().addAll(puntajeJugador1,puntajeJugador2);
+    }
+
+    public void setJugadorActual(){
+        var nombreJugador = new Label();
+        nombreJugador.setText(this.kashoot.obtenerJugadorActual().getNombre());
+        this.preguntaYOpciones.getChildren().add(nombreJugador);
     }
 
     public void setBotoneraExtras(Kashoot kashoot){
@@ -159,7 +197,7 @@ public class ContenedorPreguntas extends VBox {
         String unContenido = pregunta.getContenido();
 
         textoPregunta.setText(unContenido);
-        textoPregunta.setFont(Font.font("Tahoma",FontWeight.BOLD, 40));
+        textoPregunta.setFont(Font.font("Gill Sans",FontWeight.BOLD, 40));
         textoPregunta.setTextFill(Color.CORNFLOWERBLUE);
 
         this.preguntaYOpciones.getChildren().add(textoPregunta);
@@ -182,7 +220,13 @@ public class ContenedorPreguntas extends VBox {
 
         contenedorOpciones.setSpacing(200);
         contenedorOpciones.setAlignment(Pos.CENTER);
-        this.preguntaYOpciones.getChildren().add(contenedorOpciones);
+
+        var textoRecordatorio = new Label();
+        textoRecordatorio.setText("Recordar seleccionar TODAS tus opciones antes de apretar cualqueir boton de responder :)");
+        textoRecordatorio.setFont(Font.font("Kalam",FontWeight.BOLD, 14));
+        textoRecordatorio.setTextFill(Color.BLUEVIOLET);
+
+        this.preguntaYOpciones.getChildren().addAll(contenedorOpciones, textoRecordatorio);
 
     }
 

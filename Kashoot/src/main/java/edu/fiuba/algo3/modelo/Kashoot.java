@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
 
-import edu.fiuba.algo3.vista.VistaKashoot;
 import java.util.*;
 
 
@@ -33,8 +32,8 @@ public class Kashoot  {
 
         Jugador jugadorActual = jugadores.poll();
 
-        jugadores.add(jugadorActual);
-
+        jugadores.add(jugadorActual); //jugadores es una cola, lo pone al final
+        System.out.println("Actualice Jugador");
     }
 
     public Jugador obtenerJugadorActual(){
@@ -49,7 +48,7 @@ public class Kashoot  {
 
     public void actualizar(){
         this.actualizarJugadorActual();
-        rondas.element().aumentarturnos();
+        rondas.element().aumentarTurnos();
          if(!rondas.element().rondaContinua()){
              rondas.element().asignarPuntajes(jugadores);
              rondas.poll();
