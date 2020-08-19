@@ -17,6 +17,7 @@ public class ParcialTest {
 
         assertEquals(20,resultado);
     }
+
     @Test
     public void calcularPunatjeConOpcionesCorrectasEIncorrectasDevuelveElPuntajeCorrecto(){
 
@@ -29,7 +30,7 @@ public class ParcialTest {
         assertEquals(0,resultado);
     }
     @Test
-    public void calcularPunatjeConOpcionesCorrectasDevuelveElPuntajeCCorrecto(){
+    public void calcularPuntajeConOpcionesCorrectasDevuelveElPuntajeCCorrecto(){
 
         Parcial parcial = new Parcial();
         int cantidadOpcionesJugador = 3;
@@ -39,6 +40,4 @@ public class ParcialTest {
 
         assertEquals(30,resultado);
     }
-
-
 }
