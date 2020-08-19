@@ -43,7 +43,7 @@ import java.util.ArrayList;
         ContenedorPreguntas contenedorPreguntas = new ContenedorPreguntas(stage, kashoot, escenaFinalDeJuego,contenedorFinalDeJuego);
         Scene escenaJuego = new Scene(contenedorPreguntas, 640, 480);
 
-        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego, kashoot);
+        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego, kashoot, contenedorPreguntas);
         Scene escenaBienvenidos = new Scene(contenedorBienvenidos, 640, 480);
 
         stage.setScene(escenaBienvenidos);
@@ -189,7 +189,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta5 = new Respuesta();
         respuestaCorrecta5.agregarOpcion(opcionCorrecta51);
         respuestaCorrecta5.agregarOpcion(opcionCorrecta52);
-        Pregunta unaPregunta5 = new Pregunta(new ModalidadSinOrden(new Parcial()), "Cual es la mejor facultad?", respuestaCorrecta5);
+        Pregunta unaPregunta5 = new Pregunta(new ModalidadSinOrden(new Parcial()), "Cual es la mejor facultad?\n\t MultipleChoice", respuestaCorrecta5);
 
         Ronda ronda5 = new Ronda();
         ronda5.agregarPregunta(unaPregunta5);
@@ -219,7 +219,7 @@ import java.util.ArrayList;
         respuestaCorrecta6.agregarOpcion(opcionCorrecta64);
         respuestaCorrecta6.agregarOpcion(opcionCorrecta65);
 
-        Pregunta unaPregunta6 = new Pregunta(new ModalidadOrdenada(), "Seleccionar las letras alfabeticamente?", respuestaCorrecta6);
+        Pregunta unaPregunta6 = new Pregunta(new ModalidadOrdenada(), "Seleccionar las letras alfabeticamente?\n\t OrderedChoice", respuestaCorrecta6);
 
         Ronda ronda6 = new Ronda();
         ronda6.agregarPregunta(unaPregunta6);
@@ -238,7 +238,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta7 = new Respuesta();
         respuestaCorrecta7.agregarOpcion(opcionCorrecta31);
 
-        Pregunta unaPregunta7 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Kashoot was sent to nil?", respuestaCorrecta7);
+        Pregunta unaPregunta7 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Kashoot was sent to nil?\n\t Verdadero o Falso", respuestaCorrecta7);
 
         Ronda ronda7 = new Ronda();
         ronda7.agregarPregunta(unaPregunta7);
@@ -257,7 +257,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta8 = new Respuesta();
         respuestaCorrecta8.agregarOpcion(opcionCorrecta81);
 
-        Pregunta unaPregunta8 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Los michis son malos?", respuestaCorrecta8);
+        Pregunta unaPregunta8 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Los michis son malos?\n\t Verdadero o Falso", respuestaCorrecta8);
 
         Ronda ronda8 = new Ronda();
         ronda8.agregarPregunta(unaPregunta8);

@@ -16,12 +16,14 @@ import javafx.stage.Stage;
 public class ContenedorBienvenidos extends VBox {
 
         Stage stage;
+        ContenedorPreguntas contenedorPreguntas;
 
-        public ContenedorBienvenidos(Stage stage, Scene proximaEscena, Kashoot kashoot) {
+        public ContenedorBienvenidos(Stage stage, Scene proximaEscena, Kashoot kashoot, ContenedorPreguntas contenedorPreguntas) {
 
             super();
 
             this.stage = stage;
+            this.contenedorPreguntas = contenedorPreguntas;
 
             this.setAlignment(Pos.CENTER);
             this.setSpacing(20);
@@ -74,7 +76,7 @@ public class ContenedorBienvenidos extends VBox {
             mensajeError.setFont(Font.font("Tahoma", FontWeight.BLACK, 15));
             contenedorDeNombres.getChildren().add(mensajeError);
 
-            BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena, textoJugador1, textoJugador2, mensajeError,kashoot);
+            BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena, contenedorPreguntas, textoJugador1, textoJugador2, mensajeError,kashoot);
 
             botonJugar.setOnAction(botonJugarEventHandler);
 
