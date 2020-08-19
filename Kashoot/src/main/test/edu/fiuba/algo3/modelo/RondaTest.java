@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.formatos.Clasico;
-import edu.fiuba.algo3.modelo.formatos.GroupChoice;
 import edu.fiuba.algo3.modelo.formatos.Parcial;
 import edu.fiuba.algo3.modelo.formatos.Penalidad;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadSinOrden;
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RondaTest {
 
@@ -308,6 +307,7 @@ public class RondaTest {
 
     @Test
     public void dadaUnaRondaConPreguntaMultipleChoiceConPuntajeParcialSeRespondeConDosExclusividadesYLosPuntajesSonCorrectos(){
+        
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
 
@@ -351,4 +351,67 @@ public class RondaTest {
         assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
 
+    @Test 
+    public void dadaUnaRondaQueSoloFueJugadaPorUnJugadorSePreguntaSiLaRondaContinuaYDevuelveQueSi(){
+        Opcion opcionCorrectaUno = new Opcion("uno");
+        Opcion opcionCorrectaDos = new Opcion("dos");
+        Opcion opcionIncorrectaTres = new Opcion("tres");
+
+        ArrayList<Opcion> opciones = new ArrayList<>();
+        opciones.add(opcionCorrectaUno);
+        opciones.add(opcionCorrectaDos);
+        opciones.add(opcionIncorrectaTres);
+
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionCorrectaUno);
+        respuestaCorrecta.agregarOpcion(opcionCorrectaDos);
+
+        Respuesta respuestaUnJugador = respuestaCorrecta;
+
+        Respuesta respuestaOtroJugador = new Respuesta();
+        respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "hola soy una pregunta??", respuestaCorrecta);
+
+        Ronda ronda = new Ronda();
+        ronda.agregarOpciones(opciones);
+        ronda.agregarPregunta(unaPregunta);
+
+        ronda.aumentarTurnos();
+
+        assertTrue(ronda.rondaContinua());
+
+    }
+
+    @Test
+    public void dadaUnaRondaJugadaPorAmbosJugadoresSePreguntaSiLaRondaContinuaYDevuelveQueNo(){
+        Opcion opcionCorrectaUno = new Opcion("uno");
+        Opcion opcionCorrectaDos = new Opcion("dos");
+        Opcion opcionIncorrectaTres = new Opcion("tres");
+
+        ArrayList<Opcion> opciones = new ArrayList<>();
+        opciones.add(opcionCorrectaUno);
+        opciones.add(opcionCorrectaDos);
+        opciones.add(opcionIncorrectaTres);
+
+        Respuesta respuestaCorrecta = new Respuesta();
+        respuestaCorrecta.agregarOpcion(opcionCorrectaUno);
+        respuestaCorrecta.agregarOpcion(opcionCorrectaDos);
+
+        Respuesta respuestaUnJugador = respuestaCorrecta;
+
+        Respuesta respuestaOtroJugador = new Respuesta();
+        respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
+
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "hola soy una pregunta??", respuestaCorrecta);
+
+        Ronda ronda = new Ronda();
+        ronda.agregarOpciones(opciones);
+        ronda.agregarPregunta(unaPregunta);
+
+        ronda.aumentarTurnos();
+        ronda.aumentarTurnos();
+
+        assertFalse(ronda.rondaContinua());
+    }
 }

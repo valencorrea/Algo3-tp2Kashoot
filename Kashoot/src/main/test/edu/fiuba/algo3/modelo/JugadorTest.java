@@ -1,10 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.modalidades.ModalidadSinOrden;
-import edu.fiuba.algo3.modelo.formatos.Clasico;
-import edu.fiuba.algo3.modelo.formatos.GroupChoice;
-import edu.fiuba.algo3.modelo.formatos.Parcial;
-import edu.fiuba.algo3.modelo.formatos.Penalidad;
+import edu.fiuba.algo3.modelo.formatos.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -316,7 +313,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void jugadorRespondeVerdaderoFalsoConFortatoClasicoYMultiplicadorX2RecibePuntajeCorrecto() {
+    public void jugadorRespondeVerdaderoFalsoConFormatoClasicoYMultiplicadorX2RecibePuntajeCorrecto() {
 
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
@@ -641,7 +638,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void dosJugadoresElijenExclusividadesYRespondenAmbosBien() {
+    public void dosJugadoresEligenExclusividadesYRespondenAmbosBien() {
 
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
@@ -677,7 +674,7 @@ public class JugadorTest {
     }
 
     @Test
-    public void dosJugadoresElijenExclusividadesYRespondenAmbosMal() {
+    public void dosJugadoresEligenExclusividadesYRespondenAmbosMal() {
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
 
