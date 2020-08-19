@@ -16,13 +16,13 @@ public class PenalidadTest {
 
         Penalidad penalidad = new Penalidad();
 
-        int puntajeobtenido = penalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertosJugador,cantidadOpcionesCorrectas);
+        int puntajeObtenido = penalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertosJugador,cantidadOpcionesCorrectas);
 
-        assertEquals(30,puntajeobtenido);
+        assertEquals(30,puntajeObtenido);
     }
 
     @Test
-    public void seCalculaElPuntajeParaUnaRespuestaConUnaOpcionDesacertadaDevuelveElPuntajeCorrecto(){
+    public void seCalculaElPuntajeParaUnaRespuestaConUnaOpcionIncorrectaDevuelveElPuntajeCorrecto(){
 
         int cantidadOpcionesCorrectas = 3;
         int cantidadAciertosJugador = 2;
@@ -30,9 +30,9 @@ public class PenalidadTest {
 
         Penalidad penalidad = new Penalidad();
 
-        int puntajeobtenido = penalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertosJugador,cantidadOpcionesCorrectas);
+        int puntajeObtenido = penalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertosJugador,cantidadOpcionesCorrectas);
 
-        assertEquals(10,puntajeobtenido);
+        assertEquals(10,puntajeObtenido);
     }
 
     @Test
@@ -44,8 +44,37 @@ public class PenalidadTest {
 
         Penalidad penalidad = new Penalidad();
 
-        int puntajeobtenido = penalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertosJugador,cantidadOpcionesCorrectas);
+        int puntajeObtenido = penalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertosJugador,cantidadOpcionesCorrectas);
 
-        assertEquals(20,puntajeobtenido);
+        assertEquals(20,puntajeObtenido);
     }
+
+    @Test
+    public void seCalculaElPuntajePara2RespuestasBienDelJugadorYDosMalDeUnTotalDeDosCorrectasYDevuelveElPuntajeCorrecto(){
+
+        int cantidadOpcionesCorrectas = 2;
+        int cantidadAciertosJugador = 2;
+        int cantidadOpcionesJugador = 4;
+
+        Penalidad penalidad = new Penalidad();
+
+        int puntajeObtenido = penalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertosJugador,cantidadOpcionesCorrectas);
+
+        assertEquals(0,puntajeObtenido);
+    }
+
+    @Test
+    public void seCalculaElPuntajePara2RespuestasIncorrectasDelJugadorDeUnaPreguntaConUnaCorrectaDevuelveElPuntajeCorrecto(){
+
+        int cantidadOpcionesCorrectas = 2;
+        int cantidadAciertosJugador = 0;
+        int cantidadOpcionesJugador = 2;
+
+        Penalidad penalidad = new Penalidad();
+
+        int puntajeObtenido = penalidad.calcularPuntaje(cantidadOpcionesJugador,cantidadAciertosJugador,cantidadOpcionesCorrectas);
+
+        assertEquals(-20,puntajeObtenido);
+    }
+
 }

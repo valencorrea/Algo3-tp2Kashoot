@@ -31,8 +31,7 @@ public class Ronda {
         return this.pregunta;
     }
 
-
-    public void aumentarturnos() {
+    public void aumentarTurnos() {
 
         this.turnosJugados += 1;
     }
