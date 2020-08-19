@@ -17,6 +17,7 @@ public class ParcialTest {
 
         assertEquals(20,resultado);
     }
+
     @Test
     public void calcularPuntajeConOpcionesCorrectasEIncorrectasDevuelveElPuntajeCorrecto(){
 
@@ -39,6 +40,4 @@ public class ParcialTest {
 
         assertEquals(30,resultado);
     }
-
-
 }
