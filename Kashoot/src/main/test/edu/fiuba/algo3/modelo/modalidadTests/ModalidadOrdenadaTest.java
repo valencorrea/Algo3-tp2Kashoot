@@ -1,5 +1,7 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.modalidadTests;
 
+import edu.fiuba.algo3.modelo.Opcion;
+import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadOrdenada;
 import org.junit.jupiter.api.Test;
 
