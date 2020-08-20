@@ -14,9 +14,9 @@ import java.util.Queue;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class KahootTest {
-/*
+
     @Test
-    public void luegoDeQueJuegueUnoDeLosJugadoresSeActualizaKashootYSeActualizaCorrectamente(){
+    public void luegoDeQueJuegueUnoDeLosJugadoresSeActualizaKashootYSeActualizaCorrectamente() {
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();
 
@@ -24,17 +24,17 @@ public class KahootTest {
 
         Kashoot kashoot = new Kashoot();
 
-        kashoot.agregarJugadores(jugador1,jugador2);
+        kashoot.agregarJugadores(jugador1, jugador2);
         kashoot.agregarRonda(ronda);
 
         kashoot.actualizar();
 
         assertFalse(kashoot.terminoJuego());
-        assertEquals(jugador2,kashoot.obtenerJugadorActual());
+        assertEquals(jugador2, kashoot.obtenerJugadorActual());
     }
 
     @Test
-    public void luegoDeQueJueganAmbosJugadoresConSoloUnaRondaSeActualizaKashootYSeTerminaElJuego(){
+    public void luegoDeQueJueganAmbosJugadoresConSoloUnaRondaSeActualizaKashootYSeTerminaElJuego() {
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();
 
@@ -42,7 +42,7 @@ public class KahootTest {
 
         Kashoot kashoot = new Kashoot();
 
-        kashoot.agregarJugadores(jugador1,jugador2);
+        kashoot.agregarJugadores(jugador1, jugador2);
         kashoot.agregarRonda(ronda);
 
         kashoot.actualizar();
@@ -50,10 +50,10 @@ public class KahootTest {
 
         assertTrue(kashoot.terminoJuego());
     }
-*/
-    /*
+
+
     @Test
-    public void luegoDeQueJueganAmbosJugadoresTodasLasRondasSeActualizaKashootYSeTerminaElJuego(){
+    public void luegoDeQueJueganAmbosJugadoresTodasLasRondasSeActualizaKashootYSeTerminaElJuego() {
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();
 
@@ -63,28 +63,28 @@ public class KahootTest {
 
         Kashoot kashoot = new Kashoot();
 
-        kashoot.agregarJugadores(jugador1,jugador2);
+        kashoot.agregarJugadores(jugador1, jugador2);
         kashoot.agregarRonda(ronda1);
         kashoot.agregarRonda(ronda2);
         kashoot.agregarRonda(ronda3);
 
         /*juegan la primer ronda*/
-    //kashoot.actualizar();
-    //kashoot.actualizar();
+        kashoot.actualizar();
+        kashoot.actualizar();
 
-    /*juegan la segunda ronda*/
-    //kashoot.actualizar();
-    //kashoot.actualizar();
+        /*juegan la segunda ronda*/
+        kashoot.actualizar();
+        kashoot.actualizar();
 
-    /*juegan la tercer ronda*/
-    //kashoot.actualizar();
-    //kashoot.actualizar();
+        /*juegan la tercer ronda*/
+        kashoot.actualizar();
+        kashoot.actualizar();
 
-    //assertTrue(kashoot.terminoJuego());
-    // }
-    /*
+        assertTrue(kashoot.terminoJuego());
+    }
+
     @Test
-    public void seJuegaUnaRondaConExclusividadYLosPuntajesDeAmbosJugadoresSonCorrectosCorrectos(){
+    public void seJuegaUnaRondaConExclusividadYLosPuntajesDeAmbosJugadoresSonCorrectosCorrectos() {
 
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();
@@ -118,19 +118,18 @@ public class KahootTest {
 
         Kashoot kashoot = new Kashoot();
 
-        kashoot.agregarJugadores(jugador1,jugador2);
+        kashoot.agregarJugadores(jugador1, jugador2);
         kashoot.agregarRonda(ronda);
-        kashoot.jugarRondaConExclusividad();
-
-        jugador1.responder(unaPregunta, respuestaUnJugador);
-        jugador2.responder(unaPregunta, respuestaOtroJugador);
 
         /*ambos jugadores juegan la ronda*/
-    //kashoot.actualizar();
-    //kashoot.actualizar();
 
-    //assertEquals(40, jugador1.getPuntajeAcumulado());
-    //assertEquals(0, jugador2.getPuntajeAcumulado());
+        kashoot.jugarRondaConExclusividad(jugador1,unaPregunta, respuestaUnJugador);
+        kashoot.jugarRondaSinExclusividad(jugador2,unaPregunta, respuestaOtroJugador);
+
+
+        assertEquals(40, jugador1.getPuntajeAcumulado());
+        assertEquals(0, jugador2.getPuntajeAcumulado());
+    }
 }
 
 
