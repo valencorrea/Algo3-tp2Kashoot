@@ -318,35 +318,6 @@ public class JugadorTest {
     }
 
     @Test
-    public void jugadorRespondeVerdaderoFalsoConFormatoClasicoYMultiplicadorX2RecibePuntajeCorrecto() {
-
-        Jugador unJugador = new Jugador();
-        Jugador otroJugador = new Jugador();
-
-        Opcion opcionVerdadera = new Opcion("Verdadera");
-        Opcion opcionFalsa = new Opcion("Falsa");
-
-        Respuesta respuestaCorrecta = new Respuesta();
-        respuestaCorrecta.agregarOpcion(opcionVerdadera);
-        Respuesta respuestaIncorrecta = new Respuesta();
-        respuestaIncorrecta.agregarOpcion(opcionFalsa);
-
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "soy una pregunta?", respuestaCorrecta);
-
-        unJugador.multiplicarX2(respuestaCorrecta);
-        otroJugador.multiplicarX2(respuestaIncorrecta);
-
-        unJugador.responder(unaPregunta, respuestaCorrecta);
-        otroJugador.responder(unaPregunta, respuestaIncorrecta);
-
-        unJugador.asignarPuntajeRonda();
-        otroJugador.asignarPuntajeRonda();
-
-        Assertions.assertEquals(10, unJugador.getPuntajeAcumulado());
-        Assertions.assertEquals(0, otroJugador.getPuntajeAcumulado());
-    }
-
-    @Test
     public void jugadorRespondeVerdaderoFalsoConPenalidadYMultiplicadorX3RecibePuntajeCorrecto() {
 
         Jugador unJugador = new Jugador();
@@ -373,35 +344,6 @@ public class JugadorTest {
 
         Assertions.assertEquals(30, unJugador.getPuntajeAcumulado());
         Assertions.assertEquals(-30, otroJugador.getPuntajeAcumulado());
-    }
-
-    @Test
-    public void jugadorRespondeVerdaderoFalsoConFormatoClasicoYMultiplicadorX3RecibePuntajeCorrecto() {
-
-        Jugador unJugador = new Jugador();
-        Jugador otroJugador = new Jugador();
-
-        Opcion opcionVerdadera = new Opcion("Verdadera");
-        Opcion opcionFalsa = new Opcion("Falsa");
-
-        Respuesta respuestaCorrecta = new Respuesta();
-        respuestaCorrecta.agregarOpcion(opcionVerdadera);
-        Respuesta respuestaIncorrecta = new Respuesta();
-        respuestaIncorrecta.agregarOpcion(opcionFalsa);
-
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Este es un juego de preguntas y respuestas?", respuestaCorrecta);
-
-        unJugador.multiplicarX3(respuestaCorrecta);
-        otroJugador.multiplicarX3(respuestaIncorrecta);
-
-        unJugador.responder(unaPregunta, respuestaCorrecta);
-        otroJugador.responder(unaPregunta, respuestaIncorrecta);
-
-        unJugador.asignarPuntajeRonda();
-        otroJugador.asignarPuntajeRonda();
-
-        Assertions.assertEquals(10, unJugador.getPuntajeAcumulado());
-        Assertions.assertEquals(0, otroJugador.getPuntajeAcumulado());
     }
 
     @Test

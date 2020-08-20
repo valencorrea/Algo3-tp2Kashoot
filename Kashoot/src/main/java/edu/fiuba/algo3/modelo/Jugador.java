@@ -37,10 +37,7 @@ public class Jugador {
 
     public void responder(Pregunta unaPregunta, Respuesta unaRespuesta) {
         int puntaje = unaPregunta.calcularPuntaje(unaRespuesta);
-        if (unaPregunta.puedeMultiplicar()) {
-            puntaje = unaRespuesta.multiplicar(puntaje);
-        }
-        this.puntajeObtenidoEnRonda = puntaje;
+        this.puntajeObtenidoEnRonda = unaRespuesta.multiplicar(puntaje);
     }
 
     public int getPuntajeAcumulado(){

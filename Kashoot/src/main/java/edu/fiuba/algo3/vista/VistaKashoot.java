@@ -38,6 +38,7 @@ public class VistaKashoot {
         }
         contenedorPreguntas.actualizar();
     }
+
     public ArrayList<Opcion> getOpciones() {
        return this.opciones;
 
@@ -46,6 +47,7 @@ public class VistaKashoot {
     public Respuesta getRespuesta() {
         return this.respuestaActual;
     }
+
     public Pregunta getPregunta(){
         return this.pregunta;
 
@@ -54,7 +56,6 @@ public class VistaKashoot {
     public boolean terminoJuego() {
         return kashoot.terminoJuego();
     }
-
 
     public void setDatosFinales() {
         this.contenedorFinal.setDatosFinales();
