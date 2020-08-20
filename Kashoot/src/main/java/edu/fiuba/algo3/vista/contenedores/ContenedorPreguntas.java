@@ -29,7 +29,7 @@ public class ContenedorPreguntas extends VBox {
     private VistaKashoot vistaKashoot;
     private VBox botonesExtra;
     private VBox preguntaYOpciones = new VBox();
-    private VBox informacionJugadores = new VBox();
+    private HBox informacionJugadores = new HBox();
 
     private Stage stage;
     private Kashoot kashoot;
@@ -55,7 +55,7 @@ public class ContenedorPreguntas extends VBox {
         this.getChildren().clear();
 
         preguntaYOpciones = new VBox();
-        informacionJugadores = new VBox();
+        informacionJugadores = new HBox();
 
         this.setDatos();
 
@@ -64,7 +64,7 @@ public class ContenedorPreguntas extends VBox {
         this.preguntaYOpciones.setSpacing(100);
 
         this.informacionJugadores.setAlignment(Pos.TOP_LEFT);
-        this.informacionJugadores.setSpacing(20);
+        this.informacionJugadores.setSpacing(500);
 
         this.getChildren().addAll(informacionJugadores, botonesExtra, preguntaYOpciones);
     }
@@ -75,7 +75,6 @@ public class ContenedorPreguntas extends VBox {
     }
 
     private void setcentro(){
-        this.setJugadorActual();
         this.setPregunta();
         this.setBotoneraOpciones();
         this.setInfo();
@@ -83,8 +82,28 @@ public class ContenedorPreguntas extends VBox {
 
     public void setInfo(){
         this.setPuntajesJugadores(this.kashoot);
+        this.setJugadorActual();
     }
 
+
+
+    public void setJugadorActual(){
+        HBox contenedor_de_nombre = new HBox();
+        var nombreJugador = new Label();
+
+        var texto = new Label("Jugador actual: ");
+        texto.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
+        texto.setTextFill(Color.ROYALBLUE);
+
+        nombreJugador.setText(this.kashoot.obtenerJugadorActual().getNombre());
+        nombreJugador.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
+        nombreJugador.setTextFill(Color.ROYALBLUE);
+
+        contenedor_de_nombre.getChildren().addAll(texto,nombreJugador);
+        contenedor_de_nombre.setAlignment(Pos.TOP_CENTER);
+
+        this.informacionJugadores.getChildren().add(contenedor_de_nombre);
+    }
 
     public void setPuntajesJugadores(Kashoot kashoot){
 
@@ -126,27 +145,10 @@ public class ContenedorPreguntas extends VBox {
         HBox boxJugador2 = new HBox();
         boxJugador2.getChildren().addAll(labelConNombreJugador2,puntajeJugador2);
 
-        this.informacionJugadores.getChildren().addAll(boxJugador1,boxJugador2);
+        VBox boxDeAmbosJugadores = new VBox();
+        boxDeAmbosJugadores.getChildren().addAll(boxJugador1,boxJugador2);
+        this.informacionJugadores.getChildren().add(boxDeAmbosJugadores);
     }
-
-    public void setJugadorActual(){
-        HBox contenedor_de_nombre = new HBox();
-        var nombreJugador = new Label();
-
-        var texto = new Label("Jugador actual: ");
-        texto.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
-        texto.setTextFill(Color.ROYALBLUE);
-
-        nombreJugador.setText(this.kashoot.obtenerJugadorActual().getNombre());
-        nombreJugador.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
-        nombreJugador.setTextFill(Color.ROYALBLUE);
-
-        contenedor_de_nombre.getChildren().addAll(texto,nombreJugador);
-        contenedor_de_nombre.setAlignment(Pos.TOP_CENTER);
-
-        this.preguntaYOpciones.getChildren().add(contenedor_de_nombre);
-    }
-
     public void setBotoneraExtras(){
 
         VBox botoneraExtras = new VBox();
@@ -272,7 +274,7 @@ public class ContenedorPreguntas extends VBox {
     public Label recordatorio(){
 
         var labelRecordatorio = new Label();
-        labelRecordatorio.setText("Recordá seleccionar TODAS tus opciones antes de seleccionar cualquier boton de responder :)");
+        labelRecordatorio.setText("Recordá seleccionar TODAS tus opciones antes de seleccionar cualquier boton de responder :)\nExclusividad: asigna puntaje a un jugador si es que su oponente contesta mal");
         labelRecordatorio.setFont(Font.font("Kalam",FontWeight.BOLD, 14));
         labelRecordatorio.setTextFill(Color.BLUEVIOLET);
 
