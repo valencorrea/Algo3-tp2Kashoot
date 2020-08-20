@@ -275,7 +275,7 @@ public class ContenedorPreguntas extends VBox {
     public Label recordatorio(){
 
         var labelRecordatorio = new Label();
-        labelRecordatorio.setText("Recordá seleccionar TODAS tus opciones antes de seleccionar cualquier boton de responder :)\nExclusividad: asigna puntaje a un jugador si es que su oponente contesta mal");
+        labelRecordatorio.setText("Recordá seleccionar TODAS tus opciones antes de seleccionar cualquier boton de responder :)\nExclusividad: asigna puntaje a un jugador si es que su oponente contesta mal multiplicandolo por dos y por la cantidad de exclusividades elegidas");
         labelRecordatorio.setTextAlignment(TextAlignment.CENTER);
         labelRecordatorio.setFont(Font.font("Kalam",FontWeight.BOLD, 14));
         labelRecordatorio.setTextFill(Color.BLUEVIOLET);
