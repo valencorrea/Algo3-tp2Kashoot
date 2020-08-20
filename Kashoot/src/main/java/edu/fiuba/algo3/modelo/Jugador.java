@@ -59,9 +59,8 @@ public class Jugador {
         this.multiplicadorX3 = null;
     }
 
-    public int usarExclusividad() {
+    public void usarExclusividad() {
         this.exclusividades.remove(exclusividades.size()-1);
-        return 1;
     }
 
     public int getPuntajeRonda() {

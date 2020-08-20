@@ -420,7 +420,8 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta?", respuestaCorrecta);
 
-        int cantExclusividades = unJugador.usarExclusividad();
+        int cantExclusividades = 1;
+        unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaCorrecta);
@@ -445,7 +446,9 @@ public class JugadorTest {
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
-        int cantExclusividades = unJugador.usarExclusividad();
+
+        int cantExclusividades = 1;
+        unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaCorrecta);
@@ -472,7 +475,9 @@ public class JugadorTest {
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
-        int cantExclusividades = unJugador.usarExclusividad();
+
+        int cantExclusividades = 1;
+        unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaIncorrecta);
@@ -497,7 +502,8 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
 
-        int cantExclusividades = unJugador.usarExclusividad();
+        int cantExclusividades = 1;
+        unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaCorrecta);
@@ -525,8 +531,9 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
 
-        int cantExclusividades = unJugador.usarExclusividad();
-        cantExclusividades += otroJugador.usarExclusividad();
+        int cantExclusividades = 2;
+        unJugador.usarExclusividad();
+        otroJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaCorrecta);
@@ -561,7 +568,8 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Que numeros son primos?", respuestaCorrecta);
 
-        int cantExclusividades = unJugador.usarExclusividad();
+        int cantExclusividades = 1;
+        unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaUnJugador);
@@ -597,7 +605,8 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Que numeros son primos?", respuestaCorrecta);
 
-        int cantExclusividades = unJugador.usarExclusividad();
+        int cantExclusividades = 1;
+        unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaUnJugador);
@@ -631,7 +640,8 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "Que numeros son primos?", respuestaCorrecta);
 
-        int cantExclusividades = unJugador.usarExclusividad();
+        int cantExclusividades = 1;
+        unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaUnJugador);
@@ -668,8 +678,9 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "Que numeros son primos?", respuestaCorrecta);
 
-        int cantExclusividades = unJugador.usarExclusividad();
-        cantExclusividades += otroJugador.usarExclusividad();
+        int cantExclusividades = 2;
+        unJugador.usarExclusividad();
+        otroJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaUnJugador);
@@ -705,8 +716,9 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "Por cuales numeros puede dividirse el cuatro y resultar en un entero?", respuestaCorrecta);
 
-        int cantExclusividades = unJugador.usarExclusividad();
-        cantExclusividades += otroJugador.usarExclusividad();
+        int cantExclusividades = 2;
+        unJugador.usarExclusividad();
+        otroJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaUnJugador);
@@ -742,7 +754,8 @@ public class JugadorTest {
         respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
         respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo2_1);
 
-        int cantExclusividades = unJugador.usarExclusividad();
+        int cantExclusividades = 1;
+        unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
@@ -778,7 +791,8 @@ public class JugadorTest {
         respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
         respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_2);
 
-        int cantExclusividades = unJugador.usarExclusividad();
+        int cantExclusividades = 1;
+        unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
@@ -818,8 +832,9 @@ public class JugadorTest {
         respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
         respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo2_1);
 
-        int cantExclusividades = unJugador.usarExclusividad();
-        cantExclusividades += otroJugador.usarExclusividad();
+        int cantExclusividades = 2;
+        unJugador.usarExclusividad();
+        otroJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
@@ -856,8 +871,9 @@ public class JugadorTest {
         respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
         respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_2);
 
-        int cantExclusividades = unJugador.usarExclusividad();
-        cantExclusividades += otroJugador.usarExclusividad();
+        int cantExclusividades = 2;
+        unJugador.usarExclusividad();
+        otroJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
@@ -890,8 +906,9 @@ public class JugadorTest {
         Respuesta respuestaOtroJugadorParaElGrupo1 = new Respuesta();
         respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
 
-        int cantExclusividades = unJugador.usarExclusividad();
-        cantExclusividades += otroJugador.usarExclusividad();
+        int cantExclusividades = 2;
+        unJugador.usarExclusividad();
+        otroJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
 
         unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);
@@ -923,8 +940,9 @@ public class JugadorTest {
         Respuesta respuestaOtroJugadorParaElGrupo1 = new Respuesta();
         respuestaOtroJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
 
-        int cantExclusividades = unJugador.usarExclusividad();
-        cantExclusividades += otroJugador.usarExclusividad();
+        int cantExclusividades = 2;
+        unJugador.usarExclusividad();
+        otroJugador.usarExclusividad();
 
         Exclusividad unaExclusividad = new Exclusividad();
         unJugador.responder(unaPregunta, respuestaUnJugadorParaElGrupo1);

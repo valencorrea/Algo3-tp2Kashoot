@@ -9,7 +9,6 @@ import java.util.*;
 
 public class Kashoot  {
 
-    private int tamanio = 20;
     private Queue<Ronda> rondas = new LinkedList<Ronda>();
     private Queue<Jugador> jugadores = new LinkedList<Jugador>();
 
