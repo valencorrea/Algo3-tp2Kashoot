@@ -250,8 +250,8 @@ import java.util.ArrayList;
         //-------------------------------------------//
         // verdaderoFalso; Penalidad; los michis son malos?; verdadero;/falso
 
-        Opcion opcionCorrecta81 = new Opcion("Verdadero");
-        Opcion opcionIncorrecta81 = new Opcion("Falso");
+        Opcion opcionIncorrecta81 = new Opcion("Verdadero");
+        Opcion opcionCorrecta81 = new Opcion("Falso");
 
         ArrayList <Opcion> opciones8 = new ArrayList<Opcion>();
         opciones8.add(opcionCorrecta81);
