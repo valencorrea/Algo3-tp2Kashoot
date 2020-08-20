@@ -26,9 +26,7 @@ public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
     @Override
     public void handle(ActionEvent actionEvent) {
         Jugador jugadorActual = kashoot.obtenerJugadorActual();
-        jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
-
-        this.kashoot.actualizar();
+        this.kashoot.jugarRondaSinExclusividad(jugadorActual, vista.getPregunta(),vista.getRespuesta());
         this.vista.actualizar();
         if(vista.terminoJuego()){
             terminarJuego();
@@ -40,6 +38,6 @@ public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
         this.stage.setScene(this.escenaFinal);
         this.stage.setFullScreen(true);
         this.stage.show();
-        //
+
     }
 }

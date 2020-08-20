@@ -58,10 +58,12 @@ public class Kashoot  {
          }
     }
 
-    public void jugarRondaConExclusividad() {
-
+    public void jugarRondaConExclusividad(Jugador jugadorAcual, Pregunta unaPregunta, Respuesta unaRespuesta) {
+        jugadorAcual.responder(unaPregunta, unaRespuesta);
         Ronda rondaActual = this.rondas.element();
         rondaActual.jugarConExclusividad();
+        this.obtenerJugadorActual().usarExclusividad();
+        this.actualizar();
 
     }
 
@@ -79,8 +81,8 @@ public class Kashoot  {
 
     }
 
-    public void jugar(Jugador jugadorActual, Pregunta unaPregunta, Respuesta unaRespuesta) {
-        jugadorActual.responder(unaPregunta, unaRespuesta);
+    public void jugarRondaSinExclusividad(Jugador jugadorActual, Pregunta unaPregunta, Respuesta unaRespuesta){
+        jugadorActual.responder(unaPregunta,unaRespuesta);
         this.actualizar();
     }
 }
