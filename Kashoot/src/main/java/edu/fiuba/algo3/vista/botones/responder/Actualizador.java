@@ -4,9 +4,9 @@ import edu.fiuba.algo3.vista.VistaKashoot;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class BotonResponderGeneral {
+public class Actualizador {
 
-    public BotonResponderGeneral() {
+    public Actualizador() {
     }
 
     public void actualizar(VistaKashoot unaVista, Scene escenaFinal, Stage stage){

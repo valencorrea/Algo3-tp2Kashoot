@@ -8,14 +8,14 @@ import javafx.stage.Stage;
 
 public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
 
-    private BotonResponderGeneral botonResponderGeneral;
+    private Actualizador botonResponderGeneral;
     private Kashoot kashoot;
     private VistaKashoot vista;
     private Scene proximaEscena;
     private Stage stage;
 
     public BotonResponderEventHandler(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage) {
-        this.botonResponderGeneral = new BotonResponderGeneral();
+        this.botonResponderGeneral = new Actualizador();
         this.vista = unaVista;
         this.kashoot = kashoot;
         this.proximaEscena = escenaFinal;
