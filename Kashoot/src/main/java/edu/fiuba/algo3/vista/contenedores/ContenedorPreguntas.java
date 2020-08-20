@@ -17,6 +17,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import edu.fiuba.algo3.modelo.Kashoot;
 import edu.fiuba.algo3.modelo.EntidadesPrincipales.Pregunta;
@@ -241,7 +242,7 @@ public class ContenedorPreguntas extends VBox {
 
         textoPregunta.setText(unContenido);
         textoPregunta.setFont(Font.font("Gill Sans",FontWeight.BOLD, 40));
-
+        textoPregunta.setTextAlignment(TextAlignment.CENTER);
         textoPregunta.setTextFill(Color.CORNFLOWERBLUE);
 
         this.preguntaYOpciones.getChildren().add(textoPregunta);
@@ -275,6 +276,7 @@ public class ContenedorPreguntas extends VBox {
 
         var labelRecordatorio = new Label();
         labelRecordatorio.setText("Recordá seleccionar TODAS tus opciones antes de seleccionar cualquier boton de responder :)\nExclusividad: asigna puntaje a un jugador si es que su oponente contesta mal");
+        labelRecordatorio.setTextAlignment(TextAlignment.CENTER);
         labelRecordatorio.setFont(Font.font("Kalam",FontWeight.BOLD, 14));
         labelRecordatorio.setTextFill(Color.BLUEVIOLET);
 
