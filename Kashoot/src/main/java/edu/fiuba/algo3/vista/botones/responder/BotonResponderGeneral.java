@@ -1,6 +1,5 @@
-package edu.fiuba.algo3.vista.botones;
+package edu.fiuba.algo3.vista.botones.responder;
 
-import edu.fiuba.algo3.modelo.Kashoot;
 import edu.fiuba.algo3.vista.VistaKashoot;
 import javafx.scene.Scene;
 import javafx.stage.Stage;

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.vista.botones;
+package edu.fiuba.algo3.vista.botones.responder;
 
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.vista.VistaKashoot;
@@ -6,7 +6,7 @@ import javafx.event.*;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class BotonMultiplicadorX2EventHandler implements EventHandler<ActionEvent> {
+public class BotonMultiplicadorX3EventHandler implements EventHandler<ActionEvent> {
 
     private BotonResponderGeneral botonResponderGeneral;
     private Kashoot kashoot;
@@ -14,8 +14,7 @@ public class BotonMultiplicadorX2EventHandler implements EventHandler<ActionEven
     private Scene proximaEscena;
     private Stage stage;
 
-    public BotonMultiplicadorX2EventHandler(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage){
-
+    public BotonMultiplicadorX3EventHandler(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage){
         this.botonResponderGeneral = new BotonResponderGeneral();
         this.vista = unaVista;
         this.kashoot = kashoot;
@@ -24,12 +23,11 @@ public class BotonMultiplicadorX2EventHandler implements EventHandler<ActionEven
     }
 
     @Override
-    public void handle(ActionEvent actionEvent){
+    public void handle(ActionEvent actionEvent) {
 
         Jugador jugadorActual = this.kashoot.obtenerJugadorActual();
-        jugadorActual.multiplicarX2(this.vista.getRespuesta());
-        jugadorActual.responder(this.vista.getPregunta(), this.vista.getRespuesta());
-        this.kashoot.actualizar();
+        jugadorActual.multiplicarX3(this.vista.getRespuesta());
+        this.kashoot.jugarRondaSinExclusividad(jugadorActual, vista.getPregunta(),vista.getRespuesta());
 
         botonResponderGeneral.actualizar(vista,proximaEscena,stage);
     }
