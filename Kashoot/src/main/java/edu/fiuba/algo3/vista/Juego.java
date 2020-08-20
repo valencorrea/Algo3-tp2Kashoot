@@ -95,7 +95,7 @@ import java.util.ArrayList;
 
         Respuesta respuestaCorrecta1 = new Respuesta();
         respuestaCorrecta1.agregarOpcion(opcionCorrecta11);
-        Pregunta unaPregunta1 = new Pregunta(new ModalidadSinOrden(new Clasico()), "de que color es el cielo", respuestaCorrecta1);
+        Pregunta unaPregunta1 = new Pregunta(new ModalidadSinOrden(new Clasico()), "¿De qué color es el cielo", respuestaCorrecta1);
 
         Ronda ronda1 = new Ronda();
         ronda1.agregarPregunta(unaPregunta1);
@@ -121,7 +121,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta2 = new Respuesta();
         respuestaCorrecta2.agregarOpcion(opcionCorrecta21);
         respuestaCorrecta2.agregarOpcion(opcionCorrecta22);
-        Pregunta unaPregunta2 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Que numeros son pares? \n\t MultipleChoice", respuestaCorrecta2);
+        Pregunta unaPregunta2 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Qué números son pares? \n\t MultipleChoice", respuestaCorrecta2);
 
         Ronda ronda2 = new Ronda();
         ronda2.agregarPregunta(unaPregunta2);
@@ -139,7 +139,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta3 = new Respuesta();
         respuestaCorrecta3.agregarOpcion(opcionCorrecta31);
 
-        Pregunta unaPregunta3 = new Pregunta(new ModalidadSinOrden(new Clasico()), "C es un lenguaje terrible?\n\t Verdadero o falso", respuestaCorrecta3);
+        Pregunta unaPregunta3 = new Pregunta(new ModalidadSinOrden(new Clasico()), "¿C es un lenguaje terriblemente bueno?\n\t Verdadero o falso", respuestaCorrecta3);
 
         Ronda ronda3 = new Ronda();
         ronda3.agregarPregunta(unaPregunta3);
@@ -166,7 +166,7 @@ import java.util.ArrayList;
         respuestaCorrecta4.agregarOpcion(opcionCorrecta43);
         respuestaCorrecta4.agregarOpcion(opcionCorrecta44);
 
-        Pregunta unaPregunta4 = new Pregunta(new ModalidadOrdenada(), "Seleccionar los numeros de forma acendente? \n\t OrderedChoice ", respuestaCorrecta4);
+        Pregunta unaPregunta4 = new Pregunta(new ModalidadOrdenada(), "Seleccionar los números de forma acendente \n\t OrderedChoice ", respuestaCorrecta4);
 
         Ronda ronda4 = new Ronda();
         ronda4.agregarPregunta(unaPregunta4);
@@ -192,7 +192,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta5 = new Respuesta();
         respuestaCorrecta5.agregarOpcion(opcionCorrecta51);
         respuestaCorrecta5.agregarOpcion(opcionCorrecta52);
-        Pregunta unaPregunta5 = new Pregunta(new ModalidadSinOrden(new Parcial()), "Cual es la mejor facultad?\n\t MultipleChoice", respuestaCorrecta5);
+        Pregunta unaPregunta5 = new Pregunta(new ModalidadSinOrden(new Parcial()), "¿Cuál es la mejor facultad?\n\t MultipleChoice", respuestaCorrecta5);
 
         Ronda ronda5 = new Ronda();
         ronda5.agregarPregunta(unaPregunta5);
@@ -222,7 +222,7 @@ import java.util.ArrayList;
         respuestaCorrecta6.agregarOpcion(opcionCorrecta64);
         respuestaCorrecta6.agregarOpcion(opcionCorrecta65);
 
-        Pregunta unaPregunta6 = new Pregunta(new ModalidadOrdenada(), "Seleccionar las letras alfabeticamente?\n\t OrderedChoice", respuestaCorrecta6);
+        Pregunta unaPregunta6 = new Pregunta(new ModalidadOrdenada(), "Seleccionar las letras alfabeticamente\n\t OrderedChoice", respuestaCorrecta6);
 
         Ronda ronda6 = new Ronda();
         ronda6.agregarPregunta(unaPregunta6);
@@ -260,7 +260,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta8 = new Respuesta();
         respuestaCorrecta8.agregarOpcion(opcionCorrecta81);
 
-        Pregunta unaPregunta8 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Los michis son malos?\n\t Verdadero o Falso", respuestaCorrecta8);
+        Pregunta unaPregunta8 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Los michis son malos?\n\t Verdadero o Falso", respuestaCorrecta8);
 
         Ronda ronda8 = new Ronda();
         ronda8.agregarPregunta(unaPregunta8);
@@ -286,14 +286,14 @@ import java.util.ArrayList;
         respuestaCorrectaDeGrupo1.agregarOpcion(opcionCorrectaG1_93);
         respuestaCorrectaDeGrupo1.agregarOpcion(opcionCorrectaG1_95);
 
-        Pregunta unaPregunta9 = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos?\n\t selecciones solo los calidos \n\t GroupChoice ?", respuestaCorrectaDeGrupo1);
+        Pregunta unaPregunta9 = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Clasifique colores frios y calidos\n selecciones solo los calidos \n\t GroupChoice", respuestaCorrectaDeGrupo1);
 
         Ronda ronda9 = new Ronda();
         ronda9.agregarPregunta(unaPregunta9);
         ronda9.agregarOpciones(opciones9);
 
         //-------------------------------------------//
-        Opcion opcionCorrecta101 = new Opcion("Maven");
+        Opcion opcionCorrecta101 = new Opcion("Actualizar Maven");
         Opcion opcionCorrecta102 = new Opcion("Verificar modulo");
         Opcion opcionCorrecta103 = new Opcion("Built - rebuilt");
         Opcion opcionCorrecta104 = new Opcion("Clonar el repo devuelta");
@@ -311,7 +311,7 @@ import java.util.ArrayList;
         respuestaCorrecta10.agregarOpcion(opcionCorrecta103);
         respuestaCorrecta10.agregarOpcion(opcionCorrecta104);
 
-        Pregunta unaPregunta10 = new Pregunta(new ModalidadSinOrden(new Parcial()), "Que hacemos cuando falla intellij?\n\t multipleChoice", respuestaCorrecta10);
+        Pregunta unaPregunta10 = new Pregunta(new ModalidadSinOrden(new Parcial()), "¿Qué hacemos cuando falla intelliJ?\n\t multipleChoice", respuestaCorrecta10);
 
         Ronda ronda10 = new Ronda();
         ronda10.agregarPregunta(unaPregunta10);

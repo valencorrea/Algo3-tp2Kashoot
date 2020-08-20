@@ -28,7 +28,7 @@ public class JugadorTest {
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "El numero 1 es impar?", respuestaCorrecta);
 
         unJugador.responder(unaPregunta, respuestaCorrecta);
         otroJugador.responder(unaPregunta, respuestaIncorrecta);
@@ -54,7 +54,7 @@ public class JugadorTest {
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "El numero dos es par?", respuestaCorrecta);
 
         unJugador.responder(unaPregunta, respuestaCorrecta);
         otroJugador.responder(unaPregunta, respuestaIncorrecta);
@@ -68,12 +68,13 @@ public class JugadorTest {
 
     @Test
     public void jugadoresRespondenMultipleChoiceClasicoRecibenPuntajeCorrecto() {
+
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
-        Opcion opcionIncorrectaTres = new Opcion("tres");
+        Opcion opcionIncorrectaTres = new Opcion("Cuatro");
 
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrectaUno);
@@ -87,7 +88,7 @@ public class JugadorTest {
         respuestaOtroJugador.agregarOpcion(opcionCorrectaDos);
         respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Que numeros son primos??", respuestaCorrecta);
 
         unJugador.responder(unaPregunta, respuestaUnJugador);
         otroJugador.responder(unaPregunta, respuestaOtroJugador);
@@ -101,13 +102,14 @@ public class JugadorTest {
 
     @Test
     public void jugadoresRespondenMultipleChoiceParcialRecibenPuntajeCorrecto() {
+
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
         Jugador tercerJugador = new Jugador();
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
-        Opcion opcionIncorrectaTres = new Opcion("tres");
+        Opcion opcionIncorrectaTres = new Opcion("cuatro");
 
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrectaUno);
@@ -124,7 +126,7 @@ public class JugadorTest {
         Respuesta respuestaTercerJugador = new Respuesta();
         respuestaTercerJugador.agregarOpcion(opcionCorrectaUno);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "Que numeros son primos?", respuestaCorrecta);
 
         unJugador.responder(unaPregunta, respuestaUnJugador);
         otroJugador.responder(unaPregunta, respuestaOtroJugador);
@@ -147,7 +149,7 @@ public class JugadorTest {
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
-        Opcion opcionIncorrectaTres = new Opcion("tres");
+        Opcion opcionIncorrectaTres = new Opcion("cuatro");
 
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrectaUno);
@@ -160,7 +162,7 @@ public class JugadorTest {
         Respuesta respuestaOtroJugador = new Respuesta();
         respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "Que numeros son primos?", respuestaCorrecta);
 
         unJugador.responder(unaPregunta, respuestaUnJugador);
         otroJugador.responder(unaPregunta, respuestaOtroJugador);
@@ -187,7 +189,7 @@ public class JugadorTest {
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos? seleccione los frios", respuestaCorrectaDeUnGrupo);
 
         Respuesta respuestaJugadorParaElGrupo1 = new Respuesta();
 
@@ -216,7 +218,7 @@ public class JugadorTest {
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos? seleccione los frios", respuestaCorrectaDeUnGrupo);
 
         Respuesta respuestaJugadorParaElGrupo2 = new Respuesta();
 
@@ -245,7 +247,7 @@ public class JugadorTest {
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos? seleccione los frios", respuestaCorrectaDeUnGrupo);
 
         Respuesta respuestaJugadorParaElGrupo2 = new Respuesta();
 
@@ -271,7 +273,7 @@ public class JugadorTest {
         respuestaCorrectaDeGrupo1.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeGrupo1.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Diferencia Numeros de Letras", respuestaCorrectaDeGrupo1);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Diferencia entre numeros y letras. Seleccione las letras", respuestaCorrectaDeGrupo1);
 
         Respuesta respuestaJugadorParaElGrupo1 = new Respuesta();
 
@@ -300,7 +302,7 @@ public class JugadorTest {
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Penalidad()), "hola soy una pregunta?", respuestaCorrecta);
 
         unJugador.multiplicarX2(respuestaCorrecta);
         otroJugador.multiplicarX2(respuestaIncorrecta);
@@ -329,7 +331,7 @@ public class JugadorTest {
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "soy una pregunta?", respuestaCorrecta);
 
         unJugador.multiplicarX2(respuestaCorrecta);
         otroJugador.multiplicarX2(respuestaIncorrecta);
@@ -387,10 +389,10 @@ public class JugadorTest {
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Este es un juego de preguntas y respuestas?", respuestaCorrecta);
 
-        unJugador.multiplicarX2(respuestaCorrecta);
-        otroJugador.multiplicarX2(respuestaIncorrecta);
+        unJugador.multiplicarX3(respuestaCorrecta);
+        otroJugador.multiplicarX3(respuestaIncorrecta);
 
         unJugador.responder(unaPregunta, respuestaCorrecta);
         otroJugador.responder(unaPregunta, respuestaIncorrecta);
@@ -404,6 +406,7 @@ public class JugadorTest {
 
     @Test
     public void jugadorEligeExclusividadYSeDuplicaSuPuntajeAlResponderCorrectamente() {
+
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
 
@@ -415,7 +418,7 @@ public class JugadorTest {
         Respuesta respuestaIncorrecta = new Respuesta();
         respuestaIncorrecta.agregarOpcion(opcionFalsa);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta?", respuestaCorrecta);
 
         int cantExclusividades = unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
@@ -432,6 +435,7 @@ public class JugadorTest {
 
     @Test
     public void jugadorEligeExclusividadYSeAnulaSuPuntajeAlResponderMal() {
+
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
         Opcion opcionVerdadera = new Opcion("Verdadera");
@@ -544,7 +548,7 @@ public class JugadorTest {
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
-        Opcion opcionIncorrectaTres = new Opcion("tres");
+        Opcion opcionIncorrectaTres = new Opcion("cuatro");
 
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrectaUno);
@@ -555,7 +559,7 @@ public class JugadorTest {
         Respuesta respuestaOtroJugador = new Respuesta();
         respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Que numeros son primos?", respuestaCorrecta);
 
         int cantExclusividades = unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
@@ -578,7 +582,7 @@ public class JugadorTest {
 
         Opcion opcionCorrectaUno = new Opcion("uno");
         Opcion opcionCorrectaDos = new Opcion("dos");
-        Opcion opcionIncorrectaTres = new Opcion("tres");
+        Opcion opcionIncorrectaTres = new Opcion("cuatro");
 
         Respuesta respuestaCorrecta = new Respuesta();
         respuestaCorrecta.agregarOpcion(opcionCorrectaUno);
@@ -591,7 +595,7 @@ public class JugadorTest {
         Respuesta respuestaOtroJugador = new Respuesta();
         respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Que numeros son primos?", respuestaCorrecta);
 
         int cantExclusividades = unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
@@ -607,6 +611,7 @@ public class JugadorTest {
 
     @Test
     public void unJugadorEligeExclusividadYRespondeMejorQueOtroEnFormatoParcial() {
+
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
 
@@ -624,7 +629,7 @@ public class JugadorTest {
         Respuesta respuestaOtroJugador = new Respuesta();
         respuestaOtroJugador.agregarOpcion(opcionCorrectaUno);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "Que numeros son primos?", respuestaCorrecta);
 
         int cantExclusividades = unJugador.usarExclusividad();
         Exclusividad unaExclusividad = new Exclusividad();
@@ -661,7 +666,7 @@ public class JugadorTest {
         respuestaOtroJugador.agregarOpcion(opcionCorrectaUno);
         respuestaOtroJugador.agregarOpcion(opcionCorrectaDos);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "Que numeros son primos?", respuestaCorrecta);
 
         int cantExclusividades = unJugador.usarExclusividad();
         cantExclusividades += otroJugador.usarExclusividad();
@@ -698,7 +703,7 @@ public class JugadorTest {
         Respuesta respuestaOtroJugador = new Respuesta();
         respuestaOtroJugador.agregarOpcion(opcionIncorrectaTres);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "hola soy una pregunta??", respuestaCorrecta);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Parcial()), "Por cuales numeros puede dividirse el cuatro y resultar en un entero?", respuestaCorrecta);
 
         int cantExclusividades = unJugador.usarExclusividad();
         cantExclusividades += otroJugador.usarExclusividad();
@@ -727,7 +732,7 @@ public class JugadorTest {
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos? seleccione los frios", respuestaCorrectaDeUnGrupo);
 
         Respuesta respuestaUnJugadorParaElGrupo1 = new Respuesta();
         respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
@@ -763,7 +768,7 @@ public class JugadorTest {
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos? seleccione los frios", respuestaCorrectaDeUnGrupo);
 
         Respuesta respuestaUnJugadorParaElGrupo1 = new Respuesta();
         respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
@@ -780,6 +785,7 @@ public class JugadorTest {
         otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
 
         unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
+
         unJugador.asignarPuntajeRonda();
         otroJugador.asignarPuntajeRonda();
 
@@ -802,7 +808,7 @@ public class JugadorTest {
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos? Seleccione los frios", respuestaCorrectaDeUnGrupo);
 
         Respuesta respuestaUnJugadorParaElGrupo1 = new Respuesta();
         respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
@@ -829,6 +835,7 @@ public class JugadorTest {
 
     @Test
     public void JugadoresRespondenCorrectamenteUnaPreguntaTipoGroupChoiceUtilizandoDosExclusividadesYSeCalculaBienElPuntaje() {
+
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
 
@@ -839,7 +846,7 @@ public class JugadorTest {
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos? seleccione los frios", respuestaCorrectaDeUnGrupo);
 
         Respuesta respuestaUnJugadorParaElGrupo1 = new Respuesta();
         respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
@@ -864,6 +871,7 @@ public class JugadorTest {
 
     @Test
     public void JugadoresRespondenIncorrectamenteUnaPreguntaTipoGroupChoiceUtilizandoUnaExclusividadYSeCalculaBienElPuntaje() {
+
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
 
@@ -874,7 +882,7 @@ public class JugadorTest {
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos? Seleccione los frios", respuestaCorrectaDeUnGrupo);
 
         Respuesta respuestaUnJugadorParaElGrupo1 = new Respuesta();
         respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
@@ -896,6 +904,7 @@ public class JugadorTest {
 
     @Test
     public void JugadoresRespondenIncorrectamenteUnaPreguntaTipoGroupChoiceUtilizandoDosExclusividadesYSeCalculaBienElPuntaje() {
+
         Jugador unJugador = new Jugador();
         Jugador otroJugador = new Jugador();
 
@@ -906,7 +915,7 @@ public class JugadorTest {
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_1);
         respuestaCorrectaDeUnGrupo.agregarOpcion(opcionGrupo1_2);
 
-        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos??", respuestaCorrectaDeUnGrupo);
+        Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Colores frios y calidos? Seleccione los frios", respuestaCorrectaDeUnGrupo);
 
         Respuesta respuestaUnJugadorParaElGrupo1 = new Respuesta();
         respuestaUnJugadorParaElGrupo1.agregarOpcion(opcionGrupo1_1);
