@@ -6,9 +6,6 @@ import javafx.stage.Stage;
 
 public class Actualizador {
 
-    public Actualizador() {
-    }
-
     public void actualizar(VistaKashoot unaVista, Scene escenaFinal, Stage stage){
         unaVista.actualizar();
 
