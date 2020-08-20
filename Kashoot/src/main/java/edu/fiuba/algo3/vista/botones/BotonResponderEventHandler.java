@@ -40,5 +40,6 @@ public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
         this.stage.setScene(this.escenaFinal);
         this.stage.setFullScreen(true);
         this.stage.show();
+        //
     }
 }
