@@ -22,13 +22,12 @@ public class BotonExclusividadEventHandler implements EventHandler<ActionEvent> 
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        Jugador jugadorActual = kashoot.obtenerJugadorActual();
+        Jugador jugadorActual = this.kashoot.obtenerJugadorActual();
         jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
-        kashoot.jugarRondaConExclusividad();
-        kashoot.obtenerJugadorActual().usarExclusividad();
-
+        this.kashoot.jugarRondaConExclusividad();
+        this.kashoot.obtenerJugadorActual().usarExclusividad();
+        this.kashoot.actualizar();
         this.vista.actualizar();
-        System.out.println(jugadorActual.getPuntajeAcumulado());
 
         if(vista.terminoJuego()){
             terminarJuego();

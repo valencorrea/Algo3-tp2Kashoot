@@ -30,7 +30,7 @@ public class VistaKashoot {
     }
 
     public void actualizar(){
-        this.kashoot.actualizar();
+
         this.respuestaActual = new Respuesta();
         if(!this.kashoot.terminoJuego()) {
             this.pregunta = kashoot.getPregunta();
@@ -40,7 +40,7 @@ public class VistaKashoot {
     }
     public ArrayList<Opcion> getOpciones() {
        return this.opciones;
-        // return kashoot.getOpciones();
+
     }
 
     public Respuesta getRespuesta() {
@@ -48,7 +48,7 @@ public class VistaKashoot {
     }
     public Pregunta getPregunta(){
         return this.pregunta;
-        //return this.kashoot.getPregunta();
+
     }
 
     public boolean terminoJuego() {

@@ -24,9 +24,10 @@ public class BotonMultiplicadorX2EventHandler implements EventHandler<ActionEven
     @Override
     public void handle(ActionEvent actionEvent){
 
-        Jugador jugadorActual = kashoot.obtenerJugadorActual();
+        Jugador jugadorActual = this.kashoot.obtenerJugadorActual();
         jugadorActual.multiplicarX2(this.vista.getRespuesta());
         jugadorActual.responder(this.vista.getPregunta(), this.vista.getRespuesta());
+        this.kashoot.actualizar();
 
         this.vista.actualizar();
         if(vista.terminoJuego()){

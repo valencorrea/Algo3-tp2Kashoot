@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
 
-import edu.fiuba.algo3.modelo.EntidadesPrincipales.Opcion;
-import edu.fiuba.algo3.modelo.EntidadesPrincipales.Pregunta;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.*;
+
 
 import java.util.*;
 
@@ -78,5 +78,10 @@ public class Kashoot  {
         jugadorDos.setNombre(nombreJugadorDos);
         this.jugadores.add(jugadorDos);
 
+    }
+
+    public void jugar(Jugador jugadorActual, Pregunta unaPregunta, Respuesta unaRespuesta) {
+        jugadorActual.responder(unaPregunta, unaRespuesta);
+        this.actualizar();
     }
 }

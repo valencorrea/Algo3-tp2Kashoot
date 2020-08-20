@@ -28,10 +28,8 @@ public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
         Jugador jugadorActual = kashoot.obtenerJugadorActual();
         jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
 
+        this.kashoot.actualizar();
         this.vista.actualizar();
-        System.out.println("jugador puntaje total:");
-        System.out.println(jugadorActual.getPuntajeAcumulado());
-
         if(vista.terminoJuego()){
             terminarJuego();
         }
