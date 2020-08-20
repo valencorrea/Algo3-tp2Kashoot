@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.modalidades;
 
-import edu.fiuba.algo3.modelo.Respuesta;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Respuesta;
 import edu.fiuba.algo3.modelo.formatos.TipoFormato;
 
 public class ModalidadSinOrden implements Modalidad {
