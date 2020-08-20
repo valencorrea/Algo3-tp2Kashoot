@@ -12,7 +12,7 @@ public class Kashoot  {
     private Queue<Ronda> rondas = new LinkedList<Ronda>();
     private Queue<Jugador> jugadores = new LinkedList<Jugador>();
 
-    public ArrayList<Opcion> getOpciones() {// antes llamar a getpregunta
+    public ArrayList<Opcion> getOpciones() {
         Ronda ronda = this.rondas.element();
         ArrayList<Opcion> opciones = ronda.getOpciones();
         return opciones;
@@ -34,7 +34,7 @@ public class Kashoot  {
 
         Jugador jugadorActual = jugadores.poll();
 
-        jugadores.add(jugadorActual); //jugadores es una cola, lo pone al final
+        jugadores.add(jugadorActual);
 
     }
 

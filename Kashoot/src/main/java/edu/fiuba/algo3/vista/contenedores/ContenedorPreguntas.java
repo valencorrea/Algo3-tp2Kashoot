@@ -57,7 +57,7 @@ public class ContenedorPreguntas extends VBox {
         preguntaYOpciones = new VBox();
         informacionJugadores = new VBox();
 
-        this.setDatos(kashoot);
+        this.setDatos();
 
         this.preguntaYOpciones.setAlignment(Pos.CENTER);
         this.botonesExtra.setAlignment(Pos.TOP_RIGHT);
@@ -69,9 +69,9 @@ public class ContenedorPreguntas extends VBox {
         this.getChildren().addAll(informacionJugadores, botonesExtra, preguntaYOpciones);
     }
 
-    private void setDatos(Kashoot kashoot) {
+    private void setDatos() {
         this.setcentro();
-        this.setBotoneraExtras(kashoot);
+        this.setBotoneraExtras();
     }
 
     private void setcentro(){
@@ -147,7 +147,7 @@ public class ContenedorPreguntas extends VBox {
         this.preguntaYOpciones.getChildren().add(contenedor_de_nombre);
     }
 
-    public void setBotoneraExtras(Kashoot kashoot){
+    public void setBotoneraExtras(){
 
         VBox botoneraExtras = new VBox();
 
@@ -239,6 +239,7 @@ public class ContenedorPreguntas extends VBox {
 
         textoPregunta.setText(unContenido);
         textoPregunta.setFont(Font.font("Gill Sans",FontWeight.BOLD, 40));
+
         textoPregunta.setTextFill(Color.CORNFLOWERBLUE);
 
         this.preguntaYOpciones.getChildren().add(textoPregunta);
