@@ -1,32 +1,27 @@
 package edu.fiuba.algo3.vista.botones;
 
-import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.Kashoot;
 import edu.fiuba.algo3.vista.VistaKashoot;
-import javafx.event.*;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class BotonExclusividadEventHandler implements EventHandler<ActionEvent> {
+public class BotonResponderGeneral {
 
     private Scene escenaFinal;
     private Stage stage;
-    private VistaKashoot vista;
     private Kashoot kashoot;
+    private VistaKashoot vista;
 
-    public BotonExclusividadEventHandler(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage) {
+    public BotonResponderGeneral(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage) {
         this.vista = unaVista;
         this.kashoot = kashoot;
         this.escenaFinal = escenaFinal;
         this.stage = stage;
+        this.stage.setFullScreen(true);
+        this.stage.show();
     }
 
-    @Override
-    public void handle(ActionEvent actionEvent) {
-        Jugador jugadorActual = kashoot.obtenerJugadorActual();
-        jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
-        kashoot.jugarRondaConExclusividad();
-        kashoot.obtenerJugadorActual().usarExclusividad();
-
+    public void actualizar(){
         this.vista.actualizar();
 
         if(vista.terminoJuego()){
@@ -34,7 +29,7 @@ public class BotonExclusividadEventHandler implements EventHandler<ActionEvent> 
         }
     }
 
-    public void terminarJuego() {
+    public void terminarJuego(){
         this.vista.setDatosFinales();
         this.stage.setScene(this.escenaFinal);
         this.stage.setFullScreen(true);

@@ -12,7 +12,7 @@ public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
     private Kashoot kashoot;
     private Scene escenaFinal;
     private Stage stage;
-
+    private BotonResponderGeneral botonGeneral;
 
     public BotonResponderEventHandler(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage) {
         this.vista = unaVista;
@@ -21,6 +21,7 @@ public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
         this.stage = stage;
         this.stage.setFullScreen(true);
         this.stage.show();
+        this.botonGeneral = new BotonResponderGeneral(kashoot, unaVista, escenaFinal, stage);
     }
 
     @Override
@@ -29,8 +30,6 @@ public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
         jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
 
         this.vista.actualizar();
-        System.out.println("jugador puntaje total:");
-        System.out.println(jugadorActual.getPuntajeAcumulado());
 
         if(vista.terminoJuego()){
             terminarJuego();
@@ -38,9 +37,6 @@ public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
     }
 
     private void terminarJuego() {
-        this.vista.setDatosFinales();
-        this.stage.setScene(this.escenaFinal);
-        this.stage.setFullScreen(true);
-        this.stage.show();
+        botonGeneral.terminarJuego();
     }
 }
