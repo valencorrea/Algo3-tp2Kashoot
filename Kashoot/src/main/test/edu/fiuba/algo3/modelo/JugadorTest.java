@@ -388,8 +388,8 @@ public class JugadorTest {
 
         Pregunta unaPregunta = new Pregunta(new ModalidadSinOrden(new Clasico()), "Este es un juego de preguntas y respuestas?", respuestaCorrecta);
 
-        unJugador.multiplicarX2(respuestaCorrecta);
-        otroJugador.multiplicarX2(respuestaIncorrecta);
+        unJugador.multiplicarX3(respuestaCorrecta);
+        otroJugador.multiplicarX3(respuestaIncorrecta);
 
         unJugador.responder(unaPregunta, respuestaCorrecta);
         otroJugador.responder(unaPregunta, respuestaIncorrecta);
@@ -782,6 +782,7 @@ public class JugadorTest {
         otroJugador.responder(unaPregunta, respuestaOtroJugadorParaElGrupo1);
 
         unaExclusividad.determinarPuntaje(unJugador, otroJugador, cantExclusividades);
+
         unJugador.asignarPuntajeRonda();
         otroJugador.asignarPuntajeRonda();
 
