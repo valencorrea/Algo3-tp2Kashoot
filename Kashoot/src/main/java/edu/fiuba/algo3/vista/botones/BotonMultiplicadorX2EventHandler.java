@@ -8,16 +8,18 @@ import javafx.stage.Stage;
 
 public class BotonMultiplicadorX2EventHandler implements EventHandler<ActionEvent> {
 
-    private Scene escenaFinal;
-    private Stage stage;
+    private BotonResponderGeneral botonResponderGeneral;
     private Kashoot kashoot;
     private VistaKashoot vista;
+    private Scene proximaEscena;
+    private Stage stage;
 
     public BotonMultiplicadorX2EventHandler(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage){
 
-        this.kashoot = kashoot;
+        this.botonResponderGeneral = new BotonResponderGeneral();
         this.vista = unaVista;
-        this.escenaFinal = escenaFinal;
+        this.kashoot = kashoot;
+        this.proximaEscena = escenaFinal;
         this.stage = stage;
     }
 
@@ -29,18 +31,6 @@ public class BotonMultiplicadorX2EventHandler implements EventHandler<ActionEven
         jugadorActual.responder(this.vista.getPregunta(), this.vista.getRespuesta());
         this.kashoot.actualizar();
 
-        this.vista.actualizar();
-        if(vista.terminoJuego()){
-            terminarJuego();
-        }
+        botonResponderGeneral.actualizar(vista,proximaEscena,stage);
     }
-
-    private void terminarJuego() {
-        this.vista.setDatosFinales();
-        this.stage.setScene(this.escenaFinal);
-        this.stage.setFullScreen(true);
-        this.stage.show();
-    }
-
-
 }

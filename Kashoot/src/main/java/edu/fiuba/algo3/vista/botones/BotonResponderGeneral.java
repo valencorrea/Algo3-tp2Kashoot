@@ -7,32 +7,21 @@ import javafx.stage.Stage;
 
 public class BotonResponderGeneral {
 
-    private Scene escenaFinal;
-    private Stage stage;
-    private Kashoot kashoot;
-    private VistaKashoot vista;
-
-    public BotonResponderGeneral(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage) {
-        this.vista = unaVista;
-        this.kashoot = kashoot;
-        this.escenaFinal = escenaFinal;
-        this.stage = stage;
-        this.stage.setFullScreen(true);
-        this.stage.show();
+    public BotonResponderGeneral() {
     }
 
-    public void actualizar(){
-        this.vista.actualizar();
+    public void actualizar(VistaKashoot unaVista, Scene escenaFinal, Stage stage){
+        unaVista.actualizar();
 
-        if(vista.terminoJuego()){
-            terminarJuego();
+        if(unaVista.terminoJuego()){
+            terminarJuego(unaVista, escenaFinal, stage);
         }
     }
 
-    public void terminarJuego(){
-        this.vista.setDatosFinales();
-        this.stage.setScene(this.escenaFinal);
-        this.stage.setFullScreen(true);
-        this.stage.show();
+    public void terminarJuego(VistaKashoot unaVista, Scene escenaFinal, Stage stage){
+        unaVista.setDatosFinales();
+        stage.setScene(escenaFinal);
+        stage.setFullScreen(true);
+        stage.show();
     }
 }

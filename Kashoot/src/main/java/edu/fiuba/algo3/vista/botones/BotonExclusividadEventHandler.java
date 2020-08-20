@@ -8,15 +8,17 @@ import javafx.stage.Stage;
 
 public class BotonExclusividadEventHandler implements EventHandler<ActionEvent> {
 
-    private Scene escenaFinal;
-    private Stage stage;
-    private VistaKashoot vista;
+    private BotonResponderGeneral botonResponderGeneral;
     private Kashoot kashoot;
+    private VistaKashoot vista;
+    private Scene proximaEscena;
+    private Stage stage;
 
     public BotonExclusividadEventHandler(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage) {
+        this.botonResponderGeneral = new BotonResponderGeneral();
         this.vista = unaVista;
         this.kashoot = kashoot;
-        this.escenaFinal = escenaFinal;
+        this.proximaEscena = escenaFinal;
         this.stage = stage;
     }
 
@@ -26,18 +28,9 @@ public class BotonExclusividadEventHandler implements EventHandler<ActionEvent> 
         jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
         this.kashoot.jugarRondaConExclusividad();
         this.kashoot.obtenerJugadorActual().usarExclusividad();
+
         this.kashoot.actualizar();
-        this.vista.actualizar();
 
-        if(vista.terminoJuego()){
-            terminarJuego();
-        }
-    }
-
-    public void terminarJuego() {
-        this.vista.setDatosFinales();
-        this.stage.setScene(this.escenaFinal);
-        this.stage.setFullScreen(true);
-        this.stage.show();
+        botonResponderGeneral.actualizar(vista,proximaEscena,stage);
     }
 }

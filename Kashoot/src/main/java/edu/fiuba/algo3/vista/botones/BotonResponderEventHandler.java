@@ -8,38 +8,27 @@ import javafx.stage.Stage;
 
 public class BotonResponderEventHandler implements EventHandler<ActionEvent>{
 
-    private VistaKashoot vista;
+    private BotonResponderGeneral botonResponderGeneral;
     private Kashoot kashoot;
-    private Scene escenaFinal;
+    private VistaKashoot vista;
+    private Scene proximaEscena;
     private Stage stage;
 
-
     public BotonResponderEventHandler(Kashoot kashoot, VistaKashoot unaVista, Scene escenaFinal, Stage stage) {
+        this.botonResponderGeneral = new BotonResponderGeneral();
         this.vista = unaVista;
         this.kashoot = kashoot;
-        this.escenaFinal = escenaFinal;
+        this.proximaEscena = escenaFinal;
         this.stage = stage;
-        this.stage.setFullScreen(true);
-        this.stage.show();
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
         Jugador jugadorActual = kashoot.obtenerJugadorActual();
         jugadorActual.responder(vista.getPregunta(),vista.getRespuesta());
-
         this.kashoot.actualizar();
-        this.vista.actualizar();
-        if(vista.terminoJuego()){
-            terminarJuego();
-        }
+
+        botonResponderGeneral.actualizar(vista,proximaEscena,stage);
     }
 
-    private void terminarJuego() {
-        this.vista.setDatosFinales();
-        this.stage.setScene(this.escenaFinal);
-        this.stage.setFullScreen(true);
-        this.stage.show();
-        //
-    }
 }
