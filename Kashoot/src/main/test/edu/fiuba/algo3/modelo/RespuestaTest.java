@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Opcion;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Respuesta;
 import edu.fiuba.algo3.modelo.multiplicadores.MultiplicadorX2;
 import edu.fiuba.algo3.modelo.multiplicadores.MultiplicadorX3;
 import org.junit.jupiter.api.Test;

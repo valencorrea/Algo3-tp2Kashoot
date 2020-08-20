@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Opcion;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Pregunta;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Respuesta;
 import edu.fiuba.algo3.vista.contenedores.ContenedorFinalDelJuego;
 import edu.fiuba.algo3.vista.contenedores.ContenedorPreguntas;
 

@@ -1,5 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Opcion;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Pregunta;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Respuesta;
 import edu.fiuba.algo3.modelo.formatos.Clasico;
 import edu.fiuba.algo3.modelo.formatos.Parcial;
 import edu.fiuba.algo3.modelo.formatos.Penalidad;

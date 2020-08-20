@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
 
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Opcion;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Pregunta;
+
 import java.util.*;
 
 

@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Opcion;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Pregunta;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Respuesta;
 import edu.fiuba.algo3.modelo.formatos.*;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadOrdenada;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadSinOrden;

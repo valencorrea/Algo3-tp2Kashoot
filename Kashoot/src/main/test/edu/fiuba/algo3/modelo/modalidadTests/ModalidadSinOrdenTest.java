@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo.modalidadTests;
 
-import edu.fiuba.algo3.modelo.Opcion;
-import edu.fiuba.algo3.modelo.Respuesta;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Opcion;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Respuesta;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadSinOrden;
 import edu.fiuba.algo3.modelo.formatos.Clasico;
 import edu.fiuba.algo3.modelo.formatos.Parcial;

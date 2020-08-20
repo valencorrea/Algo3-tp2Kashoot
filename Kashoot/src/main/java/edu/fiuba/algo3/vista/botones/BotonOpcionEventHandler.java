@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.vista.botones;
 
-import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Opcion;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Respuesta;
 import javafx.event.*;
 
 public class BotonOpcionEventHandler implements EventHandler<ActionEvent> {

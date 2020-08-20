@@ -1,11 +1,11 @@
 package edu.fiuba.algo3.vista.contenedores;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Opcion;
 import edu.fiuba.algo3.vista.*;
 import edu.fiuba.algo3.vista.botones.*;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
@@ -15,7 +15,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import edu.fiuba.algo3.modelo.Kashoot;
-import edu.fiuba.algo3.modelo.Pregunta;
+import edu.fiuba.algo3.modelo.EntidadesPrincipales.Pregunta;
 
 import java.util.ArrayList;
 
