@@ -37,10 +37,7 @@ public class Jugador {
 
     public void responder(Pregunta unaPregunta, Respuesta unaRespuesta) {
         int puntaje = unaPregunta.calcularPuntaje(unaRespuesta);
-        if (unaPregunta.puedeMultiplicar()) {
-            puntaje = unaRespuesta.multiplicar(puntaje);
-        }
-        this.puntajeObtenidoEnRonda = puntaje;
+        this.puntajeObtenidoEnRonda = unaRespuesta.multiplicar(puntaje);
     }
 
     public int getPuntajeAcumulado(){
@@ -59,9 +56,8 @@ public class Jugador {
         this.multiplicadorX3 = null;
     }
 
-    public int usarExclusividad() {
+    public void usarExclusividad() {
         this.exclusividades.remove(exclusividades.size()-1);
-        return 1;
     }
 
     public int getPuntajeRonda() {

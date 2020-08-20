@@ -10,7 +10,6 @@ public class Respuesta {
     private ArrayList<Opcion> opciones = new ArrayList<Opcion>();
     private Multiplicador multiplicador = new MultiplicadorX1();
 
-
     public void agregarOpcion(Opcion opcion){
         opciones.add(opcion);
     }
