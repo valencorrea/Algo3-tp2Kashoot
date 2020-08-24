@@ -21,30 +21,68 @@ public class ContenedorBienvenidos extends VBox {
 
             super();
             seteosIniciales(stage, contenedorPreguntas);
+            VBox saludoInicial = saludar();
 
-            Label labelBienvenida = crearLabelInicial();
-            Label labelIngresarNombre = crearLabelPedidoNombres();
+            TextField nombreUnJugador = new TextField();
+            TextField nombreOtroJugador = new TextField();
 
-            VBox contenedorEtiquetas = new VBox(labelBienvenida, labelIngresarNombre);
-            contenedorEtiquetas.setSpacing(170);
-            contenedorEtiquetas.setAlignment(Pos.CENTER);
+            VBox datosJugador1 = ubicarDatosJugador(nombreUnJugador, 1);
+            VBox datosJugador2 = ubicarDatosJugador(nombreOtroJugador, 2);
 
-            TextField textoJugador1 = recibirNombreJugador1();
-            TextField textoJugador2 = recibirNombreJugador2();
-
-            HBox contenedorDeNombres = new HBox(textoJugador1, textoJugador2);
+            HBox contenedorDeNombres = new HBox(datosJugador1, datosJugador2);
             contenedorDeNombres.setSpacing(200);
             contenedorDeNombres.setAlignment(Pos.CENTER);
 
             Label mensajeNombreVacio = crearMensajeNombreVacio(contenedorDeNombres);
 
             Button botonJugar = crearBotonJugar();
-            BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena, contenedorPreguntas, textoJugador1, textoJugador2, mensajeNombreVacio, kashoot);
+            BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena, contenedorPreguntas, nombreUnJugador, nombreOtroJugador, mensajeNombreVacio, kashoot);
             botonJugar.setOnAction(botonJugarEventHandler);
 
-            this.getChildren().addAll(contenedorEtiquetas, contenedorDeNombres, mensajeNombreVacio, botonJugar);
+            this.getChildren().addAll(saludoInicial, contenedorDeNombres, mensajeNombreVacio, botonJugar);
 
         }
+
+    private VBox ubicarDatosJugador(TextField nombreUnJugador, int numeroJugador) {
+        VBox datosJugador2 = new VBox();
+
+        nombreUnJugador.setAlignment(Pos.CENTER);
+        nombreUnJugador.setScaleX(1.5);
+        nombreUnJugador.setScaleY(1.5);
+        nombreUnJugador.setPromptText("Nombre del jugador" + numeroJugador);
+
+        CheckBox terminos = new CheckBox("He leido y acepto los terminos y condiciones.");
+        terminos.setSelected(false);
+
+        datosJugador2.getChildren().add(nombreUnJugador);
+        datosJugador2.getChildren().add(terminos);
+        datosJugador2.setSpacing(20);
+
+        return datosJugador2;
+    }
+
+
+    private VBox saludar() {
+        VBox saludo = new VBox();
+        Label labelBienvenida = mostrarLabelInicial();
+        //Label terminosYCondiciones = mostrarTerminosYCondiciones();
+        Label labelIngresarNombre = crearLabelPedidoNombres();
+
+        saludo.setAlignment(Pos.CENTER);
+        saludo.setSpacing(50);
+
+        saludo.getChildren().addAll(labelBienvenida, labelIngresarNombre/*, terminosYCondiciones*/);
+        return saludo;
+    }
+
+    private Label mostrarTerminosYCondiciones() {
+        Label terminos = new Label("Terminos y condiciones: \nAnte el turno en el cual debe jugar su oponente, promete no mirar la pantalla,\nen funcion de evitar que sus respuestas tengan influencia en las propias.");
+        terminos.setFont(Font.font("Tahoma", FontWeight.THIN, 15));
+        terminos.setTextFill(Color.GRAY);
+        terminos.setAlignment(Pos.CENTER);
+        return terminos;
+
+    }
 
     private Label crearMensajeNombreVacio(HBox contenedorDeNombres) {
         Label mensajeError = new Label();
@@ -64,26 +102,6 @@ public class ContenedorBienvenidos extends VBox {
         return botonJugar;
     }
 
-    private TextField recibirNombreJugador2() {
-        TextField textoJugador2 = new TextField();
-        textoJugador2.setPromptText("Nombre del jugador 2");
-        String nombreJugador2 = textoJugador2.getText();
-        textoJugador2.setAlignment(Pos.CENTER);
-        textoJugador2.setScaleX(1.5);
-        textoJugador2.setScaleY(1.5);
-        return textoJugador2;
-    }
-
-    private TextField recibirNombreJugador1() {
-        TextField textoJugador1 = new TextField();
-        textoJugador1.setPromptText("Nombre del jugador 1");
-        textoJugador1.setAlignment(Pos.CENTER);
-        textoJugador1.setScaleX(1.5);
-        textoJugador1.setScaleY(1.5);
-
-        return textoJugador1;
-    }
-
     private Label crearLabelPedidoNombres() {
         Label labelIngresarNombre = new Label("Ingresen sus nombres para comenzar");
         labelIngresarNombre.setFont(Font.font("Tahoma", FontWeight.EXTRA_LIGHT, 40));
@@ -91,7 +109,7 @@ public class ContenedorBienvenidos extends VBox {
         return labelIngresarNombre;
     }
 
-    private Label crearLabelInicial() {
+    private Label mostrarLabelInicial() {
         Label labelBienvenida = new Label("¡Bienvenidos al kashoot!");
         labelBienvenida.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
         labelBienvenida.setTextFill(Color.HOTPINK);
