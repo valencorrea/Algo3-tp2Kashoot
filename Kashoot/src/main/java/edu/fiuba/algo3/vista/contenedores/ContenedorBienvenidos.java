@@ -39,7 +39,9 @@ public class ContenedorBienvenidos extends VBox {
             BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena, contenedorPreguntas, nombreUnJugador, nombreOtroJugador, mensajeNombreVacio, kashoot);
             botonJugar.setOnAction(botonJugarEventHandler);
 
-            this.getChildren().addAll(saludoInicial, contenedorDeNombres, mensajeNombreVacio, botonJugar);
+            Label terminosYCondiciones = mostrarTerminosYCondiciones();
+
+            this.getChildren().addAll(saludoInicial, contenedorDeNombres, mensajeNombreVacio, botonJugar, terminosYCondiciones);
 
         }
 
@@ -49,7 +51,7 @@ public class ContenedorBienvenidos extends VBox {
         nombreUnJugador.setAlignment(Pos.CENTER);
         nombreUnJugador.setScaleX(1.5);
         nombreUnJugador.setScaleY(1.5);
-        nombreUnJugador.setPromptText("Nombre del jugador" + numeroJugador);
+        nombreUnJugador.setPromptText("Nombre del jugador " + numeroJugador);
 
         CheckBox terminos = new CheckBox("He leido y acepto los terminos y condiciones.");
         terminos.setSelected(false);
@@ -76,7 +78,7 @@ public class ContenedorBienvenidos extends VBox {
     }
 
     private Label mostrarTerminosYCondiciones() {
-        Label terminos = new Label("Terminos y condiciones: \nAnte el turno en el cual debe jugar su oponente, promete no mirar la pantalla,\nen funcion de evitar que sus respuestas tengan influencia en las propias.");
+        Label terminos = new Label("\n\n\n\nTerminos y condiciones: \nAnte el turno en el cual debe jugar su oponente, promete no mirar la pantalla, en funcion de evitar que estas respuestas tengan influencia en las propias.");
         terminos.setFont(Font.font("Tahoma", FontWeight.THIN, 15));
         terminos.setTextFill(Color.GRAY);
         terminos.setAlignment(Pos.CENTER);
