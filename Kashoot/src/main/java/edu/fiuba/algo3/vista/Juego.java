@@ -20,11 +20,6 @@ import javafx.util.Duration;
 import java.io.File;
 import java.util.ArrayList;
 
-/**
-     * JavaFX App
-     *
-     */
-
     public class Juego extends Application {
 
     public static void main(String[] args) {
@@ -320,15 +315,15 @@ import java.util.ArrayList;
         //-------------------------------------------//
 
         kashoot.agregarRonda(ronda1);
-        kashoot.agregarRonda(ronda2);
-        kashoot.agregarRonda(ronda3);
-        kashoot.agregarRonda(ronda4);
-        kashoot.agregarRonda(ronda5);
-        kashoot.agregarRonda(ronda6);
-        kashoot.agregarRonda(ronda7);
-        kashoot.agregarRonda(ronda8);
-        kashoot.agregarRonda(ronda9);
-        kashoot.agregarRonda(ronda10);
+        //kashoot.agregarRonda(ronda2);
+        //kashoot.agregarRonda(ronda3);
+        //kashoot.agregarRonda(ronda4);
+        //kashoot.agregarRonda(ronda5);
+        //kashoot.agregarRonda(ronda6);
+        //kashoot.agregarRonda(ronda7);
+        //kashoot.agregarRonda(ronda8);
+        //kashoot.agregarRonda(ronda9);
+        //kashoot.agregarRonda(ronda10);
 
     }
 

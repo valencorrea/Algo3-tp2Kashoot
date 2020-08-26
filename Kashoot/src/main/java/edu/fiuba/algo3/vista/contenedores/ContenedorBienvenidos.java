@@ -2,11 +2,11 @@ package edu.fiuba.algo3.vista.contenedores;
 
 import edu.fiuba.algo3.modelo.*;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import edu.fiuba.algo3.vista.botones.BotonJugarEventHandler;
 import javafx.geometry.*;
 import javafx.scene.*;
-import javafx.scene.control.CheckBox;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -15,8 +15,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-
-import java.awt.*;
 
 public class ContenedorBienvenidos extends VBox {
 

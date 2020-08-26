@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vista.contenedores;
 
 import edu.fiuba.algo3.modelo.Kashoot;
 import edu.fiuba.algo3.vista.botones.BotonFinDeJuegoEventHandler;
+import edu.fiuba.algo3.vista.botones.responder.BotonVolverAJugarEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -36,8 +37,9 @@ public class ContenedorFinalDelJuego extends VBox {
         contenedorPuntajesJugadores.setAlignment(Pos.CENTER);
 
         Button botonFinDeJuego = this.crearBotonSalir();
+        Button botonVolverAJugar = this.crearBotonVolverAJugar();
 
-        VBox contenedorPrincipal = agregarContenedoresSecundarios(labelPuntajes, contenedorPuntajesJugadores, botonFinDeJuego);
+        VBox contenedorPrincipal = agregarContenedoresSecundarios(labelPuntajes, contenedorPuntajesJugadores, botonFinDeJuego, botonVolverAJugar);
         contenedorPrincipal.setAlignment(Pos.CENTER);
         contenedorPrincipal.setSpacing(100);
 
@@ -78,6 +80,22 @@ public class ContenedorFinalDelJuego extends VBox {
         botonFinDeJuego.setOnAction(botonFinDeJuegoEventHandler);
 
         return botonFinDeJuego;
+    }
+
+
+    private Button crearBotonVolverAJugar() {
+        Button botonVolverAJugar = new Button();
+        botonVolverAJugar.setText("Salir");
+        botonVolverAJugar.setAlignment(Pos.CENTER);
+        botonVolverAJugar.setScaleX(1);
+        botonVolverAJugar.setScaleY(1);
+        botonVolverAJugar.setFont(Font.font("Tahoma", FontWeight.EXTRA_LIGHT, 36));
+
+        BotonVolverAJugarEventHandler botonVolverAJugarEventHandler = new BotonVolverAJugarEventHandler(stage);
+        botonVolverAJugar.setOnAction(botonVolverAJugarEventHandler);
+
+        return botonVolverAJugar;
+
     }
 
     private VBox mostrarJugador2() {
