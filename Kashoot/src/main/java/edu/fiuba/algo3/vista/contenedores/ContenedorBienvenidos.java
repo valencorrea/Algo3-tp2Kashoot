@@ -1,16 +1,22 @@
 package edu.fiuba.algo3.vista.contenedores;
 
 import edu.fiuba.algo3.modelo.*;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import edu.fiuba.algo3.vista.botones.BotonJugarEventHandler;
 import javafx.geometry.*;
 import javafx.scene.*;
-import javafx.scene.control.*;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.*;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
+import java.awt.*;
 
 public class ContenedorBienvenidos extends VBox {
 
@@ -26,43 +32,45 @@ public class ContenedorBienvenidos extends VBox {
             TextField nombreUnJugador = new TextField();
             TextField nombreOtroJugador = new TextField();
 
-            VBox datosJugador1 = ubicarDatosJugador(nombreUnJugador, 1);
-            VBox datosJugador2 = ubicarDatosJugador(nombreOtroJugador, 2);
+            CheckBox unaCheckbox = new CheckBox("He leido y acepto los terminos y condiciones.");
+            CheckBox otraCheckbox = new CheckBox("He leido y acepto los terminos y condiciones.");
+
+            VBox datosJugador1 = ubicarDatosJugador(nombreUnJugador, 1, unaCheckbox);
+            VBox datosJugador2 = ubicarDatosJugador(nombreOtroJugador, 2, otraCheckbox);
 
             HBox contenedorDeNombres = new HBox(datosJugador1, datosJugador2);
             contenedorDeNombres.setSpacing(200);
             contenedorDeNombres.setAlignment(Pos.CENTER);
 
+            Label mensajeErrorCheckbox = crearMensajeErrorCheckbox(contenedorDeNombres);
             Label mensajeNombreVacio = crearMensajeNombreVacio(contenedorDeNombres);
-
-            Button botonJugar = crearBotonJugar();
-            BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena, contenedorPreguntas, nombreUnJugador, nombreOtroJugador, mensajeNombreVacio, kashoot);
-            botonJugar.setOnAction(botonJugarEventHandler);
-
             Label terminosYCondiciones = mostrarTerminosYCondiciones();
 
-            this.getChildren().addAll(saludoInicial, contenedorDeNombres, mensajeNombreVacio, botonJugar, terminosYCondiciones);
+            Button botonJugar = crearBotonJugar();
+            BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena, contenedorPreguntas, nombreUnJugador, nombreOtroJugador, mensajeNombreVacio, unaCheckbox, otraCheckbox, mensajeErrorCheckbox, kashoot);
+            botonJugar.setOnAction(botonJugarEventHandler);
+
+            this.getChildren().addAll(saludoInicial, contenedorDeNombres, mensajeNombreVacio, mensajeErrorCheckbox, botonJugar, terminosYCondiciones);
 
         }
 
-    private VBox ubicarDatosJugador(TextField nombreUnJugador, int numeroJugador) {
-        VBox datosJugador2 = new VBox();
+    private VBox ubicarDatosJugador(TextField nombreUnJugador, int numeroJugador, CheckBox terminos) {
+        VBox datosJugador = new VBox();
 
         nombreUnJugador.setAlignment(Pos.CENTER);
         nombreUnJugador.setScaleX(1.5);
         nombreUnJugador.setScaleY(1.5);
         nombreUnJugador.setPromptText("Nombre del jugador " + numeroJugador);
 
-        CheckBox terminos = new CheckBox("He leido y acepto los terminos y condiciones.");
+        //CheckBox terminos = new CheckBox("He leido y acepto los terminos y condiciones.");
         terminos.setSelected(false);
 
-        datosJugador2.getChildren().add(nombreUnJugador);
-        datosJugador2.getChildren().add(terminos);
-        datosJugador2.setSpacing(20);
+        datosJugador.getChildren().add(nombreUnJugador);
+        datosJugador.getChildren().add(terminos);
+        datosJugador.setSpacing(20);
 
-        return datosJugador2;
+        return datosJugador;
     }
-
 
     private VBox saludar() {
         VBox saludo = new VBox();
@@ -87,6 +95,15 @@ public class ContenedorBienvenidos extends VBox {
     }
 
     private Label crearMensajeNombreVacio(HBox contenedorDeNombres) {
+        Label mensajeError = new Label();
+        mensajeError.setAlignment(Pos.CENTER);
+        mensajeError.setFont(Font.font("Tahoma", FontWeight.BLACK, 15));
+        contenedorDeNombres.getChildren().add(mensajeError);
+
+        return mensajeError;
+    }
+
+    private Label crearMensajeErrorCheckbox(HBox contenedorDeNombres) {
         Label mensajeError = new Label();
         mensajeError.setAlignment(Pos.CENTER);
         mensajeError.setFont(Font.font("Tahoma", FontWeight.BLACK, 15));
