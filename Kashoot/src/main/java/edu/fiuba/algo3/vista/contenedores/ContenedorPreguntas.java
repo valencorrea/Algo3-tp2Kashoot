@@ -90,9 +90,9 @@ public class ContenedorPreguntas extends VBox {
         HBox contenedor_de_nombre = new HBox();
         var nombreJugador = new Label();
 
-        var texto = new Label("Jugador actual: ");
-        texto.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
-        texto.setTextFill(Color.ROYALBLUE);
+        var texto = new Label("Jugador actual\n ");
+        texto.setFont(Font.font("Gill Sans", FontWeight.EXTRA_BOLD, 30));
+        texto.setTextFill(Color.MEDIUMVIOLETRED);
 
         nombreJugador.setText(this.kashoot.obtenerJugadorActual().getNombre());
         nombreJugador.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
@@ -256,6 +256,8 @@ public class ContenedorPreguntas extends VBox {
         for (Opcion opcion : opciones) {
             ToggleButton unBoton = new ToggleButton();
             unBoton.setText(opcion.getContenido());
+            unBoton.setPrefSize(150, 90);
+            unBoton.setFont(Font.font("Tahoma", FontWeight.MEDIUM, 20));
             contenedorOpciones.getChildren().add(unBoton);
 
             BotonOpcionEventHandler botonOpcionEventHandler = new BotonOpcionEventHandler(this.vistaKashoot.getRespuesta(), opcion);
@@ -274,7 +276,7 @@ public class ContenedorPreguntas extends VBox {
     public Label recordatorio(){
 
         var labelRecordatorio = new Label();
-        labelRecordatorio.setText("Recordá seleccionar TODAS tus opciones antes de seleccionar cualquier boton de responder :)\nExclusividad: Duplica o cuadriplica el puntaje dependiendo de cuantos jugadores la seleccionaron y sus puntajes obtenidos");
+        labelRecordatorio.setText("Recordá seleccionar TODAS tus opciones antes de seleccionar cualquier boton de responder");
         labelRecordatorio.setTextAlignment(TextAlignment.CENTER);
         labelRecordatorio.setFont(Font.font("Kalam",FontWeight.BOLD, 14));
         labelRecordatorio.setTextFill(Color.BLUEVIOLET);
