@@ -29,7 +29,7 @@ import java.util.ArrayList;
     @Override
     public void start(Stage stage) throws Exception {
 
-        agregarMusica();
+        //agregarMusica();
 
         stage.setTitle("Kashoot");
 

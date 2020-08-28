@@ -38,7 +38,7 @@ public class ContenedorPreguntas extends VBox {
 
     public ContenedorPreguntas(Stage stage, Kashoot kashoot, Scene escenaFinal,ContenedorFinalDelJuego contenedorFinalDeJuego) {
 
-        Image imagen = new Image("patronpreguntas.jpg");
+        Image imagen = new Image("pregunta.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
 
@@ -85,8 +85,6 @@ public class ContenedorPreguntas extends VBox {
         this.setPuntajesJugadores(this.kashoot);
         this.setJugadorActual();
     }
-
-
 
     public void setJugadorActual(){
         HBox contenedor_de_nombre = new HBox();
@@ -150,6 +148,7 @@ public class ContenedorPreguntas extends VBox {
         boxDeAmbosJugadores.getChildren().addAll(boxJugador1,boxJugador2);
         this.informacionJugadores.getChildren().add(boxDeAmbosJugadores);
     }
+
     public void setBotoneraExtras(){
 
         VBox botoneraExtras = new VBox();
