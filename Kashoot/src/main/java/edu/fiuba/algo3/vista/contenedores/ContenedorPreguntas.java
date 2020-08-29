@@ -8,6 +8,7 @@ import edu.fiuba.algo3.vista.botones.responder.BotonExclusividadEventHandler;
 import edu.fiuba.algo3.vista.botones.responder.BotonMultiplicadorX2EventHandler;
 import edu.fiuba.algo3.vista.botones.responder.BotonMultiplicadorX3EventHandler;
 import edu.fiuba.algo3.vista.botones.responder.BotonResponderEventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -30,13 +31,12 @@ public class ContenedorPreguntas extends VBox {
 
     private Scene escenaFinal;
     private VistaKashoot vistaKashoot;
-    private VBox botonesExtra;
+    private HBox botonesExtra;
     private VBox preguntaYOpciones = new VBox();
     private HBox informacionJugadores = new HBox();
 
     private Stage stage;
     private Kashoot kashoot;
-
 
     public ContenedorPreguntas(Stage stage, Kashoot kashoot, Scene escenaFinal,ContenedorFinalDelJuego contenedorFinalDeJuego) {
 
@@ -64,15 +64,15 @@ public class ContenedorPreguntas extends VBox {
         this.setDatos();
 
         this.preguntaYOpciones.setAlignment(Pos.CENTER);
-        this.botonesExtra.setAlignment(Pos.TOP_RIGHT);
         this.preguntaYOpciones.setSpacing(100);
+        this.botonesExtra.setAlignment(Pos.BASELINE_CENTER);
 
         this.informacionJugadores.setAlignment(Pos.TOP_LEFT);
         this.informacionJugadores.setSpacing(500);
 
         VBox reglasJuego = mostrarReglasDeJuego();
 
-        this.getChildren().addAll(informacionJugadores, botonesExtra, preguntaYOpciones, reglasJuego);
+        this.getChildren().addAll(informacionJugadores, preguntaYOpciones, botonesExtra, reglasJuego);
     }
 
     private VBox mostrarReglasDeJuego() {
@@ -186,7 +186,7 @@ public class ContenedorPreguntas extends VBox {
 
     public void setBotoneraExtras(){
 
-        VBox botoneraExtras = new VBox();
+        HBox botoneraExtras = new HBox();
 
         ToggleButton botonExclusividad = crearBotonExclusividad();
         verificacionExclusividad(botonExclusividad);
@@ -197,9 +197,10 @@ public class ContenedorPreguntas extends VBox {
         ToggleButton multiplicadorX3 = crearBotonMultiplicadorx3();
         verificacionMultiplicadores(multiplicadorX2, multiplicadorX3);
 
-        botoneraExtras.getChildren().addAll(botonExclusividad,multiplicadorX2,multiplicadorX3,responderNormal);
-        this.botonesExtra = botoneraExtras;
+        botoneraExtras.getChildren().addAll(responderNormal, botonExclusividad,multiplicadorX2,multiplicadorX3);
+        botoneraExtras.setSpacing(50);
 
+        this.botonesExtra = botoneraExtras;
 
     }
 
@@ -269,7 +270,7 @@ public class ContenedorPreguntas extends VBox {
 
     public void setPregunta(){
 
-        var textoPregunta = new Label();
+        Label textoPregunta = new Label();
 
         Pregunta pregunta = this.vistaKashoot.getPregunta();
         String unContenido = pregunta.getContenido();
@@ -277,7 +278,8 @@ public class ContenedorPreguntas extends VBox {
         textoPregunta.setText(unContenido);
         textoPregunta.setFont(Font.font("Gill Sans",FontWeight.BOLD, 40));
         textoPregunta.setTextAlignment(TextAlignment.CENTER);
-        textoPregunta.setTextFill(Color.CORNFLOWERBLUE);
+        textoPregunta.setTextFill(Color.ROSYBROWN);
+        textoPregunta.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, new CornerRadii(5.0), new Insets(-5.0))));
 
         this.preguntaYOpciones.getChildren().add(textoPregunta);
     }
