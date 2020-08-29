@@ -21,7 +21,7 @@ public class ContenedorBienvenidos extends VBox {
         Stage stage;
         ContenedorPreguntas contenedorPreguntas;
 
-        public ContenedorBienvenidos(Stage stage, Scene proximaEscena, Kashoot kashoot, ContenedorPreguntas contenedorPreguntas) {
+    public ContenedorBienvenidos(Stage stage, Scene proximaEscena, Kashoot kashoot, ContenedorPreguntas contenedorPreguntas) {
 
             super();
             seteosIniciales(stage, contenedorPreguntas);
@@ -60,7 +60,6 @@ public class ContenedorBienvenidos extends VBox {
         nombreUnJugador.setScaleY(1.5);
         nombreUnJugador.setPromptText("Nombre del jugador " + numeroJugador);
 
-        //CheckBox terminos = new CheckBox("He leido y acepto los terminos y condiciones.");
         terminos.setSelected(false);
 
         datosJugador.getChildren().add(nombreUnJugador);
@@ -126,7 +125,9 @@ public class ContenedorBienvenidos extends VBox {
     }
 
     private Label mostrarLabelInicial() {
-        Label labelBienvenida = new Label("¡Bienvenidos al kashoot!");
+        Label labelBienvenida = new Label("¡Bienvenidos al Kashoot!");
+        labelBienvenida.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
+
         labelBienvenida.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 70));
         labelBienvenida.setTextFill(Color.HOTPINK);
         return labelBienvenida;

@@ -136,14 +136,11 @@ public class ContenedorPreguntas extends VBox {
         infoJugadorActual.getChildren().addAll(jugadorActual, nombre);
 
         infoJugadorActual.setAlignment(Pos.CENTER);
-        //textoPregunta.setTextFill(Color.ROSYBROWN);
         this.informacionJugadores.getChildren().add(infoJugadorActual);
     }
 
     public void setPuntajesJugadores(Kashoot kashoot){
-
-
-        var puntajeJugador1 = new Label();
+        Label puntajeJugador1 = new Label();
 
         Jugador jugador1 = kashoot.obtenerJugadorActual();
 
@@ -151,14 +148,14 @@ public class ContenedorPreguntas extends VBox {
         puntajeJugador1.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
         puntajeJugador1.setTextFill(Color.MEDIUMVIOLETRED);
 
-        var labelConNombreJugador1 = new Label();
-        labelConNombreJugador1.setText(jugador1.getNombre());
-        labelConNombreJugador1.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
+        Label labelConNombreJugador1 = new Label();
+        labelConNombreJugador1.setText("Puntaje parcial de " + jugador1.getNombre());
+        labelConNombreJugador1.setFont(Font.font("Gill Sans",FontWeight.THIN, 20));
         labelConNombreJugador1.setTextFill(Color.MEDIUMVIOLETRED);
 
         kashoot.actualizarJugadorActual();
 
-        var puntajeJugador2 =new Label();
+        Label puntajeJugador2 =new Label();
 
         Jugador jugador2 = kashoot.obtenerJugadorActual();
 
@@ -166,9 +163,9 @@ public class ContenedorPreguntas extends VBox {
         puntajeJugador2.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
         puntajeJugador2.setTextFill(Color.MEDIUMVIOLETRED);
 
-        var labelConNombreJugador2 = new Label();
-        labelConNombreJugador2.setText(jugador2.getNombre());
-        labelConNombreJugador2.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
+        Label labelConNombreJugador2 = new Label();
+        labelConNombreJugador2.setText("Puntaje parcial de " + jugador2.getNombre());
+        labelConNombreJugador2.setFont(Font.font("Gill Sans",FontWeight.THIN, 20));
         labelConNombreJugador2.setTextFill(Color.MEDIUMVIOLETRED);
 
         kashoot.actualizarJugadorActual();
@@ -181,7 +178,9 @@ public class ContenedorPreguntas extends VBox {
         boxJugador2.getChildren().addAll(labelConNombreJugador2,puntajeJugador2);
 
         VBox boxDeAmbosJugadores = new VBox();
-        boxDeAmbosJugadores.getChildren().addAll(boxJugador1,boxJugador2);
+        boxDeAmbosJugadores.getChildren().addAll(boxJugador1, boxJugador2);
+        boxDeAmbosJugadores.setBackground(new Background(new BackgroundFill(Color.LIGHTSALMON, new CornerRadii(5.0), new Insets(-5.0))));
+
         this.informacionJugadores.getChildren().add(boxDeAmbosJugadores);
     }
 
@@ -314,21 +313,8 @@ public class ContenedorPreguntas extends VBox {
         contenedorOpciones.setSpacing(200);
         contenedorOpciones.setAlignment(Pos.CENTER);
 
-        //var labelRecordatorio = recordatorio();
+        this.preguntaYOpciones.getChildren().addAll(contenedorOpciones);
 
-        this.preguntaYOpciones.getChildren().addAll(contenedorOpciones/*, labelRecordatorio*/);
-
-    }
-
-    public Label recordatorio(){
-
-        var labelRecordatorio = new Label();
-        labelRecordatorio.setText("Recordá seleccionar TODAS tus opciones antes de seleccionar cualquier boton de responder");
-        labelRecordatorio.setTextAlignment(TextAlignment.CENTER);
-        labelRecordatorio.setFont(Font.font("Kalam",FontWeight.BOLD, 14));
-        labelRecordatorio.setTextFill(Color.BLUEVIOLET);
-
-        return labelRecordatorio;
     }
 
 }

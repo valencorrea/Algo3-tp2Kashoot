@@ -74,23 +74,18 @@ import java.util.ArrayList;
 
     public void agregarRondas(Kashoot kashoot){
 
-        //multipleChoice; Clasico; de que color es el cielo?;rojo;mostaza;rosita;/celeste
+        //vf;Clasico;¿El cielo es celeste?;/verdadero;falso
 
-        Opcion opcionCorrecta11 = new Opcion("Celeste");
-        Opcion opcionIncorrecta11 = new Opcion("rojo");
-        Opcion opcionIncorrecta12 = new Opcion("Rosita");
-        Opcion opcionIncorrecta13 = new Opcion("Mostaza");
-
+        Opcion opcionCorrecta11 = new Opcion("Verdadero");
+        Opcion opcionIncorrecta11 = new Opcion("Falso");
 
         ArrayList <Opcion> opciones1 = new ArrayList<Opcion>();
         opciones1.add(opcionCorrecta11);
         opciones1.add(opcionIncorrecta11);
-        opciones1.add(opcionIncorrecta12);
-        opciones1.add(opcionIncorrecta13);
 
         Respuesta respuestaCorrecta1 = new Respuesta();
         respuestaCorrecta1.agregarOpcion(opcionCorrecta11);
-        Pregunta unaPregunta1 = new Pregunta(new ModalidadSinOrden(new Clasico()), "¿De qué color es el cielo?\nVerdadero/falso CLASICO", respuestaCorrecta1);
+        Pregunta unaPregunta1 = new Pregunta(new ModalidadSinOrden(new Clasico()), "¿El cielo es celeste?\nVerdadero/falso CLASICO", respuestaCorrecta1);
 
         Ronda ronda1 = new Ronda();
         ronda1.agregarPregunta(unaPregunta1);
