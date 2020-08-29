@@ -9,10 +9,12 @@ import edu.fiuba.algo3.vista.botones.responder.BotonMultiplicadorX2EventHandler;
 import edu.fiuba.algo3.vista.botones.responder.BotonMultiplicadorX3EventHandler;
 import edu.fiuba.algo3.vista.botones.responder.BotonResponderEventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -38,7 +40,7 @@ public class ContenedorPreguntas extends VBox {
 
     public ContenedorPreguntas(Stage stage, Kashoot kashoot, Scene escenaFinal,ContenedorFinalDelJuego contenedorFinalDeJuego) {
 
-        Image imagen = new Image("pregunta.jpg");
+        Image imagen = new Image("preguDia.jpeg", 230, 350, false, false);
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
 
@@ -47,6 +49,7 @@ public class ContenedorPreguntas extends VBox {
         this.escenaFinal = escenaFinal;
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
+        this.setSpacing(50);
 
         this.vistaKashoot = new VistaKashoot(kashoot,this,contenedorFinalDeJuego);
         this.actualizar();
@@ -67,7 +70,39 @@ public class ContenedorPreguntas extends VBox {
         this.informacionJugadores.setAlignment(Pos.TOP_LEFT);
         this.informacionJugadores.setSpacing(500);
 
-        this.getChildren().addAll(informacionJugadores, botonesExtra, preguntaYOpciones);
+        VBox reglasJuego = mostrarReglasDeJuego();
+
+        this.getChildren().addAll(informacionJugadores, botonesExtra, preguntaYOpciones, reglasJuego);
+    }
+
+    private VBox mostrarReglasDeJuego() {
+        VBox reglas = new VBox();
+
+        HBox reglaMultiplicadores = mostrarUnaRegla("Multiplicadores: ", "Hacen tal cosa");
+        HBox reglaExclusividad = mostrarUnaRegla("Exclusividad: ", "Hace tal otra cosa");
+
+        reglas.getChildren().add(reglaMultiplicadores);
+        reglas.getChildren().add(reglaExclusividad);
+        reglas.setAlignment(Pos.BASELINE_CENTER);
+        reglas.setSpacing(5);
+
+        return reglas;
+    }
+
+    private HBox mostrarUnaRegla(String nombre, String descripcion) {
+        HBox multiplicadores = new HBox();
+
+        Label labelNombre = new Label(nombre);
+        labelNombre.setTextFill(Color.GRAY);
+        labelNombre.setFont(Font.font("Tahoma", FontWeight.BLACK, 20));
+
+        Label labelDescripcion = new Label(descripcion);
+        labelDescripcion.setTextFill(Color.GRAY);
+        labelDescripcion.setFont(Font.font("Tahoma", FontWeight.THIN, 20));
+
+        multiplicadores.getChildren().addAll(labelNombre, labelDescripcion);
+
+        return multiplicadores;
     }
 
     private void setDatos() {
@@ -267,9 +302,9 @@ public class ContenedorPreguntas extends VBox {
         contenedorOpciones.setSpacing(200);
         contenedorOpciones.setAlignment(Pos.CENTER);
 
-        var labelRecordatorio =recordatorio();
+        //var labelRecordatorio = recordatorio();
 
-        this.preguntaYOpciones.getChildren().addAll(contenedorOpciones, labelRecordatorio);
+        this.preguntaYOpciones.getChildren().addAll(contenedorOpciones/*, labelRecordatorio*/);
 
     }
 

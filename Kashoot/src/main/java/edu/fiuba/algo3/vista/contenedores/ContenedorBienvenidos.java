@@ -73,7 +73,6 @@ public class ContenedorBienvenidos extends VBox {
     private VBox saludar() {
         VBox saludo = new VBox();
         Label labelBienvenida = mostrarLabelInicial();
-        //Label terminosYCondiciones = mostrarTerminosYCondiciones();
         Label labelIngresarNombre = crearLabelPedidoNombres();
 
         saludo.setAlignment(Pos.CENTER);

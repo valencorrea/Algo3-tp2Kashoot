@@ -90,7 +90,7 @@ import java.util.ArrayList;
 
         Respuesta respuestaCorrecta1 = new Respuesta();
         respuestaCorrecta1.agregarOpcion(opcionCorrecta11);
-        Pregunta unaPregunta1 = new Pregunta(new ModalidadSinOrden(new Clasico()), "¿De qué color es el cielo?\nVerdadero o falso", respuestaCorrecta1);
+        Pregunta unaPregunta1 = new Pregunta(new ModalidadSinOrden(new Clasico()), "¿De qué color es el cielo?\nVerdadero/falso CLASICO", respuestaCorrecta1);
 
         Ronda ronda1 = new Ronda();
         ronda1.agregarPregunta(unaPregunta1);
@@ -116,7 +116,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta2 = new Respuesta();
         respuestaCorrecta2.agregarOpcion(opcionCorrecta21);
         respuestaCorrecta2.agregarOpcion(opcionCorrecta22);
-        Pregunta unaPregunta2 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Qué números son pares?\nMultipleChoice", respuestaCorrecta2);
+        Pregunta unaPregunta2 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Qué números son pares?\nMultipleChoice PENALIDAD", respuestaCorrecta2);
 
         Ronda ronda2 = new Ronda();
         ronda2.agregarPregunta(unaPregunta2);
@@ -134,7 +134,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta3 = new Respuesta();
         respuestaCorrecta3.agregarOpcion(opcionCorrecta31);
 
-        Pregunta unaPregunta3 = new Pregunta(new ModalidadSinOrden(new Clasico()), "¿Existe el patrón Poxi?\nVerdadero o falso", respuestaCorrecta3);
+        Pregunta unaPregunta3 = new Pregunta(new ModalidadSinOrden(new Clasico()), "¿Existe el patrón Poxi?\nVerdadero/falso CLASICO", respuestaCorrecta3);
 
         Ronda ronda3 = new Ronda();
         ronda3.agregarPregunta(unaPregunta3);
@@ -161,7 +161,7 @@ import java.util.ArrayList;
         respuestaCorrecta4.agregarOpcion(opcionCorrecta43);
         respuestaCorrecta4.agregarOpcion(opcionCorrecta44);
 
-        Pregunta unaPregunta4 = new Pregunta(new ModalidadOrdenada(), "Seleccionar los números de forma acendente \nOrderedChoice ", respuestaCorrecta4);
+        Pregunta unaPregunta4 = new Pregunta(new ModalidadOrdenada(), "Seleccionar los números de forma acendente \nOrdered choice ", respuestaCorrecta4);
 
         Ronda ronda4 = new Ronda();
         ronda4.agregarPregunta(unaPregunta4);
@@ -187,7 +187,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta5 = new Respuesta();
         respuestaCorrecta5.agregarOpcion(opcionCorrecta51);
         respuestaCorrecta5.agregarOpcion(opcionCorrecta52);
-        Pregunta unaPregunta5 = new Pregunta(new ModalidadSinOrden(new Parcial()), "¿Cuál es la mejor facultad?\nMultipleChoice", respuestaCorrecta5);
+        Pregunta unaPregunta5 = new Pregunta(new ModalidadSinOrden(new Parcial()), "¿Cuál es la mejor facultad?\nMultipleChoice PARCIAL", respuestaCorrecta5);
 
         Ronda ronda5 = new Ronda();
         ronda5.agregarPregunta(unaPregunta5);
@@ -236,7 +236,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta7 = new Respuesta();
         respuestaCorrecta7.agregarOpcion(opcionCorrecta71);
 
-        Pregunta unaPregunta7 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Vamos a aprobar?\nVerdadero o Falso", respuestaCorrecta7);
+        Pregunta unaPregunta7 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Vamos a aprobar?\nVerdadero/falso PENALIDAD", respuestaCorrecta7);
 
         Ronda ronda7 = new Ronda();
         ronda7.agregarPregunta(unaPregunta7);
@@ -255,7 +255,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta8 = new Respuesta();
         respuestaCorrecta8.agregarOpcion(opcionCorrecta81);
 
-        Pregunta unaPregunta8 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Los michis son malos?\nVerdadero o Falso", respuestaCorrecta8);
+        Pregunta unaPregunta8 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Los michis son malos?\nVerdadero/falso PENALIDAD", respuestaCorrecta8);
 
         Ronda ronda8 = new Ronda();
         ronda8.agregarPregunta(unaPregunta8);
@@ -306,7 +306,7 @@ import java.util.ArrayList;
         respuestaCorrecta10.agregarOpcion(opcionCorrecta103);
         respuestaCorrecta10.agregarOpcion(opcionCorrecta104);
 
-        Pregunta unaPregunta10 = new Pregunta(new ModalidadSinOrden(new Parcial()), "¿Qué hacemos cuando falla intelliJ?\nMultipleChoice", respuestaCorrecta10);
+        Pregunta unaPregunta10 = new Pregunta(new ModalidadSinOrden(new Parcial()), "¿Qué hacemos cuando falla intelliJ?\nMultipleChoice PARCIAL", respuestaCorrecta10);
 
         Ronda ronda10 = new Ronda();
         ronda10.agregarPregunta(unaPregunta10);
