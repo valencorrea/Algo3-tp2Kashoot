@@ -34,10 +34,11 @@ public class ContenedorPreguntas extends VBox {
     private VistaKashoot vistaKashoot;
     private HBox botonesExtra;
     private VBox preguntaYOpciones = new VBox();
-    private HBox informacionJugadores = new HBox();
+    private HBox labelSuperior = new HBox();
 
     private Stage stage;
     private Kashoot kashoot;
+    private HBox labelJugadorActual;
 
     public ContenedorPreguntas(Stage stage, Kashoot kashoot, Scene escenaFinal,ContenedorFinalDelJuego contenedorFinalDeJuego) {
 
@@ -50,7 +51,7 @@ public class ContenedorPreguntas extends VBox {
         this.escenaFinal = escenaFinal;
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
-        this.setSpacing(80);
+        this.setSpacing(60);
 
         this.vistaKashoot = new VistaKashoot(kashoot,this,contenedorFinalDeJuego);
         this.actualizar();
@@ -60,21 +61,24 @@ public class ContenedorPreguntas extends VBox {
         this.getChildren().clear();
 
         preguntaYOpciones = new VBox();
-        informacionJugadores = new HBox();
+        labelSuperior = new HBox();
+        labelJugadorActual = new HBox();
 
         this.setDatos();
 
         this.preguntaYOpciones.setAlignment(Pos.CENTER);
         this.preguntaYOpciones.setSpacing(60);
 
+        this.labelJugadorActual.setAlignment(Pos.CENTER);
+
         this.botonesExtra.setAlignment(Pos.BASELINE_CENTER);
 
-        this.informacionJugadores.setAlignment(Pos.TOP_LEFT);
-        this.informacionJugadores.setSpacing(500);
+        this.labelSuperior.setAlignment(Pos.TOP_LEFT);
+        this.labelSuperior.setSpacing(500);
 
         VBox reglasJuego = mostrarReglasDeJuego();
 
-        this.getChildren().addAll(informacionJugadores, preguntaYOpciones, botonesExtra, reglasJuego);
+        this.getChildren().addAll(labelSuperior, labelJugadorActual, preguntaYOpciones, botonesExtra, reglasJuego);
     }
 
     private VBox mostrarReglasDeJuego() {
@@ -136,7 +140,7 @@ public class ContenedorPreguntas extends VBox {
         infoJugadorActual.getChildren().addAll(jugadorActual, nombre);
 
         infoJugadorActual.setAlignment(Pos.CENTER);
-        this.informacionJugadores.getChildren().add(infoJugadorActual);
+        this.labelJugadorActual.getChildren().add(infoJugadorActual);
     }
 
     public void setPuntajesJugadores(Kashoot kashoot){
@@ -173,15 +177,22 @@ public class ContenedorPreguntas extends VBox {
         HBox boxJugador1 = new HBox();
         boxJugador1.getChildren().addAll(labelConNombreJugador1,puntajeJugador1);
 
-
         HBox boxJugador2 = new HBox();
         boxJugador2.getChildren().addAll(labelConNombreJugador2,puntajeJugador2);
 
         VBox boxDeAmbosJugadores = new VBox();
         boxDeAmbosJugadores.getChildren().addAll(boxJugador1, boxJugador2);
-        boxDeAmbosJugadores.setBackground(new Background(new BackgroundFill(Color.LIGHTSALMON, new CornerRadii(5.0), new Insets(-5.0))));
+        boxDeAmbosJugadores.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
 
-        this.informacionJugadores.getChildren().add(boxDeAmbosJugadores);
+        Label recordatorio = new Label("¡Acordate de seleccionar todas tus opciones antes de cualquier boton de responder!");
+        recordatorio.setFont(Font.font("Gill Sans",FontWeight.THIN, 20));
+        recordatorio.setAlignment(Pos.BOTTOM_CENTER);
+
+        HBox labelSuperior = new HBox();
+        labelSuperior.getChildren().addAll(boxDeAmbosJugadores, recordatorio);
+        labelSuperior.setSpacing(120);
+
+        this.labelSuperior.getChildren().add(labelSuperior);
     }
 
     public void setBotoneraExtras(){
