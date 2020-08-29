@@ -14,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -65,6 +66,7 @@ public class ContenedorPreguntas extends VBox {
 
         this.preguntaYOpciones.setAlignment(Pos.CENTER);
         this.preguntaYOpciones.setSpacing(100);
+
         this.botonesExtra.setAlignment(Pos.BASELINE_CENTER);
 
         this.informacionJugadores.setAlignment(Pos.TOP_LEFT);
@@ -92,7 +94,7 @@ public class ContenedorPreguntas extends VBox {
     private HBox mostrarUnaRegla(String nombre, String descripcion) {
         HBox multiplicadores = new HBox();
 
-        Label labelNombre = new Label(nombre);
+        Label labelNombre = new Label("   " + nombre);
         labelNombre.setTextFill(Color.GRAY);
         labelNombre.setFont(Font.font("Tahoma", FontWeight.BLACK, 20));
 
@@ -189,16 +191,21 @@ public class ContenedorPreguntas extends VBox {
         HBox botoneraExtras = new HBox();
 
         ToggleButton botonExclusividad = crearBotonExclusividad();
+        botonExclusividad.setPrefSize(250, 50);
         verificacionExclusividad(botonExclusividad);
 
         ToggleButton responderNormal = crearBotonRespuestaNormal();
+        responderNormal.setPrefSize(250, 50);
 
         ToggleButton multiplicadorX2 = crearBotonMultiplicadorx2();
+        multiplicadorX2.setPrefSize(250, 50);
         ToggleButton multiplicadorX3 = crearBotonMultiplicadorx3();
+        multiplicadorX3.setPrefSize(250, 50);
         verificacionMultiplicadores(multiplicadorX2, multiplicadorX3);
 
         botoneraExtras.getChildren().addAll(responderNormal, botonExclusividad,multiplicadorX2,multiplicadorX3);
         botoneraExtras.setSpacing(50);
+        botoneraExtras.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, new CornerRadii(5.0), new Insets(-5.0))));
 
         this.botonesExtra = botoneraExtras;
 
@@ -295,6 +302,7 @@ public class ContenedorPreguntas extends VBox {
             unBoton.setText(opcion.getContenido());
             unBoton.setPrefSize(150, 90);
             unBoton.setFont(Font.font("Tahoma", FontWeight.MEDIUM, 20));
+            unBoton.setEffect(new DropShadow(2.0, Color.BLACK));
             contenedorOpciones.getChildren().add(unBoton);
 
             BotonOpcionEventHandler botonOpcionEventHandler = new BotonOpcionEventHandler(this.vistaKashoot.getRespuesta(), opcion);
