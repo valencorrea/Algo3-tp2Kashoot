@@ -50,7 +50,7 @@ public class ContenedorPreguntas extends VBox {
         this.escenaFinal = escenaFinal;
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
-        this.setSpacing(50);
+        this.setSpacing(80);
 
         this.vistaKashoot = new VistaKashoot(kashoot,this,contenedorFinalDeJuego);
         this.actualizar();
@@ -65,7 +65,7 @@ public class ContenedorPreguntas extends VBox {
         this.setDatos();
 
         this.preguntaYOpciones.setAlignment(Pos.CENTER);
-        this.preguntaYOpciones.setSpacing(100);
+        this.preguntaYOpciones.setSpacing(60);
 
         this.botonesExtra.setAlignment(Pos.BASELINE_CENTER);
 
@@ -195,12 +195,12 @@ public class ContenedorPreguntas extends VBox {
         verificacionExclusividad(botonExclusividad);
 
         ToggleButton responderNormal = crearBotonRespuestaNormal();
-        responderNormal.setPrefSize(250, 50);
+        responderNormal.setPrefSize(120, 50);
 
         ToggleButton multiplicadorX2 = crearBotonMultiplicadorx2();
-        multiplicadorX2.setPrefSize(250, 50);
+        multiplicadorX2.setPrefSize(280, 50);
         ToggleButton multiplicadorX3 = crearBotonMultiplicadorx3();
-        multiplicadorX3.setPrefSize(250, 50);
+        multiplicadorX3.setPrefSize(280, 50);
         verificacionMultiplicadores(multiplicadorX2, multiplicadorX3);
 
         botoneraExtras.getChildren().addAll(responderNormal, botonExclusividad,multiplicadorX2,multiplicadorX3);
@@ -222,6 +222,7 @@ public class ContenedorPreguntas extends VBox {
 
         ToggleButton botonExclusividad = new ToggleButton();
         botonExclusividad.setText("Responder con exclusividad");
+        botonExclusividad.setFont(Font.font("Tahoma", FontWeight.EXTRA_LIGHT, 15));
         BotonExclusividadEventHandler botonExclusividadEventHandler = new BotonExclusividadEventHandler(kashoot,vistaKashoot,escenaFinal,stage);
         botonExclusividad.setOnAction(botonExclusividadEventHandler);
 
@@ -246,6 +247,7 @@ public class ContenedorPreguntas extends VBox {
 
         ToggleButton responderNormal = new ToggleButton();
         responderNormal.setText("Responder");
+        responderNormal.setFont(Font.font("Tahoma", FontWeight.EXTRA_LIGHT, 15));
 
         BotonResponderEventHandler botonResponderNormalEventHandler = new BotonResponderEventHandler(kashoot, vistaKashoot, this.escenaFinal, this.stage);
         responderNormal.setOnAction(botonResponderNormalEventHandler);
@@ -257,6 +259,7 @@ public class ContenedorPreguntas extends VBox {
 
         ToggleButton multiplicadorX3 =new ToggleButton();
         multiplicadorX3.setText("Responder con multiplicador x3");
+        multiplicadorX3.setFont(Font.font("Tahoma", FontWeight.EXTRA_LIGHT, 15));
 
         BotonMultiplicadorX3EventHandler botonMultiplicarX3EventHandler = new BotonMultiplicadorX3EventHandler(kashoot,this.vistaKashoot, this.escenaFinal, this.stage);
         multiplicadorX3.setOnAction(botonMultiplicarX3EventHandler);
@@ -268,7 +271,7 @@ public class ContenedorPreguntas extends VBox {
 
         ToggleButton multiplicadorX2 = new ToggleButton();
         multiplicadorX2.setText("Responder con multiplicador x2");
-
+        multiplicadorX2.setFont(Font.font("Tahoma", FontWeight.EXTRA_LIGHT, 15));
         BotonMultiplicadorX2EventHandler botonMultiplicarX2EventHandler = new BotonMultiplicadorX2EventHandler(kashoot, this.vistaKashoot, this.escenaFinal, this.stage);
         multiplicadorX2.setOnAction(botonMultiplicarX2EventHandler);
 
