@@ -124,21 +124,20 @@ public class ContenedorPreguntas extends VBox {
     }
 
     public void setJugadorActual(){
-        HBox contenedor_de_nombre = new HBox();
-        var nombreJugador = new Label();
+        Label jugadorActual = new Label("Jugador actual: ");
+        jugadorActual.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, new CornerRadii(5.0), new Insets(-5.0))));
+        jugadorActual.setFont(Font.font("Arial",FontWeight.MEDIUM, 30));
 
-        var texto = new Label("Jugador actual\n ");
-        texto.setFont(Font.font("Gill Sans", FontWeight.EXTRA_BOLD, 30));
-        texto.setTextFill(Color.MEDIUMVIOLETRED);
+        Label nombre = new Label(this.kashoot.obtenerJugadorActual().getNombre());
+        nombre.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, new CornerRadii(5.0), new Insets(-5.0))));
+        nombre.setFont(Font.font("Gill Sans",FontWeight.BLACK, 30));
 
-        nombreJugador.setText(this.kashoot.obtenerJugadorActual().getNombre());
-        nombreJugador.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
-        nombreJugador.setTextFill(Color.ROYALBLUE);
+        HBox infoJugadorActual = new HBox();
+        infoJugadorActual.getChildren().addAll(jugadorActual, nombre);
 
-        contenedor_de_nombre.getChildren().addAll(texto,nombreJugador);
-        contenedor_de_nombre.setAlignment(Pos.TOP_CENTER);
-
-        this.informacionJugadores.getChildren().add(contenedor_de_nombre);
+        infoJugadorActual.setAlignment(Pos.CENTER);
+        //textoPregunta.setTextFill(Color.ROSYBROWN);
+        this.informacionJugadores.getChildren().add(infoJugadorActual);
     }
 
     public void setPuntajesJugadores(Kashoot kashoot){
