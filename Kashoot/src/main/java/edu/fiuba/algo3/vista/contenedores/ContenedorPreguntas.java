@@ -47,7 +47,7 @@ public class ContenedorPreguntas extends VBox {
 
     public ContenedorPreguntas(MediaPlayer musica, double volumen, Stage stage, Kashoot kashoot, Scene escenaFinal, ContenedorFinalDelJuego contenedorFinalDeJuego) {
 
-        Image imagen = new Image("preguDia.jpeg", 230, 350, false, false);
+        Image imagen = new Image("patronvivo.jpg", 230, 350, false, false);
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
 
@@ -109,10 +109,12 @@ public class ContenedorPreguntas extends VBox {
         Label labelNombre = new Label("   " + nombre);
         labelNombre.setTextFill(Color.GRAY);
         labelNombre.setFont(Font.font("Tahoma", FontWeight.BLACK, 20));
+        labelNombre.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
 
         Label labelDescripcion = new Label(descripcion);
         labelDescripcion.setTextFill(Color.GRAY);
         labelDescripcion.setFont(Font.font("Tahoma", FontWeight.THIN, 20));
+        labelDescripcion.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
 
         multiplicadores.getChildren().addAll(labelNombre, labelDescripcion);
 
@@ -195,6 +197,7 @@ public class ContenedorPreguntas extends VBox {
         Label recordatorio = new Label("¡Acordate de seleccionar todas tus opciones antes de cualquier boton de responder!");
         recordatorio.setFont(Font.font("Gill Sans",FontWeight.THIN, 20));
         recordatorio.setAlignment(Pos.BOTTOM_CENTER);
+        recordatorio.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
 
         VBox botonesVolumen = crearBotonesDeVolumen();
 
