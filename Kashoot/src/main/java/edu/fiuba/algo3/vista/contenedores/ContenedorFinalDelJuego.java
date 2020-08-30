@@ -85,6 +85,7 @@ public class ContenedorFinalDelJuego extends VBox {
         int puntajeAcumuladoJugador2 = kashoot.obtenerJugadorActual().getPuntajeAcumulado();
 
         var labelNombreJugador2 = new Label(kashoot.obtenerJugadorActual().getNombre());
+        labelNombreJugador2.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, new CornerRadii(5.0), new Insets(-5.0))));
 
         labelNombreJugador2.setFont(Font.font("Tahoma", FontWeight.MEDIUM, 50));
         var labelPuntajeJugador2 = new Label(Integer.toString(puntajeAcumuladoJugador2));
@@ -92,6 +93,7 @@ public class ContenedorFinalDelJuego extends VBox {
         VBox datosJugador2 = new VBox(labelNombreJugador2, labelPuntajeJugador2);
         labelPuntajeJugador2.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 50));
         labelPuntajeJugador2.setTextFill(Color.HOTPINK);
+        datosJugador2.setSpacing(5);
 
         return datosJugador2;
     }
@@ -101,6 +103,7 @@ public class ContenedorFinalDelJuego extends VBox {
         int puntajeAcumuladoJugador1 = kashoot.obtenerJugadorActual().getPuntajeAcumulado();
 
         var labelNombreJugador1 = new Label(kashoot.obtenerJugadorActual().getNombre());
+        labelNombreJugador1.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, new CornerRadii(5.0), new Insets(-5.0))));
         kashoot.actualizarJugadorActual();
 
         labelNombreJugador1.setFont(Font.font("Tahoma", FontWeight.MEDIUM, 50));
@@ -109,6 +112,7 @@ public class ContenedorFinalDelJuego extends VBox {
         VBox datosJugador1 = new VBox(labelNombreJugador1, labelPuntajeJugador1);
         labelPuntajeJugador1.setFont(Font.font("Tahoma", FontWeight.EXTRA_BOLD, 50));
         labelPuntajeJugador1.setTextFill(Color.HOTPINK);
+        datosJugador1.setSpacing(5);
 
         return datosJugador1;
     }

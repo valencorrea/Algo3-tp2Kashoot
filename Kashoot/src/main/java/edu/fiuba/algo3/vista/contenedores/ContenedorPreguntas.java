@@ -82,7 +82,7 @@ public class ContenedorPreguntas extends VBox {
         this.botonesExtra.setAlignment(Pos.BASELINE_CENTER);
 
         this.labelSuperior.setAlignment(Pos.TOP_LEFT);
-        this.labelSuperior.setSpacing(30);
+        this.labelSuperior.setSpacing(250);
 
         VBox reglasJuego = mostrarReglasDeJuego();
 
@@ -195,7 +195,7 @@ public class ContenedorPreguntas extends VBox {
         boxDeAmbosJugadores.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
 
         Label recordatorio = new Label("¡Acordate de seleccionar todas tus opciones antes de cualquier boton de responder!");
-        recordatorio.setFont(Font.font("Gill Sans",FontWeight.THIN, 20));
+        recordatorio.setFont(Font.font("Gill Sans",FontWeight.THIN, 14));
         recordatorio.setAlignment(Pos.BOTTOM_CENTER);
         recordatorio.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
 
@@ -203,7 +203,7 @@ public class ContenedorPreguntas extends VBox {
 
         HBox labelSuperior = new HBox();
         labelSuperior.getChildren().addAll(boxDeAmbosJugadores, recordatorio);
-        labelSuperior.setSpacing(120);
+        labelSuperior.setSpacing(75);
 
         this.labelSuperior.getChildren().add(labelSuperior);
         this.labelSuperior.getChildren().add(botonesVolumen);
