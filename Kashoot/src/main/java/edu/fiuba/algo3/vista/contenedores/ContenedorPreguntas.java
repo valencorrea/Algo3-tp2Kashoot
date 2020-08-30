@@ -8,16 +8,16 @@ import edu.fiuba.algo3.vista.botones.responder.BotonExclusividadEventHandler;
 import edu.fiuba.algo3.vista.botones.responder.BotonMultiplicadorX2EventHandler;
 import edu.fiuba.algo3.vista.botones.responder.BotonMultiplicadorX3EventHandler;
 import edu.fiuba.algo3.vista.botones.responder.BotonResponderEventHandler;
+import edu.fiuba.algo3.vista.botones.volumen.BotonBajarVolumenEventHandler;
+import edu.fiuba.algo3.vista.botones.volumen.BotonSubirVolumenEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -32,6 +32,7 @@ import java.util.ArrayList;
 
 public class ContenedorPreguntas extends VBox {
 
+    private ContenedorFinalDelJuego contenedorFinal;
     private double volumen;
     private MediaPlayer musica;
     private Scene escenaFinal;
@@ -58,6 +59,7 @@ public class ContenedorPreguntas extends VBox {
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
         this.setSpacing(60);
+        this.contenedorFinal = contenedorFinalDeJuego;
 
         this.vistaKashoot = new VistaKashoot(kashoot,this,contenedorFinalDeJuego);
         this.actualizar();
@@ -208,6 +210,10 @@ public class ContenedorPreguntas extends VBox {
     private VBox crearBotonesDeVolumen() {
         VBox botonesVolumen = new VBox();
 
+        ToggleButton botonModoNocturno = new ToggleButton("Modo nocturno");
+        BotonModoNocturnoEventHandler botonModoNocturnoEventHandler = new BotonModoNocturnoEventHandler(this, this.contenedorFinal);
+        botonModoNocturno.setOnAction(botonModoNocturnoEventHandler);
+
         Button botonSubirVolumen = new Button("Volumen ++");
         BotonSubirVolumenEventHandler botonSubirVolumenEventHandler = new BotonSubirVolumenEventHandler(musica, volumen);
         botonSubirVolumen.setOnAction(botonSubirVolumenEventHandler);
@@ -218,7 +224,7 @@ public class ContenedorPreguntas extends VBox {
 
         botonesVolumen.setSpacing(10);
         botonesVolumen.setAlignment(Pos.CENTER);
-        botonesVolumen.getChildren().addAll(botonSubirVolumen, botonBajarVolumen);
+        botonesVolumen.getChildren().addAll(botonModoNocturno, botonSubirVolumen, botonBajarVolumen);
         return botonesVolumen;
     }
 

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.vista.botones;
+package edu.fiuba.algo3.vista.botones.volumen;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
