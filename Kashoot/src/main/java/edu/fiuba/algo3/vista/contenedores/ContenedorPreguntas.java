@@ -12,6 +12,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.effect.DropShadow;
@@ -74,7 +75,7 @@ public class ContenedorPreguntas extends VBox {
         this.botonesExtra.setAlignment(Pos.BASELINE_CENTER);
 
         this.labelSuperior.setAlignment(Pos.TOP_LEFT);
-        this.labelSuperior.setSpacing(500);
+        this.labelSuperior.setSpacing(30);
 
         VBox reglasJuego = mostrarReglasDeJuego();
 
@@ -188,11 +189,27 @@ public class ContenedorPreguntas extends VBox {
         recordatorio.setFont(Font.font("Gill Sans",FontWeight.THIN, 20));
         recordatorio.setAlignment(Pos.BOTTOM_CENTER);
 
+        VBox botonesVolumen = crearBotonesDeVolumen();
+
         HBox labelSuperior = new HBox();
         labelSuperior.getChildren().addAll(boxDeAmbosJugadores, recordatorio);
         labelSuperior.setSpacing(120);
 
         this.labelSuperior.getChildren().add(labelSuperior);
+        this.labelSuperior.getChildren().add(botonesVolumen);
+
+    }
+
+    private VBox crearBotonesDeVolumen() {
+        VBox botonesVolumen = new VBox();
+
+        Button botonSubirVolumen = new Button("Volumen ++");
+        Button botonBajarVolumen = new Button("Volumen --");
+
+        botonesVolumen.setSpacing(10);
+        botonesVolumen.setAlignment(Pos.CENTER);
+        botonesVolumen.getChildren().addAll(botonSubirVolumen, botonBajarVolumen);
+        return botonesVolumen;
     }
 
     public void setBotoneraExtras(){
