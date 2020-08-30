@@ -29,7 +29,7 @@ import java.util.ArrayList;
     @Override
     public void start(Stage stage) throws Exception {
 
-        double volumen = 0.1;
+        double volumen = 0.4;
         MediaPlayer musica = agregarMusica(volumen);
 
         stage.setTitle("Kashoot");
