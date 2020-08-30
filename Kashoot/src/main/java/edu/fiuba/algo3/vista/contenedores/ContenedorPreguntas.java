@@ -217,8 +217,8 @@ public class ContenedorPreguntas extends VBox {
         VBox botonera = new VBox();
         HBox botonesVolumen = new HBox();
 
-        ToggleButton botonModoNocturno = new ToggleButton("Modo nocturno");
-        BotonModoNocturnoEventHandler botonModoNocturnoEventHandler = new BotonModoNocturnoEventHandler(this, this.contenedorFinal, this.modoDiurno);
+        ToggleButton botonModoNocturno = new ToggleButton("      Activar\nmodo nocturno");
+        BotonModoNocturnoEventHandler botonModoNocturnoEventHandler = new BotonModoNocturnoEventHandler(this, this.contenedorFinal, this.modoDiurno, botonModoNocturno);
         botonModoNocturno.setOnAction(botonModoNocturnoEventHandler);
         botonModoNocturno.setPrefSize(130, 40);
 
