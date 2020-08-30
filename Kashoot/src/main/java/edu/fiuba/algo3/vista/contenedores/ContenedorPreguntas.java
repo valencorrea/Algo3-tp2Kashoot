@@ -112,15 +112,12 @@ public class ContenedorPreguntas extends VBox {
         Label labelNombre = new Label("   " + nombre);
         labelNombre.setTextFill(Color.GRAY);
         labelNombre.setFont(Font.font("Tahoma", FontWeight.BLACK, 13));
-        labelNombre.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, new CornerRadii(5.0), new Insets(-5.0))));
 
         Label labelDescripcion = new Label(descripcion);
         labelDescripcion.setTextFill(Color.GRAY);
         labelDescripcion.setFont(Font.font("Tahoma", FontWeight.THIN, 13));
-        labelDescripcion.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, new CornerRadii(5.0), new Insets(-5.0))));
 
         multiplicadores.getChildren().addAll(labelNombre, labelDescripcion);
-
         return multiplicadores;
     }
 
@@ -142,11 +139,11 @@ public class ContenedorPreguntas extends VBox {
 
     public void setJugadorActual(){
         Label jugadorActual = new Label("Jugador actual: ");
-        jugadorActual.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, new CornerRadii(5.0), new Insets(-5.0))));
+        jugadorActual.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
         jugadorActual.setFont(Font.font("Arial",FontWeight.MEDIUM, 30));
 
         Label nombre = new Label(this.kashoot.obtenerJugadorActual().getNombre());
-        nombre.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, new CornerRadii(5.0), new Insets(-5.0))));
+        nombre.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
         nombre.setFont(Font.font("Gill Sans",FontWeight.BLACK, 30));
 
         HBox infoJugadorActual = new HBox();
@@ -161,12 +158,12 @@ public class ContenedorPreguntas extends VBox {
 
         Jugador jugador1 = kashoot.obtenerJugadorActual();
 
-        puntajeJugador1.setText("\n: ".concat(Integer.toString(jugador1.getPuntajeAcumulado())));
+        puntajeJugador1.setText(": ".concat(Integer.toString(jugador1.getPuntajeAcumulado())));
         puntajeJugador1.setFont(Font.font("Gill Sans",FontWeight.BOLD, 17));
         puntajeJugador1.setTextFill(Color.MEDIUMVIOLETRED);
 
         Label labelConNombreJugador1 = new Label();
-        labelConNombreJugador1.setText("\nPuntaje parcial de " + jugador1.getNombre());
+        labelConNombreJugador1.setText(" Puntaje parcial de " + jugador1.getNombre());
         labelConNombreJugador1.setFont(Font.font("Gill Sans",FontWeight.THIN, 17));
         labelConNombreJugador1.setTextFill(Color.MEDIUMVIOLETRED);
 
@@ -181,7 +178,7 @@ public class ContenedorPreguntas extends VBox {
         puntajeJugador2.setTextFill(Color.MEDIUMVIOLETRED);
 
         Label labelConNombreJugador2 = new Label();
-        labelConNombreJugador2.setText("Puntaje parcial de " + jugador2.getNombre());
+        labelConNombreJugador2.setText(" Puntaje parcial de " + jugador2.getNombre());
         labelConNombreJugador2.setFont(Font.font("Gill Sans",FontWeight.THIN, 17));
         labelConNombreJugador2.setTextFill(Color.MEDIUMVIOLETRED);
 
@@ -189,18 +186,19 @@ public class ContenedorPreguntas extends VBox {
 
         HBox boxJugador1 = new HBox();
         boxJugador1.getChildren().addAll(labelConNombreJugador1,puntajeJugador1);
+        boxJugador1.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
 
         HBox boxJugador2 = new HBox();
         boxJugador2.getChildren().addAll(labelConNombreJugador2,puntajeJugador2);
+        boxJugador2.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
 
         VBox boxDeAmbosJugadores = new VBox();
         boxDeAmbosJugadores.getChildren().addAll(boxJugador1, boxJugador2);
-        boxDeAmbosJugadores.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
+        boxDeAmbosJugadores.setSpacing(5);
 
         Label recordatorio = new Label("¡Acordate de seleccionar todas tus opciones antes de cualquier boton de responder!");
         recordatorio.setFont(Font.font("Gill Sans",FontWeight.THIN, 16));
         recordatorio.setAlignment(Pos.BOTTOM_CENTER);
-        recordatorio.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, new CornerRadii(5.0), new Insets(-5.0))));
 
         VBox botonesVolumen = crearBotonesDeVolumen();
 
