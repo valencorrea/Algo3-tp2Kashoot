@@ -4,18 +4,19 @@ import edu.fiuba.algo3.vista.contenedores.ContenedorFinalDelJuego;
 import edu.fiuba.algo3.vista.contenedores.ContenedorPreguntas;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
 public class BotonModoNocturnoEventHandler implements EventHandler<ActionEvent> {
 
-    private ToggleButton botonModoNocturno;
+    private Button botonModoNocturno;
     private boolean modoDiurno;
     private ContenedorFinalDelJuego contenedorFinal;
     private ContenedorPreguntas contenedorPreguntas;
 
-    public BotonModoNocturnoEventHandler(ContenedorPreguntas contenedorPreguntas, ContenedorFinalDelJuego contenedorFinal, boolean modoDiurno, ToggleButton botonModoNocturno) {
+    public BotonModoNocturnoEventHandler(ContenedorPreguntas contenedorPreguntas, ContenedorFinalDelJuego contenedorFinal, boolean modoDiurno, Button botonModoNocturno) {
         this.contenedorPreguntas = contenedorPreguntas;
         this.contenedorFinal = contenedorFinal;
         this.modoDiurno = modoDiurno;

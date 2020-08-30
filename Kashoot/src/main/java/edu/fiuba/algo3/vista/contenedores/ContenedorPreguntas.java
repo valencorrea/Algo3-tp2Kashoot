@@ -48,22 +48,26 @@ public class ContenedorPreguntas extends VBox {
 
     public ContenedorPreguntas(MediaPlayer musica, double volumen, Stage stage, Kashoot kashoot, Scene escenaFinal, ContenedorFinalDelJuego contenedorFinalDeJuego) {
 
-        Image imagen = new Image("modoDiurno.jpg", 230, 350, false, false);
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        this.setBackground(new Background(imagenDeFondo));
-
         this.stage = stage;
         this.kashoot = kashoot;
         this.escenaFinal = escenaFinal;
         this.musica = musica;
         this.volumen = volumen;
+        this.contenedorFinal = contenedorFinalDeJuego;
+
+        setearImagenDeFondo();
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
         this.setSpacing(50);
-        this.contenedorFinal = contenedorFinalDeJuego;
 
         this.vistaKashoot = new VistaKashoot(kashoot,this,contenedorFinalDeJuego);
         this.actualizar();
+    }
+
+    private void setearImagenDeFondo() {
+        Image imagen = new Image("modoDiurno.jpg", 230, 350, false, false);
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        this.setBackground(new Background(imagenDeFondo));
     }
 
     public void actualizar() {
@@ -200,7 +204,7 @@ public class ContenedorPreguntas extends VBox {
         recordatorio.setFont(Font.font("Gill Sans",FontWeight.THIN, 16));
         recordatorio.setAlignment(Pos.BOTTOM_CENTER);
 
-        VBox botonesVolumen = crearBotonesDeVolumen();
+        VBox botonesVolumen = botoneraOpcionesCalidadJuego();
 
         HBox labelSuperior = new HBox();
         labelSuperior.getChildren().addAll(boxDeAmbosJugadores, recordatorio);
@@ -211,32 +215,55 @@ public class ContenedorPreguntas extends VBox {
 
     }
 
-    private VBox crearBotonesDeVolumen() {
+    private VBox botoneraOpcionesCalidadJuego() {
         VBox botonera = new VBox();
+
+        Button botonModoNocturno = crearBotonModoNocturno();
+        HBox botonesVolumen = crearBotoneraVolumen();
+
+        botonera.getChildren().addAll(botonModoNocturno, botonesVolumen);
+        botonera.setSpacing(5);
+        botonera.setAlignment(Pos.CENTER);
+
+        return botonera;
+    }
+
+    private HBox crearBotoneraVolumen() {
         HBox botonesVolumen = new HBox();
 
-        ToggleButton botonModoNocturno = new ToggleButton("      Activar\nmodo nocturno");
-        BotonModoNocturnoEventHandler botonModoNocturnoEventHandler = new BotonModoNocturnoEventHandler(this, this.contenedorFinal, this.modoDiurno, botonModoNocturno);
-        botonModoNocturno.setOnAction(botonModoNocturnoEventHandler);
-        botonModoNocturno.setPrefSize(130, 40);
-
-        Button botonSubirVolumen = new Button("Vol ++");
-        BotonSubirVolumenEventHandler botonSubirVolumenEventHandler = new BotonSubirVolumenEventHandler(musica, volumen);
-        botonSubirVolumen.setOnAction(botonSubirVolumenEventHandler);
-
-        Button botonBajarVolumen = new Button("Vol --");
-        BotonBajarVolumenEventHandler botonBajarVolumenEventHandler = new BotonBajarVolumenEventHandler(musica, volumen);
-        botonBajarVolumen.setOnAction(botonBajarVolumenEventHandler);
+        Button botonSubirVolumen = crearBotonSubirVolumen();
+        Button botonBajarVolumen = crearBotonBajarVolumen();
 
         botonesVolumen.getChildren().addAll(botonSubirVolumen, botonBajarVolumen);
         botonesVolumen.setSpacing(5);
         botonesVolumen.setAlignment(Pos.CENTER);
 
-        botonera.setSpacing(5);
-        botonera.setAlignment(Pos.CENTER);
-        botonera.getChildren().addAll(botonModoNocturno, botonesVolumen);
+        return botonesVolumen;
+    }
 
-        return botonera;
+    private Button crearBotonBajarVolumen() {
+        Button botonBajarVolumen = new Button("Vol --");
+        BotonBajarVolumenEventHandler botonBajarVolumenEventHandler = new BotonBajarVolumenEventHandler(musica, volumen);
+        botonBajarVolumen.setOnAction(botonBajarVolumenEventHandler);
+
+        return botonBajarVolumen;
+    }
+
+    private Button crearBotonSubirVolumen() {
+        Button botonSubirVolumen = new Button("Vol ++");
+        BotonSubirVolumenEventHandler botonSubirVolumenEventHandler = new BotonSubirVolumenEventHandler(musica, volumen);
+        botonSubirVolumen.setOnAction(botonSubirVolumenEventHandler);
+
+        return botonSubirVolumen;
+    }
+
+    private Button crearBotonModoNocturno() {
+        Button botonModoNocturno = new Button("      Activar\nmodo nocturno");
+        BotonModoNocturnoEventHandler botonModoNocturnoEventHandler = new BotonModoNocturnoEventHandler(this, this.contenedorFinal, this.modoDiurno, botonModoNocturno);
+        botonModoNocturno.setOnAction(botonModoNocturnoEventHandler);
+        botonModoNocturno.setPrefSize(130, 40);
+
+        return botonModoNocturno;
     }
 
     public void setBotoneraExtras(){
