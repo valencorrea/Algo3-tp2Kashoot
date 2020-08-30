@@ -16,6 +16,6 @@ public class BotonSubirVolumenEventHandler implements EventHandler<ActionEvent> 
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        this.musica.setVolume((this.volumen = this.volumen + 0.1));
+        this.musica.setVolume((this.volumen = this.volumen + 0.05));
     }
 }
