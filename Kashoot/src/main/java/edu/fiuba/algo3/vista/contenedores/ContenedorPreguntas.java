@@ -19,6 +19,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -31,6 +32,8 @@ import java.util.ArrayList;
 
 public class ContenedorPreguntas extends VBox {
 
+    private double volumen;
+    private MediaPlayer musica;
     private Scene escenaFinal;
     private VistaKashoot vistaKashoot;
     private HBox botonesExtra;
@@ -41,7 +44,7 @@ public class ContenedorPreguntas extends VBox {
     private Kashoot kashoot;
     private HBox labelJugadorActual;
 
-    public ContenedorPreguntas(Stage stage, Kashoot kashoot, Scene escenaFinal,ContenedorFinalDelJuego contenedorFinalDeJuego) {
+    public ContenedorPreguntas(MediaPlayer musica, double volumen, Stage stage, Kashoot kashoot, Scene escenaFinal, ContenedorFinalDelJuego contenedorFinalDeJuego) {
 
         Image imagen = new Image("preguDia.jpeg", 230, 350, false, false);
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
@@ -50,6 +53,8 @@ public class ContenedorPreguntas extends VBox {
         this.stage = stage;
         this.kashoot = kashoot;
         this.escenaFinal = escenaFinal;
+        this.musica = musica;
+        this.volumen = volumen;
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
         this.setSpacing(60);
@@ -124,7 +129,7 @@ public class ContenedorPreguntas extends VBox {
     }
 
     public void setInfo(){
-        this.setPuntajesJugadores(this.kashoot);
+        this.setLabelSuperior(this.kashoot);
         this.setJugadorActual();
     }
 
@@ -144,7 +149,7 @@ public class ContenedorPreguntas extends VBox {
         this.labelJugadorActual.getChildren().add(infoJugadorActual);
     }
 
-    public void setPuntajesJugadores(Kashoot kashoot){
+    public void setLabelSuperior(Kashoot kashoot){
         Label puntajeJugador1 = new Label();
 
         Jugador jugador1 = kashoot.obtenerJugadorActual();
@@ -204,7 +209,12 @@ public class ContenedorPreguntas extends VBox {
         VBox botonesVolumen = new VBox();
 
         Button botonSubirVolumen = new Button("Volumen ++");
+        BotonSubirVolumenEventHandler botonSubirVolumenEventHandler = new BotonSubirVolumenEventHandler(musica, volumen);
+        botonSubirVolumen.setOnAction(botonSubirVolumenEventHandler);
+
         Button botonBajarVolumen = new Button("Volumen --");
+        BotonBajarVolumenEventHandler botonBajarVolumenEventHandler = new BotonBajarVolumenEventHandler(musica, volumen);
+        botonBajarVolumen.setOnAction(botonBajarVolumenEventHandler);
 
         botonesVolumen.setSpacing(10);
         botonesVolumen.setAlignment(Pos.CENTER);

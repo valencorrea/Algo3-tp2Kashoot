@@ -29,7 +29,8 @@ import java.util.ArrayList;
     @Override
     public void start(Stage stage) throws Exception {
 
-        //agregarMusica();
+        double volumen = 0.1;
+        MediaPlayer musica = agregarMusica(volumen);
 
         stage.setTitle("Kashoot");
 
@@ -38,7 +39,7 @@ import java.util.ArrayList;
         ContenedorFinalDelJuego contenedorFinalDeJuego = new ContenedorFinalDelJuego(stage, kashoot);
         Scene escenaFinalDeJuego = new Scene(contenedorFinalDeJuego, 640, 480);
 
-        ContenedorPreguntas contenedorPreguntas = new ContenedorPreguntas(stage, kashoot, escenaFinalDeJuego,contenedorFinalDeJuego);
+        ContenedorPreguntas contenedorPreguntas = new ContenedorPreguntas(musica, volumen, stage, kashoot, escenaFinalDeJuego,contenedorFinalDeJuego);
         Scene escenaJuego = new Scene(contenedorPreguntas, 640, 480);
 
         ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego, kashoot, contenedorPreguntas);
@@ -49,14 +50,16 @@ import java.util.ArrayList;
         stage.show();
     }
 
-    private void agregarMusica(){
+    private MediaPlayer agregarMusica(double volumen){
         Media mp3MusicFile = new Media(new File("Kashoot/resources/mipan.mp3").toURI().toString());
 
         MediaPlayer musica = new MediaPlayer(mp3MusicFile);
         musica.setAutoPlay(true);
         musica.setOnEndOfMedia(() -> musica.seek(Duration.ZERO));
-        musica.setVolume(0.1);
+        musica.setVolume(volumen);
         musica.play();
+
+        return musica;
     }
 
     private Kashoot crearModelo() {
