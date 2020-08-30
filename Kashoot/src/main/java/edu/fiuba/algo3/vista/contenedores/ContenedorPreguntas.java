@@ -40,6 +40,7 @@ public class ContenedorPreguntas extends VBox {
     private HBox botonesExtra;
     private VBox preguntaYOpciones = new VBox();
     private HBox labelSuperior = new HBox();
+    private boolean modoDiurno = true;
 
     private Stage stage;
     private Kashoot kashoot;
@@ -47,7 +48,7 @@ public class ContenedorPreguntas extends VBox {
 
     public ContenedorPreguntas(MediaPlayer musica, double volumen, Stage stage, Kashoot kashoot, Scene escenaFinal, ContenedorFinalDelJuego contenedorFinalDeJuego) {
 
-        Image imagen = new Image("patronvivo.jpg", 230, 350, false, false);
+        Image imagen = new Image("modoDiurno.jpg", 230, 350, false, false);
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
 
@@ -111,12 +112,12 @@ public class ContenedorPreguntas extends VBox {
         Label labelNombre = new Label("   " + nombre);
         labelNombre.setTextFill(Color.GRAY);
         labelNombre.setFont(Font.font("Tahoma", FontWeight.BLACK, 13));
-        labelNombre.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
+        labelNombre.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, new CornerRadii(5.0), new Insets(-5.0))));
 
         Label labelDescripcion = new Label(descripcion);
         labelDescripcion.setTextFill(Color.GRAY);
         labelDescripcion.setFont(Font.font("Tahoma", FontWeight.THIN, 13));
-        labelDescripcion.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
+        labelDescripcion.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, new CornerRadii(5.0), new Insets(-5.0))));
 
         multiplicadores.getChildren().addAll(labelNombre, labelDescripcion);
 
@@ -199,7 +200,7 @@ public class ContenedorPreguntas extends VBox {
         Label recordatorio = new Label("¡Acordate de seleccionar todas tus opciones antes de cualquier boton de responder!");
         recordatorio.setFont(Font.font("Gill Sans",FontWeight.THIN, 16));
         recordatorio.setAlignment(Pos.BOTTOM_CENTER);
-        recordatorio.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
+        recordatorio.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, new CornerRadii(5.0), new Insets(-5.0))));
 
         VBox botonesVolumen = crearBotonesDeVolumen();
 
@@ -217,7 +218,7 @@ public class ContenedorPreguntas extends VBox {
         HBox botonesVolumen = new HBox();
 
         ToggleButton botonModoNocturno = new ToggleButton("Modo nocturno");
-        BotonModoNocturnoEventHandler botonModoNocturnoEventHandler = new BotonModoNocturnoEventHandler(this, this.contenedorFinal);
+        BotonModoNocturnoEventHandler botonModoNocturnoEventHandler = new BotonModoNocturnoEventHandler(this, this.contenedorFinal, this.modoDiurno);
         botonModoNocturno.setOnAction(botonModoNocturnoEventHandler);
         botonModoNocturno.setPrefSize(130, 40);
 
@@ -245,16 +246,16 @@ public class ContenedorPreguntas extends VBox {
         HBox botoneraExtras = new HBox();
 
         ToggleButton botonExclusividad = crearBotonExclusividad();
-        botonExclusividad.setPrefSize(250, 50);
+        botonExclusividad.setPrefSize(250, 40);
         verificacionExclusividad(botonExclusividad);
 
         ToggleButton responderNormal = crearBotonRespuestaNormal();
-        responderNormal.setPrefSize(120, 50);
+        responderNormal.setPrefSize(120, 40);
 
         ToggleButton multiplicadorX2 = crearBotonMultiplicadorx2();
-        multiplicadorX2.setPrefSize(280, 50);
+        multiplicadorX2.setPrefSize(280, 40);
         ToggleButton multiplicadorX3 = crearBotonMultiplicadorx3();
-        multiplicadorX3.setPrefSize(280, 50);
+        multiplicadorX3.setPrefSize(280, 40);
         verificacionMultiplicadores(multiplicadorX2, multiplicadorX3);
 
         botoneraExtras.getChildren().addAll(responderNormal, botonExclusividad,multiplicadorX2,multiplicadorX3);

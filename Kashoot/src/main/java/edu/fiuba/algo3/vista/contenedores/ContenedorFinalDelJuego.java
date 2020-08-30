@@ -118,7 +118,7 @@ public class ContenedorFinalDelJuego extends VBox {
     }
 
     private void agregarImagenFondo() {
-        Image imagen = new Image("patronvivo.jpg");
+        Image imagen = new Image("modoDiurno.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
     }
