@@ -82,7 +82,7 @@ public class ContenedorPreguntas extends VBox {
         this.botonesExtra.setAlignment(Pos.BASELINE_CENTER);
 
         this.labelSuperior.setAlignment(Pos.TOP_LEFT);
-        this.labelSuperior.setSpacing(250);
+        this.labelSuperior.setSpacing(180);
 
         VBox reglasJuego = mostrarReglasDeJuego();
 
@@ -213,24 +213,31 @@ public class ContenedorPreguntas extends VBox {
     }
 
     private VBox crearBotonesDeVolumen() {
-        VBox botonesVolumen = new VBox();
+        VBox botonera = new VBox();
+        HBox botonesVolumen = new HBox();
 
         ToggleButton botonModoNocturno = new ToggleButton("Modo nocturno");
         BotonModoNocturnoEventHandler botonModoNocturnoEventHandler = new BotonModoNocturnoEventHandler(this, this.contenedorFinal);
         botonModoNocturno.setOnAction(botonModoNocturnoEventHandler);
+        botonModoNocturno.setPrefSize(130, 40);
 
-        Button botonSubirVolumen = new Button("Volumen ++");
+        Button botonSubirVolumen = new Button("Vol ++");
         BotonSubirVolumenEventHandler botonSubirVolumenEventHandler = new BotonSubirVolumenEventHandler(musica, volumen);
         botonSubirVolumen.setOnAction(botonSubirVolumenEventHandler);
 
-        Button botonBajarVolumen = new Button("Volumen --");
+        Button botonBajarVolumen = new Button("Vol --");
         BotonBajarVolumenEventHandler botonBajarVolumenEventHandler = new BotonBajarVolumenEventHandler(musica, volumen);
         botonBajarVolumen.setOnAction(botonBajarVolumenEventHandler);
 
-        botonesVolumen.setSpacing(10);
+        botonesVolumen.getChildren().addAll(botonSubirVolumen, botonBajarVolumen);
+        botonesVolumen.setSpacing(5);
         botonesVolumen.setAlignment(Pos.CENTER);
-        botonesVolumen.getChildren().addAll(botonModoNocturno, botonSubirVolumen, botonBajarVolumen);
-        return botonesVolumen;
+
+        botonera.setSpacing(5);
+        botonera.setAlignment(Pos.CENTER);
+        botonera.getChildren().addAll(botonModoNocturno, botonesVolumen);
+
+        return botonera;
     }
 
     public void setBotoneraExtras(){
