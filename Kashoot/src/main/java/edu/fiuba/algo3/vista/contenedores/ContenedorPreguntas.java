@@ -158,52 +158,33 @@ public class ContenedorPreguntas extends VBox {
     }
 
     public void setLabelSuperior(Kashoot kashoot){
-        Label puntajeJugador1 = new Label();
 
+        Label puntajeJugador1 = new Label();
+        Label labelConNombreJugador1 = new Label();
         Jugador jugador1 = kashoot.obtenerJugadorActual();
 
-        puntajeJugador1.setText(": ".concat(Integer.toString(jugador1.getPuntajeAcumulado())));
-        puntajeJugador1.setFont(Font.font("Gill Sans",FontWeight.BOLD, 17));
-        puntajeJugador1.setTextFill(Color.MEDIUMVIOLETRED);
-
-        Label labelConNombreJugador1 = new Label();
-        labelConNombreJugador1.setText(" Puntaje parcial de " + jugador1.getNombre());
-        labelConNombreJugador1.setFont(Font.font("Gill Sans",FontWeight.THIN, 17));
-        labelConNombreJugador1.setTextFill(Color.MEDIUMVIOLETRED);
+        mostrarPuntajeParcialDelJugador(puntajeJugador1, jugador1);
+        mostrarNombreDelJugador(jugador1, labelConNombreJugador1);
 
         kashoot.actualizarJugadorActual();
 
         Label puntajeJugador2 =new Label();
-
+        Label labelConNombreJugador2 = new Label();
         Jugador jugador2 = kashoot.obtenerJugadorActual();
 
-        puntajeJugador2.setText(": ".concat(Integer.toString(jugador2.getPuntajeAcumulado())));
-        puntajeJugador2.setFont(Font.font("Gill Sans",FontWeight.BOLD, 17));
-        puntajeJugador2.setTextFill(Color.MEDIUMVIOLETRED);
-
-        Label labelConNombreJugador2 = new Label();
-        labelConNombreJugador2.setText(" Puntaje parcial de " + jugador2.getNombre());
-        labelConNombreJugador2.setFont(Font.font("Gill Sans",FontWeight.THIN, 17));
-        labelConNombreJugador2.setTextFill(Color.MEDIUMVIOLETRED);
+        mostrarPuntajeParcialDelJugador(puntajeJugador2, jugador2);
+        mostrarNombreDelJugador(jugador2, labelConNombreJugador2);
 
         kashoot.actualizarJugadorActual();
 
-        HBox boxJugador1 = new HBox();
-        boxJugador1.getChildren().addAll(labelConNombreJugador1,puntajeJugador1);
-        boxJugador1.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
-
-        HBox boxJugador2 = new HBox();
-        boxJugador2.getChildren().addAll(labelConNombreJugador2,puntajeJugador2);
-        boxJugador2.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
+        HBox boxJugador1 = crearBoxSuperiorDelJugador(labelConNombreJugador1, puntajeJugador1);
+        HBox boxJugador2 = crearBoxSuperiorDelJugador(labelConNombreJugador2, puntajeJugador2);
 
         VBox boxDeAmbosJugadores = new VBox();
         boxDeAmbosJugadores.getChildren().addAll(boxJugador1, boxJugador2);
         boxDeAmbosJugadores.setSpacing(5);
 
-        Label recordatorio = new Label("¡Acordate de seleccionar todas tus opciones antes de cualquier boton de responder!");
-        recordatorio.setFont(Font.font("Gill Sans",FontWeight.THIN, 16));
-        recordatorio.setAlignment(Pos.BOTTOM_CENTER);
-
+        Label recordatorio = crearLabelRecordatorioDeOrdenSeleccion();
         VBox botonesVolumen = botoneraOpcionesCalidadJuego();
 
         HBox labelSuperior = new HBox();
@@ -213,6 +194,34 @@ public class ContenedorPreguntas extends VBox {
         this.labelSuperior.getChildren().add(labelSuperior);
         this.labelSuperior.getChildren().add(botonesVolumen);
 
+    }
+
+    private Label crearLabelRecordatorioDeOrdenSeleccion() {
+        Label recordatorio = new Label("¡Acordate de seleccionar todas tus opciones antes de cualquier boton de responder!");
+        recordatorio.setFont(Font.font("Gill Sans",FontWeight.THIN, 16));
+        recordatorio.setAlignment(Pos.BOTTOM_CENTER);
+
+        return recordatorio;
+    }
+
+    private HBox crearBoxSuperiorDelJugador(Label labelConNombreJugador, Label puntajeJugador) {
+        HBox boxJugador = new HBox();
+        boxJugador.getChildren().addAll(labelConNombreJugador ,puntajeJugador);
+        boxJugador.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
+
+        return boxJugador;
+    }
+
+    private void mostrarNombreDelJugador(Jugador jugador, Label labelConNombreJugador) {
+        labelConNombreJugador.setText(" Puntaje parcial de " + jugador.getNombre());
+        labelConNombreJugador.setFont(Font.font("Gill Sans",FontWeight.THIN, 17));
+        labelConNombreJugador.setTextFill(Color.MEDIUMVIOLETRED);
+    }
+
+    private void mostrarPuntajeParcialDelJugador(Label puntajeJugador, Jugador unJugador) {
+        puntajeJugador.setText(": ".concat(Integer.toString(unJugador.getPuntajeAcumulado())));
+        puntajeJugador.setFont(Font.font("Gill Sans",FontWeight.BOLD, 17));
+        puntajeJugador.setTextFill(Color.MEDIUMVIOLETRED);
     }
 
     private VBox botoneraOpcionesCalidadJuego() {
