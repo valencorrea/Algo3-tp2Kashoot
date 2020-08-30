@@ -58,7 +58,7 @@ public class ContenedorPreguntas extends VBox {
         this.volumen = volumen;
         this.setHeight(500);
         this.setAlignment(Pos.CENTER);
-        this.setSpacing(60);
+        this.setSpacing(50);
         this.contenedorFinal = contenedorFinalDeJuego;
 
         this.vistaKashoot = new VistaKashoot(kashoot,this,contenedorFinalDeJuego);
@@ -92,11 +92,13 @@ public class ContenedorPreguntas extends VBox {
     private VBox mostrarReglasDeJuego() {
         VBox reglas = new VBox();
 
-        HBox reglaMultiplicadores = mostrarUnaRegla("Multiplicadores: ", "Hacen tal cosa");
-        HBox reglaExclusividad = mostrarUnaRegla("Exclusividad: ", "Hace tal otra cosa");
+        HBox reglaMultiplicadores = mostrarUnaRegla("Multiplicadores: ", "Solo para preguntas con formato penalidad!! Aplica unicamente a quien la seleccionó, multiplicando el puntaje obtenido por el valor seleccionado.");
+        HBox reglaExclusividad = mostrarUnaRegla("Exclusividad: ", "Para cualquier formato a excepcion de penalidad. Duplica o cuadriplica el puntaje de quien gane esa ronda, dependiendo de cuantos jugadores la seleccionen.\nSi ambos responden bien, no se le asignará a ninguno.");
+        HBox nota = mostrarUnaRegla("NOTA: ", "Cada jugador posee dos exclusividades, un multiplicador x2 y uno x3.");
 
         reglas.getChildren().add(reglaMultiplicadores);
         reglas.getChildren().add(reglaExclusividad);
+        reglas.getChildren().add(nota);
         reglas.setAlignment(Pos.BASELINE_CENTER);
         reglas.setSpacing(5);
 
@@ -108,12 +110,12 @@ public class ContenedorPreguntas extends VBox {
 
         Label labelNombre = new Label("   " + nombre);
         labelNombre.setTextFill(Color.GRAY);
-        labelNombre.setFont(Font.font("Tahoma", FontWeight.BLACK, 20));
+        labelNombre.setFont(Font.font("Tahoma", FontWeight.BLACK, 13));
         labelNombre.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
 
         Label labelDescripcion = new Label(descripcion);
         labelDescripcion.setTextFill(Color.GRAY);
-        labelDescripcion.setFont(Font.font("Tahoma", FontWeight.THIN, 20));
+        labelDescripcion.setFont(Font.font("Tahoma", FontWeight.THIN, 13));
         labelDescripcion.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
 
         multiplicadores.getChildren().addAll(labelNombre, labelDescripcion);
@@ -158,13 +160,13 @@ public class ContenedorPreguntas extends VBox {
 
         Jugador jugador1 = kashoot.obtenerJugadorActual();
 
-        puntajeJugador1.setText(": ".concat(Integer.toString(jugador1.getPuntajeAcumulado())));
-        puntajeJugador1.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
+        puntajeJugador1.setText("\n: ".concat(Integer.toString(jugador1.getPuntajeAcumulado())));
+        puntajeJugador1.setFont(Font.font("Gill Sans",FontWeight.BOLD, 17));
         puntajeJugador1.setTextFill(Color.MEDIUMVIOLETRED);
 
         Label labelConNombreJugador1 = new Label();
-        labelConNombreJugador1.setText("Puntaje parcial de " + jugador1.getNombre());
-        labelConNombreJugador1.setFont(Font.font("Gill Sans",FontWeight.THIN, 20));
+        labelConNombreJugador1.setText("\nPuntaje parcial de " + jugador1.getNombre());
+        labelConNombreJugador1.setFont(Font.font("Gill Sans",FontWeight.THIN, 17));
         labelConNombreJugador1.setTextFill(Color.MEDIUMVIOLETRED);
 
         kashoot.actualizarJugadorActual();
@@ -174,12 +176,12 @@ public class ContenedorPreguntas extends VBox {
         Jugador jugador2 = kashoot.obtenerJugadorActual();
 
         puntajeJugador2.setText(": ".concat(Integer.toString(jugador2.getPuntajeAcumulado())));
-        puntajeJugador2.setFont(Font.font("Gill Sans",FontWeight.BOLD, 20));
+        puntajeJugador2.setFont(Font.font("Gill Sans",FontWeight.BOLD, 17));
         puntajeJugador2.setTextFill(Color.MEDIUMVIOLETRED);
 
         Label labelConNombreJugador2 = new Label();
         labelConNombreJugador2.setText("Puntaje parcial de " + jugador2.getNombre());
-        labelConNombreJugador2.setFont(Font.font("Gill Sans",FontWeight.THIN, 20));
+        labelConNombreJugador2.setFont(Font.font("Gill Sans",FontWeight.THIN, 17));
         labelConNombreJugador2.setTextFill(Color.MEDIUMVIOLETRED);
 
         kashoot.actualizarJugadorActual();
@@ -195,7 +197,7 @@ public class ContenedorPreguntas extends VBox {
         boxDeAmbosJugadores.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
 
         Label recordatorio = new Label("¡Acordate de seleccionar todas tus opciones antes de cualquier boton de responder!");
-        recordatorio.setFont(Font.font("Gill Sans",FontWeight.THIN, 14));
+        recordatorio.setFont(Font.font("Gill Sans",FontWeight.THIN, 16));
         recordatorio.setAlignment(Pos.BOTTOM_CENTER);
         recordatorio.setBackground(new Background(new BackgroundFill(Color.LIGHTCYAN, new CornerRadii(5.0), new Insets(-5.0))));
 
@@ -203,7 +205,7 @@ public class ContenedorPreguntas extends VBox {
 
         HBox labelSuperior = new HBox();
         labelSuperior.getChildren().addAll(boxDeAmbosJugadores, recordatorio);
-        labelSuperior.setSpacing(75);
+        labelSuperior.setSpacing(90);
 
         this.labelSuperior.getChildren().add(labelSuperior);
         this.labelSuperior.getChildren().add(botonesVolumen);
