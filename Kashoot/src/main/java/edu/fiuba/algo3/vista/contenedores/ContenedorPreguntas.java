@@ -195,7 +195,7 @@ public class ContenedorPreguntas extends VBox {
             unBoton.setOnAction(botonOpcionEventHandler);
         }
 
-        contenedorOpciones.setSpacing(200);
+        contenedorOpciones.setSpacing(100);
         contenedorOpciones.setAlignment(Pos.CENTER);
 
         this.preguntaYOpciones.getChildren().addAll(contenedorOpciones);

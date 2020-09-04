@@ -29,7 +29,7 @@ import java.util.ArrayList;
     @Override
     public void start(Stage stage) throws Exception {
 
-        double volumen = 0;//0.2
+        double volumen = 0.2;
         MediaPlayer musica = agregarMusica(volumen);
 
         stage.setTitle("Kashoot");
@@ -77,8 +77,6 @@ import java.util.ArrayList;
 
     public void agregarRondas(Kashoot kashoot){
 
-        //vf;Clasico;¿El cielo es celeste?;/verdadero;falso
-
         Opcion opcionCorrecta11 = new Opcion("Verdadero");
         Opcion opcionIncorrecta11 = new Opcion("Falso");
 
@@ -88,13 +86,12 @@ import java.util.ArrayList;
 
         Respuesta respuestaCorrecta1 = new Respuesta();
         respuestaCorrecta1.agregarOpcion(opcionCorrecta11);
-        Pregunta unaPregunta1 = new Pregunta(new ModalidadSinOrden(new Clasico()), "¿El cielo es celeste?\nVerdadero/falso CLASICO", respuestaCorrecta1);
+        Pregunta unaPregunta1 = new Pregunta(new ModalidadSinOrden(new Clasico()), "¿El cielo es celeste?\nFormato clasico", respuestaCorrecta1);
 
         Ronda ronda1 = new Ronda();
         ronda1.agregarPregunta(unaPregunta1);
         ronda1.agregarOpciones(opciones1);
         //-------------------------------------------//
-        //multipleChoice; Penalidad; que numeros son pares?;/4;7;pi;e;/2
 
         Opcion opcionCorrecta21 = new Opcion("2");
         Opcion opcionIncorrecta21 = new Opcion("7");
@@ -114,14 +111,12 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta2 = new Respuesta();
         respuestaCorrecta2.agregarOpcion(opcionCorrecta21);
         respuestaCorrecta2.agregarOpcion(opcionCorrecta22);
-        Pregunta unaPregunta2 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Qué números son pares?\nMultipleChoice PENALIDAD", respuestaCorrecta2);
+        Pregunta unaPregunta2 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Qué números son pares?\nFormato penalidad", respuestaCorrecta2);
 
         Ronda ronda2 = new Ronda();
         ronda2.agregarPregunta(unaPregunta2);
         ronda2.agregarOpciones(opciones2);
         //-------------------------------------------//
-        //verdaderoFalso; Clasico; ¿Existe el patrón Poxi?;verdadero;/falso
-
         Opcion opcionIncorrecta31 = new Opcion("Verdadero");
         Opcion opcionCorrecta31 = new Opcion("Falso");
 
@@ -132,14 +127,13 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta3 = new Respuesta();
         respuestaCorrecta3.agregarOpcion(opcionCorrecta31);
 
-        Pregunta unaPregunta3 = new Pregunta(new ModalidadSinOrden(new Clasico()), "¿Existe el patrón Poxi?\nVerdadero/falso CLASICO", respuestaCorrecta3);
+        Pregunta unaPregunta3 = new Pregunta(new ModalidadSinOrden(new Clasico()), "¿Existe el patrón Poxi?\nFormato clasico", respuestaCorrecta3);
 
         Ronda ronda3 = new Ronda();
         ronda3.agregarPregunta(unaPregunta3);
         ronda3.agregarOpciones(opciones3);
 
         //-------------------------------------------//
-        //orderedChoice; Ordenar los sig numeros;3;6;7;9
         Opcion opcionCorrecta41 = new Opcion("3");
         Opcion opcionCorrecta42 = new Opcion("6");
         Opcion opcionCorrecta43 = new Opcion("7");
@@ -159,19 +153,18 @@ import java.util.ArrayList;
         respuestaCorrecta4.agregarOpcion(opcionCorrecta43);
         respuestaCorrecta4.agregarOpcion(opcionCorrecta44);
 
-        Pregunta unaPregunta4 = new Pregunta(new ModalidadOrdenada(), "Seleccionar los números de forma acendente \nOrdered choice ", respuestaCorrecta4);
+        Pregunta unaPregunta4 = new Pregunta(new ModalidadOrdenada(), "Seleccionar los números de forma acendente \nFormato ordered choice", respuestaCorrecta4);
 
         Ronda ronda4 = new Ronda();
         ronda4.agregarPregunta(unaPregunta4);
         ronda4.agregarOpciones(opciones4);
 
         //-------------------------------------------//
-        //multipleChoice; Parcial; cual es la mejor facultad?;fmed;/fiuba;/fiuba en otro boton;sociales
 
         Opcion opcionCorrecta51 = new Opcion("Fiuba");
-        Opcion opcionIncorrecta51 = new Opcion("Fmediciona");
+        Opcion opcionIncorrecta51 = new Opcion("Fmed");
         Opcion opcionIncorrecta52 = new Opcion("Sociales");
-        Opcion opcionCorrecta52 = new Opcion("Fiuba en otro boton");
+        Opcion opcionCorrecta52 = new Opcion(" Fiuba en\notro boton");
         Opcion opcionIncorrecta53 = new Opcion("Derecho");
 
 
@@ -185,14 +178,13 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta5 = new Respuesta();
         respuestaCorrecta5.agregarOpcion(opcionCorrecta51);
         respuestaCorrecta5.agregarOpcion(opcionCorrecta52);
-        Pregunta unaPregunta5 = new Pregunta(new ModalidadSinOrden(new Parcial()), "¿Cuál es la mejor facultad?\nMultipleChoice PARCIAL", respuestaCorrecta5);
+        Pregunta unaPregunta5 = new Pregunta(new ModalidadSinOrden(new Parcial()), "¿Cuál es la mejor facultad?\nFormato parcial", respuestaCorrecta5);
 
         Ronda ronda5 = new Ronda();
         ronda5.agregarPregunta(unaPregunta5);
         ronda5.agregarOpciones(opciones5);
 
         //-------------------------------------------//
-        // orderedChoice; Ordenar las sigueintes letras alfabeticamente;M;S;V;A;R
 
         Opcion opcionCorrecta61 = new Opcion("A");
         Opcion opcionCorrecta62 = new Opcion("M");
@@ -215,14 +207,13 @@ import java.util.ArrayList;
         respuestaCorrecta6.agregarOpcion(opcionCorrecta64);
         respuestaCorrecta6.agregarOpcion(opcionCorrecta65);
 
-        Pregunta unaPregunta6 = new Pregunta(new ModalidadOrdenada(), "Seleccionar las letras alfabeticamente\nOrderedChoice", respuestaCorrecta6);
+        Pregunta unaPregunta6 = new Pregunta(new ModalidadOrdenada(), "Seleccionar las letras alfabeticamente\nFormato ordered choice", respuestaCorrecta6);
 
         Ronda ronda6 = new Ronda();
         ronda6.agregarPregunta(unaPregunta6);
         ronda6.agregarOpciones(opciones6);
 
         //-------------------------------------------//
-        // verdaderoFalso; Penalidad; ¿Vamos a aprobar?;/verdadero;falso
 
         Opcion opcionCorrecta71 = new Opcion("Verdadero");
         Opcion opcionIncorrecta71 = new Opcion("Falso");
@@ -234,14 +225,13 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta7 = new Respuesta();
         respuestaCorrecta7.agregarOpcion(opcionCorrecta71);
 
-        Pregunta unaPregunta7 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Vamos a aprobar?\nVerdadero/falso PENALIDAD", respuestaCorrecta7);
+        Pregunta unaPregunta7 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Vamos a aprobar?\nFormato penalidad", respuestaCorrecta7);
 
         Ronda ronda7 = new Ronda();
         ronda7.agregarPregunta(unaPregunta7);
         ronda7.agregarOpciones(opciones7);
 
         //-------------------------------------------//
-        // verdaderoFalso; Penalidad; los michis son malos?; verdadero;/falso
 
         Opcion opcionIncorrecta81 = new Opcion("Verdadero");
         Opcion opcionCorrecta81 = new Opcion("Falso");
@@ -253,7 +243,7 @@ import java.util.ArrayList;
         Respuesta respuestaCorrecta8 = new Respuesta();
         respuestaCorrecta8.agregarOpcion(opcionCorrecta81);
 
-        Pregunta unaPregunta8 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Los michis son malos?\nVerdadero/falso PENALIDAD", respuestaCorrecta8);
+        Pregunta unaPregunta8 = new Pregunta(new ModalidadSinOrden(new Penalidad()), "¿Los michis son malos?\nFormato penalidad", respuestaCorrecta8);
 
         Ronda ronda8 = new Ronda();
         ronda8.agregarPregunta(unaPregunta8);
@@ -279,17 +269,17 @@ import java.util.ArrayList;
         respuestaCorrectaDeGrupo1.agregarOpcion(opcionCorrectaG1_93);
         respuestaCorrectaDeGrupo1.agregarOpcion(opcionCorrectaG1_95);
 
-        Pregunta unaPregunta9 = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Clasifique colores frios y calidos\nselecciones solo los calidos \n\t GroupChoice", respuestaCorrectaDeGrupo1);
+        Pregunta unaPregunta9 = new Pregunta(new ModalidadSinOrden(new GroupChoice()), "Selecciones solo los colores calidos\n\tFormato group choice", respuestaCorrectaDeGrupo1);
 
         Ronda ronda9 = new Ronda();
         ronda9.agregarPregunta(unaPregunta9);
         ronda9.agregarOpciones(opciones9);
 
         //-------------------------------------------//
-        Opcion opcionCorrecta101 = new Opcion("Actualizar Maven");
-        Opcion opcionCorrecta102 = new Opcion("Verificar modulo");
-        Opcion opcionCorrecta103 = new Opcion("Built - rebuilt");
-        Opcion opcionCorrecta104 = new Opcion("Clonar el repo devuelta");
+        Opcion opcionCorrecta101 = new Opcion("Actualizar\n  maven");
+        Opcion opcionCorrecta102 = new Opcion("Verificar\nmodulo");
+        Opcion opcionCorrecta103 = new Opcion("Built-rebuilt");
+        Opcion opcionCorrecta104 = new Opcion("   Clonar el \nrepo devuelta");
 
 
         ArrayList <Opcion> opciones10 = new ArrayList<Opcion>();
@@ -304,7 +294,7 @@ import java.util.ArrayList;
         respuestaCorrecta10.agregarOpcion(opcionCorrecta103);
         respuestaCorrecta10.agregarOpcion(opcionCorrecta104);
 
-        Pregunta unaPregunta10 = new Pregunta(new ModalidadSinOrden(new Parcial()), "¿Qué hacemos cuando falla intelliJ?\nMultipleChoice PARCIAL", respuestaCorrecta10);
+        Pregunta unaPregunta10 = new Pregunta(new ModalidadSinOrden(new Parcial()), "¿Qué hacemos cuando falla intelliJ?\nFormato parcial", respuestaCorrecta10);
 
         Ronda ronda10 = new Ronda();
         ronda10.agregarPregunta(unaPregunta10);
@@ -313,15 +303,15 @@ import java.util.ArrayList;
         //-------------------------------------------//
 
         kashoot.agregarRonda(ronda1);
-        //kashoot.agregarRonda(ronda2);
-        //kashoot.agregarRonda(ronda3);
-        //kashoot.agregarRonda(ronda4);
-        //kashoot.agregarRonda(ronda5);
-        //kashoot.agregarRonda(ronda6);
-        //kashoot.agregarRonda(ronda7);
-        //kashoot.agregarRonda(ronda8);
-        //kashoot.agregarRonda(ronda9);
-        //kashoot.agregarRonda(ronda10);
+        kashoot.agregarRonda(ronda2);
+        kashoot.agregarRonda(ronda3);
+        kashoot.agregarRonda(ronda4);
+        kashoot.agregarRonda(ronda5);
+        kashoot.agregarRonda(ronda6);
+        kashoot.agregarRonda(ronda7);
+        kashoot.agregarRonda(ronda8);
+        kashoot.agregarRonda(ronda9);
+        kashoot.agregarRonda(ronda10);
 
     }
 
