@@ -5,7 +5,8 @@ import edu.fiuba.algo3.modelo.EntidadesPrincipales.Pregunta;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Kashoot;
 import edu.fiuba.algo3.vista.VistaKashoot;
-import edu.fiuba.algo3.vista.botones.BotonModoNocturnoEventHandler;
+import edu.fiuba.algo3.vista.botones.modoPantalla.BotonModoDiurnoEventHandler;
+import edu.fiuba.algo3.vista.botones.modoPantalla.BotonModoNocturnoEventHandler;
 import edu.fiuba.algo3.vista.botones.BotonOpcionEventHandler;
 import edu.fiuba.algo3.vista.botones.responder.BotonExclusividadEventHandler;
 import edu.fiuba.algo3.vista.botones.responder.BotonMultiplicadorX2EventHandler;
@@ -41,7 +42,6 @@ public class ContenedorPreguntas extends VBox {
     private VBox botonesExtra;
     private VBox preguntaYOpciones = new VBox();
     private HBox labelSuperior = new HBox();
-    private boolean modoDiurno = true;
     private Stage stage;
     private Kashoot kashoot;
     private HBox labelJugadorActual;
@@ -252,12 +252,21 @@ public class ContenedorPreguntas extends VBox {
     }
 
     private Button crearBotonModoNocturno() {
-        Button botonModoNocturno = new Button("      Activar\nmodo nocturno");
-        BotonModoNocturnoEventHandler botonModoNocturnoEventHandler = new BotonModoNocturnoEventHandler(this, this.contenedorFinal, this.modoDiurno, botonModoNocturno);
+        Button botonModoNocturno = new Button("Modo\nnoche");
+        BotonModoNocturnoEventHandler botonModoNocturnoEventHandler = new BotonModoNocturnoEventHandler(this, this.contenedorFinal, botonModoNocturno);
         botonModoNocturno.setOnAction(botonModoNocturnoEventHandler);
-        botonModoNocturno.setPrefSize(130, 40);
+        botonModoNocturno.setPrefSize(50, 40);
 
         return botonModoNocturno;
+    }
+
+    private Button crearBotonModoDiurno() {
+        Button botonModoDiurno = new Button("Modo\n  dia");
+        BotonModoDiurnoEventHandler botonModoDiurnoEventHandler = new BotonModoDiurnoEventHandler(this, this.contenedorFinal, botonModoDiurno);
+        botonModoDiurno.setOnAction(botonModoDiurnoEventHandler);
+        botonModoDiurno.setPrefSize(50, 40);
+
+        return botonModoDiurno;
     }
 
     private ToggleButton crearBotonRespuestaNormal() {
@@ -342,14 +351,27 @@ public class ContenedorPreguntas extends VBox {
     private VBox botoneraOpcionesCalidadJuego() {
         VBox botonera = new VBox();
 
-        Button botonModoNocturno = crearBotonModoNocturno();
+        HBox botonesModoPantalla = crearBotoneraModoPantalla();
         HBox botonesVolumen = crearBotoneraVolumen();
 
-        botonera.getChildren().addAll(botonModoNocturno, botonesVolumen);
-        botonera.setSpacing(5);
+        botonera.getChildren().addAll(botonesModoPantalla, botonesVolumen);
+        botonera.setSpacing(18);
         botonera.setAlignment(Pos.CENTER);
 
         return botonera;
+    }
+
+    private HBox crearBotoneraModoPantalla() {
+        HBox botonesModo = new HBox();
+
+        Button botonModoNocturno = crearBotonModoNocturno();
+        Button botonModoDiurno = crearBotonModoDiurno();
+
+        botonesModo.getChildren().addAll(botonModoNocturno, botonModoDiurno);
+        botonesModo.setSpacing(5);
+        botonesModo.setAlignment(Pos.CENTER);
+
+        return botonesModo;
     }
 
     private HBox crearBotoneraVolumen() {
@@ -388,11 +410,11 @@ public class ContenedorPreguntas extends VBox {
         HBox multiplicadores = new HBox();
 
         Label labelNombre = new Label("   " + nombre);
-        labelNombre.setTextFill(Color.GRAY);
+        labelNombre.setTextFill(Color.ROSYBROWN);
         labelNombre.setFont(Font.font("Tahoma", FontWeight.BLACK, 13));
 
         Label labelDescripcion = new Label(descripcion);
-        labelDescripcion.setTextFill(Color.GRAY);
+        labelDescripcion.setTextFill(Color.ROSYBROWN);
         labelDescripcion.setFont(Font.font("Tahoma", FontWeight.THIN, 13));
 
         multiplicadores.getChildren().addAll(labelNombre, labelDescripcion);
