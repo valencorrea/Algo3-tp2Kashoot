@@ -81,7 +81,7 @@ public class ContenedorPreguntas extends VBox {
         this.botonesExtra.setAlignment(Pos.BASELINE_CENTER);
 
         this.labelSuperior.setAlignment(Pos.CENTER);
-        this.labelSuperior.setSpacing(400);
+        this.labelSuperior.setSpacing(350);
 
         VBox reglasJuego = mostrarReglasDeJuego();
 
