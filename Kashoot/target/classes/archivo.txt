@@ -1,0 +1,9 @@
+multipleChoice; Clasico; de que color es el cielo?;rojo;mostaza;rosita;/celeste esta
+multipleChoice; Penalidad; que numeros son pares?;7;pi;e;/2 esta
+multipleChoice; Parcial; cual es la mejor faq?;fmed;/fiuba;/fiuba en otro boton;sociales esta
+verdaderoFalso; Clasico; c es terrible lenguaje?;/verdadero;falso esta
+verdaderoFalso; Penalidad; kashoot was sent to nil?;/verdadero;falso esta
+verdaderoFalso; Penalidad; los michis son malos?; verdadero;/falso esta
+orderedChoice; Ordenar los sig numeros;3;6;7;9 esta
+orderedChoice; Ordenar los sig numeros;3;6;7;9;35 esta
+groupChoice; numeros pares???;7;5;11;/8;/4;/2 
