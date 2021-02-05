@@ -82,7 +82,7 @@ public class ContenedorBienvenidos extends VBox {
     }
 
     private Label mostrarTerminosYCondiciones() {
-        Label terminos = new Label("\n\n\n\nTerminos y condiciones: \nAnte el turno en el cual debe jugar su oponente, promete no mirar la pantalla, en funcion de evitar que estas respuestas tengan influencia en las propias.");
+        Label terminos = new Label("\n\n\n\nTerminos y condiciones: \nAnte el turno en el cual debe jugar su oponente, promete no mirar la pantalla, en funcion de evitar que estas respuestas\ntengan influencia en las propias.");
         terminos.setFont(Font.font("Tahoma", FontWeight.THIN, 15));
         terminos.setTextFill(Color.GRAY);
         terminos.setAlignment(Pos.CENTER);

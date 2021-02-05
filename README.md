@@ -18,3 +18,7 @@ La entrega consta del desarrollo completo de la aplicación Kashoot, incluyendo:
 ## Especificaciones de la aplicación
 
 Se desarrolló un juego por turnos de 2 jugadores, conformado por un panel en el cual se muestran preguntas con múltiples opciones de respuestas, en el cual cada pregunta se muestra 2 veces (una por cada jugador). Existen diferentes tipos de preguntas, las cuales asignan puntaje de forma diferenciada según el tipo de respuesta que escoja el jugador, y si selecciona o no responder con bonus. Quien mas puntaje acumule al finalizar el juego será el ganador.
+
+![](imagenes/bienvenidos.png)
+![](imagenes/michis.png)
+![](imagenes/final.png)
